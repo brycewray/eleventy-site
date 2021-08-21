@@ -1,16 +1,17 @@
 {
-  "name": "eleventy_solo",
-  "description": "",
+  "name": "eleventy_site",
+  "description": "The history of eleventy_solo and the Vite-ness of eleventy_vite, the latter of which was based on eleventy-on-vite by Fotis Papadogeorgopoulos.",
   "private": true,
   "scripts": {
-    "clean": "rm -rf _site",
-    "hasher": "node csshash.js && node jshash.js",
+    "clean": "rimraf _site",
     "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean --parallel dev:*",
-    "dev:postcss": "postcss src/assets/css/index.css -o _site/css/index.css --config ./postcss.config.js --watch",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --quiet --serve",
-    "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
-    "prod:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js",
-    "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site"
+    "dev:vite": "vite",
+    "build": "NODE_ENV=production npm-run-all clean prod:vite prod:eleventy",
+    "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
+    "prod:vite": "NODE_ENV=production vite build",
+    "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 5000 --ui-port 5001",
+    "testbuild": "NODE_ENV=production npm run build && npm run testbuild:bsync"
   },
   "keywords": [],
   "author": "",

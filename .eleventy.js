@@ -1,4 +1,4 @@
-const fs = require("fs")
+const fs = require("fs/promises")
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 const ErrorOverlay = require("eleventy-plugin-error-overlay")
@@ -6,6 +6,13 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
+
+const INPUT_DIR = "src"
+const OUTPUT_DIR = "_site"
+
+// This will change both Eleventy's pathPrefix, and the one output by the
+// vite-related shortcodes below. Double-check if you change this, as this is only a demo :)
+const PATH_PREFIX = "/"
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -15,7 +22,7 @@ async function imageShortcode(src, alt) {
   if(alt === undefined) {
     // Throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
-  }  
+  }
   let metadataImg = await Image(src, {
     widths: [600, 900, 1500],
     formats: ['webp', 'jpeg'],
@@ -26,9 +33,9 @@ async function imageShortcode(src, alt) {
       const name = path.basename(src, extension)
       return `${name}-${width}w.${format}`
     }
-  })  
+  })
   let lowsrc = metadataImg.jpeg[0]
-  let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]  
+  let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]
   return `<picture>
     ${Object.values(metadataImg).map(imageFormat => {
       return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
@@ -43,8 +50,8 @@ async function imageShortcode(src, alt) {
   </picture>`
 }
 
-module.exports = function(eleventyConfig) {
-  
+module.exports = function (eleventyConfig) {
+
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
   eleventyConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
@@ -125,6 +132,7 @@ module.exports = function(eleventyConfig) {
   let markdownItBrakSpans = require("markdown-it-bracketed-spans")
   let markdownItPrism = require("markdown-it-prism")
   let markdownItLinkAttrs = require("markdown-it-link-attributes")
+  let markdownItAnchor = require("markdown-it-anchor")
   let markdownItOpts = {
     html: true,
     linkify: false,
@@ -133,6 +141,9 @@ module.exports = function(eleventyConfig) {
   const markdownEngine = markdownIt(markdownItOpts)
   markdownEngine.use(markdownItFootnote)
   markdownEngine.use(markdownItAttrs)
+  markdownEngine.use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.headerLink()
+  })
   markdownEngine.use(markdownItBrakSpans)
   markdownEngine.use(markdownItPrism)
   markdownEngine.use(markdownItLinkAttrs, {
@@ -155,37 +166,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownEngine)
   /* --- end, Markdown handling --- */
 
-
   eleventyConfig.addWatchTarget("src/**/*.js")
   eleventyConfig.addWatchTarget("./src/assets/css/*.css")
   // eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
   eleventyConfig.addWatchTarget("./src/**/*.md")
-
-
-  eleventyConfig.setBrowserSyncConfig({
-    ...eleventyConfig.browserSyncConfig,
-    files: [
-      "src/**/*.js", 
-      "src/assets/css/*.css", 
-      // "src/assets/scss/*.scss", 
-      "src/**/*.md"
-    ],
-    ghostMode: false,
-    port: 3000,
-    callbacks: {
-      ready: function(err, bs) {
-        bs.addMiddleware("*", (req, res) => {
-          const content_404 = fs.readFileSync('_site/404.html')
-          // Add 404 http status code in request header.
-          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" })
-          // Provides the 404 content without redirect.
-          res.write(content_404)
-          res.end()
-        })
-      }
-    },
-    snippet: false,
-  })
 
   eleventyConfig.addShortcode(
     "imgc",
@@ -223,22 +207,117 @@ module.exports = function(eleventyConfig) {
   })
   /* === END, prev/next posts stuff === */
 
-  
-  /* pathPrefix: "/"; */
+
+  // Read Vite's manifest.json, and add script tags for the entry files
+  // You could decide to do more things here, such as adding preload/prefetch tags
+  // for dynamic segments
+  // NOTE: There is some hard-coding going on here, with regard to the assetDir
+  // and location of manifest.json
+  // you could probably read vite.config.js and get that information directly
+  // @see https://vitejs.dev/guide/backend-integration.html
+  eleventyConfig.addNunjucksAsyncShortcode("viteScriptTag", viteScriptTag)
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "viteLinkStylesheetTags",
+    viteLinkStylesheetTags
+  )
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "viteLinkModulePreloadTags",
+    viteLinkModulePreloadTags
+  )
+
+  async function viteScriptTag(entryFilename) {
+    const entryChunk = await getChunkInformationFor(entryFilename)
+    return `<script type="module" src="${PATH_PREFIX}${entryChunk.file}"></script>`
+  }
+
+  /* Generate link[rel=modulepreload] tags for a script's imports */
+  /* TODO(fpapado): Consider link[rel=prefetch] for dynamic imports, or some other signifier */
+  async function viteLinkModulePreloadTags(entryFilename) {
+    const entryChunk = await getChunkInformationFor(entryFilename)
+    if (!entryChunk.imports || entryChunk.imports.length === 0) {
+      console.log(
+        `The script for ${entryFilename} has no imports. Nothing to preload.`
+      )
+      return ""
+    }
+    /* There can be multiple import files per entry, so assume many by default */
+    /* Each entry in .imports is a filename referring to a chunk in the manifest; we must resolve it to get the output path on disk.
+     */
+    const allPreloadTags = await Promise.all(
+      entryChunk.imports.map(async (importEntryFilename) => {
+        const chunk = await getChunkInformationFor(importEntryFilename)
+        return `<link rel="modulepreload" href="${PATH_PREFIX}${chunk.file}"></link>`
+      })
+    )
+
+    return allPreloadTags.join("\n")
+  }
+
+  async function viteLinkStylesheetTags(entryFilename) {
+    const entryChunk = await getChunkInformationFor(entryFilename)
+    if (!entryChunk.css || entryChunk.css.length === 0) {
+      console.warn(`No css found for ${entryFilename} entry. Is that correct?`)
+      return "";
+    }
+    /* There can be multiple CSS files per entry, so assume many by default */
+    return entryChunk.css
+      .map(
+        (cssFile) =>
+          `<link rel="stylesheet" href="${PATH_PREFIX}${cssFile}"></link>`
+      )
+      .join("\n")
+  }
+
+  async function getChunkInformationFor(entryFilename) {
+    // We want an entryFilename, because in practice you might have multiple entrypoints
+    // This is similar to how you specify an entry in development more
+    if (!entryFilename) {
+      throw new Error(
+        "You must specify an entryFilename, so that vite-script can find the correct file."
+      )
+    }
+
+    // TODO: Consider caching this call, to avoid going to the filesystem every time
+    const manifest = await fs.readFile(
+      path.resolve(process.cwd(), "_site", "manifest.json")
+    )
+    const parsed = JSON.parse(manifest)
+
+    let entryChunk = parsed[entryFilename]
+
+    if (!entryChunk) {
+      const possibleEntries = Object.values(parsed)
+        .filter((chunk) => chunk.isEntry === true)
+        .map((chunk) => `"${chunk.src}"`)
+        .join(`, `)
+      throw new Error(
+        `No entry for ${entryFilename} found in _site/manifest.json. Valid entries in manifest: ${possibleEntries}`
+      )
+    }
+
+    return entryChunk
+  }
+
   return {
-    dir: {
-      input: "src", // <--- everything else in 'dir' is relative to this directory! https://www.11ty.dev/docs/config/#directory-for-includes
-      data: "../_data",
-      includes: "_includes",
-    },
     templateFormats: [
-      "html", 
-      "md", 
-      "njk", 
+      "html",
+      "md",
+      "njk",
       "11ty.js"
     ],
+    pathPrefix: PATH_PREFIX,
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     passthroughFileCopy: true,
+    dataTemplateEngine: "njk",
+    passthroughFileCopy: true,
+    dir: {
+      input: INPUT_DIR,
+      output: OUTPUT_DIR,
+      // NOTE: These two paths are relative to dir.input
+      // @see https://github.com/11ty/eleventy/issues/232
+      includes: "_includes",
+      data: "../_data",
+    },
   }
 }
