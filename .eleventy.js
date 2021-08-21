@@ -171,6 +171,11 @@ module.exports = function (eleventyConfig) {
   // eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
   eleventyConfig.addWatchTarget("./src/**/*.md")
 
+  eleventyConfig.setBrowserSyncConfig({
+    ...eleventyConfig.browserSyncConfig,
+    ghostmode: false,
+  })
+
   eleventyConfig.addShortcode(
     "imgc",
     require("./src/assets/utils/imgc.js")
