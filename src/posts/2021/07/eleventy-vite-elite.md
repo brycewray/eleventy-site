@@ -5,7 +5,7 @@ subtitle: "Re-bundling, but without the pain of webpack"
 description: "Pairing Eleventy and Vite shows me how far bundlers have come in a short time."
 author: Bryce Wray
 date: 2021-07-24T10:46:00-05:00
-lastmod: 2021-07-25T16:49:00-05:00
+lastmod: 2021-08-20T22:10:00-05:00
 discussionId: "2021-07-eleventy-vite-elite"
 featured_image: "Eleventy-and-Vite-logos__with_daniele-levis-pelusi-nEczFlV-GMI-unsplash_3000x2000_90pct.jpg"
 featured_image_width: 3000
@@ -22,6 +22,9 @@ I speak, of course, of the [Eleventy](https://11ty.dev) [static site generator](
 In case you haven't yet had your lesson in pronouncing *Vite*, it's the French word for *fast*, and it rhymes with *neat*. And *sweet*. And *elite*. I find the latter rhyme especially appropriate because uniting the excellence of **El**eventy with the brilliant performance of V**ite** produces what can be a truly elite solution for building [static websites](/posts/2020/09/normal-persons-guide-static-websites).
 
 Indeed, I am so sold on it that the site now runs off my [`eleventy_vite`](https://github.com/brycewray/eleventy_vite) repository, rather than the still-extant [`eleventy_solo`](https://github.com/brycewray/eleventy_solo) repo on which it had lived, off and on, for over a year.
+
+**Update, 2021-08-20**: Since that change had the unwanted but unavoidable effect of losing the Git history in `eleventy_solo`, I have since cloned `eleventy_solo` and added Vite to the resulting [`eleventy_site`](https://github.com/brycewray/eleventy_site) repo; I now run the site off it, instead.
+{.yellowBox}
 
 How all this came about is our tale for today, friends and neighbors.
 
@@ -105,7 +108,7 @@ However, it was a false kind of simplicity. I flat-out didn't worry about cache-
 
 In the year-plus following the switch away from webpack, my `package.json` scripting became pretty convoluted. It *worked*, mind you, but I found myself often searching for ways to do things "manually" that a bundler tool would do. Moreover, as in the embarrassing SNAFU I described in a later edit to "[Using PostCSS for cache-busting in Eleventy](/posts/2020/11/using-postcss-cache-busting-eleventy)," some solutions I chose turned out to be not so great.
 
-Fast-forward to earlier this week---and my still all-too-"manual" approach to cache-busting both CSS and JS (especially the JS) at build time. 
+Fast-forward to earlier this week---and my still all-too-"manual" approach to cache-busting both CSS and JS (especially the JS) at build time.
 
 I realized that, yes, the time had come to integrate a bundler once again.
 
