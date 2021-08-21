@@ -4,7 +4,7 @@
 }
 
 .lazy:not(.initial) {
-  @apply transition-opacity duration-700 ease-in-out;
+  @apply transition-opacity duration-500 ease-in-out;
   /* transition: opacity 0.4s; */
 }
 
