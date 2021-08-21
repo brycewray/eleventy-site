@@ -49,7 +49,7 @@ pyftsubset Inter.ttf \
 {% raw %}
 ```css
 /* === Inter, variable === */
-/* === 
+/* ===
 references:
 https://thetrevorharmon.com/blog/how-to-prepare-and-use-variable-fonts-on-the-web
 https://rwt.io/typography-tips/getting-bent-current-state-italics-variable-font-support
