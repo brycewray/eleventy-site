@@ -1,12 +1,12 @@
 // based on eleventy-with-vite (https://github.com/fpapado/eleventy-with-vite)
 // by Fotis Papadogeorgopoulos (https://github.com/fpapado)
 
-import { defineConfig } from "vite";
-import legacy from "@vitejs/plugin-legacy";
+import { defineConfig } from "vite"
+// import legacy from "@vitejs/plugin-legacy"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [legacy()],
+  // plugins: [legacy()],
   build: {
     outDir: "_site",
     assetsDir: "assets-vite", // default = "assets"
@@ -17,4 +17,4 @@ export default defineConfig({
       input: "/src/client/main.js",
     },
   },
-});
+})
