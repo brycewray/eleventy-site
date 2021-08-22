@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "clean": "rimraf _site",
+    "hasher": "node csshash.js && node jshash.js",
     "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean --parallel dev:*",
+    "dev:postcss": "postcss src/assets/css/index.css -o _site/css/index.css --config ./postcss.config.js --watch",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --quiet --serve",
-    "dev:vite": "vite",
-    "build": "NODE_ENV=production npm-run-all clean prod:vite prod:eleventy",
+    "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
+    "prod:postcss": "postcss src/assets/css/index.css -o _site/css/$(cat csshash) --config ./postcss.config.js",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
-    "prod:vite": "NODE_ENV=production vite build",
-    "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 5000 --ui-port 5001",
+    "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
     "testbuild": "NODE_ENV=production npm run build && npm run testbuild:bsync"
   },
   "keywords": [],
@@ -26,7 +27,6 @@
     "@11ty/eleventy-img": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "autoprefixer": "^10.3.1",
-    "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
     "eleventy-plugin-error-overlay": "^0.1.2",
     "eleventy-plugin-svg-contents": "^0.7.0",
@@ -51,7 +51,6 @@
     "postcss-nesting": "^8.0.1",
     "rimraf": "^3.0.2",
     "rss": "^1.2.2",
-    "tailwindcss": "^2.2.7",
-    "vite": "^2.5.0"
+    "tailwindcss": "^2.2.7"
   }
 }
