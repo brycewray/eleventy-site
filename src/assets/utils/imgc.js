@@ -1,11 +1,11 @@
-/* 
+/*
 This shortcode takes the following form...
   {% imgc url, alt, width, height, tmpl %}
 ...with url in the form of (note NO leading or ending slash):
   filename.ext
-...and 'temp[late]' optional in body copy. The template is used 
-to specify hero images on  post pages ('posts'). 
-Without this parameter, the `switch` statement below defaults 
+...and 'temp[late]' optional in body copy. The template is used
+to specify hero images on  post pages ('posts').
+Without this parameter, the `switch` statement below defaults
 to body copy-style image-handling.
 */
 
@@ -14,7 +14,7 @@ var cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
 var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
 var xFmPart1 = 'f_auto,q_auto:eco,w_'
 var xFmPart2 = ',x_0,z_1/' // note ending slash
- 
+
 module.exports = (url, alt, width, height, tmpl) => {
   if (!tmpl) tmpl == "none"
 
@@ -39,11 +39,11 @@ module.exports = (url, alt, width, height, tmpl) => {
       nscClass = `containedImage`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
-  
+
   var separator = ', '
 
   var stringtoRet = ``
-  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover" data-bg="url(${cloudiBase + LQIPpholder + url})">
+  stringtoRet = `<div class="${divClass} imgc-div" data-bg="url(${cloudiBase + LQIPpholder + url})">
     <img class="${imgClass}" aspect-ratio="${width} / ${height}" data-src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" data-srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
