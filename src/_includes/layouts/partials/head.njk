@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="generator" content="Eleventy v{{ eleventyVersion }}" />
-        
+
     {% if page.url === "/" %}
       <title>{{ siteparams.siteTitle }}</title>
       <meta property="og:title" content="{{ siteparams.siteTitle }}" />
@@ -87,7 +87,7 @@
     <!-- **** CONCLUSION, favicons **** -->
 
     <link rel="preload" href="/assets/fonts/Inter-3-19_subset_2021-06-18.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
-    
+
     {% if eleventyEnv == "production" %}
       <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
       <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
