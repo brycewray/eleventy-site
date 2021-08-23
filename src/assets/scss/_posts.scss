@@ -181,26 +181,21 @@ hr.paginatorBottom {
     border-radius: 0.375rem;
     border-color: transparent;
     vertical-align: middle;
+    color: var.$white;
     &:focus, &:active, &:hover {
       background-color: var.$blue;
     }
     @media (prefers-color-scheme: dark) {
-      background-color: var.$blueFirst;
+      background-color: var.$blueLight;
       &:focus, &:active, &:hover {
-        background-color: var.$blueLight;
+        background-color: var.$grey-2-dark-mode;
       }
     }
     a {
+      color: var.$white;
       border: none;
-      color: white;
-      &:focus, &:active, &:hover {
-        color: white;
-      }
       @media (prefers-color-scheme: dark) {
-        color: black;
-        &:focus, &:active, &:hover {
-          color: black;
-        }
+        color: var.$black;
       }
     }
   }
