@@ -1,3 +1,4 @@
+@use './reset';
 @use './fonts';
 @use './prismjs';
 @use './global';
@@ -12,6 +13,7 @@
 @use './lazypic';
 @use './intervf';
 // @use './ffoxobliq';
+@use './heroimg';
 @use './sitemaphtml';
 @use './iefixes';
 @use './twitter';

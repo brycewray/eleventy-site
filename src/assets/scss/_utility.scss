@@ -186,7 +186,7 @@ img.containedImage {
   }
 }
 
-/* borrowed from TWCSS */
+/* === start, borrowed from TWCSS === */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -197,6 +197,48 @@ img.containedImage {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.inline {
+  display: inline;
+}
+
+/* === end, borrowed from TWCSS === */
+/* start, for imgc.html */
+
+.imgc {
+  &-div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/* end, for imgc.html */
+
+/* start, for 404 page */
+
+.FourOhFour {
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  h1 {
+    font-size: var.$biggest;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    @media screen and (min-width: var.$bkpt_lg) {
+      font-size: 3.25rem;
+    }
+    @media screen and (min-width: var.$bkpt_xl) {
+      font-size: 3.5rem;
+    }
+  }
+  p {
+    font-size: var.$slightlybig;
+  }
+  .bottom {
+    margin-bottom: 10em;
+  }
 }
 
 // === end, utility classes
