@@ -21,7 +21,7 @@ layout: base
             <p class="homePost-Dates">
               <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
               {% if post.data.lastmod %}
-              <br />Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time>
+              <br /><span class="pokey">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
               {% endif %}
             </p>
             <p class="homePost-Description">
