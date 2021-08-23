@@ -158,7 +158,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addWatchTarget("src/**/*.js")
   eleventyConfig.addWatchTarget("./src/assets/css/*.css")
-  // eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
+  eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
   eleventyConfig.addWatchTarget("./src/**/*.md")
 
 
