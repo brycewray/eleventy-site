@@ -43,7 +43,7 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 strong, b {
   font-weight: 675;
-  @mdia (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     font-weight: 625;
   }
 }
