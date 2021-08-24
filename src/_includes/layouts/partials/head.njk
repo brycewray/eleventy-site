@@ -8,10 +8,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% if eleventyEnv == "production" %}
-      <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self'; base-uri 'self'; frame-ancestors 'self' https://*.brycewray.com https://*.youtube-nocookie.com; form-action 'self'; style-src 'self' https://*.brycewray.com https://*.youtube-nocookie.com data:; img-src 'self' https://*.brycewray.com https://*.cloudinary.com https://*.ytimg.com https://*.ggpht.com https://*.youtube-nocookie.com data:; font-src 'self' https://*.brycewray.com https://*.gstatic.com; script-src '{{ nonce }}' 'strict-dynamic' https://*.brycewray.com https://*.youtube-cookie.com https://*.gstatic.com; frame-src 'self' https://*.brycewray.com https://*.youtube-nocookie.com" />
-    {% endif %}
-
     <meta name="generator" content="Eleventy v{{ eleventyVersion }}" />
 
     {% if page.url === "/" %}
