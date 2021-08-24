@@ -15,6 +15,10 @@ html, body {
   }
 }
 
+html {
+  scroll-padding-top: 80px;
+}
+
 p, li {
   line-height: 1.4;
 }
@@ -38,6 +42,40 @@ h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 625;
   @media (prefers-color-scheme: dark) {
     font-weight: 575;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  outline: 2px transparent;
+  outline-offset: 2px;
+  &:active, &:focus, &:hover {
+    outline: 2px transparent;
+    outline-offset: 2px;
+  }
+}
+
+.header-anchor {
+  border: none;
+  color: var.$black;
+  @media screen and (prefers-color-scheme: dark) {
+    color: var.$white;
+  }
+  &:hover{
+    color: var.$blue;
+    border-bottom: 2px solid var.$blue;
+    @media screen and (prefers-color-scheme: dark) {
+      color: var.$blueLight;
+      border-bottom: 2px solid var.$blueLight;
+    }
+    &::after {
+      font-size: var.$stdsize;
+      font-weight: 425;
+      padding-left: 0.5em;
+      content: "#";
+      @media screen and (prefers-color-scheme: dark) {
+        font-weight: 375;
+      }
+    }
   }
 }
 
@@ -310,7 +348,9 @@ article {
     font-size: inherit;
     margin-top: 0.25em; // definitely em, not rem
   }
-  h2, h3, h4 {
-    margin-top: 1.25em; // definitely em, not rem
+  h1, h2, h3, h4 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -.025em;
   }
 }
