@@ -16,7 +16,7 @@ featured_image_caption: |
   <span class="caption">Google favicon image: <a href="https://pixabay.com/users/WikimediaImages-1185597/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1015752">WikimediaImages</a>; <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1015752">Pixabay</a></span>
 ---
 
-“Your honor, we submit the following in evidence for today's proceedings. 
+“Your honor, we submit the following in evidence for today's proceedings.
 
 "Initially, the defendant made the following assertions:"
 
