@@ -61,6 +61,10 @@
   margin-bottom: 10em;
 }
 
+.tightLead {
+  line-height: 1.25;
+}
+
 .text {
   &-nowrap, .nobrk {
     white-space: nowrap;
@@ -149,6 +153,9 @@ img.containedImage {
 
 .red {
   color: var.$red;
+  @media (prefers-color-scheme: dark) {
+    color: var.$red-dark-mode;
+  }
 }
 
 .imgcCaption, .imgCaption, .lazypicturecaption {
