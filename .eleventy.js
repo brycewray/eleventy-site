@@ -121,6 +121,7 @@ module.exports = function(eleventyConfig) {
   // --and-- https://github.com/planetoftheweb/seven/blob/master/.eleventy.js
   let markdownIt = require("markdown-it")
   let markdownItFootnote = require("markdown-it-footnote")
+  let markdownItAnchor = require("markdown-it-anchor")
   let markdownItAttrs = require("markdown-it-attrs")
   let markdownItBrakSpans = require("markdown-it-bracketed-spans")
   let markdownItPrism = require("markdown-it-prism")
@@ -132,6 +133,9 @@ module.exports = function(eleventyConfig) {
   }
   const markdownEngine = markdownIt(markdownItOpts)
   markdownEngine.use(markdownItFootnote)
+  markdownEngine.use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.headerLink()
+  })
   markdownEngine.use(markdownItAttrs)
   markdownEngine.use(markdownItBrakSpans)
   markdownEngine.use(markdownItPrism)
