@@ -80,6 +80,7 @@ src/_includes/css/*.*
 csshash
 
 csp.txt
+cache-and-headers.js
 nonce-worker.js
 
 _data/csshash.json
