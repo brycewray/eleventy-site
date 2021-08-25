@@ -1,10 +1,4 @@
-{% set eleventyEnv = projEnv.environment %}
-{% set nonce = nonce.nonceValue %}
-{% if eleventyEnv == "production" %}
-  <script nonce="{{ nonce }}" src="/assets/js/lite-yt-embed_0-2-0.js"></script>
-{% else %}
-  <script src="/assets/js/lite-yt-embed_0-2-0.js"></script>
-{% endif %}
+<script src="/assets/js/lite-yt-embed_0-2-0.js"></script>
 
 <lite-youtube videoid="{{ videoId }}" data-bg="url('https://i.ytimg.com/vi/{{ videoId }}/hqdefault.jpg')" {% if params %} params="{{ params }}"{% endif %}>
   <button type="button" class="lty-playbtn">
