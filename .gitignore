@@ -80,6 +80,7 @@ src/_includes/css/*.*
 csshash
 
 csp.txt
+nonce-worker.js
 
 _data/csshash.json
 _data/year.json
