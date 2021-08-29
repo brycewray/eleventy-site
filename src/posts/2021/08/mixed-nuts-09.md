@@ -5,7 +5,7 @@ subtitle: "Takes that are neither hot nor cool—in multiple ways"
 description: "Just tossing a few of these out there . . ."
 author: Bryce Wray
 date: 2021-08-29T08:52:00-05:00
-#lastmod: 2021-08-29T09:02:00-05:00
+#lastmod: 2021-08-29T10:45:00-05:00
 discussionId: "2021-08-mixed-nuts-09"
 featured_image: "nuts-5555301_5184x3456.jpg"
 featured_image_width: 5184
@@ -27,7 +27,7 @@ My work department was supposed to have returned to the office on a "hybrid" bas
 
 In a few days, I'll be providing what they call on Twitter "some personal news." Whether you'll care is, as always, totally up to you, but it will be a significant milestone for your erstwhile correspondent. "[Be here. Aloha.](https://en.wikipedia.org/wiki/Hawaii_Five-O_(1968_TV_series)#Credits)"
 
-*My inability to watch my home team's ballgames on a regular basis due to what I [called the "RSNs flap"](/posts/2020/02/youtube-tv-rsns-flap) have had about the effect I'd figured it would: I have spent virtually no time this year watching **any** MLB games. While I doubt that the MLB moguls care about the viewing habit of this old fart, they **should** worry that an entire younger generation of potential baseball fans also is being shut out. In a decade or two, the owners and players might just find almost no one left (in the U.S., at least) still caring about, much less willing to pay to see, the sport that's made them all rich.*
+*My inability to watch my home team's ballgames on a regular basis due to what I [called the "RSNs flap"](/posts/2020/02/youtube-tv-rsns-flap) has had about the effect I'd figured it would: I have spent virtually no time this year watching **any** MLB games. While I doubt that the MLB moguls care about the viewing habit of this old fart, they **should** worry that an entire younger generation of potential baseball fans also is being shut out. In a decade or two, the owners and players might just find almost no one left (in the U.S., at least) still caring about, much less willing to pay to see, the sport that's made them all rich.*
 
 **Finally, from the [virtual mailbag](/contact)&nbsp;.&nbsp;.&nbsp;.**\
 A reader told me that he shares my oft-noted affinity for Trying Whatever Is Currently Cool and therefore, implored me jokingly:
