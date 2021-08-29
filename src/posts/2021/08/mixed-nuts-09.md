@@ -5,7 +5,7 @@ subtitle: "Takes that are neither hot nor cool—in multiple ways"
 description: "Just tossing a few of these out there . . ."
 author: Bryce Wray
 date: 2021-08-29T08:52:00-05:00
-#lastmod:
+#lastmod: 2021-08-29T09:02:00-05:00
 discussionId: "2021-08-mixed-nuts-09"
 featured_image: "nuts-5555301_5184x3456.jpg"
 featured_image_width: 5184
@@ -32,7 +32,7 @@ In a few days, I'll be providing what they call on Twitter "some personal news."
 **Finally, from the [virtual mailbag](/contact)&nbsp;.&nbsp;.&nbsp;.**\
 A reader told me that he shares my oft-noted affinity for Trying Whatever Is Currently Cool and therefore, implored me jokingly:
 
-> . . . please[,] no more shiny object recommendations for 6 months maybe."
+> . . . please[,] no more shiny object recommendations for 6 months maybe.
 
 The only thing I could say to that was:
 
