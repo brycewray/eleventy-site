@@ -4,7 +4,7 @@ var analyticsCode = ``
 metadata.domain == "brycewray.com"
   ? analyticsCode = /*HTML*/`
   <!-- Fathom - beautiful, simple website analytics -->
-  <script nonce="DhcnhD3khTMePgXw" src="https://boa.brycewray.com/script.js" site="CSERHYIA" included-domains="brycewray.com,www.brycewray.com" defer></script>
+  <script src="https://boa.brycewray.com/script.js" site="CSERHYIA" included-domains="brycewray.com,www.brycewray.com" defer></script>
   <!-- / Fathom -->
   `
   : analyticsCode = ``
