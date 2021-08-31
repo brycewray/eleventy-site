@@ -20,7 +20,7 @@ layout: base
         </h2>
         <p class="background-hero-description-text">{{ description }}</p>
         <p class="background-hero-p-text">
-          <strong class="text-lg md:text-xl 2xl:text-2xl">{{ page.date | htmlDateString }}</strong><br />
+          <strong>{{ page.date | htmlDateString }}</strong><br />
           <span class="pokey">
           {% if lastmod %}
           <span>Last modified</span> {{ lastmod | htmlDateString }}
