@@ -5,7 +5,7 @@ subtitle: "A trimmer website is a faster website"
 description: "How to subset large web font files to improve your site’s performance."
 author: Bryce Wray
 date: 2021-08-08T14:00:00-05:00
-#lastmod:
+lastmod: 2021-09-01T17:30:00-05:00
 discussionId: "2021-08-down-with-flabby-fonts"
 featured_image: "typography-1069409_6000x4000.jpg"
 featured_image_width: 6000
@@ -28,6 +28,8 @@ Because I keep seeing the appearance of *non*-downsized fonts in the code of mor
 ## Very Inter-esting
 
 As of the initial publication of this post, this site uses the [Inter font](https://rsms.me/inter), and specifically the [variable](https://web.dev/variable-fonts/) version thereof (which, from here, I'll call "Inter VF"). Inter is a beautiful sans-serif font that looks a lot like San Francisco, the native system font on Apple devices.
+
+{% imgc "2021-09-01_screen-cap_Inter_2164x698.png", "Sample of the Inter web font", 2164, 698 %}
 
 The problem is that, due to the vast number of [glyphs](https://en.wikipedia.org/wiki/Glyph) it contains, Inter can be a *really* large download. So you want to make sure you *[subset](https://dev.to/benjaminblack/save-your-users-data-by-subsetting-web-fonts-5eo9)* it, extracting only those parts your site will actually use, and then use your CSS to tell the site to *use* only those parts. This is referring specifically to Inter VF because I think using *just* the variable-font version, which can provide all the styles you want, is more sensible than having to do the following procedure with *multiple* conventional (static) font files:
 
