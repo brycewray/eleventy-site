@@ -211,9 +211,9 @@ img.containedImage {
 }
 
 /* === end, borrowed from TWCSS === */
+
 /* start, for imgc.html */
 
-/* purgecss start ignore */
 .imgc {
   &-div {
     background-position: center;
@@ -221,7 +221,6 @@ img.containedImage {
     background-size: cover;
   }
 }
-/* purgecss end ignore */
 
 /* end, for imgc.html */
 
