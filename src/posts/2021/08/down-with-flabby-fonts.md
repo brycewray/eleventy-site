@@ -5,7 +5,7 @@ subtitle: "A trimmer website is a faster website"
 description: "How to subset large web font files to improve your site’s performance."
 author: Bryce Wray
 date: 2021-08-08T14:00:00-05:00
-lastmod: 2021-09-02T06:58:00-05:00
+lastmod: 2021-09-02T12:17:00-05:00
 discussionId: "2021-08-down-with-flabby-fonts"
 featured_image: "typography-1069409_6000x4000.jpg"
 featured_image_width: 6000
@@ -14,6 +14,8 @@ featured_image_alt: "Closeup view of type sheet showing type specifications"
 featured_image_caption: |
   <span class="caption">Image: <a href="https://pixabay.com/users/fill-8988/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1069409">Florian Pircher</a>; <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1069409">Pixabay</a></span>
 ---
+
+{% disclaimer %}
 
 Consider this a blast from the past, just the not-too-distant past.
 

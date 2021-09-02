@@ -5,7 +5,7 @@ subtitle: "A few suggestions for your static website"
 description: "I learned these the hard way; perhaps you won’t have to do the same."
 author: Bryce Wray
 date: 2020-12-21T12:10:00-06:00
-lastmod: 2021-06-03T06:43:00-05:00
+lastmod: 2021-09-02T12:18:00-05:00
 #draft: false
 discussionId: "2020-12-gems-in-rough"
 featured_image: "gems-836763_5184x3456.jpg"
@@ -15,6 +15,8 @@ featured_image_alt: "Colorful gemstones"
 featured_image_caption: |
   <span class="caption">Image: <a href="https://pixabay.com/users/aldk-53964/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=836763">Aldk</a>; <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=836763">Pixabay</a></span>
 ---
+
+{% disclaimer %}
 
 It's tips time, my fellow and sister static website aficionados.
 
@@ -41,7 +43,7 @@ In sum&nbsp;.&nbsp;.&nbsp;.
 
 Nova is really good, pretty, and friendly, but you pay for it, while VS Code is free. VS Code is a real integrated development environment (IDE), while Nova is a very cool and fully featured code editor that does *some* IDE stuff but not nearly as much, or as well, as VS Code. (*Still*, that 30-day trial offer for Nova is worth a look if you're a Mac user. It might just grow on you, especially if you're not already that into VS Code.)
 
-## CDNs: My POPs can whip&nbsp;your&nbsp;POPs
+## CDNs: my POPs can whip&nbsp;your&nbsp;POPs
 
 As the popularity of SSG-built websites grows, your choices for hosting vendors grow as well. Each of the leading [SSG-savvy hosting vendors](/posts/2020/09/normal-persons-guide-static-website-hosting) offers some sort of [content delivery network](https://en.wikipedia.org/wiki/content_delivery_network) (CDN) as part of its package, even on its free tier. This is a major advantage over "old-guard" hosting vendors, many of whom charge extra for even the barest CDN capability if they offer it at all.[^cfCDN]
 
@@ -103,7 +105,7 @@ pyftsubset Inter.ttf \
 {% raw %}
 ```css
 /* === Inter, variable === */
-/* === 
+/* ===
 references:
 https://thetrevorharmon.com/blog/how-to-prepare-and-use-variable-fonts-on-the-web
 https://rwt.io/typography-tips/getting-bent-current-state-italics-variable-font-support
@@ -128,7 +130,7 @@ https://rwt.io/typography-tips/getting-bent-current-state-italics-variable-font-
 ```css
 .italic, i, cite, em, var, address, dfn, h3, h5, h6 {  /* dealing with Inter VF */
   font-variation-settings: 'slnt' -8;
-  /* previous is needed by Chromium and Safari; its presence makes Firefox "over-slant" Inter VF, 
+  /* previous is needed by Chromium and Safari; its presence makes Firefox "over-slant" Inter VF,
      so we override that below with the media query for Firefox */
   font-style: oblique 8deg;
   /* previous is needed by Firefox and Safari; it apparently has no effect on Chromium */
