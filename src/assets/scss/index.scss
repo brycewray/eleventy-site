@@ -1,5 +1,5 @@
 @use './reset';
-@use './fonts_Inter';
+@use './fonts_PublicSans';
 @use './prismjs';
 @use './global';
 @use './utility';
@@ -11,7 +11,7 @@
 @use './nav';
 @use './lazyload';
 @use './lazypic';
-@use './intervf';
+// @use './intervf';
 // @use './ffoxobliq';
 @use './heroimg';
 @use './sitemaphtml';
