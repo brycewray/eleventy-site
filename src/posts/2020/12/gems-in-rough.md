@@ -5,7 +5,7 @@ subtitle: "A few suggestions for your static website"
 description: "I learned these the hard way; perhaps you won’t have to do the same."
 author: Bryce Wray
 date: 2020-12-21T12:10:00-06:00
-lastmod: 2021-09-02T12:18:00-05:00
+lastmod: 2021-09-02T12:28:00-05:00
 #draft: false
 discussionId: "2020-12-gems-in-rough"
 featured_image: "gems-836763_5184x3456.jpg"
@@ -84,6 +84,8 @@ My experience has been that using *all three* of these, every time you switch ho
 ## Very Inter-esting
 
 As of the initial publication of this post, this site uses the [Inter font](https://rsms.me/inter), and specifically the [variable](https://web.dev/variable-fonts/) version thereof (which, from here, I'll call "Inter VF"). Inter is a beautiful sans-serif font that looks a lot like San Francisco, the native system font on Apple devices.
+
+{% imgc "2021-09-01_screen-cap_Inter_2164x698.png", "Sample of the Inter web font", 2164, 698 %}
 
 The problem is that, due to the vast number of [glyphs](https://en.wikipedia.org/wiki/Glyph) it contains, Inter can be a *really* large download. So you want to make sure you *[subset](https://dev.to/benjaminblack/save-your-users-data-by-subsetting-web-fonts-5eo9)* it, extracting only those parts your site will actually use, and then use your CSS to tell the site to *use* only those parts. This is referring specifically to Inter VF because I think using *just* the variable-font version, which can provide all the styles you want, is more sensible than having to do the following procedure with *multiple* conventional (static) font files:
 
