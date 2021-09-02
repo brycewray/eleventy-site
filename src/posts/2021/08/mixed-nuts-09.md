@@ -5,7 +5,7 @@ subtitle: "Takes that are neither hot nor cool—in multiple ways"
 description: "Just tossing a few of these out there . . ."
 author: Bryce Wray
 date: 2021-08-29T08:52:00-05:00
-#lastmod: 2021-08-29T10:45:00-05:00
+lastmod: 2021-09-02T06:53:00-05:00
 discussionId: "2021-08-mixed-nuts-09"
 featured_image: "nuts-5555301_5184x3456.jpg"
 featured_image_width: 5184
@@ -23,7 +23,7 @@ With that unbelievably trivial concept suitably conveyed, let us now get to what
 
 My work department was supposed to have returned to the office on a "hybrid" basis starting in a few days, after having been overwhelmingly work-from-home since March, 2020; but the further adventures of COVID-19 and its variants have forced a delay until several weeks later, at least. I see that numerous large companies, notably Apple, are similarly having to delay their return-to-office activities. I would hope there will be more such retreats as Reality™ continues to bite.
 
-*My iPhone still shows a Battery Health reading of 94%, which isn't bad at all considering that I've had the phone for nearly four years. However, in recent days, I found it using far more battery juice than normal. After trying a variety of web-based suggestions, I noticed the App Store app had been unusually power-thirsty. Further investigation revealed that, although I'd set it to download app updates automatically, it apparently had left a bunch of 'em in the chute for several days. Perhaps, I surmised, it'd been "phoning home" to Apple about it fairly often, thus draining the battery much more than usually. All I know for sure is that, once I manually triggered the pending updates, the battery's behavior returned to a more-or-less normal state. (If it later turns out this **wasn't** the fix after all, I'll update this appropriately.)*
+*My iPhone still shows a Battery Health reading of 94%, which isn't bad at all considering that I've had the phone for nearly four years. However, in recent days, I found it using far more battery juice than normal. After trying a variety of web-based suggestions, I noticed the App Store app had been unusually power-thirsty. Further investigation revealed that, although I'd set it to download app updates automatically, it apparently had left a bunch of ’em in the chute for several days. Perhaps, I surmised, it'd been "phoning home" to Apple about it fairly often, thus draining the battery much more than usually. All I know for sure is that, once I manually triggered the pending updates, the battery's behavior returned to a more-or-less normal state. (If it later turns out this **wasn't** the fix after all, I'll update this appropriately.)*
 
 In a few days, I'll be providing what they call on Twitter "some personal news." Whether you'll care is, as always, totally up to you, but it will be a significant milestone for your erstwhile correspondent. "[Be here. Aloha.](https://en.wikipedia.org/wiki/Hawaii_Five-O_(1968_TV_series)#Credits)"
 
