@@ -5,7 +5,7 @@ subtitle: "Better video embeds, CFP improvements, “passtro” on Astro"
 description: "A few more nerdy thoughts for SSG fans"
 author: Bryce Wray
 date: 2021-09-05T14:35:00-05:00
-#lastmod:
+#lastmod: 2021-09-05T14:40:00-05:00
 discussionId: "2021-09-gems-in-rough-09"
 featured_image: "gemstones-glass-1462395_4000x2667.jpg"
 featured_image_width: 4000
@@ -28,7 +28,7 @@ Since it's highly unlikely you spend time perusing *any* website's privacy polic
 
 While it was satisfying to protect my visitors from those cookies, it was simultaneously galling that I no longer could provide the content enhancement that properly chosen video embeds can offer. And, yes, I later learned there's a (sorta-)no-cookies YouTube domain but, until recently, I was unaware there was a way to use it for what appeared to be a normal embed---*i.e.*, a video frame with an overlaid "play" button---without plenty of manual labor for which, at least until my [recent retirement](/posts/2021/09/transition), I simply didn't have time.
 
-As a result, I was delighted a few weeks back when I happened upon "[Faster YouTube embeds in Eleventy](https://sia.codes/posts/lite-youtube-embed-eleventy/)" by [Sia Karamalegos](https://github.com/siakaramalegos/). While it was (as the title implies) concerned mostly with doing higher-performance video embeds, it also showed me a way to have those embeds *without* worrying about the cookies. Ms. Karamalegos's article described an [Eleventy](https://11ty.dev) [shortcode](https://11ty.dev/docs/shortcodes) that used the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) package to provide just that. I promptly implemented her solution and was able to restore those two aforementioned YouTube video embeds, plus add any others in the future as I wish.
+As a result, I was delighted a few weeks back when I happened upon "[Faster YouTube embeds in Eleventy](https://sia.codes/posts/lite-youtube-embed-eleventy/)" by [Sia Karamalegos](https://github.com/siakaramalegos/). While it was (as the title implies) concerned mostly with doing higher-performance video embeds, it also showed me a way to have those embeds *without* worrying about the cookies. Ms. Karamalegos's article described how to use the [lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed) package to provide just that. I promptly implemented her solution and was able to restore those two aforementioned YouTube video embeds, plus add any others in the future as I wish.
 
 For example, this:
 
@@ -48,7 +48,7 @@ For example, this:
 {% set videoId = "MAlSjtxy5ak" %}
 {% include "layouts/partials/lite-youtube.njk" %}
 
-I altered the shortcode a little bit to add the disclaimer after each video, which I believe keeps this site in good shape where the [GDPR](https://gdpr-info.eu/) and other related privacy measures are concerned. I made this additional change after noting the concerns expressed in "[Embed YouTube videos without cookies](https://axbom.com/embed-youtube-videos-without-cookies/)" by [Per Axbom](https://twitter.com/axbom). In short: just using the (sorta-)no-cookies YouTube domain isn't enough; it's also necessary to advise your visitors that actually **playing** an embed from that domain, the domain name notwithstanding, **still** loads cookies.
+I altered the code a little bit to add the disclaimer after each video, which I believe keeps this site in good shape where the [GDPR](https://gdpr-info.eu/) and other related privacy measures are concerned. I made this additional change after noting the concerns expressed in "[Embed YouTube videos without cookies](https://axbom.com/embed-youtube-videos-without-cookies/)" by [Per Axbom](https://twitter.com/axbom). In short: just using the (sorta-)no-cookies YouTube domain isn't enough; it's also necessary to advise your visitors that actually **playing** an embed from that domain, the domain name notwithstanding, **still** loads cookies.
 
 ## Faster CFP builds
 
