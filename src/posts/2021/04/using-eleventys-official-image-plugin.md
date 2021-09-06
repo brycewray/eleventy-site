@@ -5,7 +5,7 @@ subtitle: "Save time and trouble with this intro and code"
 description: "The what, why, and how of Eleventy Image."
 author: Bryce Wray
 date: 2021-04-17T13:41:00-05:00
-lastmod: 2021-07-13T08:54:00-05:00
+lastmod: 2021-09-06T12:05:00-05:00
 discussionId: "2021-04-using-eleventys-official-image-plugin"
 featured_image: "camera-lens-color-bkgd-theregisti-TduXmZMD2uQ-unsplash_6000x4000.jpg"
 featured_image_width: 6000
@@ -23,7 +23,7 @@ After all, Eleventy Image comes directly from Eleventy's creator, [Zach Leatherm
 
 Rather, it was because I found the plugin's documentation, and the few blog posts I found about using the plugin, somewhat less than approachable for those who don't eat, sleep, and breathe things like, say, JavaScript [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-Then, last night, I finally decided to give it a try and, shortly before midnight, I'd successfully installed it to my satisfaction on my four [Eleventy starter sets](/posts/2021/03/beginners-luck-update).[^whyNotHere] [^imgXfm] 
+Then, last night, I finally decided to give it a try and, shortly before midnight, I'd successfully installed it to my satisfaction on my four [Eleventy starter sets](/posts/2021/03/beginners-luck-update).[^whyNotHere] [^imgXfm]
 
 [^whyNotHere]: I don't use it on this site, however, because I [let Cloudinary process this site's images](/posts/2020/07/transformed). While Eleventy Image definitely can work with images served from other locations besides your site, and although I greatly admire the elegance and features of Eleventy Image, it can't begin to match all the image-transformation capabilities you can [pack into a Cloudinary URL](https://cloudinary.com/documentation/image_transformations#transformation_url_syntax).
 
@@ -108,15 +108,15 @@ async function imageShortcode(src, alt) {
   if(alt === undefined) {
     // Throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`)
-  }  
+  }
   let metadata = await Image(src, {
     widths: [600, 900, 1500],
     formats: ['webp', 'jpeg'],
     urlPath: "/images/",
     outputDir: "./_site/images/",
     /* =====
-    Now we'll make sure each resulting file's name will 
-    make sense to you. **This** is why you need 
+    Now we'll make sure each resulting file's name will
+    make sense to you. **This** is why you need
     that `path` statement mentioned earlier.
     ===== */
     filenameFormat: function (id, src, width, format, options) {
@@ -124,9 +124,9 @@ async function imageShortcode(src, alt) {
       const name = path.basename(src, extension)
       return `${name}-${width}w.${format}`
     }
-  })  
+  })
   let lowsrc = metadata.jpeg[0]
-  let highsrc = metadata.jpeg[metadata.jpeg.length - 1]  
+  let highsrc = metadata.jpeg[metadata.jpeg.length - 1]
   return `<picture>
     ${Object.values(metadata).map(imageFormat => {
       return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
@@ -188,9 +188,15 @@ Here, you've entered what the shortcode considers the `src` part ("my-pet-cat.jp
 
 ### Get a look at the result
 
-Now, just build your site, and Eleventy Image will do its magic everywhere within your site that you're using the `image` shortcode. For example, here's what the shortcode above could produce:
+Now, just build your site, and Eleventy Image will do its magic everywhere within your site that you're using the `image` shortcode. For example, here's the code the shortcode above could generate:
 
-{% image "my-pet-cat.jpg", "Photo of a cat named Shakespeare sitting on a window sill" %}
+```html
+<picture>
+  <source type="image/webp" srcset="/images/my-pet-cat-600w.webp 600w, /images/my-pet-cat-900w.webp 900w, /images/my-pet-cat-1500w.webp 1500w" sizes="(min-width: 1024px) 100vw, 50vw">
+  <source type="image/jpeg" srcset="/images/my-pet-cat-600w.jpeg 600w, /images/my-pet-cat-900w.jpeg 900w, /images/my-pet-cat-1500w.jpeg 1500w" sizes="(min-width: 1024px) 100vw, 50vw">
+  <img src="/images/my-pet-cat-600w.jpeg" width="1500" height="1125" alt="Photo of a cat named Shakespeare sitting on a window sill" loading="lazy" decoding="async">
+</picture>
+```
 
 Of course, you'll want to get a sneak peek by running Eleventy in development mode and viewing your site locally, in case you need to adjust your site's CSS so each resulting image appears as you want.[^sizesInfo]
 
