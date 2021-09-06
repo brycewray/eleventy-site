@@ -5,7 +5,7 @@ subtitle: "Better video embeds, CFP improvements, “passtro” on Astro"
 description: "A few more nerdy thoughts for SSG fans"
 author: Bryce Wray
 date: 2021-09-05T14:35:00-05:00
-#lastmod: 2021-09-05T14:40:00-05:00
+#lastmod: 2021-09-05T23:34:00-05:00
 discussionId: "2021-09-gems-in-rough-09"
 featured_image: "gemstones-glass-1462395_4000x2667.jpg"
 featured_image_width: 4000
@@ -22,7 +22,7 @@ Each entry in the "Gems in the rough" series is a collection of tips, explanatio
 
 Since it's highly unlikely you spend time perusing *any* website's privacy policy, much less *this* site's, I wanted to note here a little change I made to the [latter](/privacy) a few days ago. When I first posted the policy last year, it was pretty bare-bones because, frankly, I didn't yet understand how invasive certain items could be. Fortunately, that particular ignorance didn't last long; less than a week later, I added a "Notes about external services" section, which included the following:
 
-> ### Embedded videos
+> <span class="h3">Embedded videos</span>
 >
 > I no longer embed YouTube or other sites' videos, since they can and do transmit personal information through cookies. In the two instances where I formerly did---"[Some curmudgeonish thoughts](/posts/2018/11/some-curmudgeonish-thoughts)" and "[Coherence and COVID-19](/posts/2020/03/coherence-covid-19)"---I replaced them with clearly identified links to their original locations, and footnoted each link with a reference and link to this privacy policy.
 
