@@ -81,7 +81,8 @@ jobs:
 
 ## For Eleventy
 
-**Note**: Other than obviously not downloading and installing Hugo, this one for Eleventy also was different because, in the `Deploy to Firebase` section, I had to add `npx firebase use default` to make this work with the project, for some reason I don't understand.{.yellowBox}
+**Note**: Other than obviously not downloading and installing Hugo, this one for Eleventy also was different because, in the `Deploy to Firebase` section, I had to add `npx firebase use default` to make this work with the project, for some reason I don't understand.
+{.yellowBox}
 
 {% raw %}
 

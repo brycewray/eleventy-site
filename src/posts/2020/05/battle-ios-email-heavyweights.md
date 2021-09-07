@@ -106,7 +106,7 @@ Account
 
 Another key organizational feature for heavy email users is the ability to assign *tags* to emails. Both apps provide this feature (contrary to what I said in the original version[^AMCorrected] of this post); AltaMail calls them *flags* rather than *tags*. Preside's tags use iMAP keywords, as is true for MailMate; Preside also can suggest tags for you based on past behavior.
 
-[^AMCorrected]: At first, I said AltaMail had no tagging ability; but a long-time AltaMail user kindly corrected me on that, as I had asked the MailMate mailing list recipients to do if they found errors in the post. This particular gentleman noted: "Tags/Keywords are also available. If I recall these are not on by default. In fact they may be called Flags which makes it more confusing." I did confirm this within the [appropriate section](https://mobile.eurosmartz.com/help/app/am/setFlag.html) of the AltaMail documentation. 
+[^AMCorrected]: At first, I said AltaMail had no tagging ability; but a long-time AltaMail user kindly corrected me on that, as I had asked the MailMate mailing list recipients to do if they found errors in the post. This particular gentleman noted: "Tags/Keywords are also available. If I recall these are not on by default. In fact they may be called Flags which makes it more confusing." I did confirm this within the [appropriate section](https://mobile.eurosmartz.com/help/app/am/setFlag.html) of the AltaMail documentation.
 
 ### Over-the-top, smart support
 
@@ -164,7 +164,7 @@ Why such a sequence? Who knows?
 And you have to figure it out on your own, because this is all you get from the AltaMail documentation:
 
 > **Edit, delete, and make new email folders**
-> 
+>
 > Tap on the "Folders" button in the left side panel. Then tap on the folder button beside an email account to show the folders. You may have to tap the left arrow beside the folder heading to go back to the correct account.
 
 So, if you're trying out AltaMail and want to navigate through multiple folders in one session, now you know how to do it---**but** only from the steps I gave above, **not** from the documentation. It would be one thing if AltaMail were sufficiently popular that there were a million web pages out there with "The AltaMail manual that EuroSmartz forgot to write" kind of help for you from other users, but that's just not reality.
@@ -212,4 +212,5 @@ Finally, as a new user to each, I found Preside considerably more approachable, 
 
 It could be that, somewhere out there, somebody is secretly working on a truly MailMate-like iOS email app and, if so, there will be a small but extremely interested cadre of users ready to embrace it when it appears on the App Store. But, unless and until that occurs, Preside is the way to go.
 
-**Acknowledgment**: I'm extremely grateful to the members of the MailMate mailing list who responded to my recent request for their impressions of both AltaMail and Preside. I knew my use cases couldn't begin to match the experiences of *true* email power users, so I found their observations invaluable.{.yellowBox}
+**Acknowledgment**: I'm extremely grateful to the members of the MailMate mailing list who responded to my recent request for their impressions of both AltaMail and Preside. I knew my use cases couldn't begin to match the experiences of *true* email power users, so I found their observations invaluable.
+{.yellowBox}
