@@ -56,6 +56,7 @@
       #000
     );  }
   &-title-text, &-subtitle-text, &-description-text {
+    font-family: var.$sans-serif;
     color: #fff;
     margin: 0 auto;
     text-shadow: 4px 4px 2px #000;
@@ -119,6 +120,7 @@
     }
   }
   &-p-text {
+    font-family: var.$sans-serif;
     font-size: var.$slightlybig;
     line-height: 1.25;
     color: #fff;
@@ -138,6 +140,7 @@
   margin-right: auto;
   margin-left: auto;
   text-align: center !important;
+  font-family: var.$sans-serif;
   font-size: var.$legal;
   color: var.$white;
   a {
