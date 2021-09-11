@@ -1,21 +1,91 @@
-    <header>
-      <nav class="nav">
-        <input type="checkbox" id="nav-Checkbox" class="nav-Checkbox">
-        <label for="nav-Checkbox" class="nav-Toggle">
-          <svg class="menu" viewBox="0 0 448 512" width="100" title="bars"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" /></svg>
-          <svg class="close" viewBox="0 0 384 512" width="100" title="times"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" /></svg>
-        </label>
-        <ul class="nav-Menu">
-          <li><a href="/" aria-label="Home page">{{ '/src/assets/svg/svgNavIcon.svg' | svgContents | safe }}</a></li>
-          <li><a href="/about/" aria-label="About me">About</a></li>
+<header class="bg-black dark:bg-blue-800 w-full fixed z-50">
+  <!--
+  h/t https://stefvanlooveren.me/blog/tailwind-responsive-header-menu-example
+  and https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/javascript/navbars
+  -->
+  <nav
+    class="relative flex flex-wrap justify-between bg-black dark:bg-blue-800"
+    role="navigation"
+    id="block-main"
+  >
+    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <div class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+        <a
+          class="inline-block mr-4 py-4 lg:pt-4 lg:pb-2 border-0 float-right lg:float-none"
+          href="/"
+          aria-label="Link to home page"
+          title="Link to home page"
+        >
+          {{ '/src/assets/svg/svgNavIcon.svg' | svgContents | safe }}
+        </a>
+        <button
+          class="text-white cursor-pointer leading-none -py-2 border border-solid border-transparent rounded bg-transparent block hamburger lg:hidden outline-none focus:outline-none"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Navigation"
+          id="collapse-button"
+        >
+        </button>
+      </div>
+      <div class="lg:flex flex-grow hidden" id="collapse-navbar">
+        <ul class="w-full pr-2 lg:w-auto flex flex-col justify-end lg:flex-row list-none mb-4 lg:mb-0 lg:ml-auto">
+          <li class="nav-item my-2 lg:my-0">
+            <a
+              class="flex px-2 items-center lg:text-sm lg:uppercase font-bold leading-snug hover:opacity-75 border-0 text-white focus:text-gray-100 active:text-gray-100 hover:text-gray-100 float-right lg:float-none"
+              href="/about/"
+              title="About me"
+              aria-label="About me"
+            >
+              <span class="ml-2">About</span>
+            </a>
+          </li>
           {%- for post in collections.post | reverse -%}
             {%- if loop.index0 < 1 -%}
-              <li><a href="{{ post.url }}">Newest post</a></li>
+              <li class="nav-item my-2 lg:my-0">
+                <a
+                  class="flex px-2 items-center lg:text-sm lg:uppercase font-bold leading-snug hover:opacity-75 border-0 text-white focus:text-gray-100 active:text-gray-100 hover:text-gray-100 float-right lg:float-none"
+                  href="{{ post.url }}"
+                  title="Newest post"
+                  aria-label="Newest post">
+                  <span class="ml-2">Newest post</span>
+                </a>
+              </li>
             {%- endif -%}
           {%- endfor -%}
-          <li><a href="/posts/" aria-label="Posts">All posts</a></li>
-          <li><a href="/privacy/" aria-label="Privacy policy">Privacy</a></li>
-          <li><a href="/contact/" aria-label="Contact me">Contact</a></li>
+          <li class="nav-item my-2 lg:my-0">
+            <a
+              class="flex px-2 items-center lg:text-sm lg:uppercase font-bold leading-snug hover:opacity-75 border-0 text-white focus:text-gray-100 active:text-gray-100 hover:text-gray-100 float-right lg:float-none"
+              href="/posts/"
+              title="All posts"
+              aria-label="All posts"
+            >
+              <span class="ml-2">All posts</span>
+            </a>
+          </li>
+          <li class="nav-item my-2 lg:my-0">
+            <a
+              class="flex px-2 items-center lg:text-sm lg:uppercase font-bold leading-snug hover:opacity-75 border-0 text-white focus:text-gray-100 active:text-gray-100 hover:text-gray-100 float-right lg:float-none"
+              href="/privacy/"
+              title="Privacy policy"
+              aria-label="Privacy policy"
+            >
+              <span class="ml-2">Privacy</span>
+            </a>
+          </li>
+          <li class="nav-item my-2 lg:my-0">
+            <a
+              class="flex px-2 items-center lg:text-sm lg:uppercase font-bold leading-snug hover:opacity-75 border-0 text-white focus:text-gray-100 active:text-gray-100 hover:text-gray-100 float-right lg:float-none"
+              href="/contact/"
+              title="Contact me"
+              aria-label="Contact me"
+            >
+              <span class="ml-2">Contact</span>
+            </a>
+          </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -9,8 +9,10 @@
     <script src="/assets/js/lazyload_17-4-0.min.js"></script>
     {% if eleventyEnv == "production" %}
       <script src="/assets/js/{{ lazyloadhelper.lazyloadJS }}"></script>
+      <script src="/assets/js/{{ mobilemenuhelper.mobimenuJS }}"></script>
     {% else %}
       <script src="/assets/js/lazyload-helper.js"></script>
+      <script src="/assets/js/mobile-menu-helper.js"></script>
     {% endif %}
   </body>
 </html>
