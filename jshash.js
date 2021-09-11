@@ -1,6 +1,7 @@
 const fs = require('fs')
 const md5 = require('md5')
 const DIRECTORY = 'src/assets/js'
+const FINALDIRECTORY = '_site/assets/js'
 const LAZYDATAFILE = '_data/lazyloadhelper.json'
 const MOBIDATAFILE = '_data/mobilemenuhelper.json'
 var lazyloadFile = DIRECTORY + '/' + 'lazyload-helper.js'
@@ -32,11 +33,16 @@ fs.writeFileSync(LAZYDATAFILE, lazyloadValue)
 fs.writeFileSync(MOBIDATAFILE, mobimenuValue)
 
 // create the actual JS files
-fs.writeFile(DIRECTORY + '/' + 'lazyload-helper-' + lazyloadMd5Total + '.js', lazyloadContent, (err) => {
+
+if (!fs.existsSync(FINALDIRECTORY)) {
+  fs.mkdirSync(FINALDIRECTORY, { recursive: true })
+  // https://stackoverflow.com/questions/28498296/enoent-no-such-file-or-directory-on-fs-mkdirsync
+}
+fs.writeFile(FINALDIRECTORY + '/' + 'lazyload-helper-' + lazyloadMd5Total + '.js', lazyloadContent, (err) => {
   if (err)
     console.log(err)
 })
-fs.writeFile(DIRECTORY + '/' + 'mobile-menu-helper-' + mobimenuMd5Total + '.js', mobimenuContent, (err) => {
+fs.writeFile(FINALDIRECTORY + '/' + 'mobile-menu-helper-' + mobimenuMd5Total + '.js', mobimenuContent, (err) => {
   if (err)
     console.log(err)
 })
