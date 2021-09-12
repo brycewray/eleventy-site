@@ -1,7 +1,7 @@
 /* start, footnotes */
 
 .footnote-ref {
-  font-size: 0.65em;
+  @apply text-fn;
 }
 
 .footnote-ref a {
@@ -17,7 +17,7 @@
 }
 
 .footnote-item, .footnote-item p {
-  @apply text-sm tracking-normal;
+  @apply text-sm tracking-normal leading-snug my-4;
 }
 
 .footnote-item pre, .footnote-item code {
