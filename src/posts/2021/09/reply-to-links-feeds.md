@@ -5,7 +5,7 @@ subtitle: "A follow-up to “Help your website get discovered”"
 description: "Thanks to a reader’s helpful advice, here’s how to enhance the code for your site’s RSS and JSON feeds."
 author: Bryce Wray
 date: 2021-09-09T14:40:00-05:00
-#lastmod:
+lastmod: 2021-09-12T15:10:00-05:00
 discussionId: "2021-09-reply-to-links-feeds"
 featured_image: "magnifying-glass-4490044_4288x2848.jpg"
 featured_image_width: 4288
@@ -17,13 +17,11 @@ featured_image_caption: |
 
 Back in May, in "[Help your website get discovered](/posts/2021/05/help-your-website-get-discovered)," I provided code you could use to add RSS and JSON feeds to an [Eleventy](https://11ty.dev) site. Then, [more recently](/posts/2021/07/gems-in-rough-07/#comment-by-email), I added the "Reply via email" link to the bottom of each post. However, combining the two---*i.e.*, making sure there was a "Reply via email" link in each entry in the respective feeds---hadn't occurred to me until a few days ago, when a reader suggested it to me and provided a link to his own article, "[Email Replies in Feeds](https://blog.jim-nielsen.com/2020/email-replies-in-rss/)," explaining how he'd done it in the [Metalsmith](https://metalsmith.io/) [static site generator](https://jamstack.org/generators) (SSG). Accordingly, I updated my feeds-related code to incorporate this capability.
 
-Before I give you the updated code, here's a TL;DR explanation of the changes I made. The [Eleventy RSS plugin](https://www.11ty.dev/docs/plugins/rss/) provides a variable called `item.templateContent` which grabs a post's content. Since my per-post reply-via-email link falls **outside** the content's boundaries, I created a separate variable, `emailReplyHTML`, to hold the HTML for that link, concatenated the two variables into `finalHTMLContent`, and then injected `finalHTMLContent` rather than `item.templateContent` into the appropriate `content` tag in each feed.
+Before I give you the updated code, here's a TL;DR explanation of the changes I made. The [Eleventy RSS plugin](https://www.11ty.dev/docs/plugins/rss/) provides a variable called `item.templateContent` which grabs a post's content. Since my per-post reply-via-email link falls **outside** the content's boundaries, I created a separate variable, `emailReplyHTML`, to hold the HTML for that link, concatenated the two variables into `finalHTMLContent`, and then injected `finalHTMLContent` rather than `item.templateContent` into the appropriate `content` tag in each feed. **Also**: the [original article](/posts/2021/05/help-your-website-get-discovered/) mentioned how to do this in [Hugo](https://gohugo.io), too; so, thanks to [some help I received on the Hugo community forum](https://discourse.gohugo.io/t/remove-all-newlines-from-html-for-json-feed/34624), I'll do that, here, too.
 
-*(One more thing: that original article also provided code for RSS and JSON feeds in the [Hugo](https://gohugo.io) SSG but, as yet, I've been unable to incorporate these changes successfully into the JSON feed code for Hugo. I have asked on the Hugo community forum for help with this and, if/when I receive it, I'll update this post accordingly.)*
+Now, on to the code.
 
-Now, on to the code&nbsp;.&nbsp;.&nbsp;.
-
-### RSS
+### Eleventy RSS
 
 {% raw %}
 
@@ -78,7 +76,7 @@ Now, on to the code&nbsp;.&nbsp;.&nbsp;.
 
 {% endraw %}
 
-### JSON
+### Eleventy JSON
 
 {% raw %}
 
@@ -121,6 +119,126 @@ Now, on to the code&nbsp;.&nbsp;.&nbsp;.
         }{%- if not loop.last -%},{%- endif %}
       {%- endif -%}
     {%- endfor %}
+  ]
+}
+```
+
+{% endraw %}
+
+### Hugo RSS
+
+{% raw %}
+
+```twig
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+{{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ .Site.Params.Domain }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
+    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
+    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{- with .OutputFormats.Get "RSS" -}}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{ range $pages }}
+    {{- $titleThis := .Title | markdownify -}}
+    {{- $emailReplyHTML := printf "%s%s%s" `<p><a href="mailto:bw@brycewray.com?subject=Re: “` $titleThis `”">Reply via email</a></p>`  -}}
+    {{- $contentMD := .Content -}}
+    {{- $finalHTMLContent := printf "%s%s" $contentMD $emailReplyHTML -}}
+    <item>
+      <title>{{ $titleThis }}</title>
+      <subTitle>{{ .Params.Subtitle }}</subTitle>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ $finalHTMLContent | html }}</description>
+      <
+    </item>
+    {{ end }}
+  </channel>
+</rss>
+```
+
+{% endraw %}
+
+### Hugo JSON
+
+{% raw %}
+
+```twig
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := $pctx.RegularPages -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{ $length := (len $pages) -}}
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ .Site.Title }}",
+  "description": "{{ .Site.Params.Description }}",
+  "home_page_url": "{{ .Site.BaseURL }}",
+  {{ with .OutputFormats.Get "JSON" -}}
+  "feed_url": "{{ .Permalink }}",
+  {{ end -}}
+  {{ with .Site.LanguageCode -}}
+  "language": "{{ . }}",
+  {{ end -}}
+  {{ with $.Param "icon" -}}
+  "icon": "{{ . | absURL }}",
+  {{ end -}}
+  {{ with $.Param "favicon" -}}
+  "favicon": "{{ . | absURL }}",
+  {{ end -}}
+  {{ with .Site.Author.name -}}
+  "authors": [
+    {
+      "name": "{{ . }}"{{ with $.Site.Author.url }},
+      "url": "{{ . }}"{{ end }}{{ with $.Site.Author.avatar }},
+      "avatar": "{{ . | absURL }}"{{ end }}
+    }
+  ],
+  {{ end -}}
+  "items": [
+    {{ range $index, $element := $pages -}}
+    {{- $emailReplyHTML := printf "%s%s%s" `<p><a href="mailto:bw@brycewray.com?subject=Re: “` .Title `”">Reply via email</a></p>` -}}
+    {{- $emailReplyHTML := $emailReplyHTML -}}
+    {{- $contentHTML := printf "%s%s" .Content $emailReplyHTML -}}
+    {
+      "title": {{ .Title | jsonify }},
+      "date_published": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "date_modified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+      "id": "{{ .Permalink }}",
+      "url": "{{ .Permalink }}",
+      {{ with .Params.author -}}
+      "authors": [
+        {
+          "name": "{{ . }}"
+        }
+      ],
+      {{ end -}}
+      "content_html": {{- $contentHTML | jsonify -}}
+    }{{ if ne (add $index 1) $length }},{{ end }}
+    {{ end -}}
   ]
 }
 ```
