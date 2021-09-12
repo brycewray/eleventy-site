@@ -1,7 +1,7 @@
 /* start, footnotes */
 
 .footnote-ref {
-  @apply text-fn;
+  @apply text-fn md:text-xs;
 }
 
 .footnote-ref a {
