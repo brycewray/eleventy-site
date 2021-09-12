@@ -5,7 +5,7 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
 .nav__item {
   @apply p-0 m-0;
 
-  & a {
+  a {
     @apply block py-1 px-4 mb-1 text-white no-underline border-0 transition-opacity duration-500 ease-linear;
 
     &:link, &:visited {
@@ -22,7 +22,7 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
   .nav__item {
     @apply font-bold lowercase inline-block;
     font-variant: small-caps;
-    & a {
+    a {
       @apply text-sm inline-block pt-1 pb-0 no-underline uppercase
     }
   }
@@ -89,31 +89,31 @@ CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/W
 nav {
   @apply absolute text-left left-0 w-full transition duration-500 ease-linear scale-x-100 scale-y-0 origin-top;
   top: 100%;
-  & ul {
+  ul {
     @apply pl-0 m-0 text-right list-none transition duration-500 ease-linear;
   }
-  & li {
+  li {
     @apply mb-2 inline;
     margin-right: 5%;
     @media screen and (max-width: 899px) {
       display: inherit;
     }
   }
-  & a {
+  a {
     @apply text-white border-b-0 no-underline text-lg opacity-0;
   }
 }
 
 .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
-  & a {
+  a {
     @apply opacity-100;
   }
 }
 
 .site-logo-holder {
   @apply mt-1 pt-1 w-full;
-  & a {
+  a {
     @apply no-underline border-b-0;
   }
 }
@@ -144,14 +144,14 @@ a.navborderless {
   nav {
     @apply mt-0 col-start-3 col-end-7 transform-none;
     top: 15%;
-    & a {
+    a {
       @apply opacity-100 relative;
     }
-    & ul {
+    ul {
       padding-right: 5%;
       @apply text-right;
     }
-    & li {
+    li {
       @apply inline-block p-0 mb-0;
     }
   }

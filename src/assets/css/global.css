@@ -32,11 +32,13 @@ p, li {
 }
 
 ul li li {
-  list-style-type: circle;
+  @apply list-disc;
+  /* list-style-type: circle; */
 }
 
 ul li li li {
-  list-style-type: square;
+  @apply list-square;
+  /* list-style-type: square; */
 }
 
 a {
