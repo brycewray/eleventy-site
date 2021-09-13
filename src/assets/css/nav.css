@@ -1,160 +1,59 @@
-/*
-CSS-only and **accessible** menu based on... https://codepen.io/jonraedeke/pen/WRwJQX ...but considerably changed since then, especially due to change to Tailwind CSS
-*/
-
-.nav__item {
-  @apply p-0 m-0;
-
-  a {
-    @apply block py-1 px-4 mb-1 text-white no-underline border-0 transition-opacity duration-500 ease-linear;
-
-    &:link, &:visited {
-      @apply text-white;
-    }
-
-    &:hover, &:focus {
-      @apply no-underline opacity-75;
-    }
-  }
+header {
+  @apply fixed w-full mt-0 bg-black dark:bg-blue-800 z-[9999];
 }
 
-@media (min-width: 900px) {
-  .nav__item {
-    @apply font-bold lowercase inline-block;
-    font-variant: small-caps;
-    a {
-      @apply text-sm inline-block pt-1 pb-0 no-underline uppercase
+.nav {
+  @apply text-white bg-black dark:bg-blue-800;
+  &-Toggle {
+    @apply absolute lg:hidden cursor-pointer my-1 mx-4 right-0;
+    svg {
+      @apply w-6;
+      fill: white;
+    }
+    .close {
+      @apply hidden;
+    }
+    .menu {
+      @apply mt-[0.3rem];
     }
   }
-}
-
-.nav__icon {
-  @apply block absolute cursor-pointer;
-  top: 15px;
-  right: 13px;
-  height: 27px;
-  width: 27px;
-  text-indent: -9999px;
-  /* hide the label */
-  transition: all 1s cubic-bezier(.19, 1, .22, 1);
-  /* Remove blinking cursor */
-  @apply border-none text-transparent text-center;
-  text-shadow: 0 0 0 gray;
-  &:focus {
-    @apply outline-none;
-  }
-}
-@media (min-width: 900px) {
-  .nav__icon{
+  &-Checkbox {
     @apply hidden;
   }
-}
-
-.nav__icon-line {
-  @apply absolute block bg-white rounded left-0 transition-all duration-500 w-6 h-1 ease-linear;
-
-  &:first-child {
-    @apply top-0;
-  }
-
-  &:nth-child(2) {
-    top: 8px;
-  }
-
-  &:nth-child(3) {
-    top: 16px;
-  }
-}
-
- /* Checkbox hack for toggling mobile menu */
- input[type=checkbox] {
-   @apply hidden invisible;
-   &:checked {
-     & ~ nav .nav__items {
-       @apply h-auto bg-black dark:bg-blue-900 transition-all duration-500 ease-linear;
-       max-height: 30rem;
-     }
-     & ~ label .nav__icon-line:first-child {
-       @apply top-0 -rotate-45 translate-y-2 w-6;
-     }
-     & ~ label .nav__icon-line:nth-child(2) {
-       @apply opacity-0;
-     }
-     & ~ label .nav__icon-line:nth-child(3) {
-       @apply rotate-45 -translate-y-2 w-6;
-     }
-   }
-}
-
-nav {
-  @apply absolute text-left left-0 w-full transition duration-500 ease-linear scale-x-100 scale-y-0 origin-top;
-  top: 100%;
-  ul {
-    @apply pl-0 m-0 text-right list-none transition duration-500 ease-linear;
-  }
-  li {
-    @apply mb-2 inline;
-    margin-right: 5%;
-    @media screen and (max-width: 899px) {
-      display: inherit;
+  &-Menu {
+    @apply bg-black dark:bg-blue-800 flex flex-col lg:flex-row gap-4 lg:gap-2 text-right my-2 lg:mt-1 lg:mb-0 mr-2 lg:mr-6 ml-0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    li {
+      @apply list-none hidden font-bold lg:text-xs lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0;
+      &.notMobile {
+        @apply hidden lg:block;
+      }
+      &:first-child {
+        @apply py-2 mr-auto ml-6 block lg:tracking-normal lg:leading-none lg:mt-0 lg:mb-1;
+        svg { /* for site logo */
+          @apply w-auto;
+        }
+      }
+    }
+    a {
+      @apply no-underline border-0 text-white;
+    }
+    svg {
+      @apply w-6 text-white;
     }
   }
-  a {
-    @apply text-white border-b-0 no-underline text-lg opacity-0;
-  }
 }
-
-.nav-toggle:checked ~ nav {
-  transform: scale(1, 1);
-  a {
-    @apply opacity-100;
-  }
-}
-
-.site-logo-holder {
-  @apply mt-1 pt-1 w-full;
-  a {
-    @apply no-underline border-b-0;
-  }
-}
-
-#nav-toggle:checked + #navMenu {
+#nav-Checkbox:checked ~ ul.nav-Menu li {
   @apply block;
 }
-
-a.navborderless {
-  @apply border-b-0;
+#nav-Checkbox:checked ~ label.nav-Toggle .close {
+  @apply block;
 }
-
-/* === Beginning of primary settings for larger screens === */
-@media screen and (min-width: 900px) {
-  .nav-toggle-label {
-    @apply hidden;
-  }
-
-  header {
-    @apply fixed grid grid-cols-6;
-  }
-
-  .site-logo {
-    @apply z-50 text-left col-start-1 col-end-3 text-lg;
-    padding-left: 8%;
-  }
-
-  nav {
-    @apply mt-0 col-start-3 col-end-7 transform-none;
-    top: 15%;
-    a {
-      @apply opacity-100 relative;
-    }
-    ul {
-      padding-right: 5%;
-      @apply text-right;
-    }
-    li {
-      @apply inline-block p-0 mb-0;
-    }
-  }
+#nav-Checkbox:checked ~ label.nav-Toggle .menu {
+  @apply hidden;
 }
-
-/* === End of primary settings for larger screens === */
+#nav-Checkbox:checked ~ ul.nav-Menu {
+  @apply pb-4;
+}
