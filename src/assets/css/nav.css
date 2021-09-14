@@ -1,46 +1,19 @@
 .nav {
-  @apply text-white bg-black dark:bg-blue-800;
-  &-Toggle {
-    @apply absolute lg:hidden cursor-pointer my-1 mx-4 right-0;
-    svg {
-      @apply w-6 fill-white;
-    }
-    .close {
-      @apply hidden;
-    }
-    .menu {
-      @apply mt-[0.3rem];
-    }
-  }
-  &-Checkbox {
-    @apply hidden;
-  }
   &-Menu {
-    @apply bg-black dark:bg-blue-800 flex flex-col lg:flex-row gap-4 lg:gap-2 text-right my-2 lg:mt-1 lg:mb-0 mr-2 lg:mr-6 ml-0 mbs-0 mbe-0 pis-0;
     li {
-      @apply list-none hidden font-bold lg:text-xs lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0;
       &:first-child {
-        @apply py-2 mr-auto ml-6 block lg:tracking-normal lg:leading-none lg:mt-0 lg:mb-1;
         svg { /* for site logo */
           @apply w-auto;
         }
       }
     }
-    a {
-      @apply no-underline border-0 text-white;
-    }
-    svg {
-      @apply w-6 text-white;
-    }
   }
 }
-#nav-Checkbox:checked ~ ul.nav-Menu li {
+#nav-Checkbox:checked ~ ul.nav-Menu li,
+#nav-Checkbox:checked ~ label#nav-Toggle #svg-close {
   @apply block;
 }
-#nav-Checkbox:checked ~ label.nav-Toggle .close {
-  @apply block;
-}
-#nav-Checkbox:checked ~ label.nav-Toggle .menu {
+#nav-Checkbox:checked ~ label#nav-Toggle #svg-menu {
   @apply hidden;
 }
 #nav-Checkbox:checked ~ ul.nav-Menu {
