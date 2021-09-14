@@ -17,6 +17,10 @@ module.exports = {
       bold: 625, // not default of 700
       black: 900,
     },
+    fill: theme => ({
+      current: 'currentColor',
+      white: theme('colors.white'),
+    }),
     fontSize: {
       'fn': '.65rem',
       'xs': '.75rem',
@@ -69,6 +73,13 @@ module.exports = {
       'mono': ['ui-monospace', 'SFMono-Regular', 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace']
     },
   },
-  variants: {},
-  plugins: [], // if we add forms, do it here
+  variants: {
+    logical: [
+      'responsive',
+      'hover'
+    ],
+  },
+  plugins: [
+    require('tailwindcss-logical'),
+  ], // if we add forms, do it here
 }

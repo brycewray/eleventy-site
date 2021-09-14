@@ -49,6 +49,7 @@
     "rimraf": "^3.0.2",
     "rss": "^1.2.2",
     "sass": "^1.39.2",
-    "tailwindcss": "^2.2.15"
+    "tailwindcss": "^2.2.15",
+    "tailwindcss-logical": "^2.0.0"
   }
 }
