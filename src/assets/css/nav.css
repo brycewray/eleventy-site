@@ -1,13 +1,5 @@
-.nav {
-  &-Menu {
-    li {
-      &:first-child {
-        svg { /* for site logo */
-          @apply w-auto;
-        }
-      }
-    }
-  }
+.nav-Menu li:first-child svg {
+  @apply w-auto; /* for site logo */
 }
 #nav-Checkbox:checked ~ ul.nav-Menu li,
 #nav-Checkbox:checked ~ label#nav-Toggle #svg-close {
