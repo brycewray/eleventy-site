@@ -9,6 +9,9 @@
     <script src="/assets/js/lazyload_17-4-0.min.js"></script>
     {% if eleventyEnv == "production" %}
       <script src="/assets/js/{{ lazyloadhelper.lazyloadJS }}"></script>
+      <!-- Cloudflare Web Analytics -->
+      <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "36941dacad8b45b89336a2226d3fb050"}'></script>
+      <!-- End Cloudflare Web Analytics -->
     {% else %}
       <script src="/assets/js/lazyload-helper.js"></script>
     {% endif %}
