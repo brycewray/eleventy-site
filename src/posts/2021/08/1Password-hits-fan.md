@@ -5,7 +5,7 @@ subtitle: "An Electron-ic firestorm"
 description: "A timely follow-up to my earlier article about password management."
 author: Bryce Wray
 date: 2021-08-14T10:20:00-05:00
-lastmod: 2021-09-16T11:24:00-05:00
+lastmod: 2021-09-16T15:20:00-05:00
 discussionId: "2021-08-1Password-hits-fan"
 featured_image: "lock-and-castle-5359174_4109x2832.jpg"
 featured_image_width: 4109
@@ -90,5 +90,5 @@ Whichever "way" you go, it's a convenience-vs.-security question whether you sto
 
 [^masterTOTP]: At the very least, keep the TOTP for any "non-KeePass way" provider (*e.g.*, Bitwarden or 1Password) in a separate authenticator app. You **do** have multi-factor authentication set up for that vendor, right?
 
-**Overall update, 2021-09-16**: Based on my testing, I can recommend the KeePassXC/KeePassium route for those who want to use the "KeePass way." However, I didn't like the occasional glitchiness of KeePassXC browser extensions, so I decided to stick with Bitwarden for passwords **only** while adopting---and really liking---the free/open-source [Raivo OTP](https://github.com/raivo-otp/ios-application) authenticator app for my TOTPs, after dropping [Authy](https://authy.com/) due primarily to what I learned from that Techlore video mentioned above.
+**Overall update, 2021-09-16**: Based on my testing, I can recommend the KeePassXC/KeePassium route for those who want to use the "KeePass way." However, I didn't like the occasional glitchiness of KeePassXC browser extensions, so I decided to stick with Bitwarden for passwords **only** while adopting---and really liking---the [Raivo OTP](https://github.com/raivo-otp/ios-application) authenticator app for my TOTPs, after dropping [Authy](https://authy.com/) due primarily to what I learned from that Techlore video mentioned above.
 {.yellowBox}
