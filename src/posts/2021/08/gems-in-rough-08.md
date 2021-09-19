@@ -5,7 +5,7 @@ subtitle: "More bits, bytes, ’n’ bushwa ’bout static site builders"
 description: "Checking out Astro; comparing vendors."
 author: Bryce Wray
 date: 2021-08-04T16:30:00-05:00
-lastmod: 2021-08-14T21:10:00-05:00
+lastmod: 2021-09-18T20:15:00-05:00
 discussionId: "2021-08-gems-in-rough-08"
 featured_image: "gemstones-sung-jin-cho-0d3qxUozE-0-unsplash_7315x4881.jpg"
 featured_image_width: 7315
@@ -60,3 +60,6 @@ As for the actual performance numbers I see in Speedlify, you can check my [test
 {.yellowBox}
 
 [^CICD]: Of course, I could use GitHub Actions to get around this, as I explained in last year's "[O say can you CI/CD?](/posts/2020/06/o-say-can-you-ci-cd)"---but, as a friend overseas would say, "I can't be arsed."
+
+**Update, 2021-09-18**: Azure deleted my test ASWA site tonight (early on 2021-09-19 according to UTC) because, apparently, it doesn't allow free static sites, after all, unlike the other vendors mentioned here. Consequently, the Speedlify test results now have four sites.
+{.yellowBox}
