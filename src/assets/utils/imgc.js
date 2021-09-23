@@ -43,7 +43,7 @@ module.exports = (url, alt, width, height, tmpl) => {
   var separator = ', '
 
   var stringtoRet = ``
-  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover">
+  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover bg-gray-700 dark:bg-black">
     <noscript>
       <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
     </noscript>
