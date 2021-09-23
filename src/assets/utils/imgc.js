@@ -11,7 +11,7 @@ to body copy-style image-handling.
 
 const respSizes = require(`../../../_data/siteparams.json`).respSizes
 var cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
-// var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
+var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
 var xFmPart1 = 'f_auto,q_auto:eco,w_'
 var xFmPart2 = ',x_0,z_1/' // note ending slash
 
@@ -29,22 +29,22 @@ module.exports = (url, alt, width, height, tmpl) => {
     */
     case 'posts':
       divClass = `h-full`
-      imgClass = `imgCover hero` // add `lazy` class with lazyload JS
-      // nscClass = `imgCover`
+      imgClass = `imgCover hero lazy`
+      nscClass = `imgCover`
       dataSzes = `100vw`
       break
     default:
       divClass = `relative`
-      imgClass = `containedImage` // add `lazy` class with lazyload JS
-      // nscClass = `containedImage`
+      imgClass = `containedImage lazy`
+      nscClass = `containedImage`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
   var separator = ', '
 
   var stringtoRet = ``
-  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover">
-    <img class="${imgClass}" aspect-ratio="${width} / ${height}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
+  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover" style="background-image: url(${cloudiBase + LQIPpholder + url})">
+    <img class="${imgClass}" aspect-ratio="${width} / ${height}" data-src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" data-srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         stringtoRet += `${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`
@@ -57,7 +57,10 @@ module.exports = (url, alt, width, height, tmpl) => {
       stringtoRet += ` loading="lazy"` // not good for above-the-fold images
     }
     stringtoRet +=` sizes="${dataSzes}" />
-  </div>`
+  </div>
+  <noscript>
+    <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "300" + xFmPart2 + url}" alt="${alt}" />
+  </noscript>`
 
   return stringtoRet
 }
