@@ -7,12 +7,12 @@ author: Bryce Wray
 date: 2021-08-11T11:30:00-05:00
 lastmod: 2021-09-20T10:10:00-05:00
 discussionId: "2021-08-boy-oh-grandboy"
-featured_image: 2021-08-09_BW-holding-Dylan_2978x1675.jpg
-featured_image_width: 2978
-featured_image_height: 1675
-featured_image_alt: "Bryce Wray holds his grandson, Dylan Everett Beck, shortly after the child’s birth"
+featured_image: teddy-bear-laark-boshoff-qcYO9pU5e4Y-unsplash_2400x1600.jpg
+featured_image_width: 2400
+featured_image_height: 1600
+featured_image_alt: "A brown teddy bear sitting in front of a bluish-green background"
 featured_image_caption: |
-  <span class="caption">Image: Sarah Beck (a/k/a Kennedy&rsquo;s and Dylan&rsquo;s mom)</span>
+  <span class="caption">Image: <a href="https://unsplash.com/@laarkstudio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Laårk Boshoff</a>; <a href="https://unsplash.com/s/photos/teddy-bear?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
 
 ---
 
