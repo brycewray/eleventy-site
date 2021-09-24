@@ -196,6 +196,10 @@ module.exports = function(eleventyConfig) {
     require("./src/assets/utils/imgc.js")
   )
   eleventyConfig.addShortcode(
+    "imgcHero",
+    require("./src/assets/utils/imgcHero.js")
+  )
+  eleventyConfig.addShortcode(
     "disclaimer",
     require("./src/assets/utils/disclaimer.js")
   )
