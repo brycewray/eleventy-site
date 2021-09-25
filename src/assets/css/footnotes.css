@@ -1,7 +1,11 @@
 /* start, footnotes */
 
+.footnotes {
+  @apply font-sans;
+}
+
 .footnote-ref {
-  @apply text-fn md:text-xs;
+  @apply font-sans text-fn md:text-xs;
 }
 
 .footnote-ref a {

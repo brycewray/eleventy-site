@@ -1,5 +1,5 @@
 .yellowBox, .blueBox {
-  @apply border border-gray-900 border-solid mx-auto my-8 w-full p-8 dark:bg-gray-800 dark:border-gray-500;
+  @apply font-sans border border-gray-900 border-solid mx-auto my-8 w-full p-8 dark:bg-gray-800 dark:border-gray-500;
 }
 
 .yellowBox {
@@ -18,7 +18,7 @@
 }
 
 .lazypicturecaption, .imgcCaption {
-  @apply text-sm p-0 mt-2 leading-snug text-center;
+  @apply font-sans text-sm p-0 mt-2 leading-snug text-center;
 }
 
 .indentAfterLI {
