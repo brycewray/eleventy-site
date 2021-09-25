@@ -5,7 +5,7 @@ subtitle: "More bits, bytes, ’n’ bushwa ’bout static site builders"
 description: "Checking out Astro; comparing vendors."
 author: Bryce Wray
 date: 2021-08-04T16:30:00-05:00
-lastmod: 2021-09-18T20:15:00-05:00
+lastmod: 2021-09-25T12:07:00-05:00
 discussionId: "2021-08-gems-in-rough-08"
 featured_image: "gemstones-sung-jin-cho-0d3qxUozE-0-unsplash_7315x4881.jpg"
 featured_image_width: 7315
@@ -51,7 +51,7 @@ I have a cloned repo of Zach Leatherman's [Speedlify project](https://github.com
 
 I have no idea why DOAP's build time was so slow this time, sparing Cloudflare Pages from being the slowest of the six for once; stuff happens. That said, it's a big black eye for both the last two in that their build times **without** GitHub Actions were considerably slower than the two above them which **did** use GitHub Actions.
 
-As for the actual performance numbers I see in Speedlify, you can check my [test results](https://speedlify-tests.netlify.app/hosts-tests/) at any time. Speedlify stores only the ten most recent results, so the trends you see lack statistical significance; **but** I can make a couple of general observations about what I've been seeing:
+As for the actual performance numbers I see in Speedlify, you can check my [test results](https://speedlify-tests.netlify.app/hosts-tests/) at any time *(but see my 2021-09-25 update further down)*. Speedlify stores only the ten most recent results, so the trends you see lack statistical significance; **but** I can make a couple of general observations about what I've been seeing:
 
 - Cloudflare Pages and DOAP tend to be in the top two or three pretty consistently, while the Cloudflare Workers site and ASWA tend to be in the **bottom** two or three almost as consistently.
 - Render and Vercel are somewhat erratic, varying wildly from top three to bottom three. I'm at a loss to know why.
@@ -62,4 +62,7 @@ As for the actual performance numbers I see in Speedlify, you can check my [test
 [^CICD]: Of course, I could use GitHub Actions to get around this, as I explained in last year's "[O say can you CI/CD?](/posts/2020/06/o-say-can-you-ci-cd)"---but, as a friend overseas would say, "I can't be arsed."
 
 **Update, 2021-09-18**: Azure deleted my test ASWA site tonight (early on 2021-09-19 according to UTC) because, apparently, it doesn't allow free static sites, after all, unlike the other vendors mentioned here. Consequently, the Speedlify test results now have four sites.
+{.yellowBox}
+
+**Update, 2021-09-25**: I've turned off the cron jobs that run the test each day, so the results will be frozen going forward. It seemed nonsensical to keep running the tests since the list of sites was down to just four---two of them Cloudflare-based.
 {.yellowBox}
