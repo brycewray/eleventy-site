@@ -29,7 +29,7 @@ module.exports = (url, alt, width, height, tmpl) => {
     */
     case 'posts':
       divClass = `h-full`
-      imgClass = `imgCover hero` // add `lazy` class with lazyload JS
+      imgClass = `imgCover hero lazyfx` // use `lazy` class with lazyload JS
       // nscClass = `imgCover`
       dataSzes = `100vw`
       break

@@ -12,6 +12,17 @@ module.exports = {
   },
   darkMode: 'media',
   theme: {
+    extend: {
+      keyframes: ({
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      }),
+      animation: {
+        fade: 'fadeIn 1s ease-in-out',
+      },
+    },
     fontWeight: {
       normal: 400,
       bold: 625, // not default of 700
