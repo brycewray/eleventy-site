@@ -29,13 +29,13 @@ module.exports = (url, alt, width, height, tmpl) => {
     */
     case 'posts':
       divClass = `h-full`
-      imgClass = `imgCover hero lazyfx` // use `lazy` class with lazyload JS
+      imgClass = `imgCover hero animate-fade` // use `lazy` class with lazyload JS
       // nscClass = `imgCover`
       dataSzes = `100vw`
       break
     default:
       divClass = `relative`
-      imgClass = `containedImage lazyfx` // add `lazy` class with lazyload JS
+      imgClass = `containedImage animate-fade` // add `lazy` class with lazyload JS
       // nscClass = `containedImage`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
