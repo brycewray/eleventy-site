@@ -9,9 +9,9 @@ Without this parameter, the `switch` statement below defaults
 to body copy-style image-handling.
 */
 
-const respSizes = require(`../../../_data/siteparams.json`).respSizes
+const respSizes = [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
 var cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
-// var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
+var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
 var xFmPart1 = 'f_auto,q_auto:eco,w_'
 var xFmPart2 = ',x_0,z_1/' // note ending slash
 
@@ -29,13 +29,13 @@ module.exports = (url, alt, width, height, tmpl) => {
     */
     case 'posts':
       divClass = `h-full`
-      imgClass = `imgCover hero lazyfx` // use `lazy` class with lazyload JS
+      imgClass = `imgCover hero animate-fade`
       // nscClass = `imgCover`
       dataSzes = `100vw`
       break
     default:
       divClass = `relative`
-      imgClass = `containedImage` // add `lazy` class with lazyload JS
+      imgClass = `containedImage`
       // nscClass = `containedImage`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
@@ -43,7 +43,7 @@ module.exports = (url, alt, width, height, tmpl) => {
   var separator = ', '
 
   var stringtoRet = ``
-  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover">
+  stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover" style="background-image: url(${cloudiBase + LQIPpholder + url})">
     <img class="${imgClass}" aspect-ratio="${width} / ${height}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
@@ -53,9 +53,6 @@ module.exports = (url, alt, width, height, tmpl) => {
     })
     stringtoRet = stringtoRet.substring(0, stringtoRet.length - 2) // last one loses the final separator
     stringtoRet += `" alt="${alt}" width="${width}" height="${height}"`
-    if (divClass !== "h-full") {
-      stringtoRet += ` loading="lazy"` // not good for above-the-fold images
-    }
     stringtoRet +=` sizes="${dataSzes}" />
   </div>`
 

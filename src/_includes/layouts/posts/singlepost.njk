@@ -6,7 +6,7 @@ layout: base
 <main>
   {%- if featured_image -%}
   <div class="relative overflow-hidden w-full h-[80vh] bg-black dark:bg-blue-700 max-h-[80vh] min-h-[80vh] md:h-[85vh] md:max-h-[85vh] md:min-h-[85vh] xl:h-[95xh] xl:max-h-[95vh] xl:min-h-[95vh]">
-    {%- imgc featured_image, featured_image_alt, featured_image_width, featured_image_height, "posts" -%}
+    {%- imgcHero featured_image, featured_image_alt, featured_image_width, featured_image_height, "posts" -%}
   {%- else -%}
   <div class="relative overflow-hidden w-full bg-gradient-to-b from-blue-700 via-black to-blue-700 dark:from-black dark:via-blue-700 dark:to-black h-[80vh] max-h-[80vh] min-h-[80vh] md:h-[85vh] md:max-h-[85vh] md:min-h-[85vh] xl:h-[95xh] xl:max-h-[95vh] xl:min-h-[95vh]">
   {%- endif -%}

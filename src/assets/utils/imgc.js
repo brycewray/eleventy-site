@@ -23,20 +23,20 @@ module.exports = (url, alt, width, height, tmpl) => {
     case 'index':
       divClass = `h-full`
       imgClass = `object-cover object-center h-full w-full containedImage animate-fade`
+      nscClass = `imgCover hero`
       dataSzes = `100vw`
       break
     */
     case 'posts':
       divClass = `h-full`
       imgClass = `imgCover hero animate-fade`
+      nscClass = `imgCover animate-fade`
       dataSzes = `100vw`
       break
     default:
       divClass = `relative`
-      imgClass = `containedImage`
-      // no need for animate-fade class
-      // because we're not using JS to
-      // monitor IntersectionObserver
+      imgClass = `containedImage lazy`
+      nscClass = `containedImage animate-fade`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
@@ -44,7 +44,10 @@ module.exports = (url, alt, width, height, tmpl) => {
 
   var stringtoRet = ``
   stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover" style="background-image: url(${cloudiBase + LQIPpholder + url})">
-    <img class="${imgClass}" aspect-ratio="${width} / ${height}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
+  <noscript>
+    <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
+  </noscript>
+  <img class="${imgClass}" aspect-ratio="${width} / ${height}" data-src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" data-srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         stringtoRet += `${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`
