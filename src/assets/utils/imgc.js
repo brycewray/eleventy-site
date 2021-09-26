@@ -3,13 +3,13 @@ This shortcode takes the following form...
   {% imgcHero url, alt, width, height, tmpl %}
 ...with url in the form of (note NO leading or ending slash):
   filename.ext
-...and 'temp[late]' optional in body copy. The template is used
-to specify hero images on  post pages ('posts').
-Without this parameter, the `switch` statement below defaults
-to body copy-style image-handling.
+...and 'temp[late]' optional in body copy. The template is used to specify
+hero images on post pages ('posts'). Without this parameter, the `switch`
+statement below defaults to body copy-style image-handling.
+The `animate-fade` CSS class is from the Tailwind CSS config file.
 */
 
-const respSizes = require(`../../../_data/siteparams.json`).respSizes
+const respSizes = [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
 var cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
 var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
 var xFmPart1 = 'f_auto,q_auto:eco,w_'
@@ -19,24 +19,24 @@ module.exports = (url, alt, width, height, tmpl) => {
   if (!tmpl) tmpl == "none"
 
   switch(tmpl) {
-    /*
+    /* === 'index'case used with home page when it had a hero image (pre-Jan. 2021)
     case 'index':
       divClass = `h-full`
-      imgClass = `object-cover object-center h-full w-full containedImage lazy`
-      // nscClass = `imgCover hero`
+      imgClass = `object-cover object-center h-full w-full containedImage animate-fade`
       dataSzes = `100vw`
       break
     */
     case 'posts':
       divClass = `h-full`
-      imgClass = `imgCover hero animate-fade` // use `lazy` class with lazyload JS
-      // nscClass = `imgCover`
+      imgClass = `imgCover hero animate-fade`
       dataSzes = `100vw`
       break
     default:
       divClass = `relative`
-      imgClass = `containedImage animate-fade` // add `lazy` class with lazyload JS
-      // nscClass = `containedImage`
+      imgClass = `containedImage`
+      // no need for animate-fade class
+      // because we're not using JS to
+      // monitor IntersectionObserver
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
