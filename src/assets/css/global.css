@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  @apply dark:text-gray-100 font-serif;
+  @apply dark:text-gray-100;
   /* font-feature-settings: "liga" 1; */
   /* commenting out because of Menlo weirdness if browser uses */
 }

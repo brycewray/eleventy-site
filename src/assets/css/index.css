@@ -1,7 +1,7 @@
 /*! purgecss start ignore */
 @import 'reset.css';
 /* @import 'fonts_Inter.css'; */
-/* @import 'fonts_PublicSans.css'; */
+@import 'fonts_PublicSans.css';
 @import 'prismjs.css';
 @import 'tailwindcss/base';
 @import 'global.css';
