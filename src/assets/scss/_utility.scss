@@ -90,6 +90,18 @@
   background-color: var.$blue !important;
 }
 
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
 .btn-primary {
   background-color: var.$blue;
   border-color: var.$blue;
