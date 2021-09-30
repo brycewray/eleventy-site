@@ -5,7 +5,7 @@ subtitle: "Adapting an old friend for new realities"
 description: "Seeking a non-JS nav menu for use with Tailwind? So was I. Here’s the resulting code."
 author: Bryce Wray
 date: 2021-09-15T10:30:00-05:00
-lastmod: 2021-09-30T10:01:00-05:00
+lastmod: 2021-09-30T13:41:00-05:00
 discussionId: "2021-09-zero-javascript-navigation-menu-tailwind-css"
 featured_image: "sebastian-herrmann-JB4aR34u248-unsplash_5184x3456.jpg"
 featured_image_width: 5184
@@ -17,7 +17,7 @@ featured_image_caption: |
 
 {% disclaimer %}
 
-If your static website uses [Tailwind CSS](https://tailwindcss.com) and you've been looking for a Tailwind-based, responsive, **zero**-JavaScript navigation menu, you've come to the right place. The one you see above fits all those qualifications. I'll provide its code in a bit. First, let me provide some background.
+If your static website uses [Tailwind CSS](https://tailwindcss.com) and you've been looking for a Tailwind-based, responsive, **zero**-JavaScript navigation menu, you've come to the right place. I'll provide its code in a bit. First, let me provide some background.
 
 When I originally put this site on the web three years ago this month, I didn't yet know of the importance of having a navigation menu which was:
 
