@@ -5,7 +5,7 @@ subtitle: "Items of possible interest for SSG users"
 description: "A (perhaps) surprising requirement for native lazy-loading, the Slinkity project, problems with Cloudflare Pages."
 author: Bryce Wray
 date: 2021-10-01T09:23:00-05:00
-#lastmod:
+#lastmod: 2021-10-01T09:53:00-05:00
 discussionId: "2021-10-gems-in-rough-10"
 featured_image: "amethyst-239131_3636x2422.jpg"
 featured_image_width: 3636
@@ -64,3 +64,6 @@ I have multiple Eleventy repositories (including this one), with differing build
 This behavior began after [yesterday's worldwide incident with Let's Encrypt SSL certificates](https://www.theregister.com/2021/09/30/lets_encrypt_xero_slack_outages/). Since that was Let's Encrypt's problem, not Cloudflare's, it may have been totally coincidental that my post-cert-glitch build attempts failed. All I know is that, once the problem started, repos which still build just fine on [Netlify](https://netlify.com), [Vercel](https://vercel.com), [Render](https://render.com), and [Digital Ocean App Platform](https://www.digitalocean.com/products/app-platform/) would no longer build on CFP. Cloudflare personnel to whom I conveyed word of this via Discord said the fault must lie in my `package.json` scripting, rather than their platform, but those other vendors' successful builds (about which I've notified a Cloudflare employee) would seem to suggest otherwise.
 
 Whether any of this is applicable to you, I have no idea; I'm just tossing it out there for your consideration before you rely on CFP, a platform which remains both highly interesting and aggravatingly glitchy.
+
+**Note**: Ironically enough, when I first tried to issue **this** post, Vercel (to which I'd reverted yesterday after the aforementioned CFP issues) was having a system-wide outage of its API and dashboard which, you guessed it, prevented the site build. Ya can't win.
+{.yellowBox}
