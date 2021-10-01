@@ -5,7 +5,7 @@ subtitle: "Items of possible interest for SSG users"
 description: "A (perhaps) surprising requirement for native lazy-loading, the Slinkity project, problems with Cloudflare Pages."
 author: Bryce Wray
 date: 2021-10-01T09:23:00-05:00
-#lastmod: 2021-10-01T09:53:00-05:00
+#lastmod: 2021-10-01T11:36:00-05:00
 discussionId: "2021-10-gems-in-rough-10"
 featured_image: "amethyst-239131_3636x2422.jpg"
 featured_image_width: 3636
@@ -26,7 +26,7 @@ A few days ago, I played around with my image-handling [shortcode](https://11ty.
 
 ## The Slinkity project
 
-The [Eleventy](https://11ty.dev) SSG is [nearing the release of version 1.0.x](https://github.com/11ty/eleventy/milestone/32), and with that release will come full support for the intriguing [Slinkity](https://slinkity.dev) plugin. Slinkity, the brainchild of [Ben Holmes](https://bholmes.dev/), is still in early development but its promise is enormous. The part of it I find most intriguing is that it will allow the addition of components from the [React](https://reactjs.org), [Vue](https://vuejs.org), and [Svelte](https://svelte.dev) frameworks, which is likely to make the already formidable Eleventy an even better match for many projects where it might otherwise have been found wanting. Keep an eye on Slinkity. It could be a game-changer.
+The [Eleventy](https://11ty.dev) SSG is [nearing the release of version 1.0.x](https://github.com/11ty/eleventy/milestone/32), and with that release will come full support for the intriguing [Slinkity](https://slinkity.dev) plugin. Slinkity, the brainchild of [Ben Holmes](https://bholmes.dev/), is still in early development but its promise is enormous. The part of it I find most compelling is that it will allow the addition of components from the [React](https://reactjs.org), [Vue](https://vuejs.org), and [Svelte](https://svelte.dev) frameworks, which is likely to make the already formidable Eleventy an even better match for many projects where it might otherwise have been found wanting. Keep an eye on Slinkity. It could be a game-changer.
 
 ## Cloudflare Pages: the glitches continue
 
@@ -41,7 +41,7 @@ I have multiple Eleventy repositories (including this one), with differing build
 12:24:22.086    internal/modules/run_main.js:54
 12:24:22.086        internalBinding('errors').triggerUncaughtException(
 12:24:22.086                                  ^
-12:24:22.086    
+12:24:22.086
 12:24:22.086    Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]: Only file and data URLs are supported by the default ESM loader
 12:24:22.086        at Loader.defaultResolve [as _resolve] (internal/modules/esm/resolve.js:720:11)
 12:24:22.086        at Loader.resolve (internal/modules/esm/loader.js:97:40)
@@ -54,7 +54,7 @@ I have multiple Eleventy repositories (including this one), with differing build
 12:24:22.104    npm ERR! errno 1
 12:24:22.106    npm ERR! eleventy_site@ prodpostcss: `postcss _site/css/$(cat csshash) -o _site/css/$(cat csshash)`
 12:24:22.106    npm ERR! Exit status 1
-12:24:22.106    npm ERR! 
+12:24:22.106    npm ERR!
 12:24:22.106    npm ERR! Failed at the eleventy_site@ prodpostcss script.
 12:24:22.106    npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
 ```
