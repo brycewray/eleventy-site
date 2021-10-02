@@ -3,7 +3,7 @@
 }
 
 .yellowBox {
-  @apply bg-yellow-100 dark:bg-amber-900;
+  @apply bg-yellow-100 dark:bg-yellow-900;
 }
 
 .yellowBox a {
@@ -14,7 +14,7 @@
 }
 
 .blueBox {
-  @apply text-sm bg-blue-100 dark:bg-blue-900;
+  @apply text-sm bg-sky-100 dark:bg-blue-900;
 }
 
 .lazypicturecaption, .imgcCaption {
