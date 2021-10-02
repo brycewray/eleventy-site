@@ -1,6 +1,6 @@
 {
   "name": "eleventy_site",
-  "description": "The history of eleventy_solo and the Vite-ness of eleventy_vite, the latter of which was based on eleventy-on-vite by Fotis Papadogeorgopoulos.",
+  "description": "The repository for brycewray.com, a website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
   "private": true,
   "scripts": {
     "clean": "rimraf _site",
