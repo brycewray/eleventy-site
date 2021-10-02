@@ -40,18 +40,17 @@ module.exports = (url, alt, width, height, tmpl) => {
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
-  var separator = ', '
-
   var stringtoRet = ``
+  var arrayFromLoop = []
   stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover" style="background-image: url(${cloudiBase + LQIPpholder + url})">
     <img class="${imgClass}" aspect-ratio="${width} / ${height}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
-        stringtoRet += `${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`
-        stringtoRet += separator
+        arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)
       }
     })
-    stringtoRet = stringtoRet.substring(0, stringtoRet.length - 2) // last one loses the final separator
+    stringtoRet += arrayFromLoop.join(', ')
+    // h/t https://stackoverflow.com/questions/2047491/how-to-remove-last-comma
     stringtoRet += `" alt="${alt}" width="${width}" height="${height}"`
     stringtoRet +=` sizes="${dataSzes}" />
   </div>`

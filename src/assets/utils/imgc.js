@@ -40,9 +40,8 @@ module.exports = (url, alt, width, height, tmpl) => {
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
-  var separator = ', '
-
   var stringtoRet = ``
+  var arrayFromLoop = []
   stringtoRet = `<div class="${divClass} bg-center bg-no-repeat bg-cover" style="background-image: url(${cloudiBase + LQIPpholder + url})">
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
@@ -50,11 +49,11 @@ module.exports = (url, alt, width, height, tmpl) => {
   <img class="${imgClass}" aspect-ratio="${width} / ${height}" data-src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" data-srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
-        stringtoRet += `${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`
-        stringtoRet += separator
+        arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)
       }
     })
-    stringtoRet = stringtoRet.substring(0, stringtoRet.length - 2) // last one loses the final separator
+    stringtoRet += arrayFromLoop.join(', ')
+    // h/t https://stackoverflow.com/questions/2047491/how-to-remove-last-comma
     stringtoRet += `" alt="${alt}" width="${width}" height="${height}"`
     if (divClass !== "h-full") {
       stringtoRet += ` loading="lazy"` // not good for above-the-fold images
