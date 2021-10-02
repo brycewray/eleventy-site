@@ -5,7 +5,7 @@ subtitle: "Items of possible interest for SSG users"
 description: "A (perhaps) surprising requirement for native lazy-loading, the Slinkity project, problems with Cloudflare Pages."
 author: Bryce Wray
 date: 2021-10-01T09:23:00-05:00
-#lastmod: 2021-10-01T11:36:00-05:00
+lastmod: 2021-10-02T14:24:00-05:00
 discussionId: "2021-10-gems-in-rough-10"
 featured_image: "amethyst-239131_3636x2422.jpg"
 featured_image_width: 3636
@@ -66,4 +66,7 @@ This behavior began after [yesterday's worldwide incident with Let's Encrypt SSL
 Whether any of this is applicable to you, I have no idea; I'm just tossing it out there for your consideration before you rely on CFP, a platform which remains both highly interesting and aggravatingly glitchy.
 
 **Note**: Ironically enough, when I first tried to issue **this** post, Vercel (to which I'd reverted yesterday after the aforementioned CFP issues) was having a system-wide outage of its API and dashboard which, you guessed it, prevented the site build. Ya can't win.
+{.yellowBox}
+
+**Update, 2021-10-02**: Today I tested Cloudflare Pages again and found that, by **deleting** my previous setups there and **restoring** them, the errors stopped. I have no idea what happened, but scripts that failed as noted above are now working fine. Weird. Anyway, I moved the site back to Cloudflare to take advantage once again of this vendor's superior CDN.
 {.yellowBox}
