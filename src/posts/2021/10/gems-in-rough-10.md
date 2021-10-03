@@ -5,7 +5,7 @@ subtitle: "Items of possible interest for SSG users"
 description: "A (perhaps) surprising requirement for native lazy-loading, the Slinkity project, problems with Cloudflare Pages."
 author: Bryce Wray
 date: 2021-10-01T09:23:00-05:00
-lastmod: 2021-10-02T14:24:00-05:00
+lastmod: 2021-10-03T17:20:00-05:00
 discussionId: "2021-10-gems-in-rough-10"
 featured_image: "amethyst-239131_3636x2422.jpg"
 featured_image_width: 3636
@@ -29,6 +29,9 @@ A few days ago, I played around with my image-handling [shortcode](https://11ty.
 The [Eleventy](https://11ty.dev) SSG is [nearing the release of version 1.0.x](https://github.com/11ty/eleventy/milestone/32), and with that release will come full support for the intriguing [Slinkity](https://slinkity.dev) plugin. Slinkity, the brainchild of [Ben Holmes](https://bholmes.dev/), is still in early development but its promise is enormous. The part of it I find most compelling is that it will allow the addition of components from the [React](https://reactjs.org), [Vue](https://vuejs.org), and [Svelte](https://svelte.dev) frameworks, which is likely to make the already formidable Eleventy an even better match for many projects where it might otherwise have been found wanting. Keep an eye on Slinkity. It could be a game-changer.
 
 ## Cloudflare Pages: the glitches continue
+
+**Update, 2021-10-03**: I learned today that the problem I note below was due to an [incompatibility between the recently released version 9.x of the `postcss-cli` package and any Node.js version prior to 12.20](https://github.com/postcss/postcss-cli/issues/404). The usual way you get around that when building to your hosting vendor of choice, assuming it's using a Node.js version that fits this qualification, is to add a `NODE_VERSION` environment variable set to at least `12.20.0`. (Consult your respective vendor's documentation for details.)  In my site's case, I am currently spec’g `14.16.0` since that conforms to the Node version I run locally. Finally: despite my having learned this, I'll leave the remainder of this part of the article as it was for the sake of [transparency](/posts/2019/10/otoh).
+{.yellowBox}
 
 Until yesterday, I had used [Cloudflare Pages](https://pages.cloudflare.com) (and, with it, the Cloudflare CDN) to host this site, off-and-on, for a while. I've written in the past about the technical challenges of this still-new platform, particularly where build times are concerned; but, yesterday, the problems reached a new, show-stopping level.
 
