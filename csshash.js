@@ -1,6 +1,6 @@
 const fs = require('fs')
 const md5 = require('md5')
-const globAll = require('glob-all')
+const globAll = require('fast-glob')
 const DATAFILE = '_data/csshash.json'
 const PCSSFILE = 'csshash'
 cssFiles = globAll.sync([
