@@ -78,6 +78,7 @@ gh-pages.pub
 src/_includes/css/*.*
 
 csshash
+csshash-out
 
 csp.txt
 cache-and-headers.js

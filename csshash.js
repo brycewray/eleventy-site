@@ -2,7 +2,7 @@ const fs = require('fs')
 const md5 = require('md5')
 const fg = require('fast-glob')
 const DATAFILE = '_data/csshash.json'
-const PCSSFILE = 'csshash'
+const PCSSFILE = 'csshash-out'
 cssFiles = fg.sync([
   'src/**/*.{css,scss}'
 ])
