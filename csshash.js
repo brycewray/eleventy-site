@@ -1,9 +1,9 @@
 const fs = require('fs')
 const md5 = require('md5')
-const globAll = require('fast-glob')
+const fg = require('fast-glob')
 const DATAFILE = '_data/csshash.json'
 const PCSSFILE = 'csshash'
-cssFiles = globAll.sync([
+cssFiles = fg.sync([
   'src/**/*.{css,scss}'
 ])
 
