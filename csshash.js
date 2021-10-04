@@ -4,7 +4,7 @@ const globAll = require('fast-glob')
 const DATAFILE = '_data/csshash.json'
 const PCSSFILE = 'csshash'
 cssFiles = globAll.sync([
-  'src/assets/css/*.css'
+  'src/**/*.{css,scss}'
 ])
 
 var cssMd5Total = 0
