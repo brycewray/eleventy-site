@@ -1,9 +1,5 @@
 {
-  "build": {
-    "env": {
-      "NODE_VERSION": "14.16.0"
-    }
-  },
+  "build": {},
   "github": {
     "silent": true
   },
