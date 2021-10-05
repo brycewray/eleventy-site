@@ -60,14 +60,12 @@ layout: base
       <h3 class="ctr wht prevnextH3"><a href="/posts" class="border-transparent text-blue-100 hover:text-blue-200 hover:border-blue-200">Other posts</a></h3>
     {% if nextPost.url %}
       <p class="ctr prevnextP">
-        <strong>Next</strong>:
-        <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+        <strong>Next</strong>: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
       </p>
     {% endif %}
     {% if prevPost.url %}
       <p class="ctr wht prevnextP">
-        <strong>Previous</strong>:
-        <a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+        <strong>Previous</strong>: <a href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
       </p>
     {% endif %}
     </div>
