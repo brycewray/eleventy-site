@@ -79,6 +79,7 @@ src/_includes/css/*.*
 
 csshash
 csshash-out
+scsshash-out
 
 csp.txt
 cache-and-headers.js
