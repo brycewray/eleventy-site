@@ -5,17 +5,11 @@
   "scripts": {
     "clean": "rimraf _site",
     "hasher": "node csshash.js && node jshash.js",
-    "devsass": "sass --no-source-map src/assets/scss/index.scss _site/css/index.css",
-    "prodsass": "sass --no-source-map src/assets/scss/index.scss _site/css/$(cat csshash-out)",
-    "devpostcss": "postcss _site/css/index.css -o _site/css/index.css",
-    "prodpostcss": "postcss _site/css/$(cat csshash-out) -o _site/css/$(cat csshash-out)",
-    "start": "NODE_ENV=development npm-run-all clean devsass --parallel dev:*",
-    "build": "NODE_ENV=production npm-run-all clean hasher prod:sass prod:postcss prod:eleventy",
-    "dev:sass": "npm run devsass -- --watch",
-    "dev:postcss": "npm run devpostcss --watch",
+    "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean --parallel dev:*",
+    "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch --minify",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --quiet --serve",
-    "prod:sass": "npm run prodsass",
-    "prod:postcss": "npm run prodpostcss",
+    "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
+    "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash) --minify",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
     "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
     "testbuild": "NODE_ENV=production npm run build && npm run testbuild:bsync"
@@ -52,10 +46,10 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.9",
     "postcss-cli": "^9.0.1",
-    "postcss-csso": "^5.0.1",
     "postcss-import": "^14.0.2",
     "rimraf": "^3.0.2",
     "rss": "^1.2.2",
-    "sass": "^1.42.1"
+    "tailwindcss": "^2.2.16",
+    "tailwindcss-logical": "^2.0.0"
   }
 }
