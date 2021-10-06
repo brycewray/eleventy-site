@@ -9,7 +9,7 @@
     "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch --minify",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --quiet --serve",
     "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
-    "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash) --minify",
+    "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash-out) --minify",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
     "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
     "testbuild": "NODE_ENV=production npm run build && npm run testbuild:bsync"
