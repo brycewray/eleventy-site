@@ -1,29 +1,9 @@
-
-main {
-  @apply pt-10 lg:pt-12; /* needed in Eleventy repo; handled elsewhere in Hugo repo */
-}
-
-html, body {
-  @apply dark:bg-black;
-}
-
 html {
   scroll-padding-top: 80px;
 }
 
-body {
-  @apply dark:text-gray-100;
-  /* font-feature-settings: "liga" 1; */
-  /* commenting out because of Menlo weirdness if browser uses */
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    font-weight: 375;
-  }
-  bold, strong {
-    font-weight: 650;
-  }
+main {
+  @apply pt-10 lg:pt-12; /* needed in Eleventy repo; handled elsewhere in Hugo repo */
 }
 
 p, li {
@@ -31,14 +11,20 @@ p, li {
   @apply mb-3 text-lg;
 }
 
-ul li li {
+ul li, ul li li {
   @apply list-disc;
-  /* list-style-type: circle; */
 }
 
 ul li li li {
   @apply list-square;
-  /* list-style-type: square; */
+}
+
+ul, ol {
+  @apply pl-8;
+}
+
+ol {
+  @apply list-decimal;
 }
 
 a {
@@ -102,36 +88,12 @@ article h1, article h2, article h3, article h4 {
 }
 
 article p, li {
-  @apply text-lg mt-6 mb-6 leading-relaxed;
+  @apply text-lg mt-6 mb-6 leading-relaxed md:text-xl 2xl:text-2xl;
 }
 
 article img.containedImage, article picture img {
   @apply min-w-full max-w-full w-full h-auto;
   /* latter two for no-jank in Chrome and Firefox */
-}
-
-@media screen and (min-width: 769px) {
-  article p, li {
-    @apply text-xl leading-relaxed;
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  article p, li {
-    @apply text-2xl leading-relaxed;
-  }
-}
-
-ul, ol {
-  @apply pl-8;
-}
-
-ul {
-  @apply list-disc;
-}
-
-ol {
-  @apply list-decimal;
 }
 
 blockquote {

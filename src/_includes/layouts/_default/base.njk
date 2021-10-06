@@ -1,8 +1,8 @@
 {% set eleventyEnv = projEnv.environment %}
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark:bg-black" lang="en">
   {% include 'layouts/partials/head.njk' %}
-  <body>
+  <body class="dark:bg-black dark:text-gray-100">
     {% include 'layouts/partials/header.njk' %}
     {{ content | safe }}
     {% include 'layouts/partials/footer.njk' %}
