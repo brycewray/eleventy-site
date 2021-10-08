@@ -1,7 +1,6 @@
 const fs = require("fs")
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
-const ErrorOverlay = require("eleventy-plugin-error-overlay")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
@@ -52,7 +51,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
-  eleventyConfig.addPlugin(ErrorOverlay)
 
   eleventyConfig.setQuietMode(true)
 
