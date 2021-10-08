@@ -2,7 +2,7 @@
 {% set fallbackImg = "typewriter-monochrome_2242164_6260x4374.jpg" %}
 {% set eleventyVersion = pkg.devDependencies['@11ty/eleventy'] | replace("^", "") %}
 {% set eleventyEnv = projEnv.environment %}
-{% set cssEnv = siteparams.css %}
+{% set cssEnv = siteparams.cssEnv %}{# won't be needed in Eleventy 1.x #}
 
   <head>
     <meta charset="utf-8">
@@ -89,16 +89,16 @@
 
     <!--
     <link rel="preload" href="/assets/fonts/Inter-3-19_subset_2021-06-18.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
-    -->
     <link rel="preload" href="/assets/fonts/Public-Sans-Roman-VF-1-008_2020-01-08_subset.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
     <link rel="preload" href="/assets/fonts/Public-Sans-Italic-VF-1-008_2020-01-08_subset.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
+    -->
 
     {% if eleventyEnv == "production" %}
-      <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
       {% if cssEnv == "TWCSS" %}
+        <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
         <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
-      {% endif %}
-      {% if cssEnv == "SCSS" %}
+      {% else %}{# fall back to SCSS #}
+        <link rel="preload" href="/css/{{ csshash.indexSCSS }}" as="style" />
         <link rel="stylesheet" href="/css/{{ csshash.indexSCSS }}" type="text/css" />
       {% endif %}
     {% else %}
