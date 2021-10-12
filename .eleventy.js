@@ -162,6 +162,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/css/*.css")
   eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
   eleventyConfig.addWatchTarget("./src/**/*.md")
+  eleventyConfig.addWatchTarget("./src/**/*.njk")
+  eleventyConfig.addWatchTarget("./src/**/*.11ty.js")
+  eleventyConfig.addWatchTarget("./src/**/*.html")
 
 
   eleventyConfig.setBrowserSyncConfig({
@@ -170,7 +173,10 @@ module.exports = function(eleventyConfig) {
       "src/**/*.js",
       "src/assets/css/*.css",
       "src/assets/scss/*.scss",
-      "src/**/*.md"
+      "src/**/*.md",
+      "src/**/*.njk",
+      "src/**/*.11ty.js",
+      "src/**/*.html"
     ],
     ghostMode: false,
     port: 3000,
