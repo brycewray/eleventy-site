@@ -178,7 +178,7 @@ module.exports = function(eleventyConfig) {
       "src/**/*.11ty.js",
       "src/**/*.html"
     ],
-    ghostMode: false,
+    // ghostMode: false, // the default as of 1.0.x
     port: 3000,
     callbacks: {
       ready: function(err, bs) {
