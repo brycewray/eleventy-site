@@ -11,6 +11,5 @@
     "url": "https://www.brycewray.com/index.xml",
     "id": "https://www.brycewray.com"
   },
-  "respSizes": [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ],
-  "cssEnv": "TWCSS"
+  "respSizes": [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
 }
