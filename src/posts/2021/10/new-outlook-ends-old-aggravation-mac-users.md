@@ -5,7 +5,7 @@ subtitle: "A cross-platform solution of sorts"
 description: "For Mac users who must use Outlook, its Electron-based version brings some long-overdue feature parity."
 author: Bryce Wray
 date: 2021-10-11T14:10:00-05:00
-#lastmod:
+#lastmod: 2021-10-11T20:55:00-05:00
 discussionId: "2021-10-new-outlook-ends-old-aggravation-mac-users"
 featured_image: "liam-truong-oeDH20DVb2A-unsplash_4912x3264.jpg"
 featured_image_width: 4912
@@ -19,7 +19,7 @@ Last year, [I wrote](/posts/2020/09/mixed-nuts-2020-09):
 
 > Microsoft continues its (willful?) failure to give the Mac version of Outlook one specific feature that Outlook for Windows has had forever: the ability to see one's **own** sent emails in conversation threads. And I don't mean the hacky, unintuitive "talk balloons" method the Mac version uses; I mean the way the Windows version does it.
 
-To illustrate the difference, here's how the Windows version of Outlook shows an email thread between me and someone else:
+To illustrate the difference, here's how the Windows version of Outlook shows an email thread which includes me:
 
 {% imgc "2021-10-11_screenshot_Outlook-on-Windows_segment_1610x512.png", "Outlook on Windows - view of email thread", 1610, 512 %}
 
