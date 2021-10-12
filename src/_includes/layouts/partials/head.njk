@@ -2,7 +2,6 @@
 {% set fallbackImg = "typewriter-monochrome_2242164_6260x4374.jpg" %}
 {% set eleventyVersion = pkg.devDependencies['@11ty/eleventy'] | replace("^", "") %}
 {% set eleventyEnv = projEnv.environment %}
-{% set cssEnv = siteparams.cssEnv %}{# won't be needed in Eleventy 1.x #}
 
   <head>
     <meta charset="utf-8">
@@ -94,13 +93,8 @@
     -->
 
     {% if eleventyEnv == "production" %}
-      {% if cssEnv == "TWCSS" %}
-        <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
-        <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
-      {% else %}{# fall back to SCSS #}
-        <link rel="preload" href="/css/{{ csshash.indexSCSS }}" as="style" />
-        <link rel="stylesheet" href="/css/{{ csshash.indexSCSS }}" type="text/css" />
-      {% endif %}
+      <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
+      <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
     {% else %}
       <link rel="stylesheet" href="/css/index.css" type="text/css" />
     {% endif %}

@@ -1,5 +1,3 @@
-{% set cssEnv = siteparams.cssEnv %}{# won't be needed in Eleventy 1.x #}
-{% if cssEnv == "TWCSS" %}
   <div class="font-sans container h-auto w-full min-w-full relative overflow-hidden pt-6 md:pt-12 px-4 md:px-8 2xl:px-12">
     <h1 class="text-center text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl tracking-tight leading-tight mt-2 mb-4 md:mt-6 md:mb-6 2xl:mt-16">{{ title | safe }}</h1>
     {% if subtitle %}<h2 class="text-center text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl mb-4 md:mb-6 2xl:mb-6 leading-tight tracking-tight">{{ subtitle | safe }}</h2>{% endif %}
@@ -8,23 +6,3 @@
       <strong>{{ page.date | htmlDateString }}</strong>{% if lastmod %}<br /><span class="text-sm">Last modified {{ lastmod | htmlDateString }}</span>{% endif %}
     </p>
   </div>
-{% else %}{# fall back to SCSS #}
-  <div class="billboard-div">
-    <div class="billboard-title-block">
-      <h1 class="billboard-title-text">{{ title | safe }}</h1>
-      {% if subtitle %}
-      <h2 class="billboard-subtitle-text">{{ subtitle | safe }}</h2>
-      {% else %}
-      <p>&nbsp;</p>
-      {% endif %}
-      {% if description %}
-      <p class="billboard-description-text">{{ description | safe }}</p>
-      {% else %}
-      <p>&nbsp;</p>
-      {% endif %}
-      <p class="billboard-p-text">
-        <strong>{{ page.date | htmlDateString }}</strong><br />{% if lastmod %}<span class="seventyFive">Last modified {{ lastmod | htmlDateString }}</span>{% else %}&nbsp;{% endif %}
-      </p>
-    </div>
-  </div>
-{% endif %}

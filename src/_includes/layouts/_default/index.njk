@@ -2,8 +2,6 @@
 title: BryceWray.com
 layout: base
 ---
-{% set cssEnv = siteparams.cssEnv %}{# won't be needed in Eleventy 1.x #}
-{% if cssEnv == "TWCSS" %}
   <main class="p-0 font-sans">
     <div class="pt-6 lg:pt-12 lg:flex w-full mr-auto ml-auto">
       <div class="bg-transparent lg:bg-gradient-to-b lg:from-blue-700 lg:via-black to-white lg:dark:bg-gradient-to-b lg:dark:from-black lg:dark:via-blue-700 lg:dark:to-black lg:w-5/12 px-8 lg:px-12 pt-16 lg:text-white text-center lg:text-right">
@@ -33,34 +31,3 @@ layout: base
       </div>
     </div>
   </main>
-{% else %}{# fallback to SCSS #}
-  <main>
-    <div class="container-home">
-      <div class="homeOpen">
-        <h1>Welcome to brycewray.com, offering <a href="/about">its owner</a>&rsquo;s &ldquo;observations, opinions, and&nbsp;geekiness&rdquo; since&nbsp;2018.</h1>
-      </div>
-      <div class="homePost-Div">
-        <div class="post-line"></div>
-        <h2 class="homePost-Latest">Latest <a href="/posts/">posts</a></h2>
-        {% for post in collections.post | reverse %}
-          {% if loop.index0 < 3 %}
-          <div>
-            <h2 class="homePost-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
-            <p class="homePost-Subtitle">{{ post.data.subtitle | safe }}</p>
-            <p class="homePost-Dates">
-              <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
-              {% if post.data.lastmod %}
-              <br /><span class="pokey">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
-              {% endif %}
-            </p>
-            <p class="homePost-Description">
-              {{ post.data.description | safe }}
-            </p>
-          </div>
-          {% endif %}
-        {% endfor %}
-        <p class="topM2"><a href="/posts/"><strong>All {{ collections.post.length }} posts</strong></a> <span class="pokey"><em>(listed five per page)</em></span></p>
-      </div>
-    </div>
-  </main>
-{% endif %}
