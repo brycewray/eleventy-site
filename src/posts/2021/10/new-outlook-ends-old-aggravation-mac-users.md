@@ -5,7 +5,7 @@ subtitle: "A cross-platform solution of sorts"
 description: "For Mac users who must use Outlook, its Electron-based version brings some long-overdue feature parity."
 author: Bryce Wray
 date: 2021-10-11T14:10:00-05:00
-#lastmod: 2021-10-11T20:55:00-05:00
+lastmod: 2021-10-13T11:34:00-05:00
 discussionId: "2021-10-new-outlook-ends-old-aggravation-mac-users"
 featured_image: "liam-truong-oeDH20DVb2A-unsplash_4912x3264.jpg"
 featured_image_width: 4912
@@ -39,4 +39,4 @@ That aggravation, which had persisted for years, is nearing an end because of [M
 
 Bingo. Now, really, Microsoft, was that so frickin' difficult?
 
-In short: if you're one of those Mac users who either prefers to use Outlook or is required to do so for some reason, New Outlook finally ends the feature prejudice Microsoft has shown Macs for some years now. Even if you're an Electron hater for some reason, this might be a time for giving that a pass. This cross-platform approach appears to be the only way Microsoft will stop treating Outlook-using Mac folks as if they were second-class citizens.
+In short: if you're one of those Mac users who either prefers to use Outlook or is required to do so for some reason, New Outlook finally ends the feature prejudice Microsoft has shown Macs for some years now. Even if you're an Electron hater, this might be a time for giving that a pass. This cross-platform approach appears to be the only way Microsoft will stop treating Outlook-using Mac folks as if they were second-class citizens.
