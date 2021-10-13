@@ -166,34 +166,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/**/*.11ty.js")
   eleventyConfig.addWatchTarget("./src/**/*.html")
 
-
-  eleventyConfig.setBrowserSyncConfig({
-    ...eleventyConfig.browserSyncConfig,
-    files: [
-      "src/**/*.js",
-      "src/assets/css/*.css",
-      "src/assets/scss/*.scss",
-      "src/**/*.md",
-      "src/**/*.njk",
-      "src/**/*.11ty.js",
-      "src/**/*.html"
-    ],
-    // ghostMode: false, // the default as of 1.0.x
-    port: 3000,
-    callbacks: {
-      ready: function(err, bs) {
-        bs.addMiddleware("*", (req, res) => {
-          const content_404 = fs.readFileSync('_site/404.njk')
-          // Add 404 http status code in request header.
-          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" })
-          // Provides the 404 content without redirect.
-          res.write(content_404)
-          res.end()
-        })
-      }
-    },
-    snippet: false,
-  })
+  // BrowserSync stuff went here before
 
   eleventyConfig.addShortcode(
     "imgc",
