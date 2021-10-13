@@ -7,7 +7,7 @@
     "hasher": "node csshash.js && node jshash.js",
     "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean --parallel dev:*",
     "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --quiet --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --quiet --incremental --serve",
     "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
     "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash-out) --minify",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
