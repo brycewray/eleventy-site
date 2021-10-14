@@ -5,6 +5,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -51,6 +52,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
+  eleventyConfig.addPlugin(UpgradeHelper)
 
   eleventyConfig.setQuietMode(true)
 
