@@ -48,6 +48,7 @@
     "postcss-import": "^14.0.2",
     "rimraf": "^3.0.2",
     "rss": "^1.2.2",
+    "slinkity": "^0.1.10",
     "tailwindcss": "^2.2.17",
     "tailwindcss-logical": "^2.0.0"
   }
