@@ -5,7 +5,7 @@ subtitle: "iA Writer wins—for now"
 description: "Why, just months after proclaiming my allegiance to the Ulysses writing app, I’ve chosen to abandon it in favor of iA Writer."
 author: Bryce Wray
 date: 2019-04-20T11:17:00-05:00
-lastmod: 2021-06-16T15:15:00-05:00
+lastmod: 2021-10-17-T12:30:00-05:00
 discussionId: "2019-04-why-left-ulysses"
 featured_image: "hand-butterfly-3751159_6000x4000.jpg"
 featured_image_width: 6000
@@ -20,7 +20,7 @@ oldComments: |
       </p>
       <p class="commentName"><strong>Chris Rosser</strong> <span class="commentDate"><em>2019-04-30</em></span></p>
       <p class="comment">An excellent and very well considered article as always. Thanks for posting it!</p>
-    
+
       <p class="commentName"><strong>Bryce Wray</strong> <span class="commentDate"><em>2019-05-01</em></span></p>
       <p class="comment">Thank you, sir. I&rsquo;d have liked nothing more than for it to have been a &ldquo;Why I was able to stick with Ulysses despite a few scary moments&rdquo; article, instead (although that would have been a goofy article title); but, sadly, the continuing glitches left me no good choice in the end.</p>
     </div>
@@ -148,11 +148,7 @@ Yet another nail in the Ulysses sub's coffin.
 
 But it was hard to let go. Even as late as a couple of weeks ago, I found myself posting this on Twitter:
 
-> [Bryce Wray • @BryceWrayTX](https://twitter.com/BryceWrayTX)
->
-> I may be crazy, but have been stress-testing Ulysses and am giving it one more chance \*\*not\*\* to eat my stuff before I pull the plug on my subscription (ends in late May). It’s hard to quit an app that makes writing such a pleasure, even one with known issues. [#DontFailMeNowBigU](https://twitter.com/hashtag/DontFailMeNowBigU)
->
-> [7:20 AM • Apr 5, 2019](https://twitter.com/BryceWrayTX/status/1114140807764893696) (CDT)
+{% twitscrn "Twitter_1114140807764893696.png", "Tweet by @BryceWrayTX, 2019-04-05: I may be crazy, but have been stress-testing Ulysses and am giving it one more chance **not** to eat my stuff before I pull the plug on my subscription (ends in late May). It's hard to quit an app that makes writing such a pleasure, even one with known issues. #DontFailMeNowBigU", 1182, 578, "https://twitter.com/BryceWrayTX/status/1114140807764893696" %}
 
 And, almost as if it had gotten the message, Ulysses was good as gold across my devices---until this morning.
 
