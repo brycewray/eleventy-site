@@ -196,6 +196,10 @@ module.exports = function(eleventyConfig) {
     "disclaimer",
     require("./src/assets/utils/disclaimer.js")
   )
+  eleventyConfig.addShortcode(
+    "twitscrn",
+    require("./src/assets/utils/twitscrn.js")
+  )
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
