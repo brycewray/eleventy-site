@@ -5,7 +5,7 @@ subtitle: "iA Writer wins—for now"
 description: "Why, just months after proclaiming my allegiance to the Ulysses writing app, I’ve chosen to abandon it in favor of iA Writer."
 author: Bryce Wray
 date: 2019-04-20T11:17:00-05:00
-lastmod: 2021-10-17-T12:30:00-05:00
+lastmod: 2021-10-17T12:30:00-05:00
 discussionId: "2019-04-why-left-ulysses"
 featured_image: "hand-butterfly-3751159_6000x4000.jpg"
 featured_image_width: 6000
