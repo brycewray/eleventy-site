@@ -85,6 +85,7 @@ csp.txt
 cache-and-headers.js
 nonce-worker.js
 cache-nonce_mix.js
+cache-nonce_mix_safe.js
 cache-nonce-playground.js
 
 _data/csshash.json
