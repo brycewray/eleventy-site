@@ -1,6 +1,6 @@
 /*! purgecss start ignore */
 @import 'reset.css';
-/* @import 'fonts_Inter.css'; */
+@import 'fonts_Inter.css';
 /* @import 'fonts_PublicSans.css'; */
 @import 'prismjs.css';
 @import 'tailwindcss/base';
@@ -11,8 +11,9 @@
 @import 'nav.css';
 @import 'lazyload.css';
 @import 'lite-yt-embed.css';
-/* @import 'intervf.css'; */
-@import 'ffoxobliq.css'; /* for system fonts stack */
+@import 'intervf.css';
+/* @import 'ffoxobliq.css'; */
+/* above file for system fonts stack */
 @import 'tailwindcss/components';
 /*! purgecss end ignore */
 @import 'tailwindcss/utilities';
