@@ -5,7 +5,7 @@ subtitle: "Talking out, and about, my mixed feelings"
 description: "It’s perhaps not so much “love/hate” as it is geeky curiosity combined with an old guy’s impatience."
 author: Bryce Wray
 date: 2021-10-22T14:00:00-05:00
-#lastmod:
+lastmod: 2021-10-26T12:56:00-05:00
 discussionId: "2021-10-my-website-cloudflare-year-later"
 featured_image: "hans-peter-gauster-3y1zF4hIPCg-unsplash_5988x4000.jpg"
 featured_image_width: 5988
@@ -44,6 +44,9 @@ With Vercel, you can try to do that through a `vercel.json` file, but the proble
 - Insert dynamic nonces in third-party scripts associated with your site.
 
 While it's (always) a work in progress, you can see my spaghetti-ish implementation of such a Worker at [this GitHub repo](https://github.com/brycewray/cache-nonce-mix). I put up the repo as part of a Cloudflare contest I entered for the LOLs, but I hope you'll find it useful, too. As you'll see within the code, I gained a great deal of inspiration from others' contributions ("shoulders of giants," again).
+
+**Update, 2021-10-26**: Vercel announced today at the latest **[Next.js](https://nextjs.org) Conf** event that it was introducing **[Edge Functions](https://vercel.com/features/edge-functions)**. Although the Edge Functions functionality is in beta for now and its [examples](https://github.com/vercel/examples/tree/main/edge-functions) so far are entirely Next.js-based---as you'd expect, given that Vercel is Next's creator---it may well be that, soon, I'll be able to host the site on Vercel while using an Edge Function to do what I currently do with that CF Worker when the site is on Cloudflare Pages. If Cloudflare doesn't fix my gripes with Pages (see below) in fairly short order, such a move will be awfully tempting, my aforementioned CDN comparisons notwithstanding.
+{.yellowBox}
 
 ## What makes me leave (sometimes)
 
