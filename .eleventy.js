@@ -63,6 +63,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets/js")
   eleventyConfig.addPassthroughCopy("./src/assets/svg")
   eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
+  eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
