@@ -4,6 +4,7 @@
   "siteTitle": "BryceWray.com",
   "siteAuthor": "Bryce Wray",
   "siteDescription": "brycewray.com — Observations, opinions, geekery.",
+  "siteHost": "CFP",
   "feed": {
     "subtitle": "brycewray.com — Observations, opinions, geekery.",
     "filename": "index.xml",
