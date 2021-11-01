@@ -5,7 +5,7 @@ subtitle: "Save time and trouble with this intro and code"
 description: "The what, why, and how of Eleventy Image."
 author: Bryce Wray
 date: 2021-04-17T13:41:00-05:00
-lastmod: 2021-10-19T16:38:00-05:00
+lastmod: 2021-11-01T07:32:00-05:00
 discussionId: "2021-04-using-eleventys-official-image-plugin"
 featured_image: "camera-lens-color-bkgd-theregisti-TduXmZMD2uQ-unsplash_6000x4000.jpg"
 featured_image_width: 6000
@@ -14,6 +14,11 @@ featured_image_alt: "Close-up photo of camera lens with colorful mood lighting"
 featured_image_caption: |
   <span class="caption">Image: <a href="https://unsplash.com/@theregisti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">TheRegisti</a>; <a href="https://unsplash.com/s/photos/camera-lens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
 ---
+
+**Recommendation**: While I very much appreciate your stopping by to read this, I **strongly** recommend that, instead, you check out [Aleksandr Hovhannisyan](https://github.com/AleksandrHovhannisyan)'s **far** superior article, "[Lazily Loading Images with the 11ty Image Plugin](https://www.aleksandrhovhannisyan.com/blog/eleventy-image-lazy-loading/)."
+{.yellowBox}
+
+{% disclaimer %}
 
 It's been about a year since the first release of [Eleventy](https://www.11ty.dev)'s official image-processing plugin, [Eleventy Image](https://www.11ty.dev/docs/plugins/image/), but only in the last day or so have I given any serious thought to using it.
 
@@ -201,6 +206,9 @@ Now, just build your site, and Eleventy Image will do its magic everywhere withi
 .&nbsp;.&nbsp;.&nbsp;and the result thereof:
 
 {% image "my-pet-cat.jpg", "Photo of a cat named Shakespeare sitting on a window sill" %}
+
+**Disclaimer**: Image is sourced from Cloudinary (without using Eleventy&nbsp;Image) whenever the site is built with a non-Eleventy&nbsp;SSG, **but** this does show the result of the generated&nbsp;code.
+{.imgcCaption}
 
 Of course, you'll want to get a sneak peek by running Eleventy in development mode and viewing your site locally, in case you need to adjust your site's CSS so each resulting image appears as you want.[^sizesInfo]
 
