@@ -188,7 +188,7 @@ Late in the third week of this effort, even as I got those last few items workin
 
 One other thing kept nagging at me, also: footnotes. Here on the Hugo site, as I [explained](/posts/2019/02/ia-for-io) back in February, I can type stuff like this:
 
-```md
+```markup
 This is how you do footnotes[^footnoteInfo] in
 Markdown and Hugo, even as you keep adding them,
 moving them around within the doc, *etc.*, and
@@ -204,7 +204,7 @@ the original reference and down at the bottom.
 
 Then, down at the bottom, you get something that looks kind of like this:
 
-<p class="legal">3.&nbsp;&nbsp;So here we are at the bottom.<span class="footnote-sim">↑</span></p>
+<p class="legal font-sans">3.&nbsp;&nbsp;So here we are at the bottom.<span class="footnote-sim">↑</span></p>
 
 For somebody like me who uses footnotes a lot and moves their origins' paragraphs around frequently during the editing process, that's a gotta-have. For Gatsby, there are a couple of plugins that purport to provide it, but I found neither to do the job *reliably*. The most widely used one would work *sometimes*, but then something else would cause a crash and, after the reboot, suddenly that same Markdown would produce this in the rendered page:
 
