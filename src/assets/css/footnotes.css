@@ -1,7 +1,12 @@
 /* start, footnotes */
 
-.footnotes {
+.footnotes, .footnote-sim {
   @apply font-sans;
+}
+
+.footnote-sim {
+  @apply text-blue-500 dark:text-blue-100;
+  font-size: 0.65em;
 }
 
 .footnote-ref {
