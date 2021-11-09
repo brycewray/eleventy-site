@@ -24,7 +24,7 @@ table.noborders {
 }
 
 table.noborders td {
-  @apply text-gray-800 text-left align-middle py-1 pr-0 pl-2;
+  @apply text-zinc-800 text-left align-middle py-1 pr-0 pl-2;
   /* text-align: left !important; */
 }
 
@@ -37,7 +37,7 @@ table.noborders tr {
 }
 
 table.noborders tr:nth-child(even) {
-  @apply bg-gray-200;
+  @apply bg-zinc-200;
 }
 
 table.noborders thead tr {

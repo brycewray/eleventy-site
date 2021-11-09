@@ -7,12 +7,12 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  */
 
  code {
-  @apply bg-blue-50 dark:bg-blueGray-700;
+  @apply bg-blue-50 dark:bg-slate-700;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-blueGray-200 bg-transparent text-base whitespace-pre text-left break-normal leading-normal;
+  @apply text-slate-200 bg-transparent text-base whitespace-pre text-left break-normal leading-normal;
   word-spacing: normal;
   word-wrap: normal;
   tab-size: 4;
@@ -26,7 +26,7 @@ pre[class*="language-"] {
 }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-  @apply bg-blueGray-900;
+  @apply bg-slate-900;
 }
 
 /* Inline code */
@@ -44,7 +44,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-  @apply text-blueGray-300;
+  @apply text-slate-300;
 }
 
 .token.tag,
@@ -84,7 +84,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  @apply text-blueGray-300;
+  @apply text-slate-300;
 }
 
 .token.operator,

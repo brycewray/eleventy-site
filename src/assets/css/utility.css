@@ -1,5 +1,5 @@
 .yellowBox, .blueBox {
-  @apply font-sans border border-gray-900 border-solid mx-auto my-8 w-full p-8 dark:bg-gray-800 dark:border-gray-500;
+  @apply font-sans border border-zinc-900 border-solid mx-auto my-8 w-full p-8 dark:bg-zinc-800 dark:border-zinc-500;
 }
 
 .yellowBox {
@@ -34,7 +34,7 @@
 }
 
 .navWhite:focus, .navWhite:active {
-  @apply text-gray-400;
+  @apply text-zinc-400;
 }
 
 .text-blue-light {
@@ -60,7 +60,7 @@ span.caption {
 span.caption a {
   @apply text-blue-100 border-blue-100;
   &:focus, &:hover, &:active {
-    @apply text-blueGray-200 border-blue-100;
+    @apply text-slate-200 border-blue-100;
   }
 }
 
@@ -87,7 +87,7 @@ span.caption a {
 }
 
 .twitter-tweet {
-  @apply mt-4 mx-auto mb-0 p-1 rounded-xl bg-white border-2 border-solid border-gray-700 dark:border-gray-300;
+  @apply mt-4 mx-auto mb-0 p-1 rounded-xl bg-white border-2 border-solid border-zinc-700 dark:border-zinc-300;
 }
 
 a .twitter-tweet {

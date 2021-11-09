@@ -1,9 +1,8 @@
-const colors = require('tailwindcss/colors')
+let colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: {
-    content: [
+  content: {
+    files: [
       './src/**/*.js',
       './src/**/*.11ty.js',
       './src/**/*.njk',
@@ -21,6 +20,20 @@ module.exports = {
       }),
       animation: {
         fade: 'fadeIn 1s ease-in-out',
+      },
+      colors: {
+        blue: {
+          '50': '#e6f9ff',
+          '100': '#bbeeff',
+          '200': '#00aaff',
+          '300': '#0088ff',
+          '400': '#0033ff',
+          '500': '#0000ff',
+          '600': '#0000bb',
+          '700': '#0000aa',
+          '800': '#000088',
+          '900': '#000066',
+        },
       },
     },
     fontWeight: {
@@ -51,32 +64,6 @@ module.exports = {
       disc: 'disc',
       decimal: 'decimal',
       square: 'square',
-    },
-    colors: {
-      transparent: 'transparent',
-      white: '#ffffff',
-      black: '#000000',
-      blueGray: colors.blueGray,
-      gray: colors.gray,
-      red: colors.red,
-      orange: colors.orange,
-      amber: colors.amber,
-      yellow: colors.yellow,
-      green: colors.green,
-      teal: colors.teal,
-      sky: colors.sky,
-      blue: {
-        '50': '#e6f9ff',
-        '100': '#bbeeff',
-        '200': '#00aaff',
-        '300': '#0088ff',
-        '400': '#0033ff',
-        '500': '#0000ff',
-        '600': '#0000bb',
-        '700': '#0000aa',
-        '800': '#000088',
-        '900': '#000066',
-      },
     },
     fontFamily: {
       'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'Noto Sans', 'Segoe UI', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
