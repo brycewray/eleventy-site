@@ -46,7 +46,7 @@
   &-Latest {
     margin-top: 0.5em;
     margin-bottom: 0.25em;
-    font-weight: 825;
+    font-weight: 725;
     font-size: 2rem;
     @media screen and (min-width: var.$bkpt_lg) {
       margin-top: 0;
@@ -55,6 +55,9 @@
     }
     @media screen and (min-width: var.$bkpt_2xl) {
       font-size: 4rem;
+    }
+    @media screen and (prefers-color-scheme:dark) {
+      font-weight: 675;
     }
   }
   &-Title {

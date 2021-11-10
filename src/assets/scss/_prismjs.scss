@@ -10,6 +10,8 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
  code {
   font-family: var.$monospaced;
+  font-kerning: none;
+  font-variant-ligatures: none;
   background: var.$blueLightCode;
   @media screen and (prefers-color-scheme: dark) {
     background: var.$code-bkgd-dark-mode;
