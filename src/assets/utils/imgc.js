@@ -28,15 +28,15 @@ module.exports = (url, alt, width, height, tmpl) => {
       break
     */
     case 'posts':
-      divClass = `h-full`
-      imgClass = `imgCover hero animate-fade`
-      nscClass = `imgCover animate-fade`
-      dataSzes = `100vw`
+      divClass = `relative`
+      imgClass = `w-full h-auto aspect-[${width}/${height}]`
+      nscClass = `w-full h-auto aspect-[${width}/${height}]`
+      dataSzes = `(min-width: 1024px) 100vw, 50vw`
       break
     default:
       divClass = `relative`
-      imgClass = `containedImage lazy`
-      nscClass = `containedImage animate-fade`
+      imgClass = `w-full h-auto aspect-[${width}/${height}] lazy`
+      nscClass = `w-full h-auto aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
@@ -48,7 +48,7 @@ module.exports = (url, alt, width, height, tmpl) => {
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
   </noscript>
-  <img class="${imgClass}" aspect-ratio="${width} / ${height}" data-src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" data-srcset="`
+  <img class="${imgClass}" ${tmpl != 'posts' ? `data-` : ``}src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" ${tmpl != 'posts' ? `data-` : ``}srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)
@@ -57,7 +57,7 @@ module.exports = (url, alt, width, height, tmpl) => {
     stringtoRet += arrayFromLoop.join(', ')
     // h/t https://stackoverflow.com/questions/2047491/how-to-remove-last-comma
     stringtoRet += `" alt="${alt}" width="${width}" height="${height}"`
-    if (divClass !== "h-full") {
+    if (tmpl !== "posts") {
       stringtoRet += ` loading="lazy"` // not good for above-the-fold images
     }
     stringtoRet +=` sizes="${dataSzes}" />
