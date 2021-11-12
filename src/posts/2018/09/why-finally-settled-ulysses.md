@@ -8,12 +8,11 @@ author: Bryce Wray
 date: 2018-09-22T11:04:36-05:00
 lastmod: 2020-08-10T20:15:00-05:00
 discussionId: "2018-09-why-finally-settled-ulysses"
-featured_image: "Ulysses-Preferences-General-screen-shot-dark-mode_blk_bkgd_1280x720.jpg"
+featured_image: "Ulysses-Preferences-General-screen-shot-dark-mode_dk-blue_bkgd_1853x1043.png"
 featured_image_width: 1280
 featured_image_height: 720
 featured_image_alt: "Screen capture - Ulysses app preferences window"
-featured_image_caption: |
-  <span class="caption">Image: <strong>Preferences</strong> window in the Ulysses app</span>
+#featured_image_caption:
 ---
 
 As I write this in late September, 2018, it's a little over a year since I began writing a novel I really, truly thought I'd have finished by now.
@@ -42,7 +41,7 @@ So, once again, I began researching writing software. But this time, I had a bet
 
 Do I regret having Scrivener? Absolutely not! I still use it from time to time, and occasionally have cast a longing eye back toward it and switched stuff from Ulysses to it. But---at least so far---I keep switching back. And I really think I'm gonna stick with Big U this time. I'll explain why below. _N.B.: I don't give a flip one way or the other about subscriptions, so long as it's something I need and will use. Ulysses easily passes that test. So I won't engage in **that** holy war. Fought and done, as far as I'm concerned._
 
-## The curse of DTP, or why I _need_ Ulysses 
+## The curse of DTP, or why I _need_ Ulysses
 
 You can read oodles of reviews of Ulysses and its "beautiful" interface and all that. I won't try to add to those, at least not at this time, although I may do so somewhere down the line. This is simply an explanation of how my particular mindset requires something like a Ulysses to do creative writing---and, for that matter, what you're reading now.[^1]
 
@@ -64,7 +63,7 @@ Once I realized this about myself, it was clear why my particular DTP-/typograph
 
 Ulysses probably isn't where I'd want to write, say, _another_ book the size of the James Joyce novel after which I presume it was named. At least, that's what most reviewers say with almost an "And of course you know" sort of shrug. Since I'm more into writing stuff that ranges from short stories to, in the case of the current WIP, slightly-longer-than-novella novels, that's not a problem for me. If you're trying to write the twenty-first century version of _War and Peace_, well, then you're probably better off in Scrivener.
 
-I don't mean to cast shade on Scrivener and the wonderful people at L&amp;L. There are many authors who swear by Scrivener as the only way they can write. They clearly don't have my problem with being distracted by the appearance of text. But, believe me, when you've spent most of your adult life having to make sure paragraphs and pages and websites both _looked_ and _read_ a certain way, you're going to find it hard to divorce the text from the look of the text. Yet, that's exactly what you have to do if you're going to _write_. 
+I don't mean to cast shade on Scrivener and the wonderful people at L&amp;L. There are many authors who swear by Scrivener as the only way they can write. They clearly don't have my problem with being distracted by the appearance of text. But, believe me, when you've spent most of your adult life having to make sure paragraphs and pages and websites both _looked_ and _read_ a certain way, you're going to find it hard to divorce the text from the look of the text. Yet, that's exactly what you have to do if you're going to _write_.
 
 As [David Hewson](https://davidhewson.com) [puts it so well](https://davidhewson.com/2017/08/13/five-reasons-i-use-ulysses/):
 
