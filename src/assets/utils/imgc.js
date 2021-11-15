@@ -22,14 +22,14 @@ module.exports = (url, alt, width, height, tmpl) => {
     /* === 'index'case used with home page when it had a hero image (pre-Jan. 2021)
     case 'index':
       divClass = `h-full`
-      imgClass = `object-cover object-center h-full w-full containedImage animate-fade`
+      imgClass = `nScrHidden object-cover object-center h-full w-full containedImage animate-fade`
       nscClass = `imgCover hero`
       dataSzes = `100vw`
       break
     */
     case 'posts':
       divClass = `relative`
-      imgClass = `w-full h-auto aspect-[${width}/${height}]`
+      imgClass = `nScrHidden w-full h-auto aspect-[${width}/${height}]`
       nscClass = `w-full h-auto aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
       break
