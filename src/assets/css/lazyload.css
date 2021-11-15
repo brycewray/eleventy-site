@@ -17,4 +17,5 @@
 .lazy:not([src]) {
   @apply invisible;
 }
+
 /* end of CSS from vanilla-lazyload */
