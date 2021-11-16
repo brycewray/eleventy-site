@@ -5,12 +5,11 @@
 }
 
 .footnote-sim {
-  @apply text-blue-500 dark:text-blue-100;
-  font-size: 0.65em;
+  @apply text-blue-500 dark:text-blue-100 text-fn;
 }
 
 .footnote-ref {
-  @apply font-sans text-fn md:text-xs;
+  @apply font-sans text-fn;
 }
 
 .footnote-ref a {

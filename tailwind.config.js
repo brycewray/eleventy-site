@@ -46,7 +46,7 @@ module.exports = {
       white: theme('colors.white'),
     }),
     fontSize: {
-      'fn': '.65rem',
+      'fn': '.65em', // definitely em, not rem
       'xs': '.75rem',
       'sm': '.875rem',
       'base': '1rem',
