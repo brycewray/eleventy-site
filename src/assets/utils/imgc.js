@@ -9,13 +9,16 @@ statement below defaults to body copy-style image-handling.
 The `animate-fade` CSS class is from the Tailwind CSS config file.
 */
 
+const md5 = require('md5')
 const respSizes = [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
 var cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
-var LQIPpholder = 'f_auto,q_1,w_20/' // note ending slash
+var LQIPholder = 'f_auto,q_1,w_20/' // note ending slash
 var xFmPart1 = 'f_auto,q_auto:eco,w_'
 var xFmPart2 = ',x_0,z_1/' // note ending slash
 
 module.exports = (url, alt, width, height, tmpl) => {
+  var imgBmd5 = md5(url)
+
   if (!tmpl) tmpl == "none"
 
   switch(tmpl) {
@@ -28,13 +31,13 @@ module.exports = (url, alt, width, height, tmpl) => {
       break
     */
     case 'posts':
-      divClass = `relative`
+      divClass = `relative imgB-${imgBmd5}`
       imgClass = `nScrHidden w-full h-auto aspect-[${width}/${height}]`
       nscClass = `w-full h-auto aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
       break
     default:
-      divClass = `relative`
+      divClass = `relative imgB-${imgBmd5}`
       imgClass = `w-full h-auto aspect-[${width}/${height}] lazy`
       nscClass = `w-full h-auto aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
@@ -44,6 +47,11 @@ module.exports = (url, alt, width, height, tmpl) => {
   var arrayFromLoop = []
 
   stringtoRet = `
+  <style nonce="DhcnhD3khTMePgXw">
+    .imgB-${imgBmd5} {
+      background-image: url(${cloudiBase + LQIPholder + url})
+    }
+  </style>
   <div class="${divClass} bg-center bg-no-repeat bg-cover">
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
