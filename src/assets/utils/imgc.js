@@ -47,11 +47,7 @@ module.exports = (url, alt, width, height, tmpl) => {
   var arrayFromLoop = []
 
   stringtoRet = `
-  <style nonce="DhcnhD3khTMePgXw">
-    .imgB-${imgBmd5} {
-      background-image: url(${cloudiBase + LQIPholder + url})
-    }
-  </style>
+  <style nonce="DhcnhD3khTMePgXw">.imgB-${imgBmd5} {background-image: url(${cloudiBase + LQIPholder + url})}</style>
   <div class="${divClass} bg-center bg-no-repeat bg-cover">
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
