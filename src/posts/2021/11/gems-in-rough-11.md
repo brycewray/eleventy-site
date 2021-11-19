@@ -5,7 +5,7 @@ subtitle: "Dueling announcements, CSP-allowed CSS, fun with LQIPs"
 description: "If you know what an “SSG” is, perhaps you’ll have interest in these items."
 author: Bryce Wray
 date: 2021-11-19T11:27:00-06:00
-#lastmod:
+#lastmod: 2021-11-19T14:27:00-06:00
 discussionId: "2021-11-gems-in-rough-11"
 featured_image: "gemstones-sung-jin-cho-0d3qxUozE-0-unsplash_7315x4881.jpg"
 featured_image_width: 7315
@@ -53,7 +53,9 @@ When [lazy-loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Laz
 That's easily done by having the full image housed within a `div` whose background is that LQIP. This typically is done with inline styling which changes dynamically on a per-image basis. I had once implemented this via the site's `imgc.js` file, which works throughout the site as an [Eleventy](https://11ty.dev) [shortcode](https://11ty.dev/docs/shortcodes). However, I found that's a no-go with a tight CSP---and now you understand my interest in that new nonce-handling in the Cloudflare Worker, which allowed me to add the following capabilities to `imgc.js`:
 
 - The [md5 package](https://github.com/pvorb/node-md5) generates a random hash of the image's file name.
-- There's now a dynamically generated CSS class named `imgB-` followed by the hash. The class has only one item, specifying the image as `background-image` for whatever uses the rule.
+- There's now a dynamically generated CSS class named `imgB-` followed by the hash. The class has only one item, specifying the LQIP[^typoFix] as `background-image` for whatever uses the rule.
 - The wrapping `div` includes this class.
+
+[^typoFix]: Not the full image, as I erroneously stated in the initial publication of this post.
 
 The code for `imgc.js` is viewable on [this site's repo](https://github.com/brycewray/eleventy_site), specifically at [this link](https://github.com/brycewray/eleventy_site/blob/main/src/assets/utils/imgc.js). If you want to see the resulting HTML from how it works, use your browser's Inspector tool on this post's featured image. Refresh the page and you'll see that the end of the `imgB-` rule changes each time. That's the whole point of the nonce, thus making everything fine where the CSP's `style-src` portion is concerned.
