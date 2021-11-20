@@ -13,7 +13,7 @@ featured_image_width: 7315
 featured_image_height: 4881
 featured_image_alt: "Colorful gemstones"
 featured_image_caption: |
-  <span class="caption">Image:s <a href="https://unsplash.com/@mbuff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sung Jin Cho</a>; <a href="https://unsplash.com/s/photos/gemstones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
+  <span class="caption">Image: <a href="https://unsplash.com/@mbuff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sung Jin Cho</a>; <a href="https://unsplash.com/s/photos/gemstones?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
 ---
 
 Yes, friends, [once again](/posts/2021/03/gems-in-rough-03) we're going to go through a few instances of folderol, borderline fulmination, and perhaps foolishness about developing stuff for Ye Olde Webbe.
