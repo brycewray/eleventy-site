@@ -1,5 +1,5 @@
 lite-youtube {
-  @apply bg-black relative block bg-center bg-cover cursor-pointer max-w-[720px];
+  @apply bg-black relative block bg-center bg-cover cursor-pointer max-w-[720px] mx-auto;
 }
 
 /* gradient */
