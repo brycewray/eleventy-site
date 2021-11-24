@@ -14,15 +14,15 @@ layout: base
           {% if loop.index0 < 3 %}
           <div class="lg:pr-8">
             <h2 class="not-italic tracking-tight text-2xl lg:text-3xl 2xl:text-4xl"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
-            <p class="font-bold leading-tight mt-1 mb-0 text-xl lg:text-2xl 2xl:text-3xl">{{ post.data.subtitle | safe }}</p>
-            <p class="text-sm tracking-normal my-2 text-gray-700 dark:text-gray-400">
+            <p class="font-bold leading-tight mt-2 mb-0 text-xl lg:text-2xl 2xl:text-3xl">{{ post.data.subtitle | safe }}</p>
+            <p class="text-base my-4">
+              {{ post.data.description | safe }}
+            </p>
+            <p class="text-lg tracking-normal leading-tight mb-8 text-gray-700 dark:text-gray-400">
               <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
               {% if post.data.lastmod %}
-              <br />Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time>
+              <br /><span class="text-sm">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
               {% endif %}
-            </p>
-            <p class="text-base mt-1 mb-6 lg:mb-10">
-              {{ post.data.description | safe }}
             </p>
           </div>
           {% endif %}
