@@ -94,8 +94,8 @@
     <link rel="preload" href="/assets/fonts/PublicSans-Italic-VF-2-000_2021-11-01_subset.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
     -->
     {% if eleventyEnv == "production" %}
-      <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
-      <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
     {% else %}
       <link rel="stylesheet" href="/css/index.css" type="text/css" />
     {% endif %}
