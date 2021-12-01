@@ -17,17 +17,11 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "browserslist": [
-    "last 4 versions",
-    "> 1%",
-    "maintained node versions"
-  ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0-beta.2",
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
-    "autoprefixer": "^10.4.0",
     "cross-env": "^7.0.3",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-rss-helper": "^1.2.1",
