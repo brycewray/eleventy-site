@@ -13,7 +13,7 @@ pagination:
   alias: posts
 ---
   <main>
-    <div class="text-center px-10 w-full lg:w-2/3 2xl:w-3/5 mx-auto">
+    <div class="text-center px-10 w-full lg:w-4/5 mx-auto">
       <h1 class="tracking-tight pt-8 lg:pt-12 2xl:pt-16 2xl:mb-8 text-4xl lg:text-5xl 2xl:text-6xl">Posts</h1>
       <div class="post-line"></div>
       <div>
@@ -38,13 +38,13 @@ pagination:
           <span class="text-gray-500">&#9654;&#9654;</span>
           {% endif %}
         </p>
-        <hr class="mt-2 mb-6 mx-auto w-4/5 lg:w-3/5 2xl:w-1/2" />
+        <hr class="mt-2 mb-6 mx-auto w-5/6 lg:w-4/5 2xl:w-3/5" />
         {% for post in posts %}
           <div class="font-sans">
             <h2 class="text-xl lg:text-3xl 2xl:text-4xl mb-2 tracking-tight"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
             <p class="text-base lg:text-xl 2xl:text-2xl leading-tight mb-2"><strong>{{ post.data.subtitle | safe }}</strong></p>
             <p class="text-sm lg:text-base 2xl:text-lg my-2">
-              {{ post.data.description | safe }}
+              <em>{{ post.data.description | safe }}</em>
             </p>
             <p class="text-sm leading-tight lg:text-base 2xl:text-lg text-gray-700 dark:text-gray-400 mt-0 mb-8"><strong><time class="inline" datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
               {% if post.data.lastmod %}
@@ -53,7 +53,7 @@ pagination:
             </p>
           </div>
         {% endfor %}
-        <hr class="mt-6 mx-auto w-4/5 lg:w-3/5 2xl:w-1/2" />
+        <hr class="mt-6 mx-auto w-5/6 lg:w-4/5 2xl:w-3/5" />
         <p class="text-center mt-2 mb-16">
           {% if pagination.firstPageHref != page.url %}
           <a class="border-transparent" aria-label="First page" href="{{ pagination.firstPageHref}}">&#9664;&#9664;</a>
