@@ -96,3 +96,8 @@ _data/jshash.json
 
 _data/lazyloadhelper.json
 _data/mobilemenuhelper.json
+
+start.sh
+build.sh
+testbuild.sh
+push.sh
