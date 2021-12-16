@@ -1,8 +1,8 @@
-  <div class="container h-auto w-full min-w-full relative overflow-hidden pt-6 px-4 md:px-12 lg:px-16">
-    <h1 class="text-center lg:text-left text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-tight leading-tight mt-2 mb-4 md:mt-6 md:mb-6 2xl:mt-16">{{ title | safe }}</h1>
+  <div class="container h-auto w-full min-w-full relative overflow-hidden pt-6 px-4 md:px-16 lg:px-20 2xl:px-44">
+    <h1 class="text-center lg:text-left text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl tracking-[-0.035em] mt-2 mb-4 md:mb-6 md:pt-6 lg:pt-8 2xl:pt-12 leading-tight">{{ title | safe }}</h1>
     {% if subtitle %}<h2 class="text-center lg:text-left text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl mb-4 md:mb-6 2xl:mb-6 leading-tight tracking-tight">{{ subtitle | safe }}</h2>{% endif %}
-    {% if description %}<p class="text-center lg:text-left md:block md:text-2xl 2xl:text-3xl tracking-tight mt-4 md:mt-8 mb-0 md:mb-6 2xl:mb-12"><em>{{ description | safe }}</em></p>{% endif %}
-    <p class="text-center lg:text-right text-base lg:text-lg 2xl:text-xl px-4 md:px-0 mt-8 mb-0 md:mt-0">
+    {% if description %}<p class="text-center lg:text-left md:block md:text-2xl lg:text-3xl 2xl:text-4xl tracking-tight mt-4 md:mt-8 mb-0 md:mb-6 2xl:mb-12"><em>{{ description | safe }}</em></p>{% endif %}
+    <p class="text-center lg:text-right text-base lg:text-xl 2xl:text-2xl px-4 md:px-0 mt-8 mb-0 md:mt-0">
       <strong>{{ page.date | htmlDateString }}</strong>{% if lastmod %}<br /><span class="text-sm">Last modified {{ lastmod | htmlDateString }}</span>{% endif %}
     </p>
   </div>
