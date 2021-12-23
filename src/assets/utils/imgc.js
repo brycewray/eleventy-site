@@ -38,7 +38,7 @@ module.exports = (url, alt, width, height, tmpl) => {
       break
     default:
       divClass = `relative imgB-${imgBmd5}`
-      imgClass = `w-full h-auto aspect-[${width}/${height}] lazy`
+      imgClass = `w-full h-auto aspect-[${width}/${height}] animate-fade`
       nscClass = `w-full h-auto aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
@@ -52,7 +52,7 @@ module.exports = (url, alt, width, height, tmpl) => {
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
   </noscript>
-  <img class="${imgClass}" ${tmpl != 'posts' ? `data-` : ``}src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" ${tmpl != 'posts' ? `data-` : ``}srcset="`
+  <img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)

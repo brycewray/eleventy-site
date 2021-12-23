@@ -12,7 +12,7 @@ var xFmPart2 = ',x_0,z_1/' // note ending slash
 
 module.exports = (imageUrl, alt, width, height, twitterUrl) => {
   var imgBmd5 = md5(imageUrl)
-  imgClass = `containedImage twitter-tweet lazy`
+  imgClass = `containedImage twitter-tweet animate-fade`
   nscClass = `containedImage animate-fade`
   dataSzes = `(min-width: 1024px) 100vw, 50vw`
 
@@ -22,7 +22,7 @@ module.exports = (imageUrl, alt, width, height, twitterUrl) => {
   stringtoRet = `
   <style nonce="DhcnhD3khTMePgXw">.imgB-${imgBmd5} {background-image: url(${cloudiBase + LQIPholder + imageUrl})}</style>
   <div class="relative imgB-${imgBmd5} bg-center bg-no-repeat bg-cover rounded-xl">
-  <a href="${twitterUrl}" target="_blank" rel="noopener"><img class="${imgClass}" aspect-ratio="${width} / ${height}" data-src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + imageUrl}" data-srcset="`
+  <a href="${twitterUrl}" target="_blank" rel="noopener"><img class="${imgClass}" aspect-ratio="${width} / ${height}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + imageUrl}" srcset="`
   respSizes.forEach(size => {
     if (size <= width) {
       arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + imageUrl} ${size}w`)
