@@ -9,3 +9,5 @@ lastmod: 2021-01-30T13:55:00-05:00
 ---
 
 (The text for the home page is all in the appropriate template.)
+
+(Adding this 2021-12-23 to beta-test faster CFP builds)
