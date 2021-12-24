@@ -1,6 +1,6 @@
 /*
 This shortcode takes the following form...
-  {% imgcHero url, alt, width, height, tmpl %}
+  {% imgc url, alt, width, height, tmpl %}
 ...with url in the form of (note NO leading or ending slash):
   filename.ext
 ...and 'temp[late]' optional in body copy. The template is used to specify
