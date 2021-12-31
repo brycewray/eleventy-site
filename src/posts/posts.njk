@@ -46,7 +46,11 @@ pagination:
             <p class="text-sm lg:text-base 2xl:text-lg my-2">
               <em>{{ post.data.description | safe }}</em>
             </p>
-            <p class="text-sm leading-tight lg:text-base 2xl:text-lg mt-0 mb-8"><strong><time class="inline" datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong></p>
+            <p class="text-sm leading-tight lg:text-base 2xl:text-lg mt-0 mb-8"><strong><time class="inline" datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
+              {% if post.data.lastmod %}
+              <br /><span class="text-xs lg:text-sm">Last modified <time class="inline" datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
+              {% endif %}
+            </p>
           </div>
         {% endfor %}
         <hr class="mt-6 mx-auto w-5/6 lg:w-4/5 2xl:w-3/5" />

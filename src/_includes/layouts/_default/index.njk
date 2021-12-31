@@ -19,7 +19,11 @@ layout: base
               <em>{{ post.data.description | safe }}</em>
             </p>
             <p class="text-lg tracking-normal leading-tight mb-8">
-              <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong></p>
+              <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
+              {% if post.data.lastmod %}
+              <br /><span class="text-sm">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
+              {% endif %}
+            </p>
           </div>
           {% endif %}
         {% endfor %}
