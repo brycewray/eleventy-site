@@ -31,9 +31,9 @@ module.exports = (url, alt, width, height, tmpl) => {
       break
     */
     case 'posts':
-      divClass = `relative imgB-${imgBmd5}`
-      imgClass = `nScrHidden w-full h-auto aspect-[${width}/${height}] animate-fade`
-      nscClass = `w-full h-auto aspect-[${width}/${height}]`
+      divClass = `h-full imgB-${imgBmd5}`
+      imgClass = `nScrHidden imgCover hero animate-fade`
+      nscClass = `imgCover aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
       break
     default:
