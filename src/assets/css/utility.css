@@ -95,3 +95,7 @@ span.caption a {
 a .twitter-tweet {
   @apply m-0;
 }
+
+.featImgCapt a {
+  @apply text-blue-100 border-blue-100;
+}
