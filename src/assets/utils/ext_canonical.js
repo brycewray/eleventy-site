@@ -1,6 +1,6 @@
 module.exports = (ext_canonical) => {
 var extCanonical = `
-<p class="blueBox"><strong>Note</strong>: This article originally appeared on the <a href="${ext_canonical}" target="_blank">Stackbit blog</a>.</p>`
+<p class="blueBox"><strong>Note</strong>: This article originally appeared on the <a href="${ext_canonical}" target="_blank">Stackbit blog</a> and includes edits (content-related and stylistic) by the Stackbit staff.</p>`
 return extCanonical
 }
 
