@@ -3,13 +3,13 @@
   "description": "The repository for brycewray.com, a website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
   "private": true,
   "scripts": {
-    "clean": "rimraf _site",
-    "hasher": "node csshash.js && node jshash.js",
+    "clean": "rimraf _site src/_includes/css",
+    "hasher": "node jshash.js",
     "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all clean --parallel dev:*",
     "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --quiet --incremental --serve",
     "build": "NODE_ENV=production npm-run-all clean hasher --parallel prod:*",
-    "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash-out) --minify",
+    "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o src/_includes/css/index.css --minify",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
     "testbuild:bsync": "browser-sync start --server ./_site -w --no-open --no-notify --no-ghost-mode --port 3000 --ui-port 3001",
     "testbuild": "NODE_ENV=production npm run build && npm run testbuild:bsync"
