@@ -1,5 +1,5 @@
 .yellowBox, .blueBox {
-  @apply font-sans border border-zinc-900 border-solid mx-auto my-8 w-full p-8 dark:bg-zinc-800 dark:border-zinc-500;
+  @apply font-sans border border-zinc-900 border-solid mx-auto my-8 w-full p-[1.5em] dark:bg-zinc-800 dark:border-zinc-500;
 }
 
 .yellowBox {
