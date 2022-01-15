@@ -219,7 +219,15 @@ It doesn't build a site as quickly as Hugo---nothing beats Hugo on that score---
 
 While we're on the subject of speed: while I was working on this post, I saw this Leatherman tweet:
 
-{% twitscrn "Twitter_1169998370041208832.png", "Tweet from @zachleat, 2019-09-06: Which has a better First Meaningful Paint time? 1. a raw 8.5MB HTML file with the full text of every single one of my 27,506 tweets 2. a client rendered React site with exactly one tweet on it (Spoiler: @____lighthouse reports 8.5MB of HTML wins by about 200ms)", 1182, 704, "https://twitter.com/zachleat/status/1169998370041208832" %}
+{% twitText "Which has a better First Meaningful Paint time?
+
+① a raw 8.5MB HTML file with the full text of every single one of my 27,506 tweets
+
+② a client rendered React site with exactly one tweet on it
+
+(Spoiler:
+@____lighthouse
+ reports 8.5MB of HTML wins by about 200ms)", "zachleat", "1169998370041208832", "2019-09-06" %}
 
 React. Hmm. Wonder whom he might be zinging there? Good job, sir. Given the Gatsby team's continual boasting about how they can handle massive amounts of data with ease, I hope you're making them sweat, even if just a little.[^tweetEase]
 

@@ -26,7 +26,7 @@ The [release earlier this week of version 0.90.0](https://github.com/gohugoio/hu
 
 My initial reaction was: well, that’s surely cool, but I doubt I’ll ever need that functionality in my own relatively limited use[^1] of Hugo. Then, yesterday, a tweet by long-renowned Hugo expert [Régis Philibert](https://github.com/regisphilibert) gave me second thoughts:
 
-{% twitscrn "Twitter_1469417024518565900.png", "Tweet by @regisphilibert, 2021-12-10: With @GoHugoIO latest and its supercharged `resource.Get` there’s no more limit to what your favorite SSG can fetch from the cloud! Any kind of files really, but a full fledged fetch like API is really what I was waiting for. And boy am I.", 1190, 2208, "https://twitter.com/regisphilibert/status/1469417024518565900" %}
+{% twitText "With @GoHugoIO latest and its supercharged `resource.Get` there’s no more limit to what your favorite SSG can fetch from the cloud! Any kind of files really, but a full fledged fetch like API is really what I was waiting for. And boy am I 🤩.", "regisphilibert", "1469417024518565900", "2021-12-10" %}
 
 And, lo and behold, it hit me this morning: this new ability by Hugo to fetch remote stuff meant, now, I could use [Base64](https://en.wikipedia.org/wiki/Base64)-encoded [low-quality image placeholders](https://www.guypo.com/introducing-lqip-low-quality-image-placeholders) (LQIPs) in my image-handling shortcode (most recently described in “[Go big or Go home? The sequel](/posts/2021/11/go-big-go-home-sequel)”).
 

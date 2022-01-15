@@ -148,7 +148,7 @@ Yet another nail in the Ulysses sub's coffin.
 
 But it was hard to let go. Even as late as a couple of weeks ago, I found myself posting this on Twitter:
 
-{% twitscrn "Twitter_1114140807764893696.png", "Tweet by @BryceWrayTX, 2019-04-05: I may be crazy, but have been stress-testing Ulysses and am giving it one more chance **not** to eat my stuff before I pull the plug on my subscription (ends in late May). It's hard to quit an app that makes writing such a pleasure, even one with known issues. #DontFailMeNowBigU", 1182, 578, "https://twitter.com/BryceWrayTX/status/1114140807764893696" %}
+{% twitText "I may be crazy, but have been stress-testing Ulysses and am giving it one more chance **not** to eat my stuff before I pull the plug on my subscription (ends in late May). It's hard to quit an app that makes writing such a pleasure, even one with known issues. #DontFailMeNowBigU", "BryceWrayTX", "1114140807764893696", "2019-04-05" %}
 
 And, almost as if it had gotten the message, Ulysses was good as gold across my devices---until this morning.
 
