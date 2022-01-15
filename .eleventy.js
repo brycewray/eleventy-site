@@ -205,6 +205,10 @@ module.exports = function(eleventyConfig) {
     "ext_canonical",
     require("./src/assets/utils/ext_canonical.js")
   )
+  eleventyConfig.addShortcode(
+    "twitText",
+    require("./src/assets/utils/twitText.js")
+  )
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
