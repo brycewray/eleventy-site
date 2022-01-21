@@ -20,7 +20,7 @@ layout: base
             {% endif %}
           </h2>
           <p class="font-sans hidden not-italic lg:block md:text-2xl md:text-left tracking-tight mt-8 mb-6 text-white"><em>{{ description }}</em></p>
-          <p class="font-sans text-base text-center px-4 md:text-right md:px-0 mt-4 md:mt-0 mb-0 text-white">
+          <p class="font-sans leading-tight text-base text-center px-4 md:text-right md:px-0 mt-4 md:mt-0 mb-0 text-white">
             <strong class="text-lg md:text-xl 2xl:text-2xl">{{ page.date | htmlDateString }}</strong><br />
             <span class="text-sm">
             {% if lastmod %}
@@ -44,6 +44,7 @@ layout: base
     <div class="sm:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-1/2 mt-10 mr-auto ml-auto px-6">
       <article class="article">
         {{ content | safe }}
+        {% if page.url != "/about/" %}
         <div class="font-sans text-center py-4">
           <button class="bg-blue-600 hover:bg-blue-400 active:bg-blue-400 focus:bg-blue-400 dark:bg-sky-300 dark:hover:bg-blue-100 dark:active:bg-blue-100 dark:focus:bg-blue-100 rounded-md p-4">
             <a class="text-white hover:text-white active:text-white focus:text-white dark:text-black dark:hover:text-black dark:active:text-black dark:focus:text-black border-transparent hover:border-transparent" href="mailto:bw@brycewray.com?subject=Re: “{{ title }}”">
@@ -51,6 +52,7 @@ layout: base
             </a>
           </button>
         </div>
+        {% endif %}
       </article>
     </div>
 
