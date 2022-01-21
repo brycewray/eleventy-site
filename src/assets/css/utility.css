@@ -89,7 +89,7 @@ span.caption a {
 }
 
 .twitter-tweet {
-  @apply mt-4 mx-auto mb-4 px-8 py-0 rounded-xl bg-white dark:bg-transparent border-2 border-solid border-zinc-700 dark:border-zinc-300;
+  @apply mt-4 mx-auto mb-4 px-8 py-4 rounded-xl bg-white dark:bg-transparent border-2 border-solid border-zinc-700 dark:border-zinc-300;
 }
 
 a .twitter-tweet {
