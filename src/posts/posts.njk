@@ -11,7 +11,8 @@ pagination:
   size: 5
   reverse: true
   alias: posts
-permalink: "posts/{% if pagination.pageNumber != 0 %}{{ pagination.pageNumber }}/{% endif %}"
+permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+# above permalink fixes Eleventy issue #2161 **and** conforms to how Hugo repo paginates
 ---
   <main>
     <div class="text-center px-10 w-full lg:w-4/5 mx-auto">
