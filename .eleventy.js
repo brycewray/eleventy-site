@@ -189,7 +189,7 @@ module.exports = function(eleventyConfig) {
     // snippet: false,
   })
 
-  eleventyConfig.addShortcode(
+  eleventyConfig.addNunjucksAsyncShortcode(
     "imgc",
     require("./src/assets/utils/imgc.js")
   )
