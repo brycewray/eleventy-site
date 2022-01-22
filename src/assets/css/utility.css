@@ -96,6 +96,55 @@ a .twitter-tweet {
   @apply m-0;
 }
 
+/*
+=== START, CSS for eleventy-plugin-embed-tweet
+*/
+.tweet-card {
+  @apply mx-auto my-6 p-4 bg-white dark:bg-transparent w-full max-w-full min-w-full h-auto rounded-lg border-2 border-gray-500 dark:border-gray-200;
+  a {
+    @apply border-0;
+  }
+}
+
+.tweet-body {
+  @apply text-xl;
+}
+
+.tweet-header {
+  @apply flex;
+  .tweet-profile {
+    @apply mr-2 flex-shrink-0;
+    img {
+      @apply rounded-full;
+    }
+  }
+  .tweet-author {
+    @apply flex flex-col flex-grow;
+    &-name {
+      @apply font-bold text-black dark:text-white leading-snug;
+    }
+    &-handle {
+      @apply text-gray-700 dark:text-gray-400 text-sm leading-none;
+    }
+    .tweet-bird {
+      @apply ml-5;
+    }
+  }
+}
+
+.tweet-footer {
+  @apply mt-4 flex items-center;
+  .tweet-like-icon, .tweet-like-count {
+    @apply hidden;
+  }
+  a {
+    @apply text-gray-700 dark:text-gray-300
+  }
+}
+/*
+=== END, CSS for eleventy-plugin-embed-tweet
+*/
+
 .featImgCapt a {
   @apply text-blue-100 border-blue-100;
 }
