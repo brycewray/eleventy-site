@@ -23,6 +23,7 @@
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-upgrade-help": "^1.0.1",
     "cross-env": "^7.0.3",
+    "eleventy-plugin-embed-tweet": "^0.3.1",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-rss-helper": "^1.2.1",
     "fast-glob": "^3.2.11",
