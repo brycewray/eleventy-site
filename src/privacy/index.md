@@ -27,7 +27,7 @@ When I learned that the use of [Google Fonts](https://fonts.google.com) *served 
 
 ### Twitter
 
-This site *quotes* tweets in the form of purely static text or shows them as *screen captures* (with, obviously, no tracking involved), rather than embeds of any kind. Each is linked to its original location.[^oldLoc]
+This site reproduces tweets as purely static text and downloaded images (with no tracking involved), rather than Twitter-based embeds of any kind. Each is linked to its original location.[^oldLoc]
 
 [^oldLoc]: The link is the last one I knew to be active, so a deleted tweet obviously won't appear at such a link.
 
