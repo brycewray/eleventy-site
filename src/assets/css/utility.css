@@ -140,6 +140,10 @@ a .twitter-tweet {
   a {
     @apply text-gray-700 dark:text-gray-300
   }
+  .tweet-date:after {
+    content: " (UTC)";
+    @apply text-xs;
+  }
 }
 /*
 === END, CSS for eleventy-plugin-embed-tweet
