@@ -20,27 +20,27 @@ featured_image_caption: |
 
 "Initially, the defendant made the following assertions:"
 
-{% twitText "Can’t totally divorce Google from my life but am doing what I can. Recently dumped a largely ignored Gmail account; and now have shifted all my devices’ and browsers’ default search to @DuckDuckGo. #UnGoogle", "BryceWrayTX", "1140023324988313601", "2019-06-15" %}
+{% tweet "1140023324988313601" %}
 
 ".&nbsp;.&nbsp;. and .&nbsp;.&nbsp;."
 
-{% twitText "Deleted my personal Google account today. We still have a couple accounts in the family for necessity (contacts, access to a gifted Google Home Mini, etc.), but the main one is gone. Facebook last fall, Google now. The disengagement continues.", "BryceWrayTX", "1142915419784863745", "2019-06-23" %}
+{% tweet "1142915419784863745" %}
 
 ".&nbsp;.&nbsp;. followed a few weeks later by .&nbsp;.&nbsp;."
 
-{% twitText "Just started using this on my site. Interesting stuff so far, and I love how it requires ZERO tracking code. Netlify Analytics | Netlify", "BryceWrayTX", "1150108543208579072", "2019-07-13" %}
+{% tweet "1150108543208579072" %}
 
 "Unfortunately, your honor, this seemingly noble and well-intentioned course of action was derailed yesterday, as shown here&nbsp;.&nbsp;.&nbsp;."
 
-{% twitText "Full disclosure: I dumped my long-standing @Google account recently, but found the resulting inconveniences greater than I’d anticipated, so have created another one. #PragmaticButNotProud", "BryceWrayTX", "1165327910078681088", "2019-08-24" %}
+{% tweet "1165327910078681088" %}
 
 ".&nbsp;.&nbsp;. and here .&nbsp;.&nbsp;."
 
-{% twitText "...one of those inconveniences being that I still have a Chromebook which, on occasion, is helpful for testing things—and, while you can use it as a “guest,” that’s not ideal (by design, of course).", "BryceWrayTX", "1165328656392232960", "2019-08-24" %}
+{% tweet "1165328656392232960" %}
 
 ".&nbsp;.&nbsp;. and here .&nbsp;.&nbsp;."
 
-{% twitText "Reactivated Google Analytics on my site. Debating whether to keep the new Netlify Analytics --- former brings in massive data and has a free tier, latter is rudimentary yet has no free tier. Site brings in no $$. Guess I know which way I’ll end up, but not thrilled about it.", "BryceWrayTX", "1165357162551545857", "2019-08-24" %}
+{% tweet "1165357162551545857" %}
 
 “---and, as the defendant surmised in this most recent exhibit before the court, he did indeed end up stopping the usage of the tracking-free alternative, thus compounding his crime by no longer supporting it at the same time he was returning the Evil G Empire's tracking code to its former access to his site and its visitors.
 

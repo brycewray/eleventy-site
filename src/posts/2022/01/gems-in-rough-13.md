@@ -48,10 +48,9 @@ While AVIFs have notable advantages, I feel that the horsepower they require whe
 
 As I was finishing this, I saw the following tweets from the [Eleventy account](https://twitter.com/eleven_ty) regarding the still-in-beta Eleventy 1.0:
 
-{% twitscrn "Twitter_1478407921264377858.png", "Tweet by @eleven_ty, 2022-01-04: Early docs preview: Add your own custom file extension handler (or override existing ones in Eleventy 1.0. This was the #1 top feature request for Eleventy, with 272 votes. Thanks to @jed_fox1 for help on this one!", 1482, 1914, "https://twitter.com/eleven_ty/status/1478407921264377858" %}
-&nbsp;
+{% tweet "1478407921264377858" %}
 
-{% twitscrn "Twitter_1478436909957402628.png", "Tweet by @eleven_ty, 2022-01-04: This is documented now!", 1478, 766, "https://twitter.com/eleven_ty/status/1478436909957402628" %}
+{% tweet "1478436909957402628" %}
 
 This will be (is?[^3]) very, very cool stuff (as [Slinkity](https://slinkity.dev) fans already know). [Here’s just one example from that aforementioned updated documentation](https://www.11ty.dev/docs/languages/custom/#example-add-sass-support-to-eleventy), specifically showing how to add [Sass](https://sass-lang.com) support to an Eleventy 1.x project—and, yes, *without* all the hassles of the `package.json` method I’ve typically used in my own Eleventy-based endeavors.
 

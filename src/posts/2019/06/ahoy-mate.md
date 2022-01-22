@@ -125,4 +125,4 @@ However, the answers were "No" and "No." The [changes in Apple Mail in Catalina]
 
 My tweet tonight says it all:
 
-{% twitText "Bought a license for, and became a patron of, @mailmateapp. Very impressed with the software and the developer, as I made clear in my recent post", "BryceWrayTX", "1138614802518020096", "2019-06-11" %}
+{% tweet "1138614802518020096" %}
