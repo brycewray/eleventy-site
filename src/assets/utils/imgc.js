@@ -10,14 +10,16 @@ The `animate-fade` CSS class is from the Tailwind CSS config file.
 */
 
 const md5 = require('md5')
-const respSizes = [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
-var cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
-var LQIPholder = 'f_auto,q_1,w_20/' // note ending slash
-var xFmPart1 = 'f_auto,q_auto:eco,w_'
-var xFmPart2 = ',x_0,z_1/' // note ending slash
+const axios = require('axios')
 
-module.exports = (url, alt, width, height, tmpl) => {
-  var imgBmd5 = md5(url)
+const respSizes = [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
+let cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
+let LQIPholder = 'f_jpg,q_1,w_20/' // note ending slash
+let xFmPart1 = 'f_auto,q_auto:eco,w_'
+let xFmPart2 = ',x_0,z_1/' // note ending slash
+
+module.exports = async (url, alt, width, height, tmpl) => {
+  let imgBmd5 = md5(url)
 
   if (!tmpl) tmpl == "none"
 
@@ -31,24 +33,58 @@ module.exports = (url, alt, width, height, tmpl) => {
       break
     */
     case 'posts':
-      divClass = `h-full imgB-${imgBmd5}`
+      divClass = `h-full` // can't use the md5-generated class name here for some reason; insert below
       imgClass = `nScrHidden imgCover hero animate-fade`
       nscClass = `imgCover aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
       break
     default:
-      divClass = `relative imgB-${imgBmd5}`
+      divClass = `relative`
       imgClass = `w-full h-auto aspect-[${width}/${height}] animate-fade`
       nscClass = `w-full h-auto aspect-[${width}/${height}]`
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
-  var stringtoRet = ``
-  var arrayFromLoop = []
+  // ================================================================
+  // Fetch the LQIP from Cloudinary and convert it to a Base64 string
+  // ================================================================
+  // With immense thanks to "Aankhen" on the Eleventy Discord, 2022-01-22:
+  //   - https://discord.com/channels/741017160297611315/934524410591838249/
+  // Also, https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64
+
+  async function doSomethingWithBase64(urlToGet) {
+    let url64 = await getBase64(urlToGet)
+    // console.log(url64)
+    return url64
+  }
+
+  async function getBase64(urlFor64) {
+    const response = await axios
+      .get(urlFor64, {
+        responseType: 'arraybuffer'
+      })
+    return Buffer.from(response.data, 'binary').toString('base64')
+  }
+
+  let url64ForCSS = await getBase64(cloudiBase + LQIPholder + url)
+
+  // ================================================================
+  // End, LQIP-to-Base64
+  // ================================================================
+
+  let stringtoRet = ``
+  let arrayFromLoop = []
 
   stringtoRet = `
-  <style nonce="DhcnhD3khTMePgXw">.imgB-${imgBmd5} {background-image: url(${cloudiBase + LQIPholder + url})}</style>
-  <div class="${divClass} bg-center bg-no-repeat bg-cover">
+  <style nonce="DhcnhD3khTMePgXw">
+    .imgB-${imgBmd5} {
+      background: url(data:image/jpeg;base64,${url64ForCSS});
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+  <div class="${divClass} imgB-${imgBmd5} bg-center bg-no-repeat bg-cover">
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
   </noscript>
