@@ -6,7 +6,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  * @author Rose Pritchard
  */
 
- code {
+code {
   @apply bg-blue-50 dark:bg-slate-700;
 }
 
