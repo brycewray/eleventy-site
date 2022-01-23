@@ -5,7 +5,7 @@ subtitle: "Another swift dip into nerddom"
 description: "Speedier CFP builds, HTML sitemaps."
 author: Bryce Wray
 date: 2021-12-26T10:07:00-06:00
-lastmod: 2021-12-26T10:56:00-06:00
+#lastmod: 2021-12-26T10:56:00-06:00
 #initTextEditor: iA Writer
 discussionId: "2021-12-gems-in-rough-12"
 featured_image: "gemstones-sung-jin-cho-0d3qxUozE-0-unsplash_7315x4881.jpg"
