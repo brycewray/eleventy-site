@@ -52,9 +52,8 @@ module.exports = async (url, alt, width, height, tmpl) => {
   //   - https://discord.com/channels/741017160297611315/934524410591838249/
   // Also, https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64
 
-  async function doSomethingWithBase64(urlToGet) {
+  async function coopAsyncBase64(urlToGet) {
     let url64 = await getBase64(urlToGet)
-    // console.log(url64)
     return url64
   }
 
