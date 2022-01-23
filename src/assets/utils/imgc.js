@@ -78,7 +78,7 @@ module.exports = async (url, alt, width, height, tmpl) => {
       background-size: cover;
     }
   </style>
-  <div class="${divClass} imgB-${imgBmd5} bg-center bg-no-repeat bg-cover">
+  <div class="${divClass} imgB-${imgBmd5}">
   <noscript>
     <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
   </noscript>
