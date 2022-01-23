@@ -52,11 +52,6 @@ module.exports = async (url, alt, width, height, tmpl) => {
   //   - https://discord.com/channels/741017160297611315/934524410591838249/
   // Also, https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64
 
-  async function coopAsyncBase64(urlToGet) {
-    let url64 = await getBase64(urlToGet)
-    return url64
-  }
-
   async function getBase64(urlFor64) {
     const response = await axios
       .get(urlFor64, {
@@ -65,7 +60,7 @@ module.exports = async (url, alt, width, height, tmpl) => {
     return Buffer.from(response.data, 'binary').toString('base64')
   }
 
-  let url64ForCSS = await getBase64(cloudiBase + LQIPholder + url)
+  let url64 = await getBase64(cloudiBase + LQIPholder + url)
 
   // ================================================================
   // End, LQIP-to-Base64
@@ -77,7 +72,7 @@ module.exports = async (url, alt, width, height, tmpl) => {
   stringtoRet = `
   <style nonce="DhcnhD3khTMePgXw">
     .imgB-${imgBmd5} {
-      background: url(data:image/jpeg;base64,${url64ForCSS});
+      background: url(data:image/jpeg;base64,${url64});
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
