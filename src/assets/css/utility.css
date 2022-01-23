@@ -103,6 +103,15 @@ a .twitter-tweet {
   @apply mx-auto my-6 p-4 bg-white dark:bg-transparent w-full max-w-full min-w-full h-auto rounded-lg border-2 border-gray-500 dark:border-gray-200;
   a {
     @apply border-0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    /*
+    See:
+    - https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+    - https://css-tricks.com/where-lines-break-is-complicated-heres-all-the-related-css-and-html/
+    - https://css-tricks.com/better-line-breaks-for-long-urls/
+    */
   }
 }
 
