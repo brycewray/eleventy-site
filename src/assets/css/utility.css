@@ -100,7 +100,7 @@ a .twitter-tweet {
 === START, CSS for eleventy-plugin-embed-tweet
 */
 .tweet-card {
-  @apply mx-auto my-6 p-4 bg-white dark:bg-transparent w-full max-w-full min-w-full h-auto rounded-lg border-2 border-gray-500 dark:border-gray-200;
+  @apply font-sans mx-auto my-6 p-4 bg-white dark:bg-transparent w-full max-w-full min-w-full h-auto rounded-lg border-2 border-gray-500 dark:border-gray-200;
   a {
     @apply border-0;
     overflow-wrap: break-word;
