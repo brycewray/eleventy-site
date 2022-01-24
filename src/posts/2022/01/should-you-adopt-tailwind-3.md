@@ -16,8 +16,6 @@ featured_image_caption: |
   <span class="caption">Image: <a href="https://unsplash.com/@youngprodigy3?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mike Szczepanski</a>; <a href="https://unsplash.com/s/photos/three?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 ---
 
-{% ext_canonical "https://www.stackbit.com/blog/should-you-adopt-tailwind-3" %}
-
 Whether you adore or abhor **utility-first** CSS — or fall somewhere in between those two extreme opinions — it’s not something a web developer can ignore these days. The most prominent example of this potentially polarizing styling approach is the seemingly ubiquitous **Tailwind CSS** framework.
 
 Tailwind changed drastically during the past 14 months, evolving all the way from version 1 to version 3. In this article, we’ll try to help you determine whether you should upgrade your Tailwind projects to the Latest and Greatest. After all, in the end, that's really what matters: is it worth it to you?

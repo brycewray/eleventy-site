@@ -194,24 +194,8 @@ module.exports = function(eleventyConfig) {
     require("./src/assets/utils/imgc.js")
   )
   eleventyConfig.addShortcode(
-    "imgcHero",
-    require("./src/assets/utils/imgcHero.js")
-  )
-  eleventyConfig.addShortcode(
     "disclaimer",
     require("./src/assets/utils/disclaimer.js")
-  )
-  eleventyConfig.addShortcode(
-    "twitscrn",
-    require("./src/assets/utils/twitscrn.js")
-  )
-  eleventyConfig.addShortcode(
-    "ext_canonical",
-    require("./src/assets/utils/ext_canonical.js")
-  )
-  eleventyConfig.addShortcode(
-    "twitText",
-    require("./src/assets/utils/twitText.js")
   )
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {

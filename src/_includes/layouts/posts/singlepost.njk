@@ -43,6 +43,9 @@ layout: base
 
     <div class="sm:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-1/2 mt-10 mr-auto ml-auto px-6">
       <article class="article">
+        {% if ext_canonical %}
+        <p class="blueBox"><strong>Note</strong>: This article originally appeared on the <a href="{{ ext_canonical }}" target="_blank">Stackbit blog</a> and is &copy;&nbsp;2022&nbsp;<a href="https://www.stackbit.com" target="_blank">Stackbit</a>. The&nbsp;article includes external edits (content-related and stylistic) for that&nbsp;site.</p>
+        {% endif %}
         {{ content | safe }}
         {% if page.url != "/about/" %}
         <div class="font-sans text-center py-4">
