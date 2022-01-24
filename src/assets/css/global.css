@@ -52,7 +52,7 @@ sup a, a.previous, a.next, .footnote-return {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  @apply leading-tight tracking-tight;
+  @apply font-sans leading-tight tracking-tight;
 }
 
 h1, .h1 {
