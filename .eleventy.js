@@ -145,7 +145,9 @@ module.exports = function(eleventyConfig) {
   markdownEngine.use(markdownItBrakSpans)
   markdownEngine.use(markdownItPrism)
   markdownEngine.use(markdownItLinkAttrs, {
-    pattern: /^https:/,
+    matcher(href, config) {
+      return href.startsWith("https:");
+    },
     attrs: {
       target: "_blank",
       rel: "noreferrer noopener",
