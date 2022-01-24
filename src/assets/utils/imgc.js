@@ -45,12 +45,14 @@ module.exports = async (url, alt, width, height, tmpl) => {
       dataSzes = `(min-width: 1024px) 100vw, 50vw`
   }
 
-  // ================================================================
-  // Fetch the LQIP from Cloudinary and convert it to a Base64 string
-  // ================================================================
-  // With immense thanks to "Aankhen" on the Eleventy Discord, 2022-01-22:
-  //   - https://discord.com/channels/741017160297611315/934524410591838249/
-  // Also, https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64
+  /*
+  ================================================================
+  Fetch the LQIP from Cloudinary and convert it to a Base64 string
+  ================================================================
+  With immense thanks to "Aankhen" on the Eleventy Discord, 2022-01-22:
+  - https://discord.com/channels/741017160297611315/934524410591838249/
+  Also, https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64
+  */
 
   async function getBase64(urlFor64) {
     const response = await axios
@@ -60,11 +62,13 @@ module.exports = async (url, alt, width, height, tmpl) => {
     return Buffer.from(response.data, 'binary').toString('base64')
   }
 
-  let url64 = await getBase64(cloudiBase + LQIPholder + url)
+  let LQIP_b64 = await getBase64(cloudiBase + LQIPholder + url)
 
-  // ================================================================
-  // End, LQIP-to-Base64
-  // ================================================================
+  /*
+  ================================================================
+  End, LQIP-to-Base64
+  ================================================================
+  */
 
   let stringtoRet = ``
   let arrayFromLoop = []
@@ -72,7 +76,7 @@ module.exports = async (url, alt, width, height, tmpl) => {
   stringtoRet = `
   <style nonce="DhcnhD3khTMePgXw">
     .imgB-${imgBmd5} {
-      background: url(data:image/jpeg;base64,${url64});
+      background: url(data:image/jpeg;base64,${LQIP_b64});
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
