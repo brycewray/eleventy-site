@@ -16,7 +16,7 @@ featured_image_caption: |
   <span class="caption">Image: <a href="https://pixabay.com/users/tookapic-1386459/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=933362">tookapic</a>; <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=933362">Pixabay</a></span>
 ---
 
-My comments at the end of my [previous post](/posts/2019/01/blox-sux) aside, I have to say [iA Writer](https://www.ia.net/writer) can be a halfway decent editor for [Markdown](https://daringfireball.net/projects/markdown/), after all.
+My comments at the end of my [previous post](/posts/2019/01/blox-sux/) aside, I have to say [iA Writer](https://www.ia.net/writer) can be a halfway decent editor for [Markdown](https://daringfireball.net/projects/markdown/), after all.
 
 Once again, I'm **not** considering dropping [Ulysses](https://ulysses.app) from my small collection of much-loved apps that I utterly must have when the muse is with me and I feel like writing. It's just that I grow weary of the export-to-Markdown process inherent in writing something in Ulysses for this site, especially since I like to see my edits on my local version of the site as I save them to the target file.
 
@@ -26,7 +26,7 @@ So this is yet another look at iA Writer as a potential "daily driver" for use w
 
 ## Okay, I was YAMmering; sorry
 
-Perhaps more to the point, I believe I was more concerned about how the [YAML](https://yaml.org) "front matter" looked in the iA Writer Preview window than how the SSG would handle the final Markdown file. (As I [already explained](/posts/2018/09/why-finally-settled-ulysses), I get distracted by such things.) It turns out that doesn't matter. You don't have to enclose front matter in a ```code block``` for the SSG to know what to do with it---in fact, it doesn't know what to do with it if you **do** put it in a code block.
+Perhaps more to the point, I believe I was more concerned about how the [YAML](https://yaml.org) "front matter" looked in the iA Writer Preview window than how the SSG would handle the final Markdown file. (As I [already explained](/posts/2018/09/why-finally-settled-ulysses/), I get distracted by such things.) It turns out that doesn't matter. You don't have to enclose front matter in a ```code block``` for the SSG to know what to do with it---in fact, it doesn't know what to do with it if you **do** put it in a code block.
 
 ## Footnote follies
 

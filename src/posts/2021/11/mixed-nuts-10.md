@@ -15,7 +15,7 @@ featured_image_caption: |
   <span class="caption">Image: <a href="https://pixabay.com/users/ka_re-14461006/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5503118">Kai Reschke</a>; <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5503118">Pixabay</a></span>
 ---
 
-Each entry in the "Mixed nuts" series is a collection of random and, occasionally, relevant observations. The series originally was inspired, as noted in the [first "Mixed nuts" post](/posts/2019/11/mixed-nuts-2019-11), by the famed "Scattershooting" newspaper columns penned by the late Blackie Sherrod.
+Each entry in the "Mixed nuts" series is a collection of random and, occasionally, relevant observations. The series originally was inspired, as noted in the [first "Mixed nuts" post](/posts/2019/11/mixed-nuts-2019-11/), by the famed "Scattershooting" newspaper columns penned by the late Blackie Sherrod.
 {.blueBox}
 
 ---
@@ -30,7 +30,7 @@ Sliding into the "Wow, finally, I **did** live to see it" category is [this week
 
 At least here in the northern suburbs of Dallas, many of the retail areas seem to have standardized on [giant ball ornaments like these](https://moscadesign.com/giant-christmas-balls/), especially red ones, as the external decoration of choice for this year's holiday shopping season. Didn't get the memo but, then, I never do.
 
-*[Autoprefixer](https://github.com/postcss/autoprefixer) no longer runs on this site. After comparing last May's “[Is Vendor Prefixing Dead?](https://css-tricks.com/is-vendor-prefixing-dead/)" with the CSS this site actually uses, I simply decided Autoprefixer had ceased to be necessary. (If you believe I'm being too hasty, please [let me know](/contact).)*
+*[Autoprefixer](https://github.com/postcss/autoprefixer) no longer runs on this site. After comparing last May's “[Is Vendor Prefixing Dead?](https://css-tricks.com/is-vendor-prefixing-dead/)" with the CSS this site actually uses, I simply decided Autoprefixer had ceased to be necessary. (If you believe I'm being too hasty, please [let me know](/contact/).)*
 
 It's only anecdotal evidence, but I'd say that, right now, Google's [YouTube TV](https://tv.youtube.com) streaming service has significant pixelation issues when running on at least some [Amazon Fire Sticks](https://www.businessinsider.com/what-is-a-fire-stick). Not surprisingly, the problem doesn't seem to be nearly as bad for [Chromecast with Google TV](https://en.wikipedia.org/wiki/Chromecast#Chromecast_with_Google_TV) devices. Note to self: file that under "Things that make you say, ‘Hmm.’"
 

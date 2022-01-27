@@ -25,7 +25,7 @@ With that bad news is some accompanying good news: if you're willing to put in a
 
 Back in the late 1990s, before Google swallowed up the web search space and there still were *numerous* prominent search engines out there, you actually would have to **submit** your site to each of them for inclusion. But those days are long gone and now, to invoke a "[Russian Reversal](https://en.wikipedia.org/wiki/In_Soviet_Russia)"-ish line, "search engines find *you*." Or, at least, you hope they do.
 
-Search engine algorithms come and go, but you can safely assume that  three items are crucial to how well, and how frequently, search engines discover your site: **content**, **performance**, and the combination of **feeds** and **sitemaps**. 
+Search engine algorithms come and go, but you can safely assume that  three items are crucial to how well, and how frequently, search engines discover your site: **content**, **performance**, and the combination of **feeds** and **sitemaps**.
 
 ### Content
 
@@ -220,7 +220,7 @@ Now, finish up the Eleventy-based setup by going down this page to the "For eith
 
 #### Hugo
 
-I've noted [before](/posts/2020/12/eleventy-hugo-comparing-contrasting) that Hugo comes with a lot of built-in goodies, so it won't surprise you that the process for Hugo is a bit simpler than with Eleventy.
+I've noted [before](/posts/2020/12/eleventy-hugo-comparing-contrasting/) that Hugo comes with a lot of built-in goodies, so it won't surprise you that the process for Hugo is a bit simpler than with Eleventy.
 
 1. Make sure that, in your [sitewide configuration file](https://gohugo.io/getting-started/configuration/), you have specified `json` as one of the output formats and one of the home output options. For example, my sitewide config file is `config.yaml` and has these entries:
 

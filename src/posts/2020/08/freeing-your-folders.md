@@ -46,7 +46,7 @@ Before I give you the particulars, please be aware that I didn't come up with th
 
 ### Important notes
 
--  As with all things computer-file-system-ish, you should **[have an ongoing backup](/posts/2019/02/back-up-jack) before you do any of this**.
+-  As with all things computer-file-system-ish, you should **[have an ongoing backup](/posts/2019/02/back-up-jack/) before you do any of this**.
 - This is prior to the release of [macOS Big Sur](https://en.wikipedia.org/wiki/MacOS_Big_Sur) and thus is based on where you find things in its predecessor, [macOS Catalina](https://en.wikipedia.org/wiki/MacOS_Catalina); so please adjust accordingly.
 - This presumes you **do** have your Mac desktop and **Documents** folders set to be stored in iCloud Drive, which has been the macOS default for the last few years; but, if you **don't**, there's no need to follow this procedure. You're already good to go. (If you want to check, just use the Mac Finder to navigate to **iCloud Drive** and see whether it contains **Desktop** and **Documents** folders that **aren't** empty. If so, this procedure is valid for you.)
 - This also presumes you've **already** [deactivated the **Optimize Mac Storage** feature](https://tidbits.com/2016/11/10/how-to-turn-off-sierras-optimized-storage/). If not, **don't** try this procedure. Instead, perform **that** change first and let the necessary resulting downloads occur. (It might take quite a while, which is what we're trying to avoid with this procedure.)
@@ -58,17 +58,17 @@ So, with all that understood, here we go.
 1. On the Mac desktop, double-click your Mac's default drive icon to open a Finder window at the top level of the Mac's file structure.
 2. Navigate to your user account's home folder in **Users**. For example, if you entered **John Doe** as your account name when you set up the Mac initially, there should be a **John Doe** folder within **Users**.
 3. Navigate to that folder's **Downloads** folder. (If there's not already a **Downloads** folder there, create one.)
-4. In this **Downloads** folder, create two new empty folders:  
-	— One called **1-Desktop**.  
+4. In this **Downloads** folder, create two new empty folders:
+	— One called **1-Desktop**.
 	— One called **2-Documents**.
-5. Drag (don't copy) to the **1-Desktop** folder all content you may have on the Mac desktop. This, of course, does **not** include any drive icons that are on the desktop—just files and aliases.  
+5. Drag (don't copy) to the **1-Desktop** folder all content you may have on the Mac desktop. This, of course, does **not** include any drive icons that are on the desktop—just files and aliases.
 	You'll get a warning message about this content's no longer being available on your other iCloud-linked devices. Click the button that indicates you **do** want to move the content out of iCloud Drive.
 6. Open a separate Finder window and navigate to the **Documents** folder in your **iCloud Drive** folder.
 7. Select **everything** in that **Documents** folder.
 
 **Note:** Well, *almost* everything. I suggest being careful about any folder that is identified in the **List** view as an "App Library" (often possessing an app's logo on the folder icon in the default **Icons** view)---one notable example of which, in my case, is [iA Writer](https://ia.net/writer). Leave folders of that type in the **iCloud Drive** folder's **Documents** folder. While you *can* move those items if you wish, just be forewarned that either the current app or its future versions might have a problem with the different location.{.yellowBox}
 
-8. Drag it all to the **2-Documents** folder.  
+8. Drag it all to the **2-Documents** folder.
 	Again, you'll get the warning about moving the content out of iCloud Drive; so, as before, confirm that you **do** want to proceed.
 9. Access the iCloud Drive settings: **System Preferences** \> **Internet Accounts** \> **iCloud** \> **iCloud Drive**.
 10. Click **Options**.
@@ -82,7 +82,7 @@ Now you can safely drag the content from **1-Desktop** back out to the Mac deskt
 
 ## Simplify, simplify, simplify
 
-I found Mr. Howie's sage advice while re-thinking my own [sync'ing strategies](/posts/2019/02/back-up-jack), which for over a year and a half had me using iCloud Drive to store hundreds of gigabytes of my stuff, far more than just the **Documents** folder's contents. However, after some experimentation with other cloud sync vendors that left me wanting for one reason or another, I realized that I really don't *need* to sync all that much.[^1]
+I found Mr. Howie's sage advice while re-thinking my own [sync'ing strategies](/posts/2019/02/back-up-jack/), which for over a year and a half had me using iCloud Drive to store hundreds of gigabytes of my stuff, far more than just the **Documents** folder's contents. However, after some experimentation with other cloud sync vendors that left me wanting for one reason or another, I realized that I really don't *need* to sync all that much.[^1]
 
 So, bottom line, I downsized my monthly sync expenses to just iCloud Drive's 200 GB tier ($2.99/month as of this writing), which is far more than enough for not only all the Mac files I would ever want to see on the iPhone and iPad but also the photos storage for **both** my phone and my wife's.
 

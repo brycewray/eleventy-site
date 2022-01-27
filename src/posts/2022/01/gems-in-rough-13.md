@@ -23,7 +23,7 @@ As it turns out, this edition of “Gems in the rough” is mostly about why I d
 
 ## Why I returned to internal CSS
 
-Last year, I posted [two](/posts/2021/02/tailwind-head-hugo-pipes/) [articles](/posts/2021/03/tailwind-head-eleventy/) about putting a site’s CSS in the `head`, an approach generally called *internal CSS*. Not long thereafter, I [backtracked](/posts/2021/05/gems-in-rough-05/#its-all-about-the-cache) to my more traditional approach of using separate CSS files (*external CSS*) in an effort to be friendlier to the caching in visitors’ browsers.
+Last year, I posted [two](/posts/2021/02/tailwind-head-hugo-pipes/) [articles](/posts/2021/03/tailwind-head-eleventy/) about putting a site’s CSS in the `head`, an approach generally called *internal CSS*. Not long thereafter, I [backtracked](/posts/2021/05/gems-in-rough-05/#it%E2%80%99s-all-about-the-cache) to my more traditional approach of using separate CSS files (*external CSS*) in an effort to be friendlier to the caching in visitors’ browsers.
 
 Unfortunately, this didn’t work so well with the [long-known](https://arstechnica.com/civis/viewtopic.php?f=19&t=614905) overly aggressive caching of the Safari/[Webkit](https://webkit.org/) combo that’s the [only real browser choice Apple allows on iOS](https://infrequently.org/2021/08/webkit-ios-deep-dive/). Compared to more modern browser combos like Chrome/[Blink](https://www.chromium.org/blink) and Firefox/[Gecko](https://developer.mozilla.org/en-US/docs/Glossary/Gecko), Safari/Webkit tends to hang onto a site’s old content much longer than it should. This behavior sometimes “broke” my site on Safari/Webkit whenever I made certain significant styling changes.[^1]
 

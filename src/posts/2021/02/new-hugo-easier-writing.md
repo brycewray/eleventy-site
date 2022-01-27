@@ -49,13 +49,13 @@ The alternative would be actually writing HTML within the Markdown, but that was
 
 {% raw %}
 ```md
-**This** is bold and *this* is italicized/obliqued, and [this link](https://gohugo.io/documentation) goes to the Hugo documentation, while [this post link](/posts/2021/02/simplify-simplify) goes to the site's recent **"Simplify, simplify"** post.{.yellowBox}
+**This** is bold and *this* is italicized/obliqued, and [this link](https://gohugo.io/documentation) goes to the Hugo documentation, while [this post link](/posts/2021/02/simplify-simplify/) goes to the site's recent **"Simplify, simplify"** post.{.yellowBox}
 ```
 {% endraw %}
 
 .&nbsp;.&nbsp;. to get the same result:
 
-**This** is bold and *this* is italicized/obliqued, and [this link](https://gohugo.io/documentation) goes to the Hugo documentation, while [this post link](/posts/2021/02/simplify-simplify) goes to the site's recent **"Simplify, simplify"** post.
+**This** is bold and *this* is italicized/obliqued, and [this link](https://gohugo.io/documentation) goes to the Hugo documentation, while [this post link](/posts/2021/02/simplify-simplify/) goes to the site's recent **"Simplify, simplify"** post.
 {.yellowBox}
 
 In Eleventy, I enjoyed this convenience through use of the [Markdown-it-attrs plugin](https://github.com/GerHobbelt/markdown-it-attrs) for the [Markdown-it parser](https://github.com/markdown-it/markdown-it). In Eleventy, you essentially put together your chosen parser with whatever plugins it needs to do what you want---footnoting, "smart" punctuation, and, yes, handling styling attributes.
@@ -74,7 +74,7 @@ When I came back to Hugo, I figured I'd lost this convenience because Hugo's bui
 ```
 {% endraw %}
 
-.&nbsp;.&nbsp;. to produce the following result (borrowed from last year's ["Welcome, sweet little early bird"](/posts/2020/03/welcome-sweet-little-early-bird) post about the slightly premature birth of our granddaughter, who's nearing her first birthday):
+.&nbsp;.&nbsp;. to produce the following result (borrowed from last year's ["Welcome, sweet little early bird"](/posts/2020/03/welcome-sweet-little-early-bird/) post about the slightly premature birth of our granddaughter, who's nearing her first birthday):
 
 {% imgc "BW-holding-Kennedy-first-night__crop_1008x712.jpg", "Bryce Wray holds his new granddaughter, Kennedy Beck, on the night of her birth", "1008", "712" %}
 

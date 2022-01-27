@@ -24,7 +24,7 @@ Here are a few odds and ends---some a tad acerbic, some not so much. And I swear
 
 .&nbsp;.&nbsp;.&nbsp;but there may be some hint of that herein, for which I apologize ahead of time.
 
-[^privacy]: The embedded YouTube video that formerly was in this spot on the page is now just linked and identified, due to the site's belatedly adopted [privacy policy](/privacy).
+[^privacy]: The embedded YouTube video that formerly was in this spot on the page is now just linked and identified, due to the site's belatedly adopted [privacy policy](/privacy/).
 
 Since I began this with a linked YouTube video, that brings me to the first topic.
 
