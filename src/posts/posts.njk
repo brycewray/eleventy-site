@@ -45,13 +45,13 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
           <div class="posts-ItemDiv">
             <h2 class="posts-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
             <p class="posts-Subtitle"><strong>{{ post.data.subtitle | safe }}</strong></p>
+            <p class="posts-Description">
+              <em>{{ post.data.description | safe }}</em>
+            </p>
             <p class="posts-Dates"><strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
               {% if post.data.lastmod %}
               <br /><span class="eightyFive">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
               {% endif %}
-            </p>
-            <p class="posts-Description">
-              <em>{{ post.data.description | safe }}</em>
             </p>
             <p class="legal">&nbsp;</p><!-- where reading time goes in Hugo site -->
           </div>
