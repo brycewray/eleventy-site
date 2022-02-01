@@ -1,8 +1,6 @@
-@use 'variables' as var;
-
 /*
 td {
-  font-family: var.$sans-serif;
+  font-family: $sans-serif;
 }
 */
 
@@ -14,8 +12,8 @@ table.noborders {
   border-collapse: collapse;
   tr {
     @media (prefers-color-scheme: dark) {
-      background-color: var.$default-color-dark-mode;
-      color: var.$default-color;
+      background-color: $default-color-dark-mode;
+      color: $default-color;
     }
   }
   td {
@@ -32,11 +30,11 @@ table.noborders {
     background-color: hsl(210, 100%, 94%);
   }
   thead {
-    background-color: var.$darkblue;
+    background-color: $darkblue;
   }
   thead tr {
     @media (prefers-color-scheme: dark) {
-      background-color: var.$darkblue;
+      background-color: $darkblue;
     }
   }
   thead td {
