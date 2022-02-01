@@ -1,15 +1,17 @@
+@use 'variables' as var;
+
 html, body {
-  font-family: $sans-serif;
+  font-family: var.$sans-serif;
   font-weight: 425;
-  color: $default-color;
+  color: var.$default-color;
   width: 100%;
   margin: 0 auto;
   padding: 0;
   -moz-osx-font-smoothing: auto; // only for Firefox on macOS (and not for system fonts); other browsers use defaults (if any)
   // font-feature-settings: "liga" 1; // if using any ligature-savvy fonts, ligatures won't work without this
   @media (prefers-color-scheme: dark) {
-    background: $background-dark-mode;
-    color: $default-color-dark-mode;
+    background: var.$background-dark-mode;
+    color: var.$default-color-dark-mode;
     font-weight: 375;
   }
 }
@@ -23,10 +25,10 @@ p, li {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-family: $sans-serif;
+  font-family: var.$sans-serif;
   letter-spacing: -0.025rem;
   @media (prefers-color-scheme: dark) {
-    color: $default-color-dark-mode;
+    color: var.$default-color-dark-mode;
   }
 }
 
@@ -55,19 +57,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .header-anchor {
   border: none;
-  color: $black;
+  color: var.$black;
   @media screen and (prefers-color-scheme: dark) {
-    color: $white;
+    color: var.$white;
   }
   &:hover{
-    color: $blue;
+    color: var.$blue;
     border-bottom: 2px solid $blue;
     @media screen and (prefers-color-scheme: dark) {
-      color: $blueLight;
+      color: var.$blueLight;
       border-bottom: 2px solid $blueLight;
     }
     &::after {
-      font-size: $stdsize;
+      font-size: var.$stdsize;
       font-weight: 425;
       padding-left: 0.5em;
       content: "#";
@@ -122,18 +124,18 @@ a, a:focus, a:hover, a:active {
 }
 
 a {
-  color: $blue;
+  color: var.$blue;
   border-bottom: 1px solid $blueFirst;
   @media (prefers-color-scheme: dark) {
-    color: $blueLight;
+    color: var.$blueLight;
     border-bottom: 1px solid $blueLight;
   }
 }
 
 a:focus, a:hover, a:active {
-  color: $darkblue;
+  color: var.$darkblue;
   @media (prefers-color-scheme: dark) {
-    color: $grey-2;
+    color: var.$grey-2;
     border-bottom: 1px solid $blueLight;
   }
 }
@@ -144,13 +146,13 @@ sup a, .footnote-return, a.icon {
 
 blockquote {
 	border-left: 4px solid $grey-2;
-  color: $grey-1;
+  color: var.$grey-1;
   margin-right: 0;
   margin-left: 0;
   padding-left: 1.5em;
   @media (prefers-color-scheme: dark) {
     border-left: solid $grey-1;
-    color: $grey-2-dark-mode;
+    color: var.$grey-2-dark-mode;
   }
   p:last-child {
     margin-bottom: 0;
@@ -193,9 +195,9 @@ audio, canvas, embed, iframe, img, object, svg, video {
 }
 
 footer {
-  font-family: $sans-serif;
+  font-family: var.$sans-serif;
   text-align: center;
-  font-size: $legal;
+  font-size: var.$legal;
   margin: 4rem auto 0 auto;
   width: 100%;
   padding-top: 0.5rem;
@@ -210,7 +212,7 @@ footer {
       margin: 1rem 0;
     }
   }
-  @media (min-width: $bkpt_lg) {
+  @media (min-width: var.$bkpt_lg) {
     margin: 2rem auto 0 auto;
     // padding-bottom: 1rem;
     div.footerWrapper {
@@ -231,12 +233,12 @@ footer {
   // width: 90%;
   margin: 0 auto;
   &-home {
-    font-family: $sans-serif;
+    font-family: var.$sans-serif;
     text-align: center;
     padding: 2rem 0;
     margin: 0 auto;
     width: 90%;
-    @media screen and (min-width: $bkpt_lg) {
+    @media screen and (min-width: var.$bkpt_lg) {
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -248,10 +250,10 @@ footer {
     }
     h1 {
       font-size: 1.25rem;
-      @media screen and (min-width: $bkpt_lg) {
+      @media screen and (min-width: var.$bkpt_lg) {
         font-size: 1.5rem;
       }
-      @media screen and (min-width: $bkpt_2xl) {
+      @media screen and (min-width: var.$bkpt_2xl) {
         font-size: 1.75rem;;
       }
     }
@@ -259,13 +261,13 @@ footer {
   &-narrower {
     margin: 1rem auto 0 auto;
     width: 80%;
-    @media screen and (min-width: $bkpt_lg) {
+    @media screen and (min-width: var.$bkpt_lg) {
       width: 70%;
     }
-    @media screen and (min-width: $bkpt_xl) {
+    @media screen and (min-width: var.$bkpt_xl) {
       width: 60%;
     }
-    @media screen and (min-width: $bkpt_2xl) {
+    @media screen and (min-width: var.$bkpt_2xl) {
       width: 50%;
     }
     figure img, img {
@@ -289,10 +291,10 @@ article {
     line-height: 1.65em;
     margin-top: 1.15em;
     margin-bottom: 1.15em;
-    @media screen and (min-width: $bkpt_lg) {
+    @media screen and (min-width: var.$bkpt_lg) {
       font-size: 1.25rem;
     }
-    @media screen and (min-width: $bkpt_2xl) {
+    @media screen and (min-width: var.$bkpt_2xl) {
       font-size: 1.375rem;
     }
   }
