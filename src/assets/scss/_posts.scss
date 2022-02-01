@@ -108,7 +108,7 @@
 }
 
 .post-line {
-  border-top: 0.2rem solid $darkblue;
+  border-top: 0.2rem solid var.$darkblue;
   @media screen and (prefers-color-scheme: dark) {
     border-color: hsl(0, 0%, 100%);
   }

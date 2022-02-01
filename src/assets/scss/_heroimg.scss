@@ -142,6 +142,6 @@
   color: var.$white;
   a {
     color: var.$blueLight;
-    border-bottom: 1px solid $blueLight;
+    border-bottom: 1px solid var.$blueLight;
   }
 }

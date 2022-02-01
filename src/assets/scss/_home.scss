@@ -9,9 +9,9 @@
     text-align: right;
     padding: 0 3em 0 0;
     color: var.$white;
-    background-image: linear-gradient(to bottom, $darkblue, $black 50%, $white);
+    background-image: linear-gradient(to bottom, var.$darkblue, var.$black 50%, var.$white);
     @media screen and (prefers-color-scheme: dark) {
-      background-image: linear-gradient(to bottom, $black, $darkblue 50%, $black);
+      background-image: linear-gradient(to bottom, var.$black, var.$darkblue 50%, var.$black);
     }
     width: 40%;
     min-height: 80vh;
@@ -21,7 +21,7 @@
     }
     a {
       color: var.$blueLight;
-      border-bottom: 1px solid $blueLight;
+      border-bottom: 1px solid var.$blueLight;
     }
   }
   @media screen and (min-width: var.$bkpt_2xl) {
