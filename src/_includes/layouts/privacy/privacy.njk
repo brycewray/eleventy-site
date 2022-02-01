@@ -2,11 +2,15 @@
 title: privacy
 layout: base
 ---
-  <main>
-    {% include 'layouts/partials/billboard.njk' %}
-    <div class="sm:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-1/2 mt-10 mr-auto ml-auto px-6">
-      <article>
-        {{ content | safe }}
-      </article>
-    </div>
-  </main>
+
+<main>
+
+  {% include 'layouts/partials/billboard.njk' %}
+
+  <div class="container-narrower">
+    <article>
+      {{ content | safe }}
+    </article>
+  </div>
+
+</main>
