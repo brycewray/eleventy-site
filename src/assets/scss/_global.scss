@@ -1,7 +1,7 @@
 @use 'variables' as var;
 
 html, body {
-  font-family: var.$serif;
+  font-family: var.$sans-serif;
   font-kerning: auto;
   font-variant-ligatures: common-ligatures;
   background: white; // needed with MS Edge (macOS) in "Private" mode due to a bug (2021/11)
