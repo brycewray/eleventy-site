@@ -92,6 +92,7 @@
     }
   }
   &-Description {
+    font-family: var.$serif;
     margin-top: 0.5em;
     font-size: 0.875rem;
     @media screen and (min-width: var.$bkpt_lg) {

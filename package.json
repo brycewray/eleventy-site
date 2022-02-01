@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "clean": "rimraf _site",
-    "hasher": "node csshash.js && node jshash.js",
+    "hasher": "node jshash.js",
     "devsass": "sass --no-source-map src/assets/scss/index.scss _site/css/index.css",
-    "prodsass": "sass --no-source-map src/assets/scss/index.scss _site/css/$(cat csshash-out)",
+    "prodsass": "sass --no-source-map src/assets/scss/index.scss src/_includes/css/index.css --style=compressed",
     "start": "NODE_ENV=development npm-run-all clean devsass --parallel dev:*",
     "build": "NODE_ENV=production npm-run-all clean hasher prod:sass prod:eleventy",
     "dev:sass": "npm run devsass -- --watch",
