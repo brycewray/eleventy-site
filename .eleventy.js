@@ -20,7 +20,12 @@ async function imageShortcode(src, alt) {
     widths: [600, 900, 1500],
     formats: ['webp', 'jpeg'],
     urlPath: "/images/",
-    outputDir: "./_site/images/"
+    outputDir: "./_site/images/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src)
+      const name = path.basename(src, extension)
+      return `${name}-${width}w.${format}`
+    }
   })
   let lowsrc = metadataImg.jpeg[0]
   let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]
@@ -40,10 +45,10 @@ async function imageShortcode(src, alt) {
 
 module.exports = function(eleventyConfig) {
 
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
   eleventyConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
   eleventyConfig.addJavaScriptFunction("image", imageShortcode)
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
