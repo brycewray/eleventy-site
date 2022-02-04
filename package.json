@@ -3,7 +3,7 @@
   "description": "The repository for brycewray.com, a website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
   "private": true,
   "scripts": {
-    "clean": "rimraf '_site/!(assets)' '_site/assets/!(images)'",
+    "clean": "rimraf _site",
     "hasher": "node jshash.js",
     "devsass": "sass --no-source-map src/assets/scss/index.scss _site/css/index.css",
     "prodsass": "sass --no-source-map src/assets/scss/index.scss src/_includes/css/index.css --style=compressed",
@@ -23,7 +23,6 @@
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-img": "^1.0.0",
     "@11ty/eleventy-plugin-rss": "^1.1.2",
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
     "axios": "^0.25.0",
     "cross-env": "^7.0.3",
     "eleventy-plugin-embed-tweet": "^0.3.1",
