@@ -1,8 +1,8 @@
 @use 'variables' as var;
 
 html, body {
-  font-family: var.$serif;
-  font-weight: 425;
+  font-family: var.$sans-serif;
+  // font-weight: 425; // when using variable fonts
   color: var.$default-color;
   width: 100%;
   margin: 0 auto;

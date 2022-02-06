@@ -2,16 +2,26 @@
 
 .tweet-card {
   font-family: var.$sans-serif;
+  width: 100%;
   margin: 1.5rem auto;
   padding: 1rem;
   border: 2px solid var.$grey-1;
   border-radius: 12px;
   background: var.$white;
+  @media screen and (min-width: var.$bkpt_md) {
+    width: 90%;
+  }
+  @media screen and (min-width: var.$bkpt_lg) {
+    width: 80%;
+  }
+  @media screen and (min-width: var.$bkpt_2xl) {
+    width: 70%;
+  }
   @media screen and (prefers-color-scheme: dark) {
     background: transparent;
   }
   a, a:hover {
-    border: none;
+    border: none !important;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -32,7 +42,12 @@
 }
 
 .tweet-body {
-  font-size: var.$minimalbig;
+  font-size: var.$stdsize;
+  line-height: 1.5em;
+  text-align: left !important;
+  @media screen and (min-width: var.$bkpt_lg) {
+    font-size: var.$minimalbig;
+  }
 }
 
 .tweet-header {
@@ -74,6 +89,11 @@
   margin-top: 1rem;
   display: flex;
   align-items: center;
+  color: var.$grey-1;
+  font-size: var.$pokey;
+  @media screen and (prefers-color-scheme: dark) {
+    color: var.$grey-2-dark-mode;
+  }
   .tweet-like-icon, .tweet-like-count {
     display: none;
   }
@@ -82,7 +102,7 @@
     @media screen and (prefers-color-scheme: dark) {
       color: var.$grey-2-dark-mode;
     }
-  }
+  }/* === needed in Eleventy but not in Hugo */
   .tweet-date:after {
     content: " (UTC)";
     font-size: var.$legal;
