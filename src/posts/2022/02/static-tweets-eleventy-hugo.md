@@ -6,7 +6,7 @@ subtitle: "To serve and protect"
 description: "How to embed tweets while still protecting your visitors’ privacy."
 author: Bryce Wray
 date: 2022-02-07T12:00:00-06:00
-#lastmod:
+lastmod: 2022-02-11T11:28:00-06:00
 #initTextEditor: Ulysses
 discussionId: "2022-02-static-tweets-eleventy-hugo"
 featured_image: twitter-icon--alexander-shatov-k1xf2D7jWUs-unsplash_2400x1800.jpg
@@ -105,12 +105,12 @@ Now, that’s certainly not terrible, and it does give you the essence of the me
 {{ if isset $json "entities" }}
   {{ if isset $json.entities "user_mentions"  }}
     {{ range $user := $json.entities.user_mentions}}
-      {{ $text = replace $text (printf "@%s" $user.screen_name) (printf "<a href='https://twitter.com/%s' target='_blank' ref='noopener'>@%s</a>" $user.screen_name $user.screen_name) }}
+      {{ $text = replace $text (printf "@%s" $user.screen_name) (printf "<a href='https://twitter.com/%s' target='_blank' rel='noopener'>@%s</a>" $user.screen_name $user.screen_name) }}
     {{ end }}
   {{ end }}
   {{ if isset $json.entities "hashtags"}}
     {{ range $hashtags := $json.entities.hashtags }}
-      {{ $text = replace $text (printf "#%s" $hashtags.text) (printf "<a href='https://twitter.com/hashtag/%s?src=hash&ref_src=twsrc' target='_blank' ref='noopener'>#%s</a>" $hashtags.text $hashtags.text) }}
+      {{ $text = replace $text (printf "#%s" $hashtags.text) (printf "<a href='https://twitter.com/hashtag/%s?src=hash&ref_src=twsrc' target='_blank' rel='noopener'>#%s</a>" $hashtags.text $hashtags.text) }}
     {{ end }}
   {{ end }}
   {{ if isset $json.entities "media"  }}
@@ -120,7 +120,7 @@ Now, that’s certainly not terrible, and it does give you the essence of the me
   {{ end }}
   {{ if isset $json.entities "urls"  }}
     {{ range $url := $json.entities.urls}}
-      {{ $text = replace $text $url.url (printf "<a href='%s' target='_blank' ref='noopener'>%s</a>" $url.url $url.display_url) }}
+      {{ $text = replace $text $url.url (printf "<a href='%s' target='_blank' rel='noopener'>%s</a>" $url.url $url.display_url) }}
     {{ end }}
   {{ end }}
 {{ end }}
@@ -144,7 +144,7 @@ Now, that’s certainly not terrible, and it does give you the essence of the me
     {{ end }}
   {{ end }}
   <div class="tweet-footer">
-    <a href='https://twitter.com/{{ $json.user.screen_name }}/status/{{ $json.id_str }}' class='tweet-date' target='_blank' ref='noopener'>{{ dateFormat "3:04 PM • January 2, 2006" $json.created_at }}</a>&nbsp;<span class="legal">(UTC)</span></p>
+    <a href='https://twitter.com/{{ $json.user.screen_name }}/status/{{ $json.id_str }}' class='tweet-date' target='_blank' rel='noopener'>{{ dateFormat "3:04 PM • January 2, 2006" $json.created_at }}</a>&nbsp;<span class="legal">(UTC)</span></p>
   </div>
 </blockquote>
 ```
@@ -188,6 +188,6 @@ SSG-built websites like this one amount to [only a very tiny fraction](https://w
 
 [^8]:	But what about Hugo’s built-in `tweet` shortcode, you ask? Well, a look at its [code in the Hugo GitHub repository](https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates/shortcodes) indicates it uses the [regular Twitter embedding method](https://help.twitter.com/en/using-twitter/how-to-embed-a-tweet), so its shelf life should be a very long one. Beyond that, the Hugo maintainers know it’s widely used and will keep it updated accordingly; besides, if Twitter changed *that* method, the worldwide sound of breaking websites would shatter all our eardrums.
 
-[^9]:	I am researching how to use Twitter API v.2, rather than the public API, with `stweet`, but I wouldn’t suggest you hold your breath. The Hugo documentation for handling build-level “secret” environment variables is, um, lacking—as am I.
+[^9]:	I am researching how to use Twitter API v.2, rather than the public API, with `stweet`, but I wouldn’t suggest you hold your breath. The Hugo documentation for handling build-level “secret” environment variables is, um, lacking—as am I. **Update, 2022-02-11**: I now have a v.2-based shortcode ready, and will post a follow-up article about it ASAP.
 
 [^10]:	It probably helps that both methods covered in this post link the static embeds back to their originals on Twitter, where one gets the full nine yards’ worth of JavaScript as Twitter prefers. Otherwise, yeah, Team Twitter might have a problem with this. Also: I would add in Twitter’s defense that its eventual retirement of old APIs won’t be an effort to make anybody’s life more difficult; rather, it’ll be a legitimate attempt to improve the quality of Twitter-accessing code. I can absolutely get behind that.
