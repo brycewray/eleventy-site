@@ -6,7 +6,7 @@ subtitle: "To serve and protect"
 description: "How to embed tweets while still protecting your visitors’ privacy."
 author: Bryce Wray
 date: 2022-02-07T12:00:00-06:00
-lastmod: 2022-02-11T11:28:00-06:00
+lastmod: 2022-02-11T21:09:00-06:00
 #initTextEditor: Ulysses
 discussionId: "2022-02-static-tweets-eleventy-hugo"
 featured_image: twitter-icon--alexander-shatov-k1xf2D7jWUs-unsplash_2400x1800.jpg
@@ -16,6 +16,9 @@ featured_image_alt: "Digital image of a blue Twitter logo on a dark blue, rounde
 featured_image_caption: |
   <span class="caption">Image: <a href="https://unsplash.com/@alexbemore?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Alexander Shatov</a>; <a href="https://unsplash.com/s/photos/twitter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span>
 ---
+
+**Update, 2022-02-12**: After reading this post, please see also [its follow-up](/posts/2022/02/static-tweets-eleventy-hugo-part-2/) regarding use of the v.2 Twitter Developer API mentioned herein.
+{.yellowBox}
 
 You know it’s important to respect, and protect, the privacy of your website’s visitors. However, serving them embedded social media content can complicate your good intentions. The good news is that my two favorite [static site generators](https://jamstack.org/generators/) (SSGs), [Eleventy](https://11ty.dev/) and [Hugo](https://gohugo.io/), will help you fix that.
 
@@ -31,7 +34,7 @@ For example, here is a tweet I issued recently when I received[^2] some swag aft
 
 {% tweet "1487140202141425673" %}
 
-&nbsp;.&nbsp;. so you get to see the tweet—complete with my Twitter avatar and, in this case, the “attached” photo of the Cloudflare swag—**but** you’re spared all the other stuff that usually would come with it.[^3]
+.&nbsp;.&nbsp;. so you get to see the tweet—complete with my Twitter avatar and, in this case, the “attached” photo of the Cloudflare swag—**but** you’re spared all the other stuff that usually would come with it.[^3]
 
 This works because, in each of the methods I’ll discuss below, you’re pulling the tweet’s text and image(s) directly from a Twitter API and then putting them together as you wish. Of course, that means you’re also eschewing the Twitter CSS which normally would accompany a tweet’s embed, so you’ll have to apply some bespoke CSS to make things look as you want. Such styling concerns are beyond the scope of this post, but you can get some ideas by using your browser’s Inspector tool to see how I styled that tweet above.
 
@@ -39,7 +42,7 @@ This works because, in each of the methods I’ll discuss below, you’re pullin
 
 With the Eleventy SSG, we’ll be making use of [Kyle Mitofsky](https://twitter.com/KyleMitBTV)’s [**eleventy-plugin-embed-tweet**](https://github.com/KyleMit/eleventy-plugin-embed-tweet) plugin. It requires at least Eleventy v.0.10.0.
 
-When installed, the plugin will pull data from Twitter’s private developer API and so, as the plugin’s [README](https://github.com/KyleMit/eleventy-plugin-embed-tweet) explains, this requires signing up for a free [Twitter developer API account](https://developer.twitter.com/en/apply-for-access). Once you’ve got that account, you’ll have four environment variables—`TOKEN`, `TOKEN_SECRET`, `CONSUMER_KEY`, and `CONSUMER_SECRET`—that must live in a “dot-env” (`.env`) file at your site project’s root level.
+When installed, the plugin will pull data from Twitter’s private developer API and so, as the plugin’s [README](https://github.com/KyleMit/eleventy-plugin-embed-tweet) explains, this requires signing up for a free [Twitter Developer API account](https://developer.twitter.com/en/apply-for-access). Once you’ve got that account, you’ll have four environment variables—`TOKEN`, `TOKEN_SECRET`, `CONSUMER_KEY`, and `CONSUMER_SECRET`—that must live in a “dot-env” (`.env`) file at your site project’s root level.
 
 That’s fine for when you’re developing locally, but you obviously don’t want to [commit](https://git-scm.com/docs/git-commit) that file to a public repo. As a result, you’ll have to supply these variables to your site host, so it can access them during each build (*e.g.*, here are instructions for [Netlify](https://docs.netlify.com/configure-builds/environment-variables/), [Vercel](https://vercel.com/docs/concepts/projects/environment-variables), and [Cloudflare Pages](https://developers.cloudflare.com/pages/platform/build-configuration#environment-variables)). The README warns that, if the environment variables *aren’t* available at build time, the plugin will fall back to that JavaScript glob from Twitter’s standard tweet-embedding process.
 
