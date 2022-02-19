@@ -1,5 +1,5 @@
 ---
-#layout: singlepost
+layout: singlepost
 title: "Gems in the rough #14"
 subtitle: "Some recent items from the SSG front"
 description: "Full-time Eleventy, variables in Hugo, learning from a nice tweet, using web fonts with internal CSS."
@@ -88,7 +88,7 @@ I am perturbed to have remained ignorant of this up to now, since Hugo 0.48 appe
 
 This showed up in my Twitter feed a few days ago, referring to those aforementioned [recent](/posts/2022/02/static-tweets-eleventy-hugo/) [posts](/posts/2022/02/static-tweets-eleventy-hugo-part-2/) about embedding static versions of tweets:
 
-{{< tweet "1493660193653207040" >}}
+{% tweet "1493660193653207040" %}
 
 .&nbsp;.&nbsp;. and these folks are very welcome! Helping others with their website development work is part of why this site is here in the first place. And, in fact, these folks helped *me*.
 
