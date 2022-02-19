@@ -6,7 +6,7 @@ subtitle: "Getting similar data, but from a safer source"
 description: "Using Twitter’s preferred API to embed static tweets."
 author: Bryce Wray
 date: 2022-02-11T14:43:00-06:00
-lastmod: 2022-02-13T07:29:00-06:00
+lastmod: 2022-02-18T11:24:00-06:00
 #initTextEditor: Ulysses
 discussionId: "2022-02-static-tweets-eleventy-hugo-part-2"
 featured_image: twitter-icon--alexander-shatov-k1xf2D7jWUs-unsplash_2400x1800.jpg
@@ -154,8 +154,10 @@ And here’s the `stweetv2.html` shortcode itself. As in the case of the `stweet
     {{ with $json.includes }}
       {{ $includes := . }}
       {{ range $includes.media }}
-        <img src="{{ .url }}" alt="Image {{ .media_key }} from Twitter" class="tweet-img" />
-        {{/* This will need to be in the main blockquote for multiple included images */}}
+        {{ if not (eq .type "animated_gif" ) }}
+          <img src="{{ .url }}" alt="Image {{ .media_key }} from Twitter" class="tweet-img" />
+          {{/* This will need to be in the main blockquote for multiple included images */}}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
@@ -165,6 +167,9 @@ And here’s the `stweetv2.html` shortcode itself. As in the case of the `stweet
 </blockquote>
 ```
 {% endraw %}
+
+**Update, 2022-02-18**: I revised this slightly after learning that the Twitter API doesn’t quite supply all the data one needs to display animated GIFs. (See “[Gems in the rough #14](/posts/2022/02/gems-in-rough-14/)” for more information.)
+{.yellowBox}
 
 ## Testing with `cURL`
 
