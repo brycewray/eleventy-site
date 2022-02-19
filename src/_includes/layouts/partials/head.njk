@@ -86,9 +86,9 @@
     <link rel="preload" href="/assets/fonts/PublicSans-Italic-VF-2-000_2021-11-01_subset.woff2" crossorigin="anonymous" as="font" type="font/woff2" />
     -->
     {% if eleventyEnv == "production" %}
-      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/fonts_Inter.css" type="text/css" />
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/{{ csshash.fonts_InterSCSS }}" type="text/css" />
       <style{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %}>{% include 'css/index.css' ignore missing %}</style>
-      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/intervf.css" type="text/css" />
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/{{ csshash.intervfSCSS }}" type="text/css" />
     {% else %}
       <link rel="stylesheet" href="/css/fonts_Inter.css" type="text/css" />
       <link rel="stylesheet" href="/css/index.css" type="text/css" />

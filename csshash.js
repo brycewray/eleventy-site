@@ -4,6 +4,10 @@ const fg = require('fast-glob')
 const DATAFILE = '_data/csshash.json'
 const PCSSFILE = 'csshash-out'
 const PSCSSFILE = 'scsshash-out'
+const PCSSFONTS_INTERFILE = 'cssfonts_interhash-out'
+const PSCSSFONTS_INTERFILE = 'scssfonts_interhash-out'
+const PCSSINTERVFFILE = 'cssintervfhash-out'
+const PSCSSINTERVFFILE = 'scssintervfhash-out'
 cssFiles = fg.sync([
   'src/**/*.css'
 ])
@@ -30,13 +34,25 @@ console.log(`SCSS MD5 result =`, scssMd5Total)
 
 var jsonValue = `{
   "indexCSS": "index-${cssMd5Total}.css",
-  "indexSCSS": "index-${scssMd5Total}.css"
+  "fonts_InterCSS": "fonts_Inter-${cssMd5Total}.css",
+  "intervfCSS": "intervf-${cssMd5Total}.css",
+  "indexSCSS": "index-${scssMd5Total}.css",
+  "fonts_InterSCSS": "fonts_Inter-${scssMd5Total}.css",
+  "intervfSCSS": "intervf-${scssMd5Total}.css"
 }`
 fs.writeFileSync(DATAFILE, jsonValue)
 
 var cssTxtValue = `index-${cssMd5Total}.css`
 var scssTxtValue = `index-${scssMd5Total}.css`
+var cssfonts_InterTxtValue = `fonts_Inter-${cssMd5Total}.css`
+var scssfonts_InterTxtValue = `fonts_Inter-${scssMd5Total}.css`
+var cssintervfTxtValue = `intervf-${cssMd5Total}.css`
+var scssintervfTxtValue = `intervf-${scssMd5Total}.css`
 fs.writeFileSync(PCSSFILE, cssTxtValue)
 fs.writeFileSync(PSCSSFILE, scssTxtValue)
+fs.writeFileSync(PCSSFONTS_INTERFILE, cssfonts_InterTxtValue)
+fs.writeFileSync(PSCSSFONTS_INTERFILE, scssfonts_InterTxtValue)
+fs.writeFileSync(PCSSINTERVFFILE, cssintervfTxtValue)
+fs.writeFileSync(PSCSSINTERVFFILE, scssintervfTxtValue)
 // ...the latter because, otherwise, you get the following error:
 // The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView.

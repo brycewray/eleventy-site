@@ -80,6 +80,10 @@ src/_includes/css/*.*
 csshash
 csshash-out
 scsshash-out
+cssfonts_interhash-out
+scssfonts_interhash-out
+cssintervfhash-out
+scssintervfhash-out
 
 csp.txt
 cache-and-headers.js
