@@ -6,7 +6,7 @@ subtitle: "To serve and protect"
 description: "How to embed tweets while still protecting your visitors’ privacy."
 author: Bryce Wray
 date: 2022-02-07T12:00:00-06:00
-lastmod: 2022-02-11T21:09:00-06:00
+lastmod: 2022-02-20T11:48:00-06:00
 #initTextEditor: Ulysses
 discussionId: "2022-02-static-tweets-eleventy-hugo"
 featured_image: twitter-icon--alexander-shatov-k1xf2D7jWUs-unsplash_2400x1800.jpg
@@ -130,12 +130,12 @@ Now, that’s certainly not terrible, and it does give you the essence of the me
 
 <blockquote class="tweet-card">
   <div class="tweet-header">
-    <a class="tweet-profile" href="https://twitter.com/{{ $json.user.screen_name}}" target="_blank" ref="noopener">
+    <a class="tweet-profile" href="https://twitter.com/{{ $json.user.screen_name}}" target="_blank" rel="noopener">
       <img src="{{ $json.user.profile_image_url_https }}" alt="Twitter avatar for {{ $json.user.screen_name}}" />
     </a>
     <div class="tweet-author">
-      <a class="tweet-author-name" href="https://twitter.com/{{ $json.user.screen_name}}" target="_blank" ref="noopener">{{ $json.user.name }}</a>
-      <a class="tweet-author-handle" href="https://twitter.com/{{ $json.user.screen_name}}" target="_blank" ref="noopener">@{{ $json.user.screen_name}}</a>
+      <a class="tweet-author-name" href="https://twitter.com/{{ $json.user.screen_name}}" target="_blank" rel="noopener">{{ $json.user.name }}</a>
+      <a class="tweet-author-handle" href="https://twitter.com/{{ $json.user.screen_name}}" target="_blank" rel="noopener">@{{ $json.user.screen_name}}</a>
     </div>
   </div>
   <p class="tweet-body">
