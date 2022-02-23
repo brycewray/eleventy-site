@@ -33,21 +33,21 @@ scssMd5Total = md5(scssContent)
 console.log(`SCSS MD5 result =`, scssMd5Total)
 
 var jsonValue = `{
-  "indexCSS": "index-${cssMd5Total}.css",
-  "fonts_InterCSS": "fonts_Inter-${cssMd5Total}.css",
-  "intervfCSS": "intervf-${cssMd5Total}.css",
-  "indexSCSS": "index-${scssMd5Total}.css",
-  "fonts_InterSCSS": "fonts_Inter-${scssMd5Total}.css",
-  "intervfSCSS": "intervf-${scssMd5Total}.css"
+  "indexCSS": "index-${cssMd5Total}.min.css",
+  "indexSCSS": "index-${scssMd5Total}.min.css",
+  "fonts_InterCSS": "fonts_Inter-${cssMd5Total}.min.css",
+  "fonts_InterSCSS": "fonts_Inter-${scssMd5Total}.min.css",
+  "intervfCSS": "intervf-${cssMd5Total}.min.css",
+  "intervfSCSS": "intervf-${scssMd5Total}.min.css"
 }`
 fs.writeFileSync(DATAFILE, jsonValue)
 
 var cssTxtValue = `index-${cssMd5Total}.css`
 var scssTxtValue = `index-${scssMd5Total}.css`
-var cssfonts_InterTxtValue = `fonts_Inter-${cssMd5Total}.css`
-var scssfonts_InterTxtValue = `fonts_Inter-${scssMd5Total}.css`
-var cssintervfTxtValue = `intervf-${cssMd5Total}.css`
-var scssintervfTxtValue = `intervf-${scssMd5Total}.css`
+var cssfonts_InterTxtValue = `fonts_Inter-${cssMd5Total}.min.css`
+var scssfonts_InterTxtValue = `fonts_Inter-${scssMd5Total}.min.css`
+var cssintervfTxtValue = `intervf-${cssMd5Total}.min.css`
+var scssintervfTxtValue = `intervf-${scssMd5Total}.min.css`
 fs.writeFileSync(PCSSFILE, cssTxtValue)
 fs.writeFileSync(PSCSSFILE, scssTxtValue)
 fs.writeFileSync(PCSSFONTS_INTERFILE, cssfonts_InterTxtValue)
