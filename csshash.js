@@ -6,6 +6,8 @@ const PCSSFILE = 'csshash-out'
 const PSCSSFILE = 'scsshash-out'
 const PCSSFONTS_INTERFILE = 'cssfonts_interhash-out'
 const PSCSSFONTS_INTERFILE = 'scssfonts_interhash-out'
+const PCSSFONTS_PUBLICSANSFILE = 'cssfonts_publicsanshash-out'
+const PSCSSFONTS_PUBLICSANSFILE = 'scssfonts_publicsanshash-out'
 const PCSSINTERVFFILE = 'cssintervfhash-out'
 const PSCSSINTERVFFILE = 'scssintervfhash-out'
 cssFiles = fg.sync([
@@ -37,6 +39,8 @@ var jsonValue = `{
   "indexSCSS": "index-${scssMd5Total}.min.css",
   "fonts_InterCSS": "fonts_Inter-${cssMd5Total}.min.css",
   "fonts_InterSCSS": "fonts_Inter-${scssMd5Total}.min.css",
+  "fonts_PublicSansCSS": "fonts_PublicSans-${cssMd5Total}.min.css",
+  "fonts_PublicSansSCSS": "fonts_PublicSans-${scssMd5Total}.min.css",
   "intervfCSS": "intervf-${cssMd5Total}.min.css",
   "intervfSCSS": "intervf-${scssMd5Total}.min.css"
 }`
@@ -46,12 +50,16 @@ var cssTxtValue = `index-${cssMd5Total}.css`
 var scssTxtValue = `index-${scssMd5Total}.css`
 var cssfonts_InterTxtValue = `fonts_Inter-${cssMd5Total}.min.css`
 var scssfonts_InterTxtValue = `fonts_Inter-${scssMd5Total}.min.css`
+var cssfonts_PublicSansTxtValue = `fonts_PublicSans-${cssMd5Total}.min.css`
+var scssfonts_PublicSansTxtValue = `fonts_PublicSans-${scssMd5Total}.min.css`
 var cssintervfTxtValue = `intervf-${cssMd5Total}.min.css`
 var scssintervfTxtValue = `intervf-${scssMd5Total}.min.css`
 fs.writeFileSync(PCSSFILE, cssTxtValue)
 fs.writeFileSync(PSCSSFILE, scssTxtValue)
 fs.writeFileSync(PCSSFONTS_INTERFILE, cssfonts_InterTxtValue)
 fs.writeFileSync(PSCSSFONTS_INTERFILE, scssfonts_InterTxtValue)
+fs.writeFileSync(PCSSFONTS_PUBLICSANSFILE, cssfonts_PublicSansTxtValue)
+fs.writeFileSync(PSCSSFONTS_PUBLICSANSFILE, scssfonts_PublicSansTxtValue)
 fs.writeFileSync(PCSSINTERVFFILE, cssintervfTxtValue)
 fs.writeFileSync(PSCSSINTERVFFILE, scssintervfTxtValue)
 // ...the latter because, otherwise, you get the following error:
