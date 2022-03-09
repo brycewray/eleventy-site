@@ -82,6 +82,8 @@ csshash-out
 scsshash-out
 cssfonts_interhash-out
 scssfonts_interhash-out
+cssfonts_publicsanshash-out
+scssfonts_publicsanshash-out
 cssintervfhash-out
 scssintervfhash-out
 
