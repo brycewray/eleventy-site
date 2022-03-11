@@ -1,5 +1,5 @@
 ---
-#layout: singlepost
+layout: singlepost
 title: "Gems in the rough #16"
 subtitle: "Or, what else has been going on?"
 description: "Eleventy 2.x (yes, already), trying Giscus, another shameless plug."
@@ -50,7 +50,7 @@ To be sure, I’m *not* taking away the reply-by-email button/link, which will s
 
 A follow-up to something I [mentioned](/posts/2022/02/shameless-plug-time/) a few weeks ago: the nice folks at CloudCannon kindly asked me to write another piece for them, and the latest such effort is now live on their blog: “[The Ultimate Guide to Hugo Sections](https://cloudcannon.com/blog/the-ultimate-guide-to-hugo-sections/).” As I subsequently noted in a reply to my retweet of the article’s original announcement:
 
-{% tweet "1502062544764162054" }
+{% tweet "1502062544764162054" %}
 
 And there’s more to come in the near future.
 
