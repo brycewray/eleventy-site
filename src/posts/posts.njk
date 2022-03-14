@@ -19,7 +19,7 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
     <div class="container ctr sansSerif">
       <h1 class="posts-Head">Posts</h1>
       <div class="posts-Container">
-        <p class="posts-pagerThingp">
+        <p class="posts-pagerThingP">
           {% if pagination.firstPageHref != page.url %}
           <a class="icon" aria-label="First page" href={{ pagination.firstPageHref}}>&#9664;&#9664;</a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,7 +57,7 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
           </div>
         {% endfor %}
         <hr class="paginatorBottom" />
-        <p class="posts-pagerThingp">
+        <p class="posts-pagerThingP">
           {% if pagination.firstPageHref != page.url %}
           <a class="icon" aria-label="First page" href={{ pagination.firstPageHref}}>&#9664;&#9664;</a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
