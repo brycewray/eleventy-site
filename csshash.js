@@ -34,8 +34,8 @@ var jsonValue = `{
 }`
 fs.writeFileSync(DATAFILE, jsonValue)
 
-var cssTxtValue = `index-${cssMd5Total}.css`
-var scssTxtValue = `index-${scssMd5Total}.css`
+var cssTxtValue = `index-${cssMd5Total}.min.css`
+var scssTxtValue = `index-${scssMd5Total}.min.css`
 fs.writeFileSync(PCSSFILE, cssTxtValue)
 fs.writeFileSync(PSCSSFILE, scssTxtValue)
 // ...the latter because, otherwise, you get the following error:
