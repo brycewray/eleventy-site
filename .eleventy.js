@@ -5,7 +5,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
-const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
+// const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -52,10 +52,11 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
+/*
   eleventyConfig.addPlugin(pluginEmbedTweet, {
     useInlineStyles: false,
   })
-
+ */
   eleventyConfig.setQuietMode(true)
 
   eleventyConfig.addPassthroughCopy("browserconfig.xml")
