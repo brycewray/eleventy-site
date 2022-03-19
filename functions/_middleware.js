@@ -33,7 +33,7 @@ function generateNonce() {
  * @param {Request} request
  */
 
-export default async function handleRequest(request) {
+export default async function onRequest(request) {
   const nonce = generateNonce()
   let response = await fetch(request)
 
