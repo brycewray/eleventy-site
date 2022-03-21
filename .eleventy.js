@@ -1,4 +1,4 @@
-const fs = require("fs")
+// const fs = require("fs")
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
@@ -21,13 +21,11 @@ async function imageShortcode(src, alt) {
     formats: ['webp', 'jpeg'],
     urlPath: "/images/",
     outputDir: "./_site/images/",
-    /*
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src)
       const name = path.basename(src, extension)
       return `${name}-${width}w.${format}`
     }
-    */
   })
   let lowsrc = metadataImg.jpeg[0]
   let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]
