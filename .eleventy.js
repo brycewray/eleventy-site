@@ -112,7 +112,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setServerOptions({
     port: 3000, // default is 8080
-    showAllHosts: true,
+    // showAllHosts: true,
     showVersion: true
   })
 
