@@ -6,6 +6,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setQuietMode(true)
 
+  eleventyConfig.addPlugin(require("eleventy-hast-jsx").plugin)
+
   eleventyConfig.addPassthroughCopy("browserconfig.xml")
   eleventyConfig.addPassthroughCopy("favicon.ico")
   eleventyConfig.addPassthroughCopy("robots.txt")
@@ -110,11 +112,17 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/css/*.css")
   eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
 
-  eleventyConfig.setServerOptions({
-    port: 3000, // default is 8080
-    // showAllHosts: true,
-    showVersion: true
-  })
+  // ==== For Eleventy 2.x+
+  // eleventyConfig.setServerOptions({
+  //   port: 3000, // default is 8080
+  //   // showAllHosts: true,
+  //   showVersion: true
+  // })
+
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stoot",
+  //   require("./src/assets/utils/stoot.js")
+  // )
 
   /* pathPrefix: "/"; */
   return {
