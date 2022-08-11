@@ -6,8 +6,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setQuietMode(true)
 
-  eleventyConfig.addPlugin(require("eleventy-hast-jsx").plugin)
-
   eleventyConfig.addPassthroughCopy("browserconfig.xml")
   eleventyConfig.addPassthroughCopy("favicon.ico")
   eleventyConfig.addPassthroughCopy("robots.txt")
