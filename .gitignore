@@ -107,3 +107,5 @@ start.sh
 build.sh
 testbuild.sh
 push.sh
+
+.former
