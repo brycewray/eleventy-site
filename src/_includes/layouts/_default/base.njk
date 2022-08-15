@@ -2,9 +2,8 @@
 <html lang="en">
   {% include 'layouts/partials/head.njk' %}
   <body>
-    <p>Date: {{ date }}</p>
-    <p>Hash: {{ buildInfo.hash }}</p>
-    <p>Last modified: {{ buildInfo.time.formatted }}
     {{ content | safe }}
+    <p>Date: {{ page.date }}</p>
+    <p>Last modified: {{ lastmod }}</p>
   </body>
 </html>
