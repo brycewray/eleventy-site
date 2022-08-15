@@ -6,3 +6,5 @@ lastmod: {{ buildHash.time.formatted }}
 ---
 
 This text is coming from `src/posts/index.md`.
+
+Trying something else, just to test hashing.
