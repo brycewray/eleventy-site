@@ -11,7 +11,7 @@
     "start": "NODE_ENV=development npm-run-all cleanDev devsass --parallel dev:*",
     "build": "NODE_ENV=production npm-run-all cleanProd hasher prod:sass prod:eleventy",
     "dev:sass": "npm-run-all devsass -- --watch",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --quiet --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --quiet --serve",
     "prod:sass": "npm-run-all prodsass",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site"
   },
@@ -19,12 +19,13 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.0-canary.15",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "axios": "^0.27.2",
     "cross-env": "^7.0.3",
+    "eleventy-plugin-embed-tweet": "^0.3.1",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-rss-helper": "^1.2.1",
     "fast-glob": "^3.2.11",

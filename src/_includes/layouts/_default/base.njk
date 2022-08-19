@@ -16,6 +16,8 @@
         <!-- End Cloudflare Web Analytics -->
       {% endif %}
     {% endif %}
-		<!-- copy-code JS stuff here -->
+		{% if "<pre" in content %}
+			<script nonce="DhcnhD3khTMePgXw" src="/assets/js/copy-code-button.js" defer></script>
+		{% endif %}
   </body>
 </html>

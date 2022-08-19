@@ -5,7 +5,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
-// const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
+const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -53,9 +53,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
 
-  // eleventyConfig.addPlugin(pluginEmbedTweet, {
-  //   useInlineStyles: false,
-  // })
+  eleventyConfig.addPlugin(pluginEmbedTweet, {
+    useInlineStyles: false,
+  })
 
   eleventyConfig.setQuietMode(true)
 
@@ -172,33 +172,33 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
 
 	// --- REQUIRES Eleventy v.2.0+
-	// eleventyConfig.setServerOptions({
-	// 	enabled: true, // default
-  //   port: 3000, // default is 8080
-  //   showAllHosts: true,
-  //   showVersion: true
-  // })
+	eleventyConfig.setServerOptions({
+		// enabled: true, // default
+    port: 3000, // default is 8080
+    showAllHosts: true,
+    showVersion: true
+  })
 
 	// BrowserSync stuff
 	// -- **TURN OFF** in Eleventy v.2.0+
-  eleventyConfig.setBrowserSyncConfig({
-    ...eleventyConfig.browserSyncConfig,
-    ghostMode: false, // the default as of 1.0.x
-    port: 3000,
-    // callbacks: {
-    //   ready: function(err, bs) {
-    //     bs.addMiddleware("*", (req, res) => {
-    //       const content_404 = fs.readFileSync('_site/404.njk')
-    //       // Add 404 http status code in request header.
-    //       res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" })
-    //       // Provides the 404 content without redirect.
-    //       res.write(content_404)
-    //       res.end()
-    //     })
-    //   }
-    // },
-    // snippet: false,
-  })
+  // eleventyConfig.setBrowserSyncConfig({
+  //   ...eleventyConfig.browserSyncConfig,
+  //   ghostMode: false, // the default as of 1.0.x
+  //   port: 3000,
+  //   // callbacks: {
+  //   //   ready: function(err, bs) {
+  //   //     bs.addMiddleware("*", (req, res) => {
+  //   //       const content_404 = fs.readFileSync('_site/404.njk')
+  //   //       // Add 404 http status code in request header.
+  //   //       res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" })
+  //   //       // Provides the 404 content without redirect.
+  //   //       res.write(content_404)
+  //   //       res.end()
+  //   //     })
+  //   //   }
+  //   // },
+  //   // snippet: false,
+  // })
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "imgc",
