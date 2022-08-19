@@ -90,9 +90,7 @@ scssintervfhash-out
 csp.txt
 cache-and-headers.js
 nonce-worker.js
-cache-nonce_mix.js
-cache-nonce_mix_safe.js
-cache-nonce-playground.js
+cache-nonce*.js
 
 _data/csshash.json
 _data/year.json
@@ -103,9 +101,25 @@ _data/jshash.json
 _data/lazyloadhelper.json
 _data/mobilemenuhelper.json
 
-start.sh
-build.sh
+start*.sh
+logstart.sh
+build*.sh
 testbuild.sh
 push.sh
+wm*.sh
+git*.sh
+gitoutput.txt
 
 .former
+
+tweetcurl*.json
+toot*.json
+
+.formergha
+.former_root-level
+
+gha.txt
+gha*.json
+
+static/_pagefind
+# above is Hugo version; Eleventy's probably would be related to passthrough copy

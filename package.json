@@ -1,15 +1,18 @@
 {
   "name": "eleventy_site",
-  "description": "A repository used to test the Eleventy static site generator.",
+  "description": "The repository for brycewray.com, a website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
   "private": true,
   "scripts": {
-    "clean": "rimraf _site",
+    "cleanDev": "rimraf '_site/!(images)'",
+    "cleanProd": "rimraf _site",
+    "hasher": "node csshash.js && node jshash.js",
     "devsass": "sass --no-source-map src/assets/scss/index.scss _site/css/index.css",
-    "start": "NODE_ENV=development npm-run-all clean devsass --parallel dev:*",
-    "build": "NODE_ENV=production npm-run-all clean devsass prod:eleventy",
+    "prodsass": "sass --no-source-map src/assets/scss/index.scss _site/css/$(cat scsshash-out) --style=compressed",
+    "start": "NODE_ENV=development npm-run-all cleanDev devsass --parallel dev:*",
+    "build": "NODE_ENV=production npm-run-all cleanProd hasher prod:sass prod:eleventy",
     "dev:sass": "npm-run-all devsass -- --watch",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --quiet --serve",
-    "prod:sass": "npm-run-all devsass",
+    "prod:sass": "npm-run-all prodsass",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site"
   },
   "keywords": [],
@@ -25,6 +28,7 @@
     "eleventy-rss-helper": "^1.2.1",
     "fast-glob": "^3.2.11",
     "glob": "^8.0.3",
+    "html-minifier": "^4.0.0",
     "luxon": "^3.0.1",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.4",
@@ -36,6 +40,7 @@
     "md5": "^2.3.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
+    "rss": "^1.2.2",
     "sass": "^1.54.4"
   }
 }

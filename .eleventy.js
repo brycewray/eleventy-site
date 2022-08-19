@@ -1,8 +1,61 @@
 // const fs = require("fs")
 const { DateTime } = require("luxon")
-// const path = require('path')
+const htmlmin = require("html-minifier")
+const pluginRss = require("@11ty/eleventy-plugin-rss")
+const svgContents = require("eleventy-plugin-svg-contents")
+const path = require('path')
+const Image = require("@11ty/eleventy-img")
+const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
+
+async function imageShortcode(src, alt) {
+  let sizes = "(min-width: 1024px) 100vw, 50vw"
+  let srcPrefix = `./src/assets/images/`
+  src = srcPrefix + src
+  console.log(`Generating image(s) from:  ${src}`)
+  if(alt === undefined) {
+    // Throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
+  }
+  let metadataImg = await Image(src, {
+    widths: [600, 900, 1500],
+    formats: ['webp', 'jpeg'],
+    urlPath: "/images/",
+    outputDir: "./_site/images/",
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src)
+      const name = path.basename(src, extension)
+      return `${name}-${width}w.${format}`
+    }
+  })
+  let lowsrc = metadataImg.jpeg[0]
+  let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]
+  return `<picture>
+    ${Object.values(metadataImg).map(imageFormat => {
+      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
+    }).join("\n")}
+    <img
+      src="${lowsrc.url}"
+      width="${highsrc.width}"
+      height="${highsrc.height}"
+      alt="${alt}"
+      loading="lazy"
+      decoding="async">
+  </picture>`
+}
 
 module.exports = function(eleventyConfig) {
+
+  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
+  eleventyConfig.addLiquidShortcode("image", imageShortcode)
+  // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
+  eleventyConfig.addJavaScriptFunction("image", imageShortcode)
+
+  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(svgContents)
+
+  eleventyConfig.addPlugin(pluginEmbedTweet, {
+    useInlineStyles: false,
+  })
 
   eleventyConfig.setQuietMode(true)
 
@@ -11,6 +64,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt")
   eleventyConfig.addPassthroughCopy("./src/assets/fonts")
   eleventyConfig.addPassthroughCopy("./src/assets/js")
+  eleventyConfig.addPassthroughCopy("./src/assets/svg")
+  eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
@@ -53,9 +108,14 @@ module.exports = function(eleventyConfig) {
 
   /* --- end, date-handling */
 
+
   // https://www.11ty.dev/docs/layouts/
   eleventyConfig.addLayoutAlias("base", "layouts/_default/base.njk")
+  eleventyConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
   eleventyConfig.addLayoutAlias("index", "layouts/_default/index.njk")
+  eleventyConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
+  eleventyConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
+  eleventyConfig.addLayoutAlias("sitemap", "layouts/sitemap/sitemap.njk")
 
 
   /* --- Markdown handling --- */
@@ -110,17 +170,48 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/css/*.css")
   eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
 
-  // ==== For Eleventy 2.x+
-  // eleventyConfig.setServerOptions({
-  //   port: 3000, // default is 8080
-  //   // showAllHosts: true,
-  //   showVersion: true
-  // })
+  eleventyConfig.setServerOptions({
+    port: 3000, // default is 8080
+    showAllHosts: true,
+    showVersion: true
+  })
 
-  // eleventyConfig.addNunjucksAsyncShortcode(
-  //   "stoot",
-  //   require("./src/assets/utils/stoot.js")
-  // )
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "imgc",
+    require("./src/assets/utils/imgc.js")
+  )
+  eleventyConfig.addShortcode(
+    "disclaimer",
+    require("./src/assets/utils/disclaimer.js")
+  )
+
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      })
+      return minified
+    }
+    return content
+  })
+
+
+  /* === START, prev/next posts stuff === */
+  // https://github.com/11ty/eleventy/issues/529#issuecomment-568257426
+  eleventyConfig.addCollection("posts", function (collection) {
+    const coll = collection.getFilteredByTag("post")
+    for (let i = 0; i < coll.length; i++) {
+      const prevPost = coll[i - 1]
+      const nextPost = coll[i + 1]
+      coll[i].data["prevPost"] = prevPost
+      coll[i].data["nextPost"] = nextPost
+    }
+    return coll
+  })
+  /* === END, prev/next posts stuff === */
+
 
   /* pathPrefix: "/"; */
   return {
