@@ -20,9 +20,9 @@ layout: base
               <em>{{ post.data.description | safe }}</em>
             </p>
             <p class="homePost-Dates">
-              <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
+              {% if not ("The site this week" in post.data.title) %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong><br />{% endif %}
               {% if post.data.lastmod %}
-              <br /><span class="pokey">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
+              <span class="pokey">Last modified <time datetime="{{ post.date | dateStringISO }}">{{ post.data.lastmod | dateStringISO }}</time></span>
               {% endif %}
             </p>
           </div>

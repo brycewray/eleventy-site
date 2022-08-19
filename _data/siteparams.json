@@ -3,6 +3,7 @@
   "siteBaseURL": "/",
   "siteTitle": "BryceWray.com",
   "siteAuthor": "Bryce Wray",
+	"searchPageTitle": "Search the site",
   "siteDescription": "brycewray.com — Observations, opinions, geekery.",
   "siteHost": "CFP",
   "feed": {

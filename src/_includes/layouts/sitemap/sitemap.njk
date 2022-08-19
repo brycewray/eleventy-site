@@ -3,26 +3,27 @@ title: sitemap
 layout: base
 eleventyExcludeFromCollections: true
 ---
-
   <main>
-    <div class="container-narrower sitemapDiv">
-      <h1>Sitemap</h1>
-      <h2>Main pages</h2>
-      <ul>
-        <li><a href="{{ data.siteparams.siteURLforOG }}/">Home page</a></li>
-        <li><a href="{{ data.siteparams.siteURLforOG }}/about/">About me</a></li>
-        <li><a href="{{ data.siteparams.siteURLforOG }}/privacy/">Site&rsquo;s privacy policy</a></li>
-        <li><a href="{{ data.siteparams.siteURLforOG }}/contact/">How to contact me</a></li>
-      </ul>
-      <h2>Posts</h2>
-      <ul>
-        <li><a href="{{ data.siteparams.siteURLforOG }}/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
-        {% for post in collections.post | reverse %}
-          <li><a href="{{ siteparams.siteURLforOG }}{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>&nbsp;&bull;&nbsp;{{ post.date | htmlDateString }}<br />
-          <strong>{{ post.data.subtitle | safe }}</strong><br />
-          {{ post.data.description | safe }}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+    <div class="sitemap-Container" data-pagefind-ignore>
+			<div class="sitemap-Div">
+				<h1 class="ctr">Sitemap</h1>
+				<h2>Main pages</h2>
+				<ul>
+					<li><a href="/">Home page</a></li>
+					<li><a href="/about/">About me</a></li>
+					<li><a href="/search/">Search page</a></li>
+					<li><a href="/privacy/">Site&rsquo;s privacy policy</a></li>
+					<li><a href="/contact/">How to contact me</a></li>
+				</ul>
+				<h2>Posts</h2>
+				<ul>
+					<li><a href="/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
+					{% for post in collections.post | reverse %}
+						<li><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>&nbsp;&bull;&nbsp;{{ post.date | dateStringISO }}<br />
+						{{ post.data.description | safe }}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
   </main>

@@ -1,123 +1,336 @@
 @use 'variables' as var;
 
+// based partly on https://github.com/astro-community/astro-embed/tree/main/packages/astro-embed-twitter
+
+$tc-corner-radius: 1em;
+$tc-padding: 1em;
+
 .tweet-card {
-  font-family: var.$sans-serif;
-  width: 100%;
-  margin: 1.5rem auto;
-  padding: 1rem;
-  border: 2px solid var.$grey-1;
-  border-radius: 12px;
-  background: var.$white;
-  @media screen and (min-width: var.$bkpt_md) {
-    width: 90%;
-  }
-  @media screen and (min-width: var.$bkpt_lg) {
-    width: 80%;
-  }
-  @media screen and (min-width: var.$bkpt_2xl) {
-    width: 70%;
-  }
-  @media screen and (prefers-color-scheme: dark) {
-    background: transparent;
-  }
-  a, a:hover {
-    border: none !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    /*
-    See:
-    - https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
-    - https://css-tricks.com/where-lines-break-is-complicated-heres-all-the-related-css-and-html/
-    - https://css-tricks.com/better-line-breaks-for-long-urls/
-    */
-    @media screen and (prefers-color-scheme: dark) {
-      color: var.$blueLight;
-    }
-  }
-  @media screen and (prefers-color-scheme: dark) {
-    border: 2px solid var.$grey-2;
-    color: var.$white;
-  }
+	line-height: 1.35em; // for non-`p` results from $text
+	font-family: var.$twitter-sans-serif;
+	font-size: var.$stdsize;
+	@media screen and (min-width: var.$bkpt_md) {
+		font-size: var.$minimalbig;
+	}
+	p {
+		margin-top: 0; //reset
+		margin-bottom: 1em;
+		line-height: 1.35em;
+	}
+	margin: 1.5rem auto;
+	padding: 1rem;
+	border: 2px solid var.$gray-1;
+	border-radius: 12px;
+	background: var.$white;
+	width: 100%;
+	@media screen and (min-width: var.$bkpt_ml) {
+		width: 80%;
+	}
+	@media screen and (min-width: var.$bkpt_lg) {
+		width: 85%;
+	}
+	// @media screen and (min-width: var.$bkpt_2xl) {
+	//   width: 85%;
+	// }
+	@media screen and (min-width: var.$bkpt_3xl) {
+		max-width: 80ch;
+	}
+	@media screen and (prefers-color-scheme: dark) {
+		background: var.$twitter-bkgd-dark-mode;
+		// background: transparent;
+	}
+	a, a:hover {
+		border: none !important;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		word-break: break-word;
+		/*
+		See:
+		- https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+		- https://css-tricks.com/where-lines-break-is-complicated-heres-all-the-related-css-and-html/
+		- https://css-tricks.com/better-line-breaks-for-long-urls/
+		*/
+		@media screen and (prefers-color-scheme: dark) {
+			color: var.$blueLight;
+		}
+	}
+	@media screen and (prefers-color-scheme: dark) {
+		border: 2px solid var.$gray-2;
+		color: var.$white;
+	}
 }
 
 .tweet-body {
-  font-size: var.$stdsize;
-  line-height: 1.5em;
-  text-align: left !important;
-  @media screen and (min-width: var.$bkpt_lg) {
-    font-size: var.$minimalbig;
-  }
+	text-align: left !important;
 }
 
 // ==== rounded image "attachment"
 // Eleventy version
 .tweet-images {
-  img {
-    border-radius: 12px;
-  }
+	img {
+		border-radius: 12px;
+	}
 }
 // Hugo version
-.tweet-img {
-  border-radius: 12px;
+.tweet-media-img {
+	width: 100%; // overcoming something in Andy Bell's `reset`
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: cover;
 }
+
+.tweet-card-img {
+	border-bottom: 1px solid var.$gray-2;
+	@media screen and (prefers-color-scheme: dark) {
+		border: 1px solid var.$gray-2-dark-mode;
+	}
+	width: 100%;
+}
+
+.tweet-player {
+	display: flex;
+}
+
 // ==== END, rounded image "attachment"
 
+a > .card {
+	color: var.$gray-1;
+	@media screen and (prefers-color-scheme: dark) {
+		color: var.$gray-2-dark-mode;
+	}
+}
+
+.card {
+	overflow: hidden;
+	// background-color: yellow;
+	margin-top: 1em;
+	border-radius: 12px;
+	border: 1px solid var.$gray-2;
+	@media screen and (prefers-color-scheme: dark) {
+		border: 1px solid var.$gray-2-dark-mode;
+	}
+	p {
+		padding: 0.5em 1em 1em;
+		line-height: 1.4;
+		margin-top: 0;
+		font-size: var.$pokey;
+		.card-title {
+			color: var.$black;
+			@media screen and (prefers-color-scheme: dark){
+				color: var.$white;
+			}
+		}
+	}
+}
+
+
 .tweet-header {
-  display: flex;
-  .tweet-profile {
-    margin-right: 0.5em;
-    flex-shrink: 0;
-    img {
-      border-radius: 9999px;
-    }
-  }
-  .tweet-author {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    &-name {
-      font-weight: bold;
-      color: var.$black;
-      @media screen and (prefers-color-scheme: dark) {
-        color: var.$white;
-      }
-      line-height: 1.375;
-    }
-    &-handle {
-      color: var.$grey-1;
-      @media screen and (prefers-color-scheme: dark) {
-        color: var.$grey-2-dark-mode;
-      }
-      font-size: var.$pokey;
-      line-height: 1;
-    }
-    .tweet-bird {
-      margin-left: 1.25rem;
-    }
-  }
+	display: flex;
+	.tweet-profile {
+		margin-right: 0.5em;
+		margin-bottom: 1em;
+		flex-shrink: 0;
+		img {
+			border-radius: 9999px;
+			width: 48px;
+			height: auto;
+		}
+	}
+	.tweet-author {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		&-name {
+			font-weight: bold;
+			font-size: var.$stdsize;
+			color: var.$black;
+			@media screen and (prefers-color-scheme: dark) {
+				color: var.$white;
+			}
+			line-height: 1.375;
+		}
+		&-handle {
+			color: var.$gray-1;
+			@media screen and (prefers-color-scheme: dark) {
+				color: var.$gray-2-dark-mode;
+			}
+			font-size: var.$pokey;
+			line-height: 1;
+		}
+		.tweet-bird {
+			margin-left: 1.25rem;
+		}
+	}
 }
 
 .tweet-footer {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  color: var.$grey-1;
-  font-size: var.$pokey;
-  @media screen and (prefers-color-scheme: dark) {
-    color: var.$grey-2-dark-mode;
-  }
-  .tweet-like-icon, .tweet-like-count {
-    display: none;
-  }
-  a {
-    color: var.$grey-1;
-    @media screen and (prefers-color-scheme: dark) {
-      color: var.$grey-2-dark-mode;
-    }
-  }/* === needed in Eleventy but not in Hugo */
-  .tweet-date:after {
-    content: " (UTC)";
-    font-size: var.$legal;
-  }
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	color: var.$gray-1;
+	font-size: var.$pokey;
+	@media screen and (prefers-color-scheme: dark) {
+		color: var.$gray-2-dark-mode;
+	}
+	.tweet-like-icon, .tweet-like-count {
+		display: none;
+	}
+	a {
+		color: var.$gray-1;
+		@media screen and (prefers-color-scheme: dark) {
+			color: var.$gray-2-dark-mode;
+		}
+	}
+	/* === needed in Eleventy but not in Hugo
+	.tweet-date:after {
+		content: " (UTC)";
+		font-size: var.$legal;
+	}
+	*/
 }
+
+[class^='tweet-img-grid'],
+.tweet-video-wrapper,
+.tweet-media-video {
+	margin-top: 0.5em;
+	border-radius: $tc-corner-radius;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 2px;
+}
+
+.tweet-video-wrapper {
+	border-radius: $tc-corner-radius;
+	display: block;
+	// overriding previous
+	position: relative;
+}
+
+.tweet-img-grid-3 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.tweet-img-grid-3 .tweet-media-img {
+	aspect-ratio: 1.8;
+}
+
+.tweet-img-grid-3 :nth-child(1) {
+	grid-row: 1 / span 2;
+	height: 100%;
+}
+
+.tweet-img-grid-3 :nth-child(1) .tweet-media-img {
+	aspect-ratio: 0.9;
+}
+
+.tweet-img-grid-2,
+.tweet-img-grid-4 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.tweet-sens-blur {
+	filter: blur(5rem);
+	position: relative;
+}
+
+.tweet-sens-blur-no {
+	filter: none !important;
+	z-index: 9999 !important;
+	position: relative;
+}
+
+[class^='tweet-img-grid'] {
+	position: relative;
+}
+
+.blur-text {
+	position: absolute;
+	font-weight: bold;
+	text-shadow: 0.125em 0.125em 0.1em var.$black;
+	width: 100%;
+	top: 40%;
+	color: white;
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 1.2;
+}
+
+.blur-text-no {
+	display: none !important;
+	background-color: black;
+}
+
+.tweet-poll {
+	&-wrapper {
+		display: grid;
+		grid-template-columns: 3.5em 0.25fr 1fr;
+		grid-gap: 1em;
+		line-height: 1;
+	}
+	&-count {
+		grid-column: 1;
+		text-align: right;
+	}
+	&-meter {
+		grid-column: 2;
+		meter {
+			width: 100%;
+		}
+	}
+	&-title {
+		grid-column: 3;
+	}
+}
+
+.tweet-quoted-tweet {
+	border: 1px solid var.$gray-1;
+	@media screen and (prefers-color-scheme: dark) {
+		border: 1px solid var.$gray-2-dark-mode;
+	}
+	border-radius: 12px;
+	padding: 1em 1em 0.5em 1em;
+	margin-top: 0.75em;
+	margin-bottom: 0;
+	p {
+		font-size: var.$pokey;
+		margin: 0 0 0.5em;
+		line-height: 1.4;
+		.tweet-quoted-tweet-profile-image {
+			border-radius: 9999px;
+			width: 18px;
+			height: auto;
+			display: inline;
+		}
+	}
+	p.tweet-quoted-tweet-head {
+		margin-bottom: 0.25em;
+		a {
+			color: var.$gray-1;
+			@media screen and (prefers-color-scheme: dark) {
+				color: var.$gray-2-dark-mode;
+			}
+			&:hover {
+				color: var.$darkblue;
+				@media screen and (prefers-color-scheme: dark) {
+					color: var.$blueLight;
+				}
+			}
+		}
+	}
+}
+
+.tweet-reply-to {
+	margin-top: 0;
+	padding-top: 0;
+	line-height: 1.3em;
+	color: var.$gray-1;
+	font-size: var.$pokey;
+	@media screen and (prefers-color-scheme: dark) {
+		color: var.$gray-2-dark-mode;
+	}
+	.tweet-like-icon, .tweet-like-count {
+		display: none;
+	}
+}
+

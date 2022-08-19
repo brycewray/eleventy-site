@@ -16,7 +16,7 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
 ---
 
   <main>
-    <div class="container ctr sansSerif">
+    <div class="posts-Wrapper ctr" data-pagefind-ignore>
       <h1 class="posts-Head">Posts</h1>
       <div class="posts-Container">
         <p class="posts-pagerThingP">
@@ -48,9 +48,9 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
             <p class="posts-Description">
               <em>{{ post.data.description | safe }}</em>
             </p>
-            <p class="posts-Dates"><strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
+            <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong><br />{% endif %}
               {% if post.data.lastmod %}
-              <br /><span class="eightyFive">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
+              <span class="eightyFive">Last modified <time datetime="{{ post.date | dateStringISO }}">{{ post.data.lastmod | dateStringISO }}</time></span>
               {% endif %}
             </p>
             <p class="legal">&nbsp;</p><!-- where reading time goes in Hugo site -->
