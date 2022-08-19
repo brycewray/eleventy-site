@@ -1,8 +1,34 @@
 ---
-title: eleventy_site
+title: BryceWray.com
 layout: base
 ---
 
   <main>
-    {{ content | safe }}
+    <div class="container-home">
+      <div class="homeOpen">
+        <h1>Welcome&nbsp;to brycewray.com, offering&nbsp;<a href="/about/">its&nbsp;owner</a>&rsquo;s &ldquo;observations, opinions, and&nbsp;geekiness&rdquo; since&nbsp;2018.</h1>
+      </div>
+      <div class="homePost-Div">
+        <div class="post-line"></div>
+        <h2 class="homePost-Latest">Latest <a href="/posts/">posts</a></h2>
+        {% for post in collections.post | reverse %}
+          {% if loop.index0 < 3 %}
+          <div>
+            <h2 class="homePost-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
+            <p class="homePost-Subtitle">{{ post.data.subtitle | safe }}</p>
+            <p class="homePost-Description">
+              <em>{{ post.data.description | safe }}</em>
+            </p>
+            <p class="homePost-Dates">
+              <strong><time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time></strong>
+              {% if post.data.lastmod %}
+              <br /><span class="pokey">Last modified <time datetime="{{ post.date | htmlDateString }}">{{ post.data.lastmod | htmlDateString }}</time></span>
+              {% endif %}
+            </p>
+          </div>
+          {% endif %}
+        {% endfor %}
+        <p class="homePost-Finish"><a href="/posts/"><strong>All {{ collections.post.length }} posts</strong></a> <span class="pokey"><em>(listed five per page)</em></span></p>
+      </div>
+    </div>
   </main>

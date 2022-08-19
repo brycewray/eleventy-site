@@ -1,5 +1,4 @@
-# Test repository
+# Repo for brycewray.com
 
-I use this repository to test the [Eleventy](https://11ty.dev) [static site generator](https://jamstack.org/generators) (SSG).
+This is the repository from which the [Eleventy](https://11ty.dev)-generated version of [brycewray.com](https://www.brycewray.com/) is built.
 
-![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=eleventy-site-vercel&style=plastic)
