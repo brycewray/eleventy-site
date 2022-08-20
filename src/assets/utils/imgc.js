@@ -1,11 +1,14 @@
 /*
 This shortcode takes the following form...
-  {% imgc url, alt, width, height, tmpl %}
+  {% imgc "url", "alt", width, height, "phn" %}
 ...with url in the form of (note NO leading or ending slash):
   filename.ext
-...and 'temp[late]' optional in body copy. The template is used to specify
-hero images on post pages ('posts'). Without this parameter, the `switch`
-statement below defaults to body copy-style image-handling.
+...and "phn" optional.
+
+If 'phn' (for screen caps from phones) is "phn", there's
+no LQIP bkgd and the image is rendered at small size on most displays.
+If 'phn' is unspecified, default image styling occurs.
+
 The `animate-fade` CSS class is from the Tailwind CSS config file.
 */
 
@@ -18,32 +21,11 @@ let LQIPholder = 'f_jpg,q_01,w_20/' // note ending slash and leading zero in `q`
 let xFmPart1 = 'f_auto,q_auto:eco,w_'
 let xFmPart2 = ',x_0,z_1/' // note ending slash
 
-module.exports = async (url, alt, width, height, tmpl) => {
+module.exports = async (url, alt, width, height, phn) => {
   let imgBmd5 = md5(url)
 
-  if (!tmpl) tmpl == "none"
-
-  switch(tmpl) {
-    /* === 'index'case used with home page when it had a hero image (pre-Jan. 2021)
-    case 'index':
-      divClass = `h-full`
-      imgClass = `nScrHidden object-cover object-center h-full w-full containedImage animate-fade`
-      nscClass = `imgCover hero`
-      dataSzes = `100vw`
-      break
-    */
-    case 'posts':
-      divClass = `h-full` // can't use the md5-generated class name here for some reason; insert below
-      imgClass = `nScrHidden imgCover hero animate-fade`
-      nscClass = `imgCover aspect-[${width}/${height}]`
-      dataSzes = `(min-width: 1024px) 100vw, 50vw`
-      break
-    default:
-      divClass = `relative`
-      imgClass = `w-full h-auto aspect-[${width}/${height}] animate-fade`
-      nscClass = `w-full h-auto aspect-[${width}/${height}]`
-      dataSzes = `(min-width: 1024px) 100vw, 50vw`
-  }
+	divClass = `relative`
+	dataSzes = `(min-width: 1024px) 100vw, 50vw`
 
   /*
   ================================================================
@@ -73,20 +55,21 @@ module.exports = async (url, alt, width, height, tmpl) => {
   let stringtoRet = ``
   let arrayFromLoop = []
 
-  stringtoRet = `
-  <style nonce="DhcnhD3khTMePgXw">
+	if (phn === "phn") {
+		imgClass = `img-phn h-auto ctrImg animate-fade`
+		stringtoRet += `<div class="${divClass}">`
+	} else {
+		imgClass = `w-full h-auto animate-fade`
+		stringtoRet += `<style nonce="DhcnhD3khTMePgXw">
     .imgB-${imgBmd5} {
       background: url(data:image/jpeg;base64,${LQIP_b64});
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
     }
-  </style>
-  <div class="${divClass} imgB-${imgBmd5}">
-  <noscript>
-    <img class="${nscClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" alt="${alt}" />
-  </noscript>
-  <img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
+		</style><div class="${divClass} imgB-${imgBmd5}">`
+	}
+	stringtoRet += `<img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)
@@ -94,12 +77,7 @@ module.exports = async (url, alt, width, height, tmpl) => {
     })
     stringtoRet += arrayFromLoop.join(', ')
     // h/t https://stackoverflow.com/questions/2047491/how-to-remove-last-comma
-    stringtoRet += `" alt="${alt}" width="${width}" height="${height}"`
-    if (tmpl !== "posts") {
-      stringtoRet += ` loading="lazy"` // not good for above-the-fold images
-    }
-    stringtoRet +=` sizes="${dataSzes}" />
-  </div>`
+    stringtoRet += `" alt="${alt}" width="${width}" height="${height}" sizes="${dataSzes}" /></div>`
 
   return stringtoRet
 }
