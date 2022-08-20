@@ -19,7 +19,7 @@ eleventyExcludeFromCollections: true
 				<ul>
 					<li><a href="/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
 					{% for post in collections.post | reverse %}
-						<li><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>&nbsp;&bull;&nbsp;{{ post.date | dateStringISO }}<br />
+						<li><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>&nbsp;&bull;&nbsp;<strong class="legal">{{ post.date | dateStringISO }}</strong><br />
 						{{ post.data.description | safe }}
 						</li>
 					{% endfor %}
