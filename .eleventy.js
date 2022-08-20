@@ -206,7 +206,13 @@ module.exports = function(eleventyConfig) {
     "imgc",
     require("./src/assets/utils/imgc.js")
   )
-  eleventyConfig.addShortcode(
+
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "stweet",
+    require("./src/assets/utils/stweet.js")
+  )
+
+	eleventyConfig.addShortcode(
     "disclaimer",
     require("./src/assets/utils/disclaimer.js")
   )
