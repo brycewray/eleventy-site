@@ -123,3 +123,4 @@ gha*.json
 
 static/_pagefind
 # above is Hugo version; Eleventy's probably would be related to passthrough copy
+_pagefind

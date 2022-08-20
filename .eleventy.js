@@ -67,6 +67,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets/svg")
   eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
+	eleventyConfig.addPassthroughCopy("./src/_pagefind")
 
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
@@ -116,6 +117,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("about", "layouts/about/about.njk")
   eleventyConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
   eleventyConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
+  eleventyConfig.addLayoutAlias("search", "layouts/search/search.njk")
   eleventyConfig.addLayoutAlias("sitemap", "layouts/sitemap/sitemap.njk")
 
 
@@ -149,7 +151,7 @@ module.exports = function(eleventyConfig) {
       return href.startsWith("https:");
     },
     attrs: {
-      target: "_blank",
+      // target: "_blank",
       rel: "noreferrer noopener",
     },
   })
