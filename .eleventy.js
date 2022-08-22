@@ -12,7 +12,7 @@ async function imageShortcode(src, alt) {
   let srcPrefix = `./src/assets/images/`
   src = srcPrefix + src
   console.log(`Generating image(s) from:  ${src}`)
-  if(alt === undefined) {
+  if (alt === undefined) {
     // Throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
   }
