@@ -106,6 +106,9 @@ module.exports = function(eleventyConfig) {
       "MMMM d, yyyy"
     )
   })
+  eleventyConfig.addFilter("socialDate", (dateObj) => {
+    return DateTime.fromISO(dateObj).toFormat("MM d, yyyy • h:mm a")
+  })
 
   /* --- end, date-handling */
 
@@ -210,6 +213,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode(
     "stweet",
     require("./src/assets/utils/stweet.js")
+  )
+
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "stweetsimple",
+    require("./src/assets/utils/stweetsimple.js")
   )
 
 	eleventyConfig.addShortcode(
