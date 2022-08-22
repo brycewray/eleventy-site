@@ -233,8 +233,7 @@ module.exports = async (user, id) => {
 
 	let tweetLink = `https://twitter.com/${Json.user.screen_name}/status/${id}`;
 
-	stringToRet += `
-	<blockquote class="tweet-card" cite="${tweetLink}">
+	stringToRet += `<blockquote class="tweet-card" cite="${tweetLink}">
 		<div class="tweet-header">
 			<a class="tweet-profile twitterExt" href="https://twitter.com/${Json.user.screen_name}" rel="noopener">
 				<img src="${Json.user.profile_image_url_https}" alt="Twitter avatar for ${Json.user.screen_name}" loading="lazy" />
@@ -247,27 +246,34 @@ module.exports = async (user, id) => {
 		if (RT_text) {
 			stringToRet += `<p class="pokey tweet-reply-to">${RT_text}</p>`
 		}
-		stringToRet += `
-		<p class="tweet-body">${JsonOHTML}</p>`
+		stringToRet += `<p class="tweet-body">${JsonOHTML}</p>`
 		if (Json.video) {
 			if (Json.video.variants) {
-				stringToRet += `
-				<div class="ctr tweet-video-wrapper">`
-				{Json.video.variants.type == "video/gif"
-					? stringToRet += `<video loop autoplay muted plays controlslist="nofullscreen" class="ctr tweet-media-img"><source src="${Json.video.variants[0].src}" type=${Json.video.variants[0].type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
-					: stringToRet += `<video loop autoplay controls class="ctr tweet-media-img"><source src="${Json.video.variants[0].src}" type="${Json.video.variants[0].type}"><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
+				let vidVar_1 = Json.video.variants[1] // for `type: video/mp4`
+				let vidVarsL = Json.video.variants.length
+				if (vidVarsL == 1) {
+					vidVar_1 = Json.video.variants[0]
 				}
-				stringToRet += `
-				</div>
-				`
+				let vidType
+				Json.video.variants.forEach((variants) => {
+					vidType = variants.type // will end up with last one
+				})
+				let vidVarLast = Json.video.variants[(vidVarsL - 1)] // for `type: gif`
+				stringToRet += `<div class="ctr tweet-video-wrapper">`
+				if (vidType == "video/gif") {
+					stringToRet += `<video loop autoplay muted plays controlslist="nofullscreen" class="ctr tweet-media-img"><source src="${vidVarLast.src}" type=${vidVarLast.type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
+				}
+				if (vidType = "video/mp4") {
+					stringToRet += `<video loop autoplay muted playsinline controls class="ctr tweet-media-img"><source src="${vidVar_1.src}" type=${vidVar_1.type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
+				}
+				stringToRet += `</div>`
 			}
 		}
 
 		if (Json.card) {
 			if (Json.card.binding_values) {
 				if (Json.card.binding_values.photo_image_full_size_large) {
-					stringToRet += `
-					<a href="${Json.card.binding_values.card_url.string_value}" rel="noopener">
+					stringToRet += `<a href="${Json.card.binding_values.card_url.string_value}" rel="noopener">
 						<div class="card">
 							<img src="${Json.card.binding_values.photo_image_full_size_large.image_value.url}" alt="${Json.card.binding_values.photo_image_full_size_large.image_value.alt}" loading="lazy" class="tweet-card-img" />
 							<p>
@@ -276,8 +282,7 @@ module.exports = async (user, id) => {
 								${Json.card.binding_values.description.string_value}
 							</p>
 						</div>
-					</a>
-					`
+					</a>`
 				}
 			}
 		}
@@ -285,8 +290,7 @@ module.exports = async (user, id) => {
 		if (Json.card) {
 			if (Json.card.binding_values) {
 				if (Json.card.binding_values.player_image_small) {
-					stringToRet += `
-					<a href="${Json.card.binding_values.card_url.string_value}" rel="noopener">
+					stringToRet += `<a href="${Json.card.binding_values.card_url.string_value}" rel="noopener">
 						<div class="card tweet-player">
 							<img src="${Json.card.binding_values.player_image_small.image_value.url}" alt="${Json.card.binding_values.title.string_value}" loading="lazy" />
 							<p>
@@ -295,8 +299,7 @@ module.exports = async (user, id) => {
 								${Json.card.binding_values.description.string_value}
 							</p>
 						</div>
-					</a>
-					`
+					</a>`
 				}
 			}
 		}
@@ -304,12 +307,10 @@ module.exports = async (user, id) => {
 		let timeToFormat = Json.created_at
 		let formattedTime = DateTime.fromISO(timeToFormat).toFormat("h:mm a • MMM d, yyyy")
 
-		stringToRet += `
-		<div class="tweet-footer">
+		stringToRet += `<div class="tweet-footer">
 			<a href="https://twitter.com/${Json.user.screen_name}/status/${Json.id_str}" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
 		</div>
-	</blockquote>
-	`
+	</blockquote>`
 
 	return stringToRet
 
