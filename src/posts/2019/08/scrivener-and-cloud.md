@@ -4,7 +4,7 @@ title: "Scrivener and The Cloud"
 description: "When even Ars Technica’s forum users can’t keep this straight, intervention is necessary."
 author: Bryce Wray
 date: 2019-08-18T14:15:00-05:00
-lastmod: 2022-07-22T20:56:00-05:00
+lastmod: 2022-08-22T05:33:00-05:00
 discussionId: "2019-08-scrivener-and-cloud"
 ---
 
@@ -52,7 +52,9 @@ So, let me say the simple part first, and then I'll get into the whys and wheref
 
 So, why the difference?
 
-A Scrivener .scriv "file" on macOS and iOS is actually *not* a file in the usual sense but is, instead, a *ZIP archive*. Through some clever little manipulation of the macOS file structure, it *looks like* a file in the macOS Finder. In fact, those who use the Windows version of Scrivener see its "files" appear on that OS's File Explorer as, yep, ZIPs.
+A Scrivener .scriv "file" on macOS and iOS is actually *not* a file in the usual sense but is, instead, a *package* of files. Through some clever little manipulation of the macOS file structure, it *looks like* a file in the macOS Finder. In fact, those who use the Windows version of Scrivener see its "files" appear on that OS's File Explorer as folders.[^ZIPerror]
+
+[^ZIPerror]: **Note, 2022-08-22**: This corrects my error in the original version of this post, in which I stated erroneously that a Scrivener "file" is a .zip file (thus appearing as a folder-like item in the Windows UI). However, as Kirk McElhearn wrote in "[Syncing Scrivener Projects to the Cloud](https://www.literatureandlatte.com/blog/syncing-scrivener-projects-to-the-cloud)": "Scrivener projects are made up of files and folders. If you use a Mac, iOS, or iPadOS, you see these as 'packages'; they look just like single files, but within each project there are multiple items. On Windows, you see projects as folders, and you can easily navigate within them to see all the items they contain."
 
 And why is that?
 
