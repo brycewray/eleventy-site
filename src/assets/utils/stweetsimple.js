@@ -3,7 +3,8 @@
 // --- use as:
 // {% stweetsimple "user", "id" %}
 
-const fetch = require('node-fetch')
+const fetch = (...args) =>
+	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 module.exports = async (user, id) => {
 
