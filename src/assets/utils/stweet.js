@@ -1,8 +1,10 @@
-// This is to be the Eleventy shortcode version
-// of the `stweet`/`STweet` code I used in
+// This is the Eleventy shortcode version
+// of the `stweet`/`STweet` code I've used in
 // both Hugo and Astro
 
-const fetch = require('node-fetch')
+const fetch = (...args) =>
+	import('node-fetch').then(({ default: fetch }) => fetch(...args));
+
 const { DateTime } = require("luxon")
 
 module.exports = async (user, id) => {
@@ -133,6 +135,7 @@ module.exports = async (user, id) => {
 			`.<a`,
 			`. <a`
 		)
+		/*
 		.replace(
 			`>https://t.co/QPSmjqXwft`,
 			`>brycewray.com`
@@ -153,10 +156,12 @@ module.exports = async (user, id) => {
 			`I’ll`,
 			`I’ll`
 		)
+		*/
 		.replace(
 			`😄<a`,
 			`😄 <a`
 		)
+		/*
 		.replace(
 			`>https://t.co/wB96VIVOLn`,
 			`>brycewray.com`
@@ -165,10 +170,12 @@ module.exports = async (user, id) => {
 			`<a href="https://t.co/x6y4ksDwrt">https://t.co/x6y4ksDwrt</a>`,
 			``
 		)
+		*/
 		.replace(
 			`users<br>(embedded`,
 			`users (embedded`
 		)
+		/*
 		.replace(
 			`<a href="https://t.co/tryfucEzv5">pic.twitter.com/tryfucEzv5</a>`,
 			``
@@ -181,10 +188,12 @@ module.exports = async (user, id) => {
 			`<a href="https://t.co/jsuCgadKmE">https://t.co/jsuCgadKmE</a>`,
 			``
 		)
+		*/
 		.replace(
 			`:<a`,
 			`: <a`
 		)
+		/*
 		.replace(
 			`>https://t.co/M2dJYnyAhc`,
 			`>11ty.dev/docs/languages…`
@@ -213,14 +222,16 @@ module.exports = async (user, id) => {
 			`<a href="https://t.co/Ode2sKCtpG">https://t.co/Ode2sKCtpG</a>`,
 			``
 		)
-		.replace(
-			`>https://t.co/LOmOSrG28e`,
-			`github.com/giscus/giscus/...`
-		)
+		// === following `replace` is problematic for (???) reasons, 2022-08-24 ===
+		// .replace(
+		// 	`>https://t.co/LOmOSrG28e`,
+		// 	`github.com/giscus/giscus/...`
+		// )
 		.replace(
 			`<a href="https://t.co/KObTA4I8tk">https://t.co/KObTA4I8tk</a>`,
 			`<br /><br /><a href="https://t.co/KObTA4I8tk">astro.build</a>`
 		)
+		*/
 
 	if (Json.card) {
 		if (Json.card.url) {
@@ -247,6 +258,7 @@ module.exports = async (user, id) => {
 			stringToRet += `<p class="pokey tweet-reply-to">${RT_text}</p>`
 		}
 		stringToRet += `<p class="tweet-body">${JsonOHTML}</p>`
+
 		if (Json.video) {
 			if (Json.video.variants) {
 				let vidVar_1 = Json.video.variants[1] // for `type: video/mp4`
@@ -261,10 +273,10 @@ module.exports = async (user, id) => {
 				let vidVarLast = Json.video.variants[(vidVarsL - 1)] // for `type: gif`
 				stringToRet += `<div class="ctr tweet-video-wrapper">`
 				if (vidType == "video/gif") {
-					stringToRet += `<video loop autoplay muted plays controlslist="nofullscreen" class="ctr tweet-media-img"><source src="${vidVarLast.src}" type=${vidVarLast.type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
+					stringToRet += `<video loop autoplay muted playsinline controlslist="nofullscreen" class="ctr tweet-media-img"><source src="${vidVarLast.src}" type=${vidVarLast.type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
 				}
 				if (vidType = "video/mp4") {
-					stringToRet += `<video loop autoplay muted playsinline controls class="ctr tweet-media-img"><source src="${vidVar_1.src}" type=${vidVar_1.type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
+					stringToRet += `<video loop autoplay muted playsinline controls class="ctr tweet-media-img"><source src="${vidVarLast.src}" type=${vidVarLast.type}><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`
 				}
 				stringToRet += `</div>`
 			}
