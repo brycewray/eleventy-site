@@ -70,4 +70,4 @@ And there you have it. Using your browser’s Inspector tool on nearly[^1] any i
 
 The official Eleventy Twitter account graciously retweeted my announcement of this post and added the following, which I pass along for your further edification:
 
-{% tweet "1486347755404640257" %}
+{% stweet "eleven_ty", "1486347755404640257" %}

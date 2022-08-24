@@ -116,4 +116,4 @@ However, the answers were "No" and "No." The [changes in Apple Mail in Catalina]
 
 My tweet tonight says it all:
 
-{% tweet "1138614802518020096" %}
+{% stweet "BryceWrayTX", "1138614802518020096" %}

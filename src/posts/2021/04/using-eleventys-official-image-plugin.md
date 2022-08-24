@@ -4,7 +4,7 @@ title: "Using Eleventy’s official image plugin"
 description: "The what, why, and how of Eleventy Image."
 author: Bryce Wray
 date: 2021-04-17T13:41:00-05:00
-lastmod: 2022-08-20T11:10:00-05:00
+lastmod: 2022-08-22T16:08:00-05:00
 discussionId: "2021-04-using-eleventys-official-image-plugin"
 ---
 
@@ -177,9 +177,9 @@ Now, just build your site, and Eleventy Image will do its magic everywhere withi
 
 .&nbsp;.&nbsp;.&nbsp;and the result thereof:
 
-{% image "my-pet-cat.jpg", "Photo of a cat named Shakespeare sitting on a window sill" %}
+{% imgc "my-pet-cat_3264x2448.jpg", "Photo of a cat named Shakespeare sitting on a window sill", 3264, 2448 %}
 
-**Disclaimer**: Image is sourced without using Eleventy&nbsp;Image whenever the site is built with <span class="text-nowrap">a non-Eleventy&nbsp;SSG,</span> **but** this does show the result of the generated&nbsp;code.
+**Disclaimer**: Image is sourced here without using Eleventy&nbsp;Image **but** this does show the result of the generated&nbsp;code.
 {.imgcCaption}
 
 Of course, you'll want to get a sneak peek by running Eleventy in development mode and viewing your site locally, in case you need to adjust your site's CSS so each resulting image appears as you want.[^sizesInfo]
