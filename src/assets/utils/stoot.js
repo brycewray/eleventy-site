@@ -16,12 +16,19 @@ module.exports = async (instance, id) => {
 
 	urlToGet = `https://` + instance + `/api/v1/statuses/` + id
 
-	const response = await fetch(urlToGet, {
-		method: "get"
-	})
+	async function GetToot(tootURL) {
+		const response = await fetch(tootURL, {
+			method: "get"
+		});
+		return response.json()
+	}
 
-	const Json = await response.json()
-	let JsonHolder = Json // for debugging
+	// const response = await fetch(urlToGet, {
+	// 	method: "get"
+	// });
+
+	let Json = await GetToot(urlToGet);
+	// let JsonHolder = Json; // for debugging
 
 	if (Json.account) {
 		tootLink = `https://` + instance + `@` + Json.account.acct + `/status/` + id

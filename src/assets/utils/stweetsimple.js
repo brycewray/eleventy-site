@@ -14,11 +14,18 @@ module.exports = async (user, id) => {
 	const query = `url=${urlOembed}&dnt=true&omit_script=true`;
 	const requestUrlO = `https://publish.twitter.com/oembed?` + query;
 
-	const responseUrlO = await fetch(requestUrlO, {
-		method: "get"
-	});
+	async function getTweet(tweetURL) {
+		const response = await fetch(tweetURL, {
+			method: "get"
+		});
+		return response.json()
+	}
 
-	const JsonOembed = await responseUrlO.json();
+	// const responseUrlO = await fetch(requestUrlO, {
+	// 	method: "get"
+	// });
+	// const JsonOembed = await responseUrlO.json();
+	let JsonOembed = await getTweet(requestUrlO);
 	let JsonOHTML = JsonOembed.html;
 
 	stringToRet += JsonOHTML

@@ -17,13 +17,17 @@ module.exports = async (TweetID) => {
 	const jsonURL1 = "https://api.twitter.com/2/tweets?ids="
 	const jsonURL2 = "&expansions=author_id,attachments.media_keys&tweet.fields=created_at,text,attachments,entities,source&user.fields=name,username,profile_image_url&media.fields=preview_image_url,type,url,alt_text"
 
-	const response = await fetch(jsonURL1 + TweetID + jsonURL2, {
-		method: "get",
-		headers: {
-			"Authorization": `Bearer ${BearerToken}`
-		}
-	})
-	const Json = await response.json()
+	async function getTweetV2(tweetURL) {
+		const response = await fetch(tweetURL, {
+			method: "get",
+			headers: {
+				"Authorization": `Bearer ${BearerToken}`
+			}
+		});
+		return response.json()
+	}
+
+	const Json = await getTweetV2(jsonURL1 + TweetID + jsonURL2)
 	const JsonData = Json.data[0]
 	const JsonIncludes = Json.includes
 

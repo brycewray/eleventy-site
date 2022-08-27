@@ -18,22 +18,29 @@ module.exports = async (user, id) => {
 	const requestUrlO = `https://publish.twitter.com/oembed?` + query;
 	const urlSynd = `https://cdn.syndication.twimg.com/tweet?id=${id}`
 
-	const responseUrlSynd = await fetch(urlSynd, {
-		method: "get"
-	});
+	async function getTweet(tweetURL) {
+		const response = await fetch(tweetURL, {
+			method: "get"
+		});
+		return response.json()
+	}
 
-	const responseUrlO = await fetch(requestUrlO, {
-		method: "get"
-	});
+	// const responseUrlSynd = await fetch(urlSynd, {
+	// 	method: "get"
+	// });
 
-	const Json = await responseUrlSynd.json();
+	// const responseUrlO = await fetch(requestUrlO, {
+	// 	method: "get"
+	// });
+
+	let Json = await getTweet(urlSynd);
 	let Text = Json.text;
-	let TextBefore = Text; // pre-HTML-subs -- debugging
+	// let TextBefore = Text; // pre-HTML-subs -- debugging
 
-	const JsonOembed = await responseUrlO.json();
+	// const JsonOembed = await responseUrlO.json();
+	let JsonOembed = await getTweet(requestUrlO);
 	let JsonOHTML = JsonOembed.html;
-
-	if (Json.in_reply_to_screen_name) {
+		if (Json.in_reply_to_screen_name) {
 		RT_text = `Replying to <a href="https://twitter.com/${Json.in_reply_to_screen_name}">@${Json.in_reply_to_screen_name}</a>`;
 	}
 
@@ -135,7 +142,6 @@ module.exports = async (user, id) => {
 			`.<a`,
 			`. <a`
 		)
-		/*
 		.replace(
 			`>https://t.co/QPSmjqXwft`,
 			`>brycewray.com`
@@ -156,12 +162,10 @@ module.exports = async (user, id) => {
 			`I’ll`,
 			`I’ll`
 		)
-		*/
 		.replace(
 			`😄<a`,
 			`😄 <a`
 		)
-		/*
 		.replace(
 			`>https://t.co/wB96VIVOLn`,
 			`>brycewray.com`
@@ -170,12 +174,10 @@ module.exports = async (user, id) => {
 			`<a href="https://t.co/x6y4ksDwrt">https://t.co/x6y4ksDwrt</a>`,
 			``
 		)
-		*/
 		.replace(
 			`users<br>(embedded`,
 			`users (embedded`
 		)
-		/*
 		.replace(
 			`<a href="https://t.co/tryfucEzv5">pic.twitter.com/tryfucEzv5</a>`,
 			``
@@ -188,12 +190,10 @@ module.exports = async (user, id) => {
 			`<a href="https://t.co/jsuCgadKmE">https://t.co/jsuCgadKmE</a>`,
 			``
 		)
-		*/
 		.replace(
 			`:<a`,
 			`: <a`
 		)
-		/*
 		.replace(
 			`>https://t.co/M2dJYnyAhc`,
 			`>11ty.dev/docs/languages…`
@@ -223,15 +223,14 @@ module.exports = async (user, id) => {
 			``
 		)
 		// === following `replace` is problematic for (???) reasons, 2022-08-24 ===
-		// .replace(
-		// 	`>https://t.co/LOmOSrG28e`,
-		// 	`github.com/giscus/giscus/...`
-		// )
+		.replace(
+			`>https://t.co/LOmOSrG28e`,
+			`>github.com/giscus/giscus/...`
+		)
 		.replace(
 			`<a href="https://t.co/KObTA4I8tk">https://t.co/KObTA4I8tk</a>`,
 			`<br /><br /><a href="https://t.co/KObTA4I8tk">astro.build</a>`
 		)
-		*/
 
 	if (Json.card) {
 		if (Json.card.url) {
