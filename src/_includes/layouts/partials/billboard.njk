@@ -8,7 +8,7 @@
         {% endif %}
 				{% if not (title == data.siteparams.searchPageTitle) %}
         <p class="billboard-p-text" data-pagefind-ignore>
-          {% if not ('The site this week' in title) %}<strong>{{ page.date | dateStringISO }}</strong><br />{% endif %}<span class="seventyFive">{% if lastmod %}Last modified {{ lastmod | dateStringISO }}{% else %}&nbsp;{% endif %}</span>
+          {% if not ('The site this week' in title) %}<strong>{{ page.date | dateStringISO }}</strong><br />{% endif %}<span class="seventyFive">{% if lastmod and not ((page.date | dateStringISO) == (lastmod | dateStringISO)) %}Last modified {{ lastmod | dateStringISO }}{% else %}&nbsp;{% endif %}</span>
         </p>
 				{% endif %}
       </div>

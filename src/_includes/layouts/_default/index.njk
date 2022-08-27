@@ -21,7 +21,7 @@ layout: base
             </p>
             <p class="homePost-Dates">
               {% if not ("The site this week" in post.data.title) %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong><br />{% endif %}
-              {% if post.data.lastmod %}
+              {% if post.data.lastmod and not ((post.date | dateStringISO) == (post.data.lastmod | dateStringISO)) %}
               <span class="pokey">Last modified <time datetime="{{ post.date | dateStringISO }}">{{ post.data.lastmod | dateStringISO }}</time></span>
               {% endif %}
             </p>

@@ -49,7 +49,7 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
               <em>{{ post.data.description | safe }}</em>
             </p>
             <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong><br />{% endif %}
-              {% if post.data.lastmod %}
+              {% if post.data.lastmod and not ((post.date | dateStringISO) == (post.data.lastmod | dateStringISO)) %}
               <span class="eightyFive">Last modified <time datetime="{{ post.date | dateStringISO }}">{{ post.data.lastmod | dateStringISO }}</time></span>
               {% endif %}
             </p>
