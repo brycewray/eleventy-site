@@ -10,7 +10,7 @@
     "start": "NODE_ENV=development npm-run-all cleanDev hasher sassall --parallel dev:*",
     "build": "NODE_ENV=production npm-run-all cleanProd hasher prod:sass prod:eleventy",
     "dev:sass": "npm-run-all sassall -- --watch",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --serve",
     "prod:sass": "npm-run-all sassall",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site"
   },
@@ -26,7 +26,6 @@
     "cross-env": "^7.0.3",
     "date-fns": "^2.29.2",
     "dotenv": "^16.0.1",
-    "eleventy-plugin-embed-tweet": "^0.3.1",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-rss-helper": "^1.2.1",
     "fast-glob": "^3.2.11",
