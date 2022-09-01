@@ -48,12 +48,8 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
             <p class="posts-Description">
               <em>{{ post.data.description | safe }}</em>
             </p>
-            <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong><br />{% endif %}
-              {% if post.data.lastmod and not ((post.date | dateStringISO) == (post.data.lastmod | dateStringISO)) %}
-              <span class="eightyFive">Last modified <time datetime="{{ post.date | dateStringISO }}">{{ post.data.lastmod | dateStringISO }}</time></span>
-              {% endif %}
+            <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
             </p>
-            <p class="legal">&nbsp;</p><!-- where reading time goes in Hugo site -->
           </div>
         {% endfor %}
         <hr class="paginatorBottom" />
