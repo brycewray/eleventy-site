@@ -6,9 +6,9 @@
         {% else %}
         <p>&nbsp;</p>
         {% endif %}
-				{% if not (title == siteparams.searchPageTitle) %}
-        <p class="billboard-p-text" data-pagefind-ignore>
-          {% if not ('The site this week' in title) %}<strong>{{ page.date | dateStringISO }}</strong>{% endif %}
+				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Privacy policy")) and (not (title == "Want to reach me?")) and (not ('The site this week' in title)) %}
+				<p class="billboard-p-text" data-pagefind-ignore>
+          <strong>{{ page.date | dateStringISO }}</strong>
         </p>
 				{% endif %}
       </div>
