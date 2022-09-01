@@ -2,15 +2,17 @@
 // of the `stweet`/`STweet` code I've used in
 // both Hugo and Astro
 
-const fetch = (...args) =>
-	import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const EleventyFetch = require("@11ty/eleventy-fetch")
+
+// const fetch = (...args) =>
+// 	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const { DateTime } = require("luxon")
 
 module.exports = async (user, id) => {
 
 	let stringToRet = ``
-	let aspect = '1 / 1'
+	// let aspect = '1 / 1'
 	let RT_text = ''
 
 	const urlOembed = `https://twitter.com/${user}/status/${id}`;
@@ -19,10 +21,11 @@ module.exports = async (user, id) => {
 	const urlSynd = `https://cdn.syndication.twimg.com/tweet?id=${id}`
 
 	async function getTweet(tweetURL) {
-		const response = await fetch(tweetURL, {
-			method: "get"
+		const response = await EleventyFetch(tweetURL, {
+			duration: "2w",
+			type: "json"
 		});
-		return response.json()
+		return response
 	}
 
 	// const responseUrlSynd = await fetch(urlSynd, {

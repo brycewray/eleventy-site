@@ -3,8 +3,10 @@
 // --- use as:
 // {% stweetsimple "user", "id" %}
 
-const fetch = (...args) =>
-	import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const EleventyFetch = require("@11ty/eleventy-fetch")
+
+// const fetch = (...args) =>
+// 	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 module.exports = async (user, id) => {
 
@@ -15,10 +17,11 @@ module.exports = async (user, id) => {
 	const requestUrlO = `https://publish.twitter.com/oembed?` + query;
 
 	async function getTweet(tweetURL) {
-		const response = await fetch(tweetURL, {
-			method: "get"
+		const response = await EleventyFetch(tweetURL, {
+			duration: "2w",
+			type: "json"
 		});
-		return response.json()
+		return response
 	}
 
 	// const responseUrlO = await fetch(requestUrlO, {

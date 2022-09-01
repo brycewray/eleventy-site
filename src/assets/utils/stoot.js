@@ -3,8 +3,10 @@
 // both Hugo and Astro for static content
 // from Mastodon
 
-const fetch = (...args) =>
-	import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const EleventyFetch = require("@11ty/eleventy-fetch")
+
+// const fetch = (...args) =>
+// 	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const md5 = require('md5')
 const { DateTime } = require("luxon")
@@ -17,10 +19,11 @@ module.exports = async (instance, id) => {
 	urlToGet = `https://` + instance + `/api/v1/statuses/` + id
 
 	async function GetToot(tootURL) {
-		const response = await fetch(tootURL, {
-			method: "get"
+		const response = await EleventyFetch(tootURL, {
+			duration: "2w",
+			type: "json"
 		});
-		return response.json()
+		return response
 	}
 
 	// const response = await fetch(urlToGet, {
