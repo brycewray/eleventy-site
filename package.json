@@ -9,7 +9,7 @@
     "sassall": "sass --no-source-map src/assets/scss/index.scss _site/css/$(cat scsshash-out) --style=compressed",
     "start": "NODE_ENV=development npm-run-all cleanDev hasher sassall --parallel dev:*",
     "build": "NODE_ENV=production npm-run-all cleanProd hasher prod:sass prod:eleventy",
-    "notdev:sass": "npm-run-all sassall -- --watch",
+    "dev:sass": "npm-run-all sassall -- --watch",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --incremental --serve",
     "prod:sass": "npm-run-all sassall",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site"
