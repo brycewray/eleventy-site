@@ -72,7 +72,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
 
-  /* --- date-handling --- */
+  eleventyConfig.addFilter("numCommas", function(value) {
+		return value.toLocaleString()
+	})
+
+	/* --- date-handling --- */
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
