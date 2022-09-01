@@ -58,7 +58,7 @@ Here’s an example of `stweetv2` in action, using the same tweet I featured in 
 
 .&nbsp; .&nbsp;. which gives you:
 
-{% stweet "BryceWrayTX", "1487140202141425673" %}
+{% stweetv2 "1487140202141425673" %}
 
 And here’s the `stweetv2.html` shortcode itself. As in the case of the `stweet` shortcode, the CSS therein is left to you, but you can use your browser’s Inspector tool on the tweet example above to see how I handled it.
 
