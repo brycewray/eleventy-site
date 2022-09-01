@@ -1,7 +1,7 @@
 ---
 layout: singlepost
 title: "Ec-static"
-description: "Some tips for ordinary non-geeks on using the Hugo static site generator to create and maintain their own websites."
+description: "Some tips for ordinary non-geeks on using the Hugo static site generator to create and maintain their own websites."
 author: Bryce Wray
 date: 2019-04-07T14:00:00-05:00
 lastmod: 2022-07-22T20:56:00-05:00
