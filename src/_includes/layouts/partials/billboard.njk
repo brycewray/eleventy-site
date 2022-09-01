@@ -2,7 +2,7 @@
       <div class="billboard-title-block">
         <h1 class="billboard-title-text">{{ title | safe }}</h1>
         {% if description %}
-        <p class="billboard-description-text"><em>{{ description | safe }}</em></p>
+        <p class="billboard-description-text">{{ description | safe }}</p>
         {% else %}
         <p>&nbsp;</p>
         {% endif %}

@@ -71,7 +71,7 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
             <h2 class="posts-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
             <p class="posts-Subtitle"><strong>{{ post.data.subtitle | safe }}</strong></p>
             <p class="posts-Description">
-              <em>{{ post.data.description | safe }}</em>
+              {{ post.data.description | safe }}
             </p>
             <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
             </p>
