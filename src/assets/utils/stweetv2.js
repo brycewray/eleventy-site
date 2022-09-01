@@ -2,8 +2,10 @@
 // of the `stweetv2`/`STweetV2` code I've used in
 // both Hugo and Astro
 
-const fetch = (...args) =>
-	import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const EleventyFetch = require("@11ty/eleventy-fetch")
+
+// const fetch = (...args) =>
+// 	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const { DateTime } = require("luxon")
 
@@ -18,13 +20,16 @@ module.exports = async (TweetID) => {
 	const jsonURL2 = "&expansions=author_id,attachments.media_keys&tweet.fields=created_at,text,attachments,entities,source&user.fields=name,username,profile_image_url&media.fields=preview_image_url,type,url,alt_text"
 
 	async function getTweetV2(tweetURL) {
-		const response = await fetch(tweetURL, {
-			method: "get",
-			headers: {
-				"Authorization": `Bearer ${BearerToken}`
+		const response = await EleventyFetch(tweetURL, {
+			duration: "2w",
+			type: "json",
+			fetchOptions: {
+				headers: {
+					"Authorization": `Bearer ${BearerToken}`
+				},
 			}
 		});
-		return response.json()
+		return response
 	}
 
 	const Json = await getTweetV2(jsonURL1 + TweetID + jsonURL2)
