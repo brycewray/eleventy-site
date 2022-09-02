@@ -5,6 +5,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 // const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
 
 async function imageShortcode(src, alt) {
@@ -52,6 +53,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
+	eleventyConfig.addPlugin(syntaxHighlight)
 
 	// eleventyConfig.addPlugin(pluginEmbedTweet, {
   //   useInlineStyles: false,
