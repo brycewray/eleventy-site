@@ -56,158 +56,158 @@ With those understood, here we go&nbsp;.&nbsp;.&nbsp;.
 
 2. In the `src` folder, create the file `feed.njk` to make your template for the RSS feed:
 
-{% raw %}
-```twig
----json
-{
-  "permalink": "/index.xml",
-  "eleventyExcludeFromCollections": true,
-  "metadata": {
-    "title": "My Site Title",
-    "description": "A short site description.",
-    "url": "https://www.example.com/",
-    "feedUrl": "https://www.example.com/index.xml",
-    "authors": {
-      "name": "Your Name",
-      "url": "https://www.example.com/about/"
-    }
-  }
-}
----
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-	<title>{{ metadata.title }}</title>
-	<subtitle>{{ metadata.subtitle }}</subtitle>
-	<link href="{{ metadata.feedUrl }}" rel="self"/>
-	<link href="{{ metadata.url }}"/>
-	<updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
-	<id>{{ metadata.url }}</id>
-	<author>
-		<name>{{ metadata.authors.name }}</name>
-	</author>
-	{%- for item in collections.all | reverse -%}
-		{%- if loop.index0 < 10 -%}
-			{%- set absolutePostUrl -%}{{ item.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
-			<entry>
-				<title>{{ item.data.title }}</title>
-				<link href="{{ absolutePostUrl }}"/>
-				<updated>{{ item.date | dateToRfc3339 }}</updated>
-				<id>{{ absolutePostUrl }}</id>
-				<summary>{%- if item.data.subtitle -%}{{ item.data.subtitle }}{%- else -%}""{%- endif -%}{%- if item.data.description %} • {{ item.data.description }}{%- else -%}"[No description]"{%- endif -%}</summary>
-				<content type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-			</entry>
-		{%- endif -%}
-	{%- endfor %}
-</feed>
-```
-{% endraw %}
+	{% raw %}
+	```twig
+	---json
+	{
+		"permalink": "/index.xml",
+		"eleventyExcludeFromCollections": true,
+		"metadata": {
+			"title": "My Site Title",
+			"description": "A short site description.",
+			"url": "https://www.example.com/",
+			"feedUrl": "https://www.example.com/index.xml",
+			"authors": {
+				"name": "Your Name",
+				"url": "https://www.example.com/about/"
+			}
+		}
+	}
+	---
+	<?xml version="1.0" encoding="utf-8"?>
+	<feed xmlns="http://www.w3.org/2005/Atom">
+		<title>{{ metadata.title }}</title>
+		<subtitle>{{ metadata.subtitle }}</subtitle>
+		<link href="{{ metadata.feedUrl }}" rel="self"/>
+		<link href="{{ metadata.url }}"/>
+		<updated>{{ collections.all | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+		<id>{{ metadata.url }}</id>
+		<author>
+			<name>{{ metadata.authors.name }}</name>
+		</author>
+		{%- for item in collections.all | reverse -%}
+			{%- if loop.index0 < 10 -%}
+				{%- set absolutePostUrl -%}{{ item.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
+				<entry>
+					<title>{{ item.data.title }}</title>
+					<link href="{{ absolutePostUrl }}"/>
+					<updated>{{ item.date | dateToRfc3339 }}</updated>
+					<id>{{ absolutePostUrl }}</id>
+					<summary>{%- if item.data.subtitle -%}{{ item.data.subtitle }}{%- else -%}""{%- endif -%}{%- if item.data.description %} • {{ item.data.description }}{%- else -%}"[No description]"{%- endif -%}</summary>
+					<content type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+				</entry>
+			{%- endif -%}
+		{%- endfor %}
+	</feed>
+	```
+	{% endraw %}
 
 3. In the `src` folder, create the file `jsonfile.njk` to make your template for the JSON feed:
 
-{% raw %}
+	{% raw %}
 
-```twig
----json
-{
-  "permalink": "/index.json",
-  "eleventyExcludeFromCollections": true,
-  "metadata": {
-    "title": "My Site Title",
-    "description": "A short site description.",
-    "url": "https://www.example.com/",
-    "feedUrl": "https://www.example.com/index.json",
-    "authors": {
-      "name": "Your Name",
-      "url": "https://www.example.com/about/"
-    }
-  }
-}
----
-{
-  "version": "https://jsonfeed.org/version/1.1",
-  "title": "{{ metadata.title }}",
-  "home_page_url": "{{ metadata.url }}",
-  "feed_url": "{{ metadata.feedUrl }}",
-  "description": "{{ metadata.description }}",
-  "items": [
-    {%- for item in collections.all | reverse -%}
-      {%- if loop.index0 < 10  -%}
-        {%- set absolutePostUrl -%}{{ item.url | url | absoluteUrl(metadata.url) }}{%- endset %}
-        {
-          "id": "{{ absolutePostUrl }}",
-          "title": "{{ item.data.title }}",
-          "url": "{{ absolutePostUrl }}",
-          "date_published": "{{ item.date | dateFromRFC2822 }}",
-          "summary": "{% if item.data.subtitle -%}{{ item.data.subtitle }} • {% endif -%}{%- if item.data.description -%}{{ item.data.description }}{%- else -%}No description{%- endif %}",
-          "content_html": {%- if item.templateContent -%}{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{%- else -%}""{%- endif -%}
-        }{%- if not loop.last -%},{%- endif %}
-      {%- endif -%}
-    {%- endfor %}
-  ]
-}
-```
-{% endraw %}
+	```twig
+	---json
+	{
+		"permalink": "/index.json",
+		"eleventyExcludeFromCollections": true,
+		"metadata": {
+			"title": "My Site Title",
+			"description": "A short site description.",
+			"url": "https://www.example.com/",
+			"feedUrl": "https://www.example.com/index.json",
+			"authors": {
+				"name": "Your Name",
+				"url": "https://www.example.com/about/"
+			}
+		}
+	}
+	---
+	{
+		"version": "https://jsonfeed.org/version/1.1",
+		"title": "{{ metadata.title }}",
+		"home_page_url": "{{ metadata.url }}",
+		"feed_url": "{{ metadata.feedUrl }}",
+		"description": "{{ metadata.description }}",
+		"items": [
+			{%- for item in collections.all | reverse -%}
+				{%- if loop.index0 < 10  -%}
+					{%- set absolutePostUrl -%}{{ item.url | url | absoluteUrl(metadata.url) }}{%- endset %}
+					{
+						"id": "{{ absolutePostUrl }}",
+						"title": "{{ item.data.title }}",
+						"url": "{{ absolutePostUrl }}",
+						"date_published": "{{ item.date | dateFromRFC2822 }}",
+						"summary": "{% if item.data.subtitle -%}{{ item.data.subtitle }} • {% endif -%}{%- if item.data.description -%}{{ item.data.description }}{%- else -%}No description{%- endif %}",
+						"content_html": {%- if item.templateContent -%}{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{%- else -%}""{%- endif -%}
+					}{%- if not loop.last -%},{%- endif %}
+				{%- endif -%}
+			{%- endfor %}
+		]
+	}
+	```
+	{% endraw %}
 
 4. In the `src` folder, create the file `sitemap.njk` to make your template for the XML sitemap (replace the dates in the final two items with what make sense for your site):
 
-{% raw %}
-```twig
----
-permalink: /sitemap.xml
-eleventyExcludeFromCollections: true
----
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {%- for item in collections.all | reverse -%}
-  <url>
-    <loc>{{ siteparams.siteURLforOG }}{{ item.url }}</loc>
-    {%- if item.data.lastmod -%}
-    <lastmod>{{ item.data.lastmod | dateStringISO }}</lastmod>
-    {%- else -%}
-    <lastmod>{{ item.date | dateStringISO }}</lastmod>
-    {%- endif -%}
-  </url>
-  {%- endfor -%}
-</urlset>
-```
-{% endraw %}
+	{% raw %}
+	```twig
+	---
+	permalink: /sitemap.xml
+	eleventyExcludeFromCollections: true
+	---
+	<?xml version="1.0" encoding="UTF-8"?>
+	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+		{%- for item in collections.all | reverse -%}
+		<url>
+			<loc>{{ siteparams.siteURLforOG }}{{ item.url }}</loc>
+			{%- if item.data.lastmod -%}
+			<lastmod>{{ item.data.lastmod | dateStringISO }}</lastmod>
+			{%- else -%}
+			<lastmod>{{ item.date | dateStringISO }}</lastmod>
+			{%- endif -%}
+		</url>
+		{%- endfor -%}
+	</urlset>
+	```
+	{% endraw %}
 
 5. In the `src` folder, create the folder `sitemap`; then, within it, create the file `index.md` with whatever date makes sense for you:
 
-```md
----
-layout: sitemap
-title: "Sitemap (HTML form)"
----
+	```md
+	---
+	layout: sitemap
+	title: "Sitemap (HTML form)"
+	---
 
-(The text for the page is all in the appropriate template.)
-```
+	(The text for the page is all in the appropriate template.)
+	```
 
 6. Then, in the appropriate folder for your layouts (in my case, that's `src/_includes/layouts`), add a folder called `sitemap` and, within it, the `sitemap.njk` template which will serve as the template for your HTML sitemap (you'll have to handle the CSS classes on your own, of course, but this'll give you a start; also, the `layout` reference will vary based on what you call *your* site's [base layout](https://www.11ty.dev/docs/layout-chaining/), and you'll obviously want to customize those "Main pages" items at the top):
 
-{% raw %}
-```twig
----
-layout: 'base.njk'
----
-<main>
-  <div class="container-narrower sitemapDiv">
-    <h1>Sitemap</h1>
-    <h2>Main pages</h2>
-    <ul>
-      <li><a href="{{ siteparams.siteURLforOG }}">Home page</a></li>
-      <li><a href="{{ siteparams.siteURLforOG }}/about/">About me</a></li>
-    </ul>
-    <h2>Posts</h2>
-    <ul>
-    {%- for post in collections.post | reverse %}
-	  <li>{{ siteparams.siteURLforOG }}{{ post.url }} &bull; {{ post.date | dateStringISO }}</li>
-    {%- endfor %}
-    </ul>
-  </div>
-</main>
-```
-{% endraw %}
+	{% raw %}
+	```twig
+	---
+	layout: 'base.njk'
+	---
+	<main>
+		<div class="container-narrower sitemapDiv">
+			<h1>Sitemap</h1>
+			<h2>Main pages</h2>
+			<ul>
+				<li><a href="{{ siteparams.siteURLforOG }}">Home page</a></li>
+				<li><a href="{{ siteparams.siteURLforOG }}/about/">About me</a></li>
+			</ul>
+			<h2>Posts</h2>
+			<ul>
+			{%- for post in collections.post | reverse %}
+			<li>{{ siteparams.siteURLforOG }}{{ post.url }} &bull; {{ post.date | dateStringISO }}</li>
+			{%- endfor %}
+			</ul>
+		</div>
+	</main>
+	```
+	{% endraw %}
 
 Now, finish up the Eleventy-based setup by going down this page to the "For either SSG" instructions.
 
@@ -217,120 +217,122 @@ I've noted [before](/posts/2020/12/eleventy-hugo-comparing-contrasting/) that Hu
 
 1. Make sure that, in your [sitewide configuration file](https://gohugo.io/getting-started/configuration/), you have specified `json` as one of the output formats and one of the home output options. For example, my sitewide config file is `config.yaml` and has these entries:
 
-{% raw %}
-```yaml
-outputFormats:
-	json:
-		baseName: "index"
-		mediaType: "application/json"
-		isPlainText: true
+	{% raw %}
+	```yaml
+	outputFormats:
+		json:
+			baseName: "index"
+			mediaType: "application/json"
+			isPlainText: true
 
-outputs:
-	home:
-		- html
-		- rss
-		- json
-```
-{% endraw %}
+	outputs:
+		home:
+			- html
+			- rss
+			- json
+	```
+	{% endraw %}
 
 2. Hugo comes with a built-in template for the RSS feed, so there's no need to come up with one.
+
 3. For the JSON feed, go to the appropriate `layouts/_defaults` folder (either in the top level or within a theme's folder setup; see "[Hugo's Lookup Order](https://gohugo.io/templates/lookup-order/)") and create an `index.json` file with the following content (based on how the aforementioned RSS template works):
 
-{% raw %}
-```go
-{{- $pctx := . -}}
-{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
-{{- $pages := $pctx.RegularPages -}}
-{{- $limit := .Site.Config.Services.RSS.Limit -}}
-{{- if ge $limit 1 -}}
-{{- $pages = $pages | first $limit -}}
-{{- end -}}
-{{ $length := (len $pages) -}}
-{
-  "version": "https://jsonfeed.org/version/1.1",
-  "title": "{{ .Site.Title }}",
-  "description": "{{ .Site.Params.Description }}",
-  "home_page_url": "{{ .Site.BaseURL }}",
-  {{ with .OutputFormats.Get "JSON" -}}
-  "feed_url": "{{ .Permalink }}",
-  {{ end -}}
-  {{ with .Site.LanguageCode -}}
-  "language": "{{ . }}",
-  {{ end -}}
-  {{ with $.Param "icon" -}}
-  "icon": "{{ . | absURL }}",
-  {{ end -}}
-  {{ with $.Param "favicon" -}}
-  "favicon": "{{ . | absURL }}",
-  {{ end -}}
-  {{ with .Site.Author.name -}}
-  "authors": [
-    {
-      "name": "{{ . }}"{{ with $.Site.Author.url }},
-      "url": "{{ . }}"{{ end }}{{ with $.Site.Author.avatar }},
-      "avatar": "{{ . | absURL }}"{{ end }}
-    }
-  ],
-  {{ end -}}
-  "items": [
-    {{ range $index, $element := $pages -}}
-    {
-      "title": {{ .Title | jsonify }},
-      "date_published": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-      "date_modified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-      "id": "{{ .Permalink }}",
-      "url": "{{ .Permalink }}",
-      {{ with .Params.author -}}
-      "authors": [
-        {
-          "name": "{{ . }}"
-        }
-      ],
-      {{ end -}}
-      "content_html": {{ .Content | jsonify }}
-    }{{ if ne (add $index 1) $length }},{{ end }}
-    {{ end -}}
-  ]
-}
-```
-{% endraw %}
+	{% raw %}
+	```go
+	{{- $pctx := . -}}
+	{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+	{{- $pages := $pctx.RegularPages -}}
+	{{- $limit := .Site.Config.Services.RSS.Limit -}}
+	{{- if ge $limit 1 -}}
+	{{- $pages = $pages | first $limit -}}
+	{{- end -}}
+	{{ $length := (len $pages) -}}
+	{
+		"version": "https://jsonfeed.org/version/1.1",
+		"title": "{{ .Site.Title }}",
+		"description": "{{ .Site.Params.Description }}",
+		"home_page_url": "{{ .Site.BaseURL }}",
+		{{ with .OutputFormats.Get "JSON" -}}
+		"feed_url": "{{ .Permalink }}",
+		{{ end -}}
+		{{ with .Site.LanguageCode -}}
+		"language": "{{ . }}",
+		{{ end -}}
+		{{ with $.Param "icon" -}}
+		"icon": "{{ . | absURL }}",
+		{{ end -}}
+		{{ with $.Param "favicon" -}}
+		"favicon": "{{ . | absURL }}",
+		{{ end -}}
+		{{ with .Site.Author.name -}}
+		"authors": [
+			{
+				"name": "{{ . }}"{{ with $.Site.Author.url }},
+				"url": "{{ . }}"{{ end }}{{ with $.Site.Author.avatar }},
+				"avatar": "{{ . | absURL }}"{{ end }}
+			}
+		],
+		{{ end -}}
+		"items": [
+			{{ range $index, $element := $pages -}}
+			{
+				"title": {{ .Title | jsonify }},
+				"date_published": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+				"date_modified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+				"id": "{{ .Permalink }}",
+				"url": "{{ .Permalink }}",
+				{{ with .Params.author -}}
+				"authors": [
+					{
+						"name": "{{ . }}"
+					}
+				],
+				{{ end -}}
+				"content_html": {{ .Content | jsonify }}
+			}{{ if ne (add $index 1) $length }},{{ end }}
+			{{ end -}}
+		]
+	}
+	```
+	{% endraw %}
 
 4. Hugo comes with a built-in template for the XML sitemap, so there's no need to create one.
+
 5. For the HTML sitemap, go to the `content` folder (probably top-level) and create a `sitemap` folder containing an `_index.md` file (note that it's `_index.md` and not `index.md`, which [matters in Hugo](https://gohugo.io/content-management/page-bundles/)) with whatever date you prefer:
 
-{% raw %}
-```md
----
-title: "Sitemap (HTML form)"
-date: 2021-05-12T08:00:00-05:00
----
-```
-{% endraw %}
+	{% raw %}
+	```md
+	---
+	title: "Sitemap (HTML form)"
+	date: 2021-05-12T08:00:00-05:00
+	---
+	```
+	{% endraw %}
 
 6. Then, back in the appropriate `layouts` folder, add a `sitemap` folder containing a `sitemap.html` file with the following (edit the CSS classes and the "Main pages" stuff as makes sense for your site):
 
-{% raw %}
-```go
-{{ define "main" }}
-  <div class="container-narrower sitemapDiv">
-    <h1>Sitemap</h1>
-    <h2>Main pages</h2>
-    <ul>
-      <li><a href="{{ .Site.BaseURL }}">Home page</a></li>
-      <li><a href="{{ .Site.BaseURL }}about/">About me</li>
-    </ul>
-    <h2>Posts</h2>
-    <ul>
-    {{- range where .Site.Pages.ByPublishDate.Reverse ".Type" "posts" -}}
-      {{- if (ne .Title "Posts") -}}
-      <li><strong><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></strong> &bull; {{ .PublishDate.Format "January 2, 2006" }}</li>
-      {{- end -}}
-    {{- end -}}
-    </ul>
-  </div>
-{{ end }}
-```
-{% endraw %}
+	{% raw %}
+	```go
+	{{ define "main" }}
+		<div class="container-narrower sitemapDiv">
+			<h1>Sitemap</h1>
+			<h2>Main pages</h2>
+			<ul>
+				<li><a href="{{ .Site.BaseURL }}">Home page</a></li>
+				<li><a href="{{ .Site.BaseURL }}about/">About me</li>
+			</ul>
+			<h2>Posts</h2>
+			<ul>
+			{{- range where .Site.Pages.ByPublishDate.Reverse ".Type" "posts" -}}
+				{{- if (ne .Title "Posts") -}}
+				<li><strong><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></strong> &bull; {{ .PublishDate.Format "January 2, 2006" }}</li>
+				{{- end -}}
+			{{- end -}}
+			</ul>
+		</div>
+	{{ end }}
+	```
+	{% endraw %}
 
 Now, finish up the Hugo-based setup with the "For either SSG" instructions below.
 
@@ -338,21 +340,21 @@ Now, finish up the Hugo-based setup with the "For either SSG" instructions below
 
 1. Add the following to your sitewide `head` tag, wherever it resides in your layouts:
 
-{% raw %}
-```html
-<!-- discover feeds -->
-<link rel="alternate" title="Feed - RSS" type="application/rss+xml" href="https://www.example.com/index.xml" />
-<link rel="alternate" title="Feed - JSON" type="application/feed+json" href="https://www.example.com/index.json" />
-```
-{% endraw %}
+	{% raw %}
+	```html
+	<!-- discover feeds -->
+	<link rel="alternate" title="Feed - RSS" type="application/rss+xml" href="https://www.example.com/index.xml" />
+	<link rel="alternate" title="Feed - JSON" type="application/feed+json" href="https://www.example.com/index.json" />
+	```
+	{% endraw %}
 
 2. This one is a **suggestion** but I think it's wise, especially for accessibility: add sitewide links (perhaps in the footer) to both of your sitemaps. For example, you might do it like this:
 
-{% raw %}
-```html
-Sitemaps: <a href="/sitemap">HTML</a> &bull; <a href="/sitemap.xml">XML</a>.
-```
-{% endraw %}
+	{% raw %}
+	```html
+	Sitemaps: <a href="/sitemap">HTML</a> &bull; <a href="/sitemap.xml">XML</a>.
+	```
+	{% endraw %}
 
 ### Easy and automatic from here on
 

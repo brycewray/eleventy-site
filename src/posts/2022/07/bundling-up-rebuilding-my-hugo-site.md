@@ -76,20 +76,18 @@ But, during that process with the Discourse, I received [one bit of extremely sa
 When I responded that this was a good idea if I were starting from scratch but not now, given my then-current content management scheme, he [doubled down](https://discourse.gohugo.io/t/using-printf-with-resources-get/39642/18?):
 
 > Use [leaf bundles](https://gohugo.io/content-management/page-bundles/#leaf-bundles).
-
-```bash
- content/
- └─ posts/
-    └─ 2022/
-        └─ 07/
-            ├── my-first-post/
-            │   ├── index.md
-            │   ├── og.png
-            └── my-second-post/
-                ├── index.md
-                ├── og.png
-```
-{.indentAfterLI}
+>	```bash
+>	content/
+>	└─ posts/
+>			└─ 2022/
+>					└─ 07/
+>							├── my-first-post/
+>							│   ├── index.md
+>							│   ├── og.png
+>							└── my-second-post/
+>									├── index.md
+>									├── og.png
+>	```
 
 And, although I then gave a (weak) rejoinder that this also was "in the category if I were starting over, rather than 200+ posts into my current setup," he'd gotten me to thinking --- about not only the current headache but also, perhaps in time, others that might come about if I didn't take his advice. I'd actually considered going with page bundles before but, in the absence of resulting problems, hadn't bothered. Now, I saw, there *were* potentially site-hobbling potholes to be encountered from not proceeding in that direction.
 

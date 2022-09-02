@@ -38,25 +38,23 @@ Hugo is an app that you install on your computer. You can do that by either (a.)
 1. Open the **Terminal** app.
 
 2. If you already have the [**Homebrew** package manager app](https://brew.sh) installed, skip to the next item.\
-Otherwise, install Homebrew by entering the following via Terminal:
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Once the Homebrew installation is complete, go on to the next item.
-{.indentAfterLI}
+	Otherwise, install Homebrew by entering the following via Terminal:
+	```bash
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	```
+	Once the Homebrew installation is complete, go on to the next item.
 
 3. Install Hugo by entering the following via Terminal:
 
-```bash
-brew install hugo
-```
-This will be the Hugo Extended version, since that's the only one Homebrew includes.\
-**In the future**, you can *upgrade* Hugo to the latest version in Homebrew's possession by entering:
-{.indentAfterLI}
+	```bash
+	brew install hugo
+	```
+	This will be the Hugo Extended version, since that's the only one Homebrew includes.\
+	**In the future**, you can *upgrade* Hugo to the latest version in Homebrew's possession by entering:
 
-```bash
-brew upgrade hugo
-```
+	```bash
+	brew upgrade hugo
+	```
 
 This concludes Step 1 for macOS. You can now toggle this back to "closed."
 
@@ -71,26 +69,23 @@ This concludes Step 1 for macOS. You can now toggle this back to "closed."
 
 2. If you already have the [**Scoop** package manager app](https://scoop.sh/) installed, skip to the next item.\
 Otherwise, install Scoop. First, enter this via Windows PowerShell:
-```powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-Answer "Y" (for "Yes") to the resulting prompt. Then, enter this:
-{.indentAfterLI}
-```powershell
-irm get.scoop.sh | iex
-```
-Once the Scoop installation is complete, go on to the next item.
-{.indentAfterLI}
+	```powershell
+	Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+	```
+	Answer "Y" (for "Yes") to the resulting prompt. Then, enter this:
+	```powershell
+	irm get.scoop.sh | iex
+	```
+	Once the Scoop installation is complete, go on to the next item.
 
 3. Install Hugo Extended by entering this via Windows PowerShell:
-```bash
-scoop install hugo-extended
-```
-**In the future**, you can *update* Hugo to the latest version in Scoop's possession by entering:
-{.indentAfterLI}
-```bash
-scoop update hugo-extended
-```
+	```bash
+	scoop install hugo-extended
+	```
+	**In the future**, you can *update* Hugo to the latest version in Scoop's possession by entering:
+	```bash
+	scoop update hugo-extended
+	```
 
 This concludes Step 1 for Windows. You can now toggle this back to "closed."
 
@@ -104,27 +99,25 @@ Let's say we'll call the new site `my-site`.
 From here on, we'll refer to your *terminal app*. On macOS, the default is Terminal. On Windows, you can use either Command Prompt (*cmd.exe*) or Windows PowerShell; I suggest the latter.
 
 2. In your terminal app, enter:
-```bash
-hugo new site my-site
-```
-*(As it creates the site, Hugo will automatically display instructions that mention using a theme --- **but** you can ignore them, because they relate to the aforementioned official procedure to which this is an alternative.)*\
-&nbsp;\
-The result will be a structure like the following in your user directory:
-{.indentAfterLI}
-```bash
-my-site   <-- The Hugo project folder
-└─ archetypes
-└─ config.toml   <-- The only non-folder
-└─ content
-└─ data
-└─ layouts
-└─ public
-└─ static
-└─ themes
-```
+	```bash
+	hugo new site my-site
+	```
+	*(As it creates the site, Hugo will automatically display instructions that mention using a theme --- **but** you can ignore them, because they relate to the aforementioned official procedure to which this is an alternative.)*\
+	&nbsp;\
+	The result will be a structure like the following in your user directory:
+	```bash
+	my-site   <-- The Hugo project folder
+	└─ archetypes
+	└─ config.toml   <-- The only non-folder
+	└─ content
+	└─ data
+	└─ layouts
+	└─ public
+	└─ static
+	└─ themes
+	```
 
-Everything from here on takes place in that `my-site` folder.
-{.indentAfterLI}
+	Everything from here on takes place in that `my-site` folder.
 
 **Note**: Windows users, we'll refer to `content/` and `layouts/` --- *i.e.*, using **forward** slashes (the web's norm) rather than **back**slashes.
 {.yellowBox .indentAfterLI}
@@ -136,76 +129,72 @@ Each of the files you'll create below is a plain-text file. In macOS, the defaul
 1. In `layouts/`, add a folder called `_default`.
 
 2. In `layouts/`, create a file called `index.html` with the following content:
-{% raw %}
-```go
-{{ define "main" }}
-	{{ .Content }}
-  <p>This line is from <code>layouts/index.html</code>.</p>
-{{ end }}
-```
-{% endraw %}
-`layouts/index.html` is the layout for the site's home page.
-{.indentAfterLI}
+	{% raw %}
+	```go
+	{{ define "main" }}
+		{{ .Content }}
+		<p>This line is from <code>layouts/index.html</code>.</p>
+	{{ end }}
+	```
+	{% endraw %}
+	`layouts/index.html` is the layout for the site's home page.
 
 3. In `layouts/_default/`, create a file called `baseof.html` with the following content (Hugo's default is for English, so that's why I use `lang="en"`):
-{% raw %}
-```go
-<!DOCTYPE html>
-<html lang="en" charset="utf-8">
-<head>
-</head>
-<body>
-	{{ block "main" . }}
-	{{ end }}
-</body>
-</html>
-```
-{% endraw %}
-`layouts/_default/baseof.html` is, to quote the [Hugo documentation](https://gohugo.io/templates/base/#define-the-base-template), "the shell from which all your pages will be rendered unless you specify another `baseof.html` closer to the beginning of the lookup order."[^lookupOrder]
-{.indentAfterLI}
+	{% raw %}
+	```go
+	<!DOCTYPE html>
+	<html lang="en" charset="utf-8">
+	<head>
+	</head>
+	<body>
+		{{ block "main" . }}
+		{{ end }}
+	</body>
+	</html>
+	```
+	{% endraw %}
+	`layouts/_default/baseof.html` is, to quote the [Hugo documentation](https://gohugo.io/templates/base/#define-the-base-template), "the shell from which all your pages will be rendered unless you specify another `baseof.html` closer to the beginning of the lookup order."[^lookupOrder]
 
 [^lookupOrder]: The lookup order is explained in [this vital part](https://gohugo.io/templates/lookup-order/) of the Hugo documentation.
 
 4. In `layouts/_default/`, create a file called `single.html` with the following content:
-{% raw %}
-```go
-{{ define "main" }}
-	{{ .Content }}
-  <p>This line is from <code>layouts/_default/single.html</code>.</p>
-{{ end }}
-```
-{% endraw %}
-`layouts/_default/single.html` is the default template for a *single page*.[^lookupOrder]
-{.indentAfterLI}
+	{% raw %}
+	```go
+	{{ define "main" }}
+		{{ .Content }}
+		<p>This line is from <code>layouts/_default/single.html</code>.</p>
+	{{ end }}
+	```
+	{% endraw %}
+	`layouts/_default/single.html` is the default template for a *single page*.[^lookupOrder]
 
 5. In `content/`, add a file called `firstpost.md`[^Markdown] with the following content:
-```md
----
-title: "First post"
----
+	```md
+	---
+	title: "First post"
+	---
 
-This line is from `content/firstpost.md`.
+	This line is from `content/firstpost.md`.
 
-[Go to home](/)
-```
+	[Go to home](/)
+	```
 
 6. In `content/` , add a file called `_index.md` with the following content:
-```md
----
-title: "Home page"
----
+	```md
+	---
+	title: "Home page"
+	---
 
-This line is from `content/_index.md`.
+	This line is from `content/_index.md`.
 
-[Go to firstpost](/firstpost/).
-```
-Incidentally, the reason for that underscore in the name `_index.md` has to do with [how Hugo helps you manage content](https://gohugo.io/content-management/organization/#index-pages-_indexmd), but a more detailed explanation thereof is well outside the scope of these intentionally simplified instructions.
-{.indentAfterLI}
+	[Go to firstpost](/firstpost/).
+	```
+	Incidentally, the reason for that underscore in the name `_index.md` has to do with [how Hugo helps you manage content](https://gohugo.io/content-management/organization/#index-pages-_indexmd), but a more detailed explanation thereof is well outside the scope of these intentionally simplified instructions.
 
 7. In the `config.toml` file at the Hugo project's top level, add the following line[^disableKinds]:
-```toml
-disableKinds = ['taxonomy', 'term']
-```
+	```toml
+	disableKinds = ['taxonomy', 'term']
+	```
 
 [^Markdown]: If you're unfamiliar with the Markdown (`.md`) format for plain-text files, start with the [original specification](https://daringfireball.net/projects/markdown) and then search for more details.
 
@@ -220,9 +209,9 @@ Speaking of which . . .
 ## Step 4 • Run the dev server
 
 1. In your terminal app, navigate to the `my-site` Hugo project folder (if you're not already working in it) and enter:
-```bash
-hugo server
-```
+	```bash
+	hugo server
+	```
 
 2. In your browser, visit the site at the URL that the terminal prompts you to visit, which should be `http://localhost:1313/`. The home page will have a link to "firstpost," and *vice versa*.
 

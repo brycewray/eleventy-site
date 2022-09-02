@@ -66,128 +66,131 @@ For each variable font you want from Google Fonts:
 
 1. Pick all the widths and styles you want and see what appears under **Review** on the right side of the Google Fonts interface. For example, when I was using Public Sans for this site, I picked regular, italic, bold regular, and bold italic (*400* is the default regular weight and *700* is usually the default weight for boldfacing):
 
-{% imgc "Public_Sans_selected_family_1024x1248.png", "Screen capture from Google Fonts showing typeface selections", 1024, 1248, "phn" %}
+	{% imgc "Public_Sans_selected_family_1024x1248.png", "Screen capture from Google Fonts showing typeface selections", 1024, 1248, "phn" %}
 
 2. Then check the result in the **Embed** view. This gives you the code you'd use *if* you were going to serve the fonts off Google Fonts which, again, you *shouldn't* do:
 
-{% imgc "Public_Sans_Embed_1060x1798.png", "Screen capture from Google Fonts showing code for embedding", 1060, 1798, "phn" %}
+	{% imgc "Public_Sans_Embed_1060x1798.png", "Screen capture from Google Fonts showing code for embedding", 1060, 1798, "phn" %}
 
 3. Instead, copy the URL from the code, like this:
 
-{% imgc "Public_Sans_URL_to_copy_1066x630.png", "Screen capture from Google Fonts showing the URL to select", 1066, 630, "phn" %}
+	{% imgc "Public_Sans_URL_to_copy_1066x630.png", "Screen capture from Google Fonts showing the URL to select", 1066, 630, "phn" %}
 
 4. Paste the copied URL into a browser window/tab.
 
-{% imgc "Public_Sans_URL_pasted_into_browser_1588x74.png", "Screen capture from browser showing URL pasted into URL bar", 1588, 74 %}
+	{% imgc "Public_Sans_URL_pasted_into_browser_1588x74.png", "Screen capture from browser showing URL pasted into URL bar", 1588, 74 %}
 
 5. Go to that URL.
 	The resulting page will give you CSS that looks something like the following (the actual content will depend on what is current on Google Fonts at the time):
 
-```css
-/* latin-ext */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJLax8s3JimW3w.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJzax8s3Jik.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJLax8s3JimW3w.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: italic;
-	font-weight: 700;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJzax8s3Jik.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNIfJ7QwOk1Fig.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNGfJ7QwOk1.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNIfJ7QwOk1Fig.woff2) format('woff2');
-	unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNGfJ7QwOk1.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-```
+	```css
+	/* latin-ext */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: italic;
+		font-weight: 400;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJLax8s3JimW3w.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: italic;
+		font-weight: 400;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJzax8s3Jik.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	/* latin-ext */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: italic;
+		font-weight: 700;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJLax8s3JimW3w.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: italic;
+		font-weight: 700;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwTs572Xtc6ZYQws9YVwnNDTJzax8s3Jik.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	/* latin-ext */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNIfJ7QwOk1Fig.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNGfJ7QwOk1.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	/* latin-ext */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNIfJ7QwOk1Fig.woff2) format('woff2');
+		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url(https://fonts.gstatic.com/s/publicsans/v4/ijwRs572Xtc6ZYQws9YVwnNGfJ7QwOk1.woff2) format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	```
 
-You probably don't need the `latin-extended` character sets (you already know if you do, and I'm guessing you don't if this information is new to you), and you want to provide as little downloadable content as possible to keep your visitors’ downloads smaller, so I'll assume from here on that we're interested only in the `latin`.
-{.indentAfterLI}
+	You probably don't need the `latin-extended` character sets (you already know if you do, and I'm guessing you don't if this information is new to you), and you want to provide as little downloadable content as possible to keep your visitors’ downloads smaller, so I'll assume from here on that we're interested only in the `latin`.
 
 6. For each variation of the `latin`:
 	- Copy the URL from the `src: url`. This is a direct link to the variable font. Don't worry about the bizarre name; we'll handle that in a moment.
 	- Paste the URL into *another* browser window/tab and press **Enter**.
 	- Download the file to *a folder of its own* on your development machine; and I also strongly suggest putting each of the folders in an overarching folder with a name that tells you the date you did this (I'll explain why shortly). For example, here's my `Public_Sans` folder with the files I downloaded to set them up on this site, and note that the inner folder is named `VF-2020-08-09` --- *i.e.*, variable fonts downloaded 2020-08-09 --- and each font type has its own separate subfolder (I *did* get the `latin-extended` versions, just in case):
 
-{% imgc "Public_Sans_folder_1502x672.png", "Screen capture of OS folder with Public Sans typeface files", 1502, 672 %}
+	{% imgc "Public_Sans_folder_1502x672.png", "Screen capture of OS folder with Public Sans typeface files", 1502, 672 %}
 
 7. **Back in the browser window/tab with the CSS you got from the Google Fonts-provided URL, copy the CSS into a text file so you can refer to it later.**
+
 8. Now, close the browser windows/tabs; you're done with them.
+
 9. In each one-font subfolder, **duplicate** its .woff2 file; keep the original just in case something goes wrong with the following step.
+
 10. Rename the duplicate .woff2 to something that makes sense to you. My `latin` duplicates have these names (and note that, in each, the name includes the date as an identifier; again, I'll shortly explain why):
 	- public-sans-20200809-vf-italic-latin.woff2
 	- public-sans-20200809-vf-roman-latin.woff2 --- I'm old-school and tend to call regular typefaces "Roman," even though that's actually correct only for serif faces.
+
 11. Now, put the renamed .woff2 files in whatever location is appropriate for your website's setup, and do the normal setup you'd do to make "local" fonts work.
 	For the CSS part of it, you can refer to that CSS you copied earlier, but **be sure** to change the URL to **yours** or you'll be serving from Google! For example, on my site when it was using Public Sans, you'd see the following for the Public Sans italic regular-weight file:
 
-```css
-/* latin */
-@font-face {
-	font-family: 'Public Sans';
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url('../assets/fonts/public-sans-20200809-vf-italic-latin.woff2') format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-```
+	```css
+	/* latin */
+	@font-face {
+		font-family: 'Public Sans';
+		font-style: italic;
+		font-weight: 400;
+		font-display: swap;
+		src: url('../assets/fonts/public-sans-20200809-vf-italic-latin.woff2') format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	```
 
 ## It's a date
 

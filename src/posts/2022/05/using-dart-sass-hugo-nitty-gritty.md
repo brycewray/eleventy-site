@@ -40,26 +40,23 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 
 2. Determine which shell your setup is using, `bash` or `zsh`:
 
-```bash
-echo $0
-```
-This will return either `bash` or `zsh`.
-{.indentAfterLI}
+	```bash
+	echo $0
+	```
+	This will return either `bash` or `zsh`.
 
 3. Use your preferred terminal-level text editor to open the appropriate file --- either `/home/JohnDoe/.bashrc` or `/home/JohnDoe/.zshrc` --- and add the following lines:
 
-```bash
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/bin/sass_embedded:$PATH"
-```
-{.indentAfterLI}
+	```bash
+	export PATH="$HOME/bin:$PATH"
+	export PATH="$HOME/bin/sass_embedded:$PATH"
+	```
 
 4. Restart the terminal app, and check that `PATH` now includes your entries:
 
-```bash
-echo $PATH
-```
-{.indentAfterLI}
+	```bash
+	echo $PATH
+	```
 
 ### Get the archive file
 
@@ -73,16 +70,15 @@ echo $PATH
 3. To unpack the `.tar.gz` archive file to retrieve its contents, enter `tar -xf ` followed by the name of the `.tar.gz` file. (As an alternative, depending on your particular Linux distribution and windows manager, you **may** also be able to use a GUI to perform this operation.)\
 The resulting contents should be as shown in your downloads folder:
 
-```bash
-sass_embedded
-└─ dart-sass-embedded
-└─ src
-		└─ dart
-		└─ dart-sass-embedded.snapshot
-		└─ LICENSE
-```
-Even though it lacks an extension, `sass_embedded/dart-sass-embedded` is a shell script that works with the actual binary, `sass_embedded/src/dart`.
-{.indentAfterLI}
+	```bash
+	sass_embedded
+	└─ dart-sass-embedded
+	└─ src
+			└─ dart
+			└─ dart-sass-embedded.snapshot
+			└─ LICENSE
+	```
+	Even though it lacks an extension, `sass_embedded/dart-sass-embedded` is a shell script that works with the actual binary, `sass_embedded/src/dart`.
 
 ### Move the `sass_embedded` folder to `bin`
 
@@ -138,28 +134,26 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 ### Add a folder and subfolder to your `PATH`
 
 1. Create `/Users/JohnDoe/bin/` if it doesn't already exist. This `bin` folder will be the **target folder** where you'll store the contents of the Embedded Dart Sass archive file you'll be getting shortly.
+
 2. Determine which shell your setup is using, `bash` or `zsh`:
 
-```bash
-echo $0
-```
-This will return either `bash` or `zsh`.
-{.indentAfterLI}
+	```bash
+	echo $0
+	```
+	This will return either `bash` or `zsh`.
 
 3. Use your preferred terminal-level text editor to open the appropriate file --- either `/Users/JohnDoe/.bashrc` or `/Users/JohnDoe/.zshrc` --- and add the following lines:
 
-```bash
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/bin/sass_embedded:$PATH"
-```
-{.indentAfterLI}
+	```bash
+	export PATH="$HOME/bin:$PATH"
+	export PATH="$HOME/bin/sass_embedded:$PATH"
+	```
 
 4. Restart the terminal app, and check that `PATH` now includes your entries:
 
-```bash
-echo $PATH
-```
-{.indentAfterLI}
+	```bash
+	echo $PATH
+	```
 
 ### Get the archive file
 
@@ -172,16 +166,15 @@ echo $PATH
 3. To unpack the `.tar.gz` archive file to retrieve its contents, enter `tar -xf ` followed by the name of the `.tar.gz` file. (As an alternative, you can double-click the `.tar.gz` file in the Finder.)\
 The resulting contents should be as shown inside your downloads folder:
 
-```bash
-sass_embedded
-└─ dart-sass-embedded
-└─ src
-		└─ dart
-		└─ dart-sass-embedded.snapshot
-		└─ LICENSE
-```
-Even though it lacks an extension, `sass_embedded/dart-sass-embedded` is a shell script that works with the actual binary, `sass_embedded/src/dart`.
-{.indentAfterLI}
+	```bash
+	sass_embedded
+	└─ dart-sass-embedded
+	└─ src
+			└─ dart
+			└─ dart-sass-embedded.snapshot
+			└─ LICENSE
+	```
+	Even though it lacks an extension, `sass_embedded/dart-sass-embedded` is a shell script that works with the actual binary, `sass_embedded/src/dart`.
 
 ### Move the `sass_embedded` folder to `bin`
 
@@ -248,10 +241,9 @@ If you need to restore the `PATH` later, enter:\
 
 4. In Command Prompt, enter:
 
-```powershell
-setx PATH "C:\Users\JohnDoe\bin;%PATH%"
-```
-{.indentAfterLI}
+	```powershell
+	setx PATH "C:\Users\JohnDoe\bin;%PATH%"
+	```
 
 5. Close Command Prompt.
 
@@ -259,17 +251,15 @@ setx PATH "C:\Users\JohnDoe\bin;%PATH%"
 
 7. In Command Prompt, enter:
 
-```powershell
-setx PATH "C:\Users\JohnDoe\bin\sass_embedded;%PATH%"
-```
-{.indentAfterLI}
+	```powershell
+	setx PATH "C:\Users\JohnDoe\bin\sass_embedded;%PATH%"
+	```
 
 8. Repeat steps 2--3 to reload Command Prompt (with or without **Run as administrator** this time) and check the `PATH` to confirm your new entries are there:
 
-```powershell
-echo %PATH%
-```
-{.indentAfterLI}
+	```powershell
+	echo %PATH%
+	```
 
 ### Get the archive file
 
@@ -286,17 +276,16 @@ echo %PATH%
 5. In Command Prompt, enter `tar -xf ` followed by the name of the `.tar.gz` file.\
 The resulting contents should be as shown (inside the regular downloads folder):
 
-```bash
-sass_embedded
-└─ dart-sass-embedded.bat
-└─ src
-		└─ dart.exe
-		└─ dart-sass-embedded.snapshot
-		└─ LICENSE
-```
+	```bash
+	sass_embedded
+	└─ dart-sass-embedded.bat
+	└─ src
+			└─ dart.exe
+			└─ dart-sass-embedded.snapshot
+			└─ LICENSE
+	```
 
-The `sass_embedded\dart-sass-embedded.bat` batch file works with the actual binary, `sass_embedded\src\dart.exe`.
-{.indentAfterLI}
+	The `sass_embedded\dart-sass-embedded.bat` batch file works with the actual binary, `sass_embedded\src\dart.exe`.
 
 ### Move the `sass_embedded` folder to `bin`
 
