@@ -23,7 +23,7 @@ pre[class*="language-"] {
   color: #fff; // was #a9eafa
   background: none;
   font-family: var.$monospaced;
-  font-size: 1em;
+  font-size: 1rem; // rem, not em (for indented code blocks)
   text-align: left;
   white-space: pre;
   word-spacing: normal;
