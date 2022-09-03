@@ -61,6 +61,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setQuietMode(true)
 
+	eleventyConfig.setServerPassthroughCopyBehavior("copy")
+	// fix for issue in 2.0.0-canary.12 and above
+
   eleventyConfig.addPassthroughCopy("browserconfig.xml")
   eleventyConfig.addPassthroughCopy("favicon.ico")
   eleventyConfig.addPassthroughCopy("robots.txt")
