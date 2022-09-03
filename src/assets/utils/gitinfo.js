@@ -34,7 +34,7 @@ module.exports = (pubdate, filename) => {
 	repoLink += longHash
 
 	if (longHash !== '') {
-		stringtoRet = `${pubdate} - ${lastUpdatedFromGit}<br />Latest commit: <a class="mono" href="${repoLink}" rel="noopener">${abbrevHash}</a>`
+		stringtoRet = `Latest commit: <a class="mono" href="${repoLink}" rel="noopener">${abbrevHash}</a>`
 		if (pubdate !== lastUpdatedFromGit) {
 			stringtoRet += `, ${lastUpdatedFromGit}`
 		}
