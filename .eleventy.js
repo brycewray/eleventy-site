@@ -183,12 +183,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/assets/scss/*.scss")
 
 	// --- REQUIRES Eleventy v.2.0+
-	// eleventyConfig.setServerOptions({
-	// 	// enabled: true, // default
-  //   port: 3000, // default is 8080
-  //   showAllHosts: true,
-  //   showVersion: true
-  // })
+	eleventyConfig.setServerOptions({
+		// enabled: true, // default
+    port: 3000, // default is 8080
+    showAllHosts: true,
+    showVersion: true
+  })
 
 	// BrowserSync stuff
 	// -- "no-op" in Eleventy v.2.0+
