@@ -8,9 +8,11 @@
         {% endif %}
 				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) and (not ('The site this week' in title)) %}
 				<p class="billboard-p-text" data-pagefind-ignore>
-          <strong>{{ page.date | dateStringISO }}</strong><br />
-					<span class="seventyFive">{% if lastmod and not ((page.date | dateStringISO) == (lastmod | dateStringISO)) %}Last modified {{ lastmod | dateStringISO }}{% else %}&nbsp;{% endif %}
+          <strong>{{ page.date | dateStringISO }}</strong>
         </p>
-				{% endif %}</p>
+				<p class="ctr legal" data-pagefind-ignore>
+					{% gitinfo page.date, page.inputPath %}
+				</p>
+				{% endif %}
       </div>
     </div>
