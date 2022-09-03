@@ -244,6 +244,12 @@ module.exports = function(eleventyConfig) {
     require("./src/assets/utils/disclaimer.js")
   )
 
+	eleventyConfig.addNunjucksShortcode(
+		"gitinfo",
+		require("./src/assets/utils/gitinfo.js")
+	)
+
+
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
