@@ -149,7 +149,7 @@ module.exports = async (instance, id) => {
 			}
 
 			let timeToFormat = Json.created_at
-			let formattedTime = DateTime.fromISO(timeToFormat).toFormat("h:mm a • MMM d, yyyy")
+			let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMM d, yyyy")
 
 			stringToRet += `<div class="tweet-footer">
 				<a href="https://${instance}/@${Json.account.acct}/${Json.id}" class="tweet-date twitterExt" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>

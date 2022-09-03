@@ -4,7 +4,7 @@ title: "Static embeds in Eleventy"
 description: "In what could and perhaps should be the end of this saga, here’s code to provide static tweets and static Mastodon toots in Eleventy."
 author: Bryce Wray
 date: 2022-08-27T12:33:00-05:00
-lastmod: 2022-09-03T06:31:00-05:00
+lastmod: 2022-09-03T13:23:00-05:00
 #draft: true
 #initTextEditor: **iA Writer**
 ---
@@ -267,7 +267,7 @@ module.exports = async (user, id) => {
 		}
 
 		let timeToFormat = Json.created_at
-		let formattedTime = DateTime.fromISO(timeToFormat).toFormat("h:mm a • MMM d, yyyy")
+		let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMM d, yyyy")
 
 		stringToRet += `<div class="tweet-footer">
 			<a href="https://twitter.com/${Json.user.screen_name}/status/${Json.id_str}" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
@@ -408,7 +408,7 @@ module.exports = async (TweetID) => {
 		<span>${imageItems}</span>`
 
 		let timeToFormat = created_at
-		let formattedTime = DateTime.fromISO(timeToFormat).toFormat("h:mm a • MMM d, yyyy")
+		let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMM d, yyyy")
 
 		stringToRet += `<div class="tweet-footer">
 			<a href="https://twitter.com/${username}/status/${TweetID}" class="tweet-date" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
@@ -566,7 +566,7 @@ module.exports = async (instance, id) => {
 			}
 
 			let timeToFormat = Json.created_at
-			let formattedTime = DateTime.fromISO(timeToFormat).toFormat("h:mm a • MMM d, yyyy")
+			let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMM d, yyyy")
 
 			stringToRet += `<div class="tweet-footer">
 				<a href="https://${instance}/@${Json.account.acct}/${Json.id}" class="tweet-date twitterExt" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
