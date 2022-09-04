@@ -6,10 +6,14 @@
         {% else %}
         <p>&nbsp;</p>
         {% endif %}
-				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) and (not ('The site this week' in title)) %}
 				<p class="billboard-p-text" data-pagefind-ignore>
+				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) and (not ('The site this week' in title)) %}
           <strong>{{ page.date | dateStringISO }}</strong>
+				{% else %}
+					&nbsp;
+				{% endif %}
         </p>
+				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="ctr legal" data-pagefind-ignore>
 					{% gitinfo page.date, page.inputPath %}
 				</p>
