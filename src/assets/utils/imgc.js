@@ -59,7 +59,7 @@ module.exports = async (url, alt, width, height, phn) => {
 
 	if (phn === "phn") {
 		imgClass = `img-phn h-auto ctrImg animate-fade`
-		stringToRet += `<div class="${divClass}">`
+		stringToRet += `<div class="${divClass}" data-pagefind-ignore>`
 	} else {
 		imgClass = `w-full h-auto animate-fade`
 		stringToRet += `<style nonce="DhcnhD3khTMePgXw">
@@ -69,7 +69,7 @@ module.exports = async (url, alt, width, height, phn) => {
       background-position: center;
       background-size: cover;
     }
-		</style><div class="${divClass} imgB-${imgBmd5}">`
+		</style><div class="${divClass} imgB-${imgBmd5}" data-pagefind-ignore>`
 	}
 	stringToRet += `<img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
@@ -79,7 +79,7 @@ module.exports = async (url, alt, width, height, phn) => {
     })
     stringToRet += arrayFromLoop.join(', ')
     // h/t https://stackoverflow.com/questions/2047491/how-to-remove-last-comma
-    stringToRet += `" alt="${alt}" width="${width}" height="${height}" sizes="${dataSzes}" /></div>`
+    stringToRet += `" alt="${alt}" width="${width}" height="${height}" sizes="${dataSzes}" data-pagefind-ignore /></div>`
 
   return stringToRet
 }

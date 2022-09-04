@@ -36,7 +36,7 @@ module.exports = async (user, id) => {
 		stringToRet += JsonOHTML
 
 	} else {
-		stringToRet = `<blockquote><p class="legal serif">[Embedded <strong>simple</strong> static tweet will appear here in production.]</p></blockquote>`
+		stringToRet = `<blockquote data-pagefind-ignore><p class="legal serif">[Embedded <strong>simple</strong> static tweet will appear here in production.]</p></blockquote>`
 	}
 
 	return stringToRet

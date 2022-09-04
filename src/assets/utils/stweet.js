@@ -249,7 +249,7 @@ module.exports = async (user, id) => {
 
 		let tweetLink = `https://twitter.com/${Json.user.screen_name}/status/${id}`;
 
-		stringToRet += `<blockquote class="tweet-card" cite="${tweetLink}">
+		stringToRet += `<blockquote class="tweet-card" cite="${tweetLink}" data-pagefind-ignore>
 			<div class="tweet-header">
 				<a class="tweet-profile twitterExt" href="https://twitter.com/${Json.user.screen_name}" rel="noopener">
 					<img src="${Json.user.profile_image_url_https}" alt="Twitter avatar for ${Json.user.screen_name}" loading="lazy" />
@@ -329,7 +329,7 @@ module.exports = async (user, id) => {
 			</div>
 		</blockquote>`
 	} else {
-		stringToRet = `<blockquote class="tweet-card"><p class="ctr legal">[Embedded static tweet will appear here in production.]</p></blockquote>`
+		stringToRet = `<blockquote class="tweet-card"><p class="ctr legal" data-pagefind-ignore>[Embedded static tweet will appear here in production.]</p></blockquote>`
 	}
 
 	return stringToRet

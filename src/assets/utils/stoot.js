@@ -131,7 +131,7 @@ module.exports = async (instance, id) => {
 		}
 
 		if (Json.content) {
-			stringToRet = `<blockquote class="tweet-card" cite="${tootLink}">
+			stringToRet = `<blockquote class="tweet-card" cite="${tootLink}" data-pagefind-ignore>
 				<div class="tweet-header">
 					<a class="tweet-profile twitterExt" href="https://${instance}/@${Json.account.acct}" rel="noopener"><img src="${Json.account.avatar}" alt="Mastodon avatar for ${handleInst}" loading="lazy" /></a>
 					<div class="tweet-author">
@@ -162,7 +162,7 @@ module.exports = async (instance, id) => {
 			</blockquote>`
 		}
 	} else {
-		stringToRet = `<blockquote class="tweet-card"><p class="ctr legal">[Embedded static toot will appear here in production.]</p></blockquote>`
+		stringToRet = `<blockquote class="tweet-card" data-pagefind-ignore><p class="ctr legal">[Embedded static toot will appear here in production.]</p></blockquote>`
 	}
 
 	return stringToRet
