@@ -59,7 +59,7 @@ jobs:
       - name: Build site
         run: npm run build
       - name: Run Pagefind
-        run: npx -y pagefind --source "public"
+        run: npx -y pagefind --source "_site"
       - name: Publish to CFP
         uses: cloudflare/pages-action@1
         with:
