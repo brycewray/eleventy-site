@@ -54,15 +54,15 @@ module.exports = async (url, alt, width, height, phn) => {
   ================================================================
   */
 
-  let stringtoRet = ``
+  let stringToRet = ``
   let arrayFromLoop = []
 
 	if (phn === "phn") {
 		imgClass = `img-phn h-auto ctrImg animate-fade`
-		stringtoRet += `<div class="${divClass}">`
+		stringToRet += `<div class="${divClass}">`
 	} else {
 		imgClass = `w-full h-auto animate-fade`
-		stringtoRet += `<style nonce="DhcnhD3khTMePgXw">
+		stringToRet += `<style nonce="DhcnhD3khTMePgXw">
     .imgB-${imgBmd5} {
       background: url(data:image/jpeg;base64,${LQIP_b64});
       background-repeat: no-repeat;
@@ -71,15 +71,15 @@ module.exports = async (url, alt, width, height, phn) => {
     }
 		</style><div class="${divClass} imgB-${imgBmd5}">`
 	}
-	stringtoRet += `<img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
+	stringToRet += `<img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)
       }
     })
-    stringtoRet += arrayFromLoop.join(', ')
+    stringToRet += arrayFromLoop.join(', ')
     // h/t https://stackoverflow.com/questions/2047491/how-to-remove-last-comma
-    stringtoRet += `" alt="${alt}" width="${width}" height="${height}" sizes="${dataSzes}" /></div>`
+    stringToRet += `" alt="${alt}" width="${width}" height="${height}" sizes="${dataSzes}" /></div>`
 
-  return stringtoRet
+  return stringToRet
 }

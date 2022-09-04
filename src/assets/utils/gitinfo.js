@@ -8,7 +8,7 @@ const environment = process.env.NODE_ENV
 
 module.exports = (pubdate, filename) => {
 
-	let stringtoRet = ``
+	let stringToRet = ``
 
 	if (environment === "production") {
 
@@ -37,17 +37,17 @@ module.exports = (pubdate, filename) => {
 		repoLink += longHash
 
 		if (longHash !== '') {
-			stringtoRet = `Latest commit: <a class="mono" href="${repoLink}" rel="noopener">${abbrevHash}</a>`
+			stringToRet = `Latest commit: <a class="mono" href="${repoLink}" rel="noopener">${abbrevHash}</a>`
 			if (pubdate !== lastUpdatedFromGit) {
-				stringtoRet += `, ${lastUpdatedFromGit}`
+				stringToRet += `, ${lastUpdatedFromGit}`
 			}
 		} else {
-			stringtoRet = `&nbsp;`
+			stringToRet = `&nbsp;`
 		}
 
 	} else {
-		stringtoRet = `[Git info will appear here in production.]`
+		stringToRet = `[Git info will appear here in production.]`
 	}
 
-	return stringtoRet
+	return stringToRet
 }
