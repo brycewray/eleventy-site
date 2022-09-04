@@ -22,8 +22,12 @@
       <meta property="og:description" content="{{ siteparams.siteDescription }}" />
       <meta property="og:url" content = "{{ siteparams.siteURLforOG }}/" />
     {% else %}
-      <link rel="canonical" href="{{ siteparams.siteURLforOG }}{{ page.url }}" />
-      <title>{{ title }} | {{ siteparams.siteTitle }}</title>
+			{% if ext_canonical %}
+				<link rel="canonical" href="{{ ext_canonical }}" />
+			{% else %}
+	      <link rel="canonical" href="{{ siteparams.siteURLforOG }}{{ page.url }}" />
+			{% endif %}
+  	    <title>{{ title }} | {{ siteparams.siteTitle }}</title>
       <meta property="og:title" content="{{ title }} | {{ siteparams.siteTitle }}" />
       <meta name="description" content="{{ description }}" />
       <meta property="og:description" content="{{ description }}" />
