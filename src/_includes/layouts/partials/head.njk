@@ -86,7 +86,6 @@
     -->
     {% if eleventyEnv == "production" %}
       <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/{{ csshash.indexSCSS }}" type="text/css" />
-      <style{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %}>{% include 'css/index.css' ignore missing %}</style>
     {% else %}
       <link rel="stylesheet" href="/css/{{ csshash.indexSCSS }}" type="text/css" />
     {% endif %}
