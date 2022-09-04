@@ -66,6 +66,7 @@ Finally, here’s how this site’s SSG ([Hugo](https://gohugo.io), at this writ
 | --------- | --------------------- |
 | iA Writer | 6.x                   |
 | Ulysses   | 27.x                  |
+
 {.ulysses}
 
 *(Of course, I added some styling to make it look better, since the basic Markdown gives you equally basic HTML with no styling other than your browser’s defaults.)*
