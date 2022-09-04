@@ -1,4 +1,4 @@
-# Repo for brycewray.com
+# Repo for www.brycewray.com
 
 This is the repository from which the [Eleventy](https://11ty.dev)-generated version of [brycewray.com](https://www.brycewray.com/) is built (when/if that occurs).[^stickler]
 
