@@ -1,18 +1,14 @@
 		<div class="billboard-div">
       <div class="billboard-title-block">
         <h1 class="billboard-title-text">{{ title | safe }}</h1>
-        {% if description %}
+        {% if description and not (title == siteparams.searchPageTitle) %}
         <p class="billboard-description-text">{{ description | safe }}</p>
-        {% else %}
-        <p>&nbsp;</p>
         {% endif %}
+				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="billboard-p-text" data-pagefind-ignore>
-				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) and (not ('The site this week' in title)) %}
-          <strong>{{ page.date | dateStringISO }}</strong>
-				{% else %}
-					&nbsp;
-				{% endif %}
+          {% if (not 'The site this week' in title) %}<strong>{{ page.date | dateStringISO }}</strong>{% else %}&nbsp;{% endif %}
         </p>
+				{% endif %}
 				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="ctr legal" data-pagefind-ignore>
 					{% gitinfo page.date, page.inputPath %}
