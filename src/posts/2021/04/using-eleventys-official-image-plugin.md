@@ -177,7 +177,7 @@ Now, just build your site, and Eleventy Image will do its magic everywhere withi
 
 .&nbsp;.&nbsp;.&nbsp;and the result thereof:
 
-{% imgc "my-pet-cat_3264x2448.jpg", "Photo of a cat named Shakespeare sitting on a window sill", 3264, 2448 %}
+{% imgcnobg "my-pet-cat_3264x2448.jpg", "Photo of a cat named Shakespeare sitting on a window sill", 3264, 2448 %}
 
 **Disclaimer**: Image is sourced here without using Eleventy&nbsp;Image **but** this does show the result of the generated&nbsp;code.
 {.imgcCaption}
