@@ -13,11 +13,11 @@ const { DateTime } = require("luxon")
 const environment = process.env.NODE_ENV
 
 
-module.exports = async (instance, id) => {
+module.exports = async (instance, id, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production") {
+	if (environment === "production" || prod === "prod") {
 		let tootLink, handleInst, mediaMD5, urlToGet, mediaStuff, videoStuff, gifvStuff, pollStuff = ''
 		let imageCount, votesCount = 0
 

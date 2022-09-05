@@ -13,11 +13,11 @@ const { DateTime } = require("luxon")
 require('dotenv').config()
 const BearerToken = process.env.BEARER_TOKEN
 
-module.exports = async (TweetID) => {
+module.exports = async (TweetID, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production") {
+	if (environment === "production" || prod === "prod") {
 
 		const jsonURL1 = "https://api.twitter.com/2/tweets?ids="
 		const jsonURL2 = "&expansions=author_id,attachments.media_keys&tweet.fields=created_at,text,attachments,entities,source&user.fields=name,username,profile_image_url&media.fields=preview_image_url,type,url,alt_text"

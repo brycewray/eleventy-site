@@ -1,19 +1,24 @@
-// This is to be the Eleventy shortcode version
-// of the Hugo full-privacy `tweet` shortcode
-// --- use as:
-// {% stweetsimple "user", "id" %}
+/*
+	This is to be the Eleventy shortcode version
+	of the Hugo full-privacy `tweet` shortcode
+	--- use as:
+	{% stweetsimple "user", "id", "prod" %}
 
+	...with "prod" as optional.
+
+	If "prod" is "prod", show the tweet as if in production mode.
+*/
 const EleventyFetch = require("@11ty/eleventy-fetch")
 const environment = process.env.NODE_ENV
 
 // const fetch = (...args) =>
 // 	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-module.exports = async (user, id) => {
+module.exports = async (user, id, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production") {
+	if (environment === "production" || prod === "prod") {
 		const urlOembed = `https://twitter.com/${user}/status/${id}`;
 		const query = `url=${urlOembed}&dnt=true&omit_script=true`;
 		const requestUrlO = `https://publish.twitter.com/oembed?` + query;

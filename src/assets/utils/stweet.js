@@ -10,11 +10,11 @@ const environment = process.env.NODE_ENV
 
 const { DateTime } = require("luxon")
 
-module.exports = async (user, id) => {
+module.exports = async (user, id, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production") {
+	if (environment === "production" || prod === "prod") {
 		// let aspect = '1 / 1'
 		let RT_text = ''
 
