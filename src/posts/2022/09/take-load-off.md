@@ -59,9 +59,9 @@ The answer is that it depends. For example, in [Astro](https://astro.build), you
 
 ----
 
-**Additional note (also from 2022-09-04)**
+**Additional note**
 
-Another, perhaps simpler possibility would be optionally passing a `prod` variable (after `user` and `id` in our example above) which, if set to `"prod"`, **also** would cause the API results to occur. In that case, the `if` statement above would become an "or" conditional:
+Another, perhaps simpler possibility would be optionally passing a `prod` variable (after `user` and `id` in our example above) which, if set to `"prod"`, **also** would access the API and cause the results to appear. In that case, the `if` statement above would become an "or" conditional:
 
 ```js
 if (environment === "production" || prod === "prod")
