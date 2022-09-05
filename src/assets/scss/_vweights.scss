@@ -1,3 +1,5 @@
+@use 'variables' as var;
+
 /* ====
 FOR USE **ONLY** WITH FONTS WITH VARIABLE WEIGHTS
 --------
@@ -20,6 +22,7 @@ h1,
 .homePost-Latest,
 .homeOpen h1 {
 	font-weight: 600;
+	letter-spacing: -0.05em;
 }
 
 h2,
@@ -35,6 +38,7 @@ h6,
 .homePost-Title,
 .posts-Title {
 	font-weight: 550;
+	letter-spacing: -0.05em;
 }
 
 .homePost-Title,
@@ -46,6 +50,20 @@ h6,
 .posts-Description,
 .homePost-Description {
 	font-weight: 300;
+	letter-spacing: -0.0375em;
+}
+
+article code, article p code {
+	font-size: 1em;
+	@media screen and (min-width: var.$bkpt_md) {
+		font-size: 0.975em;
+	}
+	@media screen and (min-width: var.$bkpt_xl) {
+		font-size: 0.95em;
+	}
+	@media screen and (min-width: var.$bkpt_2xl) {
+		font-size: 0.9em;
+	}
 }
 
 @media screen and (prefers-color-scheme: dark) {
