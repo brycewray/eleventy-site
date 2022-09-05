@@ -95,12 +95,6 @@ This will automatically feed to `gitinfo` a Markdown file's `date` (derived by d
 ./src/posts/path/to/my-markdown-file.md
 ```
 
-For example, this page you're reading now has an `inputPath` of:
-
-```bash
-./src/posts/2022/09/get-good-git-info-eleventy-too.md
-```
-
 As for the final message conveyed in your site by `stringToRet`, you're obviously free to make `stringToRet` say what works best for your site. The main thing is that the code here shows you how to get the data that it needs in the first place. And, to be specific about that data, in production the `gitinfo` shortcode invocation brings back a string containing:
 
 - `lastUpdatedFromGit` --- The date of the file's last Git commit in `yyyy-mm-dd` format. (If this is on the same day as the initial date of publication, `lastUpdatedFromGit` doesn't appear.)
