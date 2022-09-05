@@ -220,6 +220,11 @@ module.exports = function(eleventyConfig) {
   )
 
   eleventyConfig.addNunjucksAsyncShortcode(
+    "imgcnobg",
+    require("./src/assets/utils/imgcnobg.js")
+  )
+
+  eleventyConfig.addNunjucksAsyncShortcode(
     "stweet",
     require("./src/assets/utils/stweet.js")
   )
