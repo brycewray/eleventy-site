@@ -56,3 +56,13 @@ The answer is that it depends. For example, in [Astro](https://astro.build), you
 ```
 
 . . . so entering `npm run testbuild` would let you develop while in a production environment --- and, thus, see the results of the APIs you're accessing. When you're done checking for those results, simply restart the dev server and use `npm run start` to return to a much leaner dev mode. Your SSG and CPU will thank you for it.
+
+----
+
+**Additional note (also from 2022-09-04)**
+
+Another, perhaps simpler possibility would be optionally passing a `prod` variable (after `user` and `id` in our example above) which, if set to `"prod"`, **also** would cause the API results to occur. In that case, the `if` statement above would become an "or" conditional:
+
+```js
+if (environment === "production" || prod === "prod")
+```
