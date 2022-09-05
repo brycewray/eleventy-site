@@ -95,7 +95,7 @@ However, what the JSON object from the oEmbed API *didn't* include were items wh
 
 When I compared this oEmbed API return with what I'd get from either of the other Twitter APIs for the same tweet, I realized that --- short of going ahead and dumbing down to just the `tweet` shortcode's bare-bones results --- there was only one way to make my site's embedded tweets look and read as I wanted: I'd have to re-do my own `stweet` shortcode so that it accessed and used **both** the oEmbed API **and** the Public Syndication API.[^v2] The former would provide the text as I wanted it, while I'd source the latter for all the other goodies.
 
-[^v2]: As I've [explained before](/posts/2022/02/gems-in-rough-14/#update-20220410), the [Version 2 API still isn't video- and animations-friendly](https://developer.twitter.com/en/docs/twitter-api/data-dictionary/object-model/media), at least not as of this writing.
+[^v2]: As I've [explained before](/posts/2022/02/gems-in-rough-14/#update%2C-2022%E2%80%9104%E2%80%9110), the [Version 2 API still isn't video- and animations-friendly](https://developer.twitter.com/en/docs/twitter-api/data-dictionary/object-model/media), at least not as of this writing.
 
 ## Careful cuts
 

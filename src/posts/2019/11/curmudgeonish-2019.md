@@ -48,7 +48,7 @@ Dear marketing departments for the newscasts: **if this old fart knew about it h
 
 The best example I ever saw of a story *truly* breaking during an evening newscast was back in January, 1973, when the *CBS Evening News* came back from a segment and, on camera, anchorman Walter Cronkite was *on the phone* getting the first word about the death of ex-president Lyndon Johnson (video [here](https://www.youtube.com/watch?v=KGQs9htF9kQ)[^noEmbed]). Now **that** was breaking. I only wish today's networks understood how tired and, therefore, useless that they have rendered the "breaking news" descriptor.
 
-[^noEmbed]: I didn't imbed the video here as a [static video](/posts/2021/09/gems-in-rough-09/#privacy-respecting-youtubeembeds), because its channel owner has prohibited that.
+[^noEmbed]: I didn't imbed the video here as a [static video](/posts/2021/09/gems-in-rough-09/#privacy-respecting-youtube-embeds), because its channel owner has prohibited that.
 
 ## Today's unis aren't uniform
 

@@ -244,6 +244,6 @@ Finally, down in the Markdown itself, call the imported component the same way a
 
 ## An escapee from the lab?
 
-As I [noted](/posts/2022/03/simplify-simplify-again/#a-line-in-the-shifting-sands) recently, I'm now once again actively experimenting with Astro, having [let it be for a while](/posts/2021/09/gems-in-rough-09/#passtro-on-astro-for-now) when it was a tad too skittish for my limited skill set. The component I've provided in this post is one example of that experimentation.
+As I [noted](/posts/2022/03/simplify-simplify-again/#a-line-in-the-shifting-sands) recently, I'm now once again actively experimenting with Astro, having [let it be for a while](/posts/2021/09/gems-in-rough-09/#%E2%80%9Cpasstro%E2%80%9D-on-astro-for-now) when it was a tad too skittish for my limited skill set. The component I've provided in this post is one example of that experimentation.
 
 If you're building a site with Astro, perhaps this component can be at least a starting point toward your embedding tweets without endangering your visitors' privacy.

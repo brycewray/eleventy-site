@@ -18,7 +18,7 @@ Please use the [site search page](/search/) to find related posts.
 
 You know it’s important to respect, and protect, the privacy of your website’s visitors. However, serving them embedded social media content can complicate your good intentions. The good news is that my two favorite [static site generators](https://jamstack.org/generators/) (SSGs), [Eleventy](https://11ty.dev/) and [Hugo](https://gohugo.io/), will help you fix that.
 
-In the [first item](/posts/2021/09/gems-in-rough-09/#privacy-respecting-youtubeembeds) in last September’s “[Gems in the rough #9](/posts/2021/09/gems-in-rough-09/),” I provided a description of a privacy-friendly way to embed YouTube videos in your Eleventy- or Hugo-powered site.[^1] Now, in this post, let’s talk about how to treat tweets (?) similarly.
+In the [first item](/posts/2021/09/gems-in-rough-09/#privacy-respecting-youtube-embeds) in last September’s “[Gems in the rough #9](/posts/2021/09/gems-in-rough-09/),” I provided a description of a privacy-friendly way to embed YouTube videos in your Eleventy- or Hugo-powered site.[^1] Now, in this post, let’s talk about how to treat tweets (?) similarly.
 
 ## Go static with your tweet embeds
 

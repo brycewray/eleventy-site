@@ -114,7 +114,7 @@ Of course, this doesn't obviate the issue, expressed in the first post, with usi
 
 ## Making web fonts work with internal CSS
 
-In the [most recent installment](/posts/2022/01/gems-in-rough-13/) of this “Gems in the rough” series, I [noted](/posts/2022/01/gems-in-rough-13/#why-i-returned-to-internalcss) that I’d taken to using internal CSS (*i. e.*, CSS contained within a `style` element in the `head` of each page on the site) to get around the overly aggressive caching inherent in Safari, which many of my visitors use, as well as on Cloudflare Pages.
+In the [most recent installment](/posts/2022/01/gems-in-rough-13/) of this “Gems in the rough” series, I [noted](/posts/2022/01/gems-in-rough-13/#why-i-returned-to-internal-css) that I’d taken to using internal CSS (*i. e.*, CSS contained within a `style` element in the `head` of each page on the site) to get around the overly aggressive caching inherent in Safari, which many of my visitors use, as well as on Cloudflare Pages.
 
 However, since the initial posting of that piece:
 
