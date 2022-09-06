@@ -30,7 +30,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCc0YbtMkRdhcqwhu3Oad-lw
 You may already be aware that podcasts notify apps and websites of new content at least in part through RSS feeds. To get the URL for a podcast's feed, find the podcast's home web page; then, assuming the page doesn't helpfully display the feed link (sometimes with text like "Subscribe"), use your browser's **View Source** function and look for a line with content like this:
 
 ```html
-<link rel="alternate" type="application/rss+xml"
+<link rel="alternate" type="application/rss+xml" title="title" href="link" />
 ```
 
 The URL you'll find within that `link` is the one that your feed reader needs. For example, here's the feed `link`  for one of my long-time favorites, [*The Skeptics' Guide to the Universe*](https://www.theskepticsguide.org):
