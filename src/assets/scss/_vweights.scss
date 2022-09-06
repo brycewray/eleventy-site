@@ -77,9 +77,9 @@ article .h6,
 	letter-spacing: -0.0375em;
 }
 
-article p {
+article p, article li {
 	@media screen and (min-width: var.$bkpt_xl) {
-		letter-spacing: -0.02em;
+		letter-spacing: -0.03em;
 	}
 }
 
