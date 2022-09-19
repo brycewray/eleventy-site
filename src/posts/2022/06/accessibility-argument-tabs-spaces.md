@@ -54,7 +54,7 @@ So that's what I did. Fortunately, [Visual Studio Code makes that fairly easy](h
 
 I also changed the site's *[.editorconfig file](https://editorconfig.org/)* to the following, specifically the `indent_style` setting (which had been `space`):
 
-```bash
+```editorconfig
 root = true
 
 [*]

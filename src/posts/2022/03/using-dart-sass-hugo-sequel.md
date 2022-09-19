@@ -164,7 +164,7 @@ That's likely to produce a very long list, separated by `:` characters, so you'l
 
 For example, here's what I got back from trying `echo "PATH is $PATH"` in an early version of the Cloudflare Pages script (and I have separated them onto separate lines, **without** the `:` separator, for your reading convenience, but that's not how they come back when you do it):
 
-```bash
+```plaintext
 Path is
 /opt/buildhome/.wasmer/bin
 /opt/buildhome/.gimme/versions/go1.14.4.linux.amd64/bin
@@ -194,7 +194,7 @@ Path is
 
 I stared at that list for a while, and then tried a couple of likely suspects in the `BIN_DIR=` line before finding the one that worked:
 
-```bash
+```plaintext
 BIN_DIR=/opt/buildhome/.binrc/bin
 ```
 

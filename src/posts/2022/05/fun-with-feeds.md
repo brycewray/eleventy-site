@@ -21,7 +21,7 @@ Are you subscribed to any YouTube channels? Your feed reader can tell you when t
 
 The **Fireship** channel on YouTube has a home page URL of `https://www.youtube.com/c/Fireship`. But, when you copy that into a compatible reader app, it gets translated to what the reader really wants to use:
 
-```bash
+```plaintext
 https://www.youtube.com/feeds/videos.xml?channel_id=UCc0YbtMkRdhcqwhu3Oad-lw
 ```
 
@@ -45,7 +45,7 @@ Most subreddits have an RSS feed. All you have to do is take a subreddit's URL a
 
 The [Eleventy](https://11ty.dev) subreddit, with the `new` designation, is `https://www.reddit.com/r/eleventy/new`. Thus, its feed URL would be:
 
-```bash
+```plaintext
 https://www.reddit.com/r/eleventy/new.rss
 ```
 
@@ -59,7 +59,7 @@ Getting RSS from a Twitter timeline can be tricky, depending on your feed-readin
 
 By contrast, it's a lot easier to get the RSS feed from a Mastodon user's timeline. Here's mine from the [mastodon.technology](https://mastodon.technology) instance, where I use the handle of `@BryceWrayTX` (same as on Twitter):
 
-```bash
+```plaintext
 https://mastodon.technology/@BryceWrayTX.rss
 ```
 

@@ -39,20 +39,20 @@ Hugo is an app that you install on your computer. You can do that by either (a.)
 
 2. If you already have the [**Homebrew** package manager app](https://brew.sh) installed, skip to the next item.\
 	Otherwise, install Homebrew by entering the following via Terminal:
-	```bash
+	```plaintext
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	```
 	Once the Homebrew installation is complete, go on to the next item.
 
 3. Install Hugo by entering the following via Terminal:
 
-	```bash
+	```plaintext
 	brew install hugo
 	```
 	This will be the Hugo Extended version, since that's the only one Homebrew includes.\
 	**In the future**, you can *upgrade* Hugo to the latest version in Homebrew's possession by entering:
 
-	```bash
+	```plaintext
 	brew upgrade hugo
 	```
 
@@ -79,11 +79,11 @@ Otherwise, install Scoop. First, enter this via Windows PowerShell:
 	Once the Scoop installation is complete, go on to the next item.
 
 3. Install Hugo Extended by entering this via Windows PowerShell:
-	```bash
+	```powershell
 	scoop install hugo-extended
 	```
 	**In the future**, you can *update* Hugo to the latest version in Scoop's possession by entering:
-	```bash
+	```powershell
 	scoop update hugo-extended
 	```
 
@@ -99,13 +99,13 @@ Let's say we'll call the new site `my-site`.
 From here on, we'll refer to your *terminal app*. On macOS, the default is Terminal. On Windows, you can use either Command Prompt (*cmd.exe*) or Windows PowerShell; I suggest the latter.
 
 2. In your terminal app, enter:
-	```bash
+	```plaintext
 	hugo new site my-site
 	```
 	*(As it creates the site, Hugo will automatically display instructions that mention using a theme --- **but** you can ignore them, because they relate to the aforementioned official procedure to which this is an alternative.)*\
 	&nbsp;\
 	The result will be a structure like the following in your user directory:
-	```bash
+	```plaintext
 	my-site   <-- The Hugo project folder
 	└─ archetypes
 	└─ config.toml   <-- The only non-folder
@@ -209,7 +209,7 @@ Speaking of which . . .
 ## Step 4 • Run the dev server
 
 1. In your terminal app, navigate to the `my-site` Hugo project folder (if you're not already working in it) and enter:
-	```bash
+	```plaintext
 	hugo server
 	```
 

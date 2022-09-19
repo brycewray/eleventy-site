@@ -47,7 +47,7 @@ That’s fine for when you’re developing locally, but you obviously don’t wa
 
 With all that out of the way, let’s install the plugin:
 
-```bash
+```plaintext
 npm install eleventy-plugin-embed-tweet --save
 ```
 

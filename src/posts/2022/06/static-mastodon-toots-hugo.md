@@ -69,7 +69,7 @@ https://mastodon.technology/@BryceWrayTX/108363758238065126
 
 . . . that means its ID was `108363758238065126`. So, the `curl` to `GET` that toot's JSON would be:
 
-```bash
+```plaintext
 curl "https://mastodon.technology/api/v1/statuses/108363758238065126"
 ```
 

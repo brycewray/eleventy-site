@@ -45,13 +45,13 @@ First of all, if you don't even use [node modules](https://nodejs.org/api/module
 
 If your Sass-using Hugo project has no `package.json` file as yet, go into the project and run this `npm` command to create that file:
 
-```bash
+```plaintext
 npm init -y
 ```
 
 Now you're set to proceed. Install the packages you'll need for the code to follow:
 
-```bash
+```plaintext
 npm i -D npm-run-all rimraf sass
 ```
 

@@ -94,7 +94,7 @@ You may have noticed that the shortcode took two parameters: `pubdate` and `file
 
 This will automatically feed to `gitinfo` a Markdown file's `date` (derived by default from the file's front matter but, if it's not there, [Eleventy has fallbacks](https://www.11ty.dev/docs/dates/)) and `inputPath`. In a typical Eleventy repo, `inputPath` takes this form:
 
-```bash
+```plaintext
 ./src/path/to/my-markdown-file.md
 ```
 

@@ -85,13 +85,13 @@ Of course, feel free to make the `cp -v` line conform to how your site and SSG a
 
 Finally, give `newfile.sh` the necessary permissions:
 
-```bash
+```plaintext
 chmod 0755 newfile.sh
 ```
 
 Done! Now, when you want to create a new Markdown file, just enter:
 
-```bash
+```plaintext
 ./newfile.sh
 ```
 

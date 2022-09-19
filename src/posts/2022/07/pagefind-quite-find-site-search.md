@@ -29,7 +29,7 @@ You can run Pagefind either by using the following command, which automatically[
 
 [^Yflag]: The `-y` flag gives a pre-emptive "Yes" answer to Pagefind's resulting prompt which asks whether it's allowed to install itself.
 
-```bash
+```plaintext
 npx -y pagefind --source "public" --serve
 ```
 
@@ -37,7 +37,7 @@ npx -y pagefind --source "public" --serve
 
 [^PFbinary]:If I preferred to use the binary on my Mac, the script's last line would be just `pagefind --source "public" --serve`. The advantage of `npx pagefind` is that you always get the newest version. Its only real disadvantage *vs.* using the binary is that you *must* be online to use `npx pagefind` --- although, IMHO, there's not much point in doing web dev if one *isn't* online, so that last item may be of little concern.
 
-```bash
+```plaintext
 pagefind --source "public" --serve
 ```
 
@@ -65,7 +65,7 @@ Since I'm [using a GitHub Action](/posts/2022/05/using-dart-sass-hugo-github-act
 
 If you're not using a GHA or other, similar scripting approach, you still should find it easy to add Pagefind to your site-building process. In your chosen host's GUI, just use `&&` to tack an `npx pagefind` command onto your site's usual build command. Here are some examples:
 
-```bash
+```plaintext
 # With Astro
 npm run build && npx -y pagefind --source "dist"
 
@@ -90,7 +90,7 @@ After reading this post, Hugo expert [Régis Philibert](https://github.com/regis
 
 2. From the terminal, run:
 
-	```bash
+	```plaintext
 	npx -y pagefind --source public --bundle-dir ../static/_pagefind
 	```
 	The [`--bundle-dir` flag](https://pagefind.app/docs/config-options/#bundle-directory) will tell Pagefind to store its "crawl" results in, and source them from, a `static/_pagefind` directory rather than the default.
@@ -120,7 +120,7 @@ Thanks to Philibert for coming up for this --- and [Rodrigo Alcaraz de la Osa](h
 
 In my tests a few weeks ago, I ran Pagefind only locally, so this was my first experience with deploying it for real out on Cloudflare Pages. In my own use thus far, Pagefind works *very* quickly out on the host:
 
-```bash
+```plaintext
 Indexed 269 pages
 Indexed 15851 words
 Indexed 0 filters

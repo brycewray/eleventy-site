@@ -83,7 +83,7 @@ The Netlify interface then will bring you to your Netlify **dashboard**. You'll 
 You'll be asked to select a Bitbucket repo to use. You probably have only the one we've been talking about up to now but, if by chance, you have more than one, be sure to select the one that's for this site. (You also probably have only one **branch** for that repo; if you're already into [branching with your repo](https://confluence.atlassian.com/bitbucket/branching-a-repository-223217999.html), I really doubt you need my help!)
 
 You'll also be asked for your **build command** --- which means just specifying which version of Hugo you want Netlify to use. Select the same version you've been running on your local Hugo setup. If you don't know what that is, open your local system's CLI app and type into it the following command, followed by **Return** or **Enter**:
-```bash
+```plaintext
 hugo version
 ```
 

@@ -25,7 +25,7 @@ Specifically, here's what I did to turn the `eleventy_solo_starter_njk` clone in
 
 ### Add dependencies
 
-```bash
+```plaintext
 npm i -D @vitejs/plugin-legacy browser-sync vite
 ```
 

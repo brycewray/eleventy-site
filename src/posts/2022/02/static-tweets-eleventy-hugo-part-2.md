@@ -42,7 +42,7 @@ Fortunately, after I asked on Hugo’s Discourse forum about how to handle this 
 
 What if you’re developing in Windows without using WSL? Unfortunately, `direnv` isn’t available for that setup. Instead, you can write a [shell script](https://www.howtogeek.com/261591/how-to-create-and-run-bash-shell-scripts-on-windows-10/) for your usual Hugo development command — *e.g.*, `hugo server` — with Hugo’s `env` command to add the `BEARER_TOKEN` at launch, as [explained](https://gohugo.io/getting-started/configuration/#configure-with-environment-variables) in the Hugo documentation. (**Just make sure you don’t commit the shell script**, of course!) For example, here’s one with a fake `BEARER_TOKEN` of `123456789a`:
 
-```bash
+```plaintext
 env BEARER_TOKEN=123456789a hugo server
 ```
 
@@ -174,7 +174,7 @@ And here’s the `stweetv2.html` shortcode itself. As in the case of the `stweet
 
 By the way, there are times when Twitter’s APIs don’t respond because of some outage. If that happens during your development process, as it indeed did when I was finishing up work on `stweetv2`, you can confirm that it’s Twitter’s fault, not yours, by using the [`cURL` command](https://developer.ibm.com/articles/what-is-curl-command/) to submit your request to the API. For example, the `cURL` version of what we did above to get that tweet — again substituting `123456789a` for a real `BEARER_TOKEN` — is:
 
-```bash
+```plaintext
 curl "https://api.twitter.com/2/tweets?ids=1487140202141425673&expansions=author_id,attachments.media_keys&tweet.fields=created_at,text,attachments,entities,source&user.fields=name,username,profile_image_url&media.fields=preview_image_url,type,url,alt_text" -H "Authorization: Bearer 123456789a"
 ```
 

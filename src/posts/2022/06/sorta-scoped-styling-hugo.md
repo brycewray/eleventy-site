@@ -65,7 +65,7 @@ tags:
 
 As for that content-based styling itself, that would require creating appropriate SCSS files which, at build time, Hugo would use to generate the final CSS. There would be one SCSS file for each possible *combination* of tags. Each file would provide the global styling plus the content-specific styling. So, again in the example above, there'd be a `post-code-yt.scss` file which, during the build process, Hugo would use to build `post-code-yt` CSS and assign it to the page. Fortunately, I had plenty of existing SCSS *[partials](https://sass-lang.com/guide#topic-4)* for building each such SCSS file, but I knew this new setup would require better organization --- so, following Kevin Powell's example, I reworked `assets/scss/` so that, rather than having an `index.scss` plus all the partials living in that one level, it would end up like this:
 
-```bash
+```plaintext
 .
 └── assets
 		└── scss

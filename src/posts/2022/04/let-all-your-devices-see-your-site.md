@@ -26,7 +26,7 @@ In such cases, you need to make it possible for those other devices to "see" the
 
 The answer is to point your other devices to the dev machine's **IP address** on your LAN. That will enable those devices to access your machine's `localhost` instance through a URL in the following format:
 
-```bash
+```plaintext
 http://[IP address]:[port number]
 ```
 
@@ -38,13 +38,13 @@ Now, let's walk through how you discover that address.
 
 On a Mac, go into your chosen terminal app and enter:
 
-```bash
+```plaintext
 ifconfig | grep broadcast
 ```
 
 .&nbsp;.&nbsp;. and you'll see one or more lines like this:
 
-```bash
+```plaintext
 inet 192.168.254.10 netmask 0xffffff00 broadcast 192.168.254.255
 ```
 
@@ -54,13 +54,13 @@ The [address you want](https://tips.tutorialhorizon.com/2016/11/08/get-the-local
 
 In Windows, open the Command Prompt and enter this into the resulting screen:
 
-```bash
+```plaintext
 ipconfig
 ```
 
 In [the resulting display](https://www.businessinsider.com/how-to-find-ip-address-on-windows), you'll get the desired address from a line that begins with `IPv4 Address`, like this:
 
-```bash
+```plaintext
 IPv4 Address. . . . . . . . . . . : 192.168.1.49
 ```
 
@@ -68,7 +68,7 @@ IPv4 Address. . . . . . . . . . . : 192.168.1.49
 
 On Linux, you have [multiple choices](https://phoenixnap.com/kb/how-to-find-ip-address-linux) (wouldn't you know?), but the easiest is to enter this in your terminal app:
 
-```bash
+```plaintext
 hostname -I
 ```
 
@@ -84,7 +84,7 @@ If you're using a **pre-version-2.x** installation of the [Eleventy](https://11t
 
 By default, Eleventy's dev server uses port 8080. If you prefer to use a different port, ***either*** set it in `.eleventy.js` (in Browsersync with pre-2.x or the built-in server with 2.x+) ***or***, when running the `eleventy` command, use the `--port` flag as shown here, wherein you're specifying port 3000:
 
-```bash
+```plaintext
 npx @11ty/eleventy --serve --port=3000
 ```
 
@@ -94,13 +94,13 @@ npx @11ty/eleventy --serve --port=3000
 
 With the [Hugo](https://gohugo.io) SSG, you'll want to [add the `--bind` and `--baseURL` flags](https://gohugo.io/commands/hugo_server/#options) to the usual `hugo server` command. Using our example IP address (and Hugo's default dev port, 1313) you'd do it this way:
 
-```bash
+```plaintext
 hugo server --bind=0.0.0.0 --baseURL=http://192.168.254.10:1313
 ```
 
 To change the port number from the default, you must [add a `-p` or `--port` flag](https://gohugo.io/commands/hugo_server/#options) **and** change the `--baseURL` flag accordingly. So, to use port 3000 rather than port 1313, you'd enter:
 
-```bash
+```plaintext
 hugo server --port 3000 --bind=0.0.0.0 --baseURL=http://192.168.254.10:3000
 ```
 
@@ -110,7 +110,7 @@ hugo server --port 3000 --bind=0.0.0.0 --baseURL=http://192.168.254.10:3000
 
 If you're using a **pre-version-0.26.x** installation of the [Astro](https://astro.build) SSG, [use the `--host` flag](https://docs.astro.build/en/reference/cli-reference/#astro-dev) with `astro dev`; *e.g.*:
 
-```bash
+```plaintext
 astro dev --host 192.168.254.10
 ```
 
@@ -143,7 +143,7 @@ When using [Gatsby](https://gatsbyjs.com), [use the `-H` or `--host` flag](https
 
 With [Nuxt.js](https://nuxtjs.org), [use the `HOST` and (if desired) `PORT` environment variables](https://nuxtjs.org/docs/features/configuration#edit-host-and-port) with `npm run dev` as follows, using our example from above (changing the port here, too, from its default of *3000*):
 
-```bash
+```plaintext
 HOST=192.168.254.10 PORT=8000 npm run dev
 ```
 
@@ -164,7 +164,7 @@ For you folks who prefer to hand-code without help from SSGs, here's how you'd m
 
 Finally, on SSGs, I suggest handling these changes via [**shell scripts**](https://www.shellscript.sh/). I can assure you that I do **not** do this stuff without them. For example, here's the `start` shell script I run when developing in Hugo:
 
-```bash
+```plaintext
 #!/bin/sh
 
 rm -rf public

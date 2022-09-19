@@ -29,7 +29,7 @@ As was true for my [recent](/posts/2022/02/static-tweets-eleventy-hugo-part-2/) 
 
 First, you'll need to **install the [`date-fns` package](https://date-fns.org/)**, so we can properly format the `created_at` date we'll get from the Twitter API for each tweet this component will render:
 
-```bash
+```plaintext
 npm i -D date-fns
 ```
 

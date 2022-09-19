@@ -46,7 +46,7 @@ These instructions are based heavily on Hugo's [Quick Start page](https://gohugo
 <span class="red">**IMPORTANT**</span>:
 
 - All of these instructions presume you have **full administrative rights** to the system you're using, whether it's a Mac, a Windows PC, or a Linux system. If you don't, stop now because you simply won't be able to do it (and shouldn't be trying). Period.
-- Each time you see a command to enter, make it easier on yourself and just **copy/paste** it from the <span class="eightyFive"><pre class="language-bash"><code class="pokey language-bash">text that looks like this</code></pre></span> in the entry. **Don't** try to re-type it because, in all probability, you'll miss something, mistake a page-forced line break for a return character, *etc*. Also, when you copy, be sure to select the **entire** entry, including anything that may require scrolling to the right, and also **not** to select any **extraneous** characters (such as spaces) on the end. These commands have to entered exactly as shown --- no more, no less.
+- Each time you see a command to enter, make it easier on yourself and just **copy/paste** it from the <span class="eightyFive"><pre class="language-bash"><code class="pokey language-plaintext">text that looks like this</code></pre></span> in the entry. **Don't** try to re-type it because, in all probability, you'll miss something, mistake a page-forced line break for a return character, *etc*. Also, when you copy, be sure to select the **entire** entry, including anything that may require scrolling to the right, and also **not** to select any **extraneous** characters (such as spaces) on the end. These commands have to entered exactly as shown --- no more, no less.
 {.indentAfterLI}
 
 ### STEP 1: Install Hugo.
@@ -56,13 +56,13 @@ These instructions are based heavily on Hugo's [Quick Start page](https://gohugo
 1. Open the **Terminal** CLI app.
 2. If you already have the [**Homebrew** package installer app](https://brew.sh) installed, skip to the next item.\
 Otherwise, install Homebrew by copying/pasting the following into Terminal and pressing **Return** or **Enter**:
-	```bash
+	```plaintext
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	```
 	Once the Homebrew installation is complete, go on to the next item.
 
 3. [Install Hugo](https://gohugo.io/getting-started/quick-start/) by copying/pasting the following into Terminal and pressing **Return** or **Enter**:
-	```bash
+	```plaintext
 	brew install hugo
 	```
 
@@ -73,14 +73,14 @@ Otherwise, install Homebrew by copying/pasting the following into Terminal and p
 2. If you already have the [**Chocolatey** package installer app](https://chocolatey.org) installed, skip to the next item.\
 Otherwise, install Chocolatey by copying/pasting the following into the Command Prompt app and pressing **Enter**:
 
-	```powershell
+	```plaintext
 	@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 	```
 
 	Once the Chocolatey installation is complete, go on to the next item.
 
 3. [Install Hugo](https://gohugo.io/getting-started/installing) by copying/pasting the following into the Command Prompt app and pressing **Enter**:
-	```bash
+	```plaintext
 	choco install hugo -confirm
 	```
 
@@ -91,7 +91,7 @@ Otherwise, install Chocolatey by copying/pasting the following into the Command 
 	I would suggest picking a location that's [backed up and/or sync'd](/posts/2019/02/back-up-jack/). For example, on my Mac, I put my local Hugo sites in iCloud Drive. On a Windows PC, you may want to use OneDrive. On either, you might choose Dropbox if that's your cloud vendor of choice.[^syncGit]
 
 2. Copy/paste the following into the CLI app and press **Return** or **Enter**:
-	```bash
+	```plaintext
 	hugo new site mysite
 	```
 
@@ -119,7 +119,7 @@ Like most site-building technology, Hugo uses *themes* to make a site look and p
 
 5. In the *themes* subdirectory within *mysite*, if necessary (*e.g.*, Macs generally do this automatically), expand the *hugo-theme-basic-master.zip* file to that same subdirectory. This will then produce the following setup:
 
-	```bash
+	```plaintext
 		- mysite
 			- themes
 				- hugo-theme-basic-master
@@ -133,13 +133,13 @@ All the textual content --- the *posts* --- that you'll be adding in the future 
 
 2. Copy/paste the following and then press **Return** or **Enter**:
 
-	```bash
+	```plaintext
 	hugo new posts/my-first-post.md
 	```
 
 	This will create a new Markdown file, *my-first-post.md*, which produces this arrangement:
 
-	```bash
+	```plaintext
 	- mysite
 		- content
 			- posts
@@ -159,7 +159,7 @@ In order to see what's going on in your browser, you now have to start Hugo's bu
 
 1. If necessary, use your system's CLI app to navigate back to that *mysite* directory you created in **STEP 2: Create your new site**.
 2. Copy/paste the following and then press **Return** or **Enter**:
-	```bash
+	```plaintext
 	hugo server -D
 	```
 

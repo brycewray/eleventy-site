@@ -78,7 +78,7 @@ Ready? Here we go.
 5. Open your chosen terminal app. If the app doesn't open at the `{$User}` level, execute the necessary command(s) to get to there.
 
 6. In the terminal app, execute the following command, which will clone the PresideNotify repository into a "PresideNotify" folder at the top level of your `{$User}` folder:
-	```bash
+	```plaintext
 	git clone https://github.com/richwaters/PresideNotify.git PresideNotify
 	```
 
@@ -90,7 +90,7 @@ Ready? Here we go.
 	Although the Finder makes "Preside.mmBundle" appear to be a special sort of file, it's actually a folder, as the following few steps will make clear.
 
 9. Back in the terminal app, execute the following command to navigate to the necessary location for the next few steps (and the quotation marks **are** required):
-	```bash
+	```plaintext
 	cd "Library/Application Support/MailMate/Bundles/Preside.mmBundle/Support/bin/"
 	```
 

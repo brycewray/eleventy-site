@@ -40,7 +40,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 
 2. Determine which shell your setup is using, `bash` or `zsh`:
 
-	```bash
+	```plaintext
 	echo $0
 	```
 	This will return either `bash` or `zsh`.
@@ -54,7 +54,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 
 4. Restart the terminal app, and check that `PATH` now includes your entries:
 
-	```bash
+	```plaintext
 	echo $PATH
 	```
 
@@ -70,7 +70,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 3. To unpack the `.tar.gz` archive file to retrieve its contents, enter `tar -xf ` followed by the name of the `.tar.gz` file. (As an alternative, depending on your particular Linux distribution and windows manager, you **may** also be able to use a GUI to perform this operation.)\
 The resulting contents should be as shown in your downloads folder:
 
-	```bash
+	```plaintext
 	sass_embedded
 	└─ dart-sass-embedded
 	└─ src
@@ -87,7 +87,7 @@ The resulting contents should be as shown in your downloads folder:
 
 Enter the following in your terminal app:
 
-```bash
+```plaintext
 mv $HOME/Downloads/sass_embedded $HOME/bin/sass_embedded
 ```
 
@@ -95,12 +95,12 @@ mv $HOME/Downloads/sass_embedded $HOME/bin/sass_embedded
 
 Finally, to confirm that the `sass_embedded` folder and its contents are in the `PATH`, enter the following in your terminal app:
 
-```bash
+```plaintext
 dart-sass-embedded --version
 ```
 This will run the `dart-sass-embedded` shell script included in the `sass_embedded` folder. The result **should** look something like this example from Embedded Dart Sass v.1.52.1:
 
-```bash
+```plaintext
 {
 	"protocolVersion": "1.0.0",
 	"compilerVersion": "1.52.1",
@@ -137,7 +137,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 
 2. Determine which shell your setup is using, `bash` or `zsh`:
 
-	```bash
+	```plaintext
 	echo $0
 	```
 	This will return either `bash` or `zsh`.
@@ -151,7 +151,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 
 4. Restart the terminal app, and check that `PATH` now includes your entries:
 
-	```bash
+	```plaintext
 	echo $PATH
 	```
 
@@ -166,7 +166,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 3. To unpack the `.tar.gz` archive file to retrieve its contents, enter `tar -xf ` followed by the name of the `.tar.gz` file. (As an alternative, you can double-click the `.tar.gz` file in the Finder.)\
 The resulting contents should be as shown inside your downloads folder:
 
-	```bash
+	```plaintext
 	sass_embedded
 	└─ dart-sass-embedded
 	└─ src
@@ -183,7 +183,7 @@ The resulting contents should be as shown inside your downloads folder:
 
 Enter the following in your terminal app:
 
-```bash
+```plaintext
 mv $HOME/Downloads/sass_embedded $HOME/bin/sass_embedded
 ```
 
@@ -191,13 +191,13 @@ mv $HOME/Downloads/sass_embedded $HOME/bin/sass_embedded
 
 Finally, to confirm that the `sass_embedded` folder and its contents are in the `PATH`, enter the following in your terminal app:
 
-```bash
+```plaintext
 dart-sass-embedded --version
 ```
 
 This will run the `dart-sass-embedded` shell script included in the `sass_embedded` folder. The result **should** look something like this example from Embedded Dart Sass v.1.52.1:
 
-```bash
+```plaintext
 {
 	"protocolVersion": "1.0.0",
 	"compilerVersion": "1.52.1",
@@ -276,7 +276,7 @@ If you need to restore the `PATH` later, enter:\
 5. In Command Prompt, enter `tar -xf ` followed by the name of the `.tar.gz` file.\
 The resulting contents should be as shown (inside the regular downloads folder):
 
-	```bash
+	```plaintext
 	sass_embedded
 	└─ dart-sass-embedded.bat
 	└─ src
@@ -308,7 +308,7 @@ dart-sass-embedded --version
 
 This will run the `dart-sass-embedded.bat` batch file included in the `sass_embedded` folder. The result **should** look something like this example from Embedded Dart Sass v.1.52.1:
 
-```bash
+```plaintext
 {
 	"protocolVersion": "1.0.0",
 	"compilerVersion": "1.52.1",

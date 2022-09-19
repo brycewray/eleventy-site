@@ -100,7 +100,7 @@ The higher you score on all these things, the better chance your site content ha
 
 **Have a valid [`robots.txt`](https://support.google.com/webmasters/answer/6062608?hl=en) file**. There's no over-arching authority that can *make* Google and the other search engines obey `robots.txt`, but it's better to have it than not to do so. So make sure it's *there*, that it's in your site's root directory (e.g., `https://mysite.com/robots.txt`), and that it allows search engines to "spider" through all the content you want them to "see." If you don't have a problem with their "seeing" everything, it doesn't get simpler than this two-liner:
 
-```bash
+```plaintext
 user-agent: *
 allow: /
 ```

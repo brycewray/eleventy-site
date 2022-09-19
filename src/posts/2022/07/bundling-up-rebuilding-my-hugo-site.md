@@ -38,7 +38,7 @@ But it was easier said than done. I'd have to:
 
 And this was going to take some doing. I was [keeping all my images in `assets/images/`](/posts/2022/06/responsive-optimized-images-hugo/). As for my content files: rather than using the page bundles approach, I'd always organized them as in this example:
 
-```bash
+```plaintext
 .   <-- The Hugo project folder
 └─ content
     └─ posts
@@ -76,7 +76,7 @@ But, during that process with the Discourse, I received [one bit of extremely sa
 When I responded that this was a good idea if I were starting from scratch but not now, given my then-current content management scheme, he [doubled down](https://discourse.gohugo.io/t/using-printf-with-resources-get/39642/18?):
 
 > Use [leaf bundles](https://gohugo.io/content-management/page-bundles/#leaf-bundles).
->	```bash
+>	```plaintext
 >	content/
 >	└─ posts/
 >			└─ 2022/
@@ -93,7 +93,7 @@ And, although I then gave a (weak) rejoinder that this also was "in the category
 
 So, just a few hours after I had my *original* plan working, I created a new branch, `pagebundles`, and proceeded to rebuild my site exactly that way. For example, this post you're reading now is arranged as follows:
 
-```bash
+```plaintext
 project   <-- The Hugo project folder
 └─ content
     └─ posts

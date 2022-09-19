@@ -55,7 +55,7 @@ After all: if you're using PostCSS, you're almost certainly [using Hugo Pipes to
 
 That would produce a CSS file named something like this:
 
-```bash
+```plaintext
 index.575f0a87ee2e4e24d8a061847ec508e1be27d95d0c16b717a4bd1f03a5c7e49f.css
 ```
 

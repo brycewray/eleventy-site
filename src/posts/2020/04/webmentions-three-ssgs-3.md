@@ -43,7 +43,7 @@ You see, one thing you have to "present" to webmention.io to "prove" that your s
 Fine, I wondered, but how to do this in Hugo? Yes, I already had the repo using JavaScript because of PostCSS, but this was another matter. I was trying to get a non-Node-JS app to accept an environment variable from Node.js.
 
 For a while, it looked as if the only working method would require including the token in plain sight in a `GET`-style query string: *e.g.*, something like:
-```bash
+```plaintext
 https://webmention.io/api/mentions.jf2?domain=brycewray.com&token=1234567890123
 ```
 Not a good idea, as you can imagine.

@@ -34,13 +34,13 @@ But either the Public Syndication API or the Version 2 API simply inserts the s
 
 For example, if `@OurWebConf` was a reply-to screen name for a tweet but *also* appeared in the tweet's regular text, these APIs would return the text as:
 
-```bash
+```plaintext
 @OurWebConf Register today for @OurWebConf to be part of the fun
 ```
 
 . . . which is already weird-looking enough; but a search/replace to *clear out* this annoying repetition would then result in:
 
-```bash
+```plaintext
 Register today for to be part of the fun
 ```
 
