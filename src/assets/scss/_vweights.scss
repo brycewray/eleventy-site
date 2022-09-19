@@ -77,11 +77,11 @@ article .h6,
 	letter-spacing: -0.0375em;
 }
 
-article p, article li {
-	@media screen and (min-width: var.$bkpt_xl) {
-		letter-spacing: -0.03em;
-	}
-}
+// article p, article li {
+// 	@media screen and (min-width: var.$bkpt_xl) {
+// 		letter-spacing: -0.0175em;
+// 	}
+// }
 
 .footnotes li,
 .footnotes li p,
