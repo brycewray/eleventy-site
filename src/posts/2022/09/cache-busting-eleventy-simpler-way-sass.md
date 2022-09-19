@@ -44,7 +44,7 @@ module.exports = function(eleventyConfig) {
 Finally, add the following to your template for the site-wide `head` tag (the following assumes you have an `index.scss` file within `src/styles/`):
 
 {% raw %}
-```html
+```twig
 <link rel="stylesheet" href="{{ "/styles/index.css" | rev }}" type="text/css" />
 ```
 {% endraw %}
