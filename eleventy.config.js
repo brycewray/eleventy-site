@@ -7,6 +7,8 @@ const path = require('path')
 const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 // const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
+const pluginRev = require("eleventy-plugin-rev")
+const eleventySass = require("eleventy-sass")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -54,6 +56,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
 	eleventyConfig.addPlugin(syntaxHighlight)
+	eleventyConfig.addPlugin(pluginRev)
+	eleventyConfig.addPlugin(eleventySass, {
+		rev: true,
+		sass: {
+			style: "compressed",
+			sourceMap: false
+		}
+	})
 
 	// eleventyConfig.addPlugin(pluginEmbedTweet, {
   //   useInlineStyles: false,
