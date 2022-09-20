@@ -25,6 +25,7 @@ First, here's a template file derived from[^original] my [`billboard.njk`](https
 {% set wordCount = fixedContent | wordcount %}
 {% set readingRate = 225 %}
 {% set readingTime = (wordCount/readingRate) | round %}
+{% if readingTime < 1 %}{% set readingTime = 1 %}{% endif %}
 <p>
 	{{ wordCount | numCommas }} words • Reading time: {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %}
 </p>
@@ -37,7 +38,7 @@ Let's break down what's happening here, and keep in mind that everything below (
 - The `set fixedContent` line makes a `fixedContent` variable, which soon will be used in deriving the word count, and uses `replace` with the `regExpCode` variable to delete all code-block-related HTML from `fixedContent`. Then, it uses the Nunjucks `striptags` filter to carve the remaining HTML down to just text. (That neatly takes care of any inline images, among other things.)
 - The `set wordCount` line uses the `wordcount` filter to, well, you can guess.
 - The `set readingRate` line assigns *225* as the number of words per minute we'll use in calculating the reading time. If you have a preferred number, substitute it here.
-- The `set readingTime` line divides `wordCount` by `readingRate` and then `round`s it to the nearest integer.
+- The `set readingTime` line divides `wordCount` by `readingRate` and then `round`s it to the nearest integer. (But, since really short posts might end up with `readingTime` as *0* based on that `round`ing, the `if readingTime < 1` line fixes that.)
 - Finally, in the paragraph, we:
 	- Filter `wordCount` through `numCommas` (that's the aforementioned exception, about which more shortly).
 	- Provide `readingTime`, followed by either *minute* or *minutes* (depending on whether the value of `readingTime` exceeds *1*).
