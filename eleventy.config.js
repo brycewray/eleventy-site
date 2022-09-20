@@ -277,6 +277,15 @@ module.exports = function(eleventyConfig) {
     return content
   })
 
+	// for RSS/JSON feeds and sitemap.xml collection
+	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
+	eleventyConfig.addCollection("feeds", function (collection) {
+		const feedsColl = collection.getFilteredByGlob([
+			"./src/**/*.md",
+		])
+		return feedsColl
+	})
+	// end, RSS/JSON feeds and sitemap.xml collection
 
   /* === START, prev/next posts stuff === */
   // https://github.com/11ty/eleventy/issues/529#issuecomment-568257426
