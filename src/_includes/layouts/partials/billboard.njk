@@ -1,15 +1,10 @@
 		{% set regExpCode = r/<pre class=.*<\/pre>/gm %}
 		{% set regExpImg = r/.imgB.*}/gm %}
 		{% set regExpCSS = r/<style.*<\/style>/gm %}
-		{% set fixedContent = content %}
-		{% set fixedContent = fixedContent | replace(regExpCode, "") %}
-		{% set fixedContent = fixedContent | replace(regExpCSS, "") %}
-		{% set fixedContent = fixedContent | striptags %}
-		{% set fixedContent = fixedContent | replace(regExpImg, "") %}
+		{% set fixedContent = content | replace(regExpCode, "") | replace(regExpCSS, "") | striptags | replace(regExpImg, "") %}
 		{% set wordCount = fixedContent | wordcount %}
 		{% set readingRate = 225 %}
-		{% set readingTime = wordCount/readingRate %}
-		{% set readingTime = readingTime | round %}
+		{% set readingTime = (wordCount/readingRate) | round %}
 		<div class="billboard-div">
       <div class="billboard-title-block">
         <h1 class="billboard-title-text">{{ title | safe }}</h1>
