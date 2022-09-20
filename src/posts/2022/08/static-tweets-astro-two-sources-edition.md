@@ -57,7 +57,6 @@ async function getTweet(tweetURL) {
 
 let Json = await getTweet(urlSynd);
 let Text = Json.text;
-// let TextBefore = Text; // pre-HTML-subs -- debugging
 
 let JsonOembed = await getTweet(requestUrlO);
 let JsonOHTML = JsonOembed.html;
