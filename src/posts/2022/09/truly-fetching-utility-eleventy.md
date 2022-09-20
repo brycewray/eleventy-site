@@ -1,6 +1,6 @@
 ---
 layout: singlepost
-title: "A truly fetching utility for Eleventy"
+title: "A truly fetching utility for Eleventy"
 description: "While trying to make things work equally well in multiple repos, I discover the value of an Eleventy plugin I’d previously ignored."
 author: Bryce Wray
 date: 2022-09-01T13:20:00-05:00
