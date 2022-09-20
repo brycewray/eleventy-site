@@ -12,7 +12,13 @@ Introductory note for the uninitiated: each entry in the "Gems in the rough" ser
 
 ## Your own Eleventy time machine
 
-Some SSGs, such as [Hugo](https://gohugo.io) and [Jekyll](https://jekyllrb.com), allow you to build your site without including posts to which you've assigned future dates. This can come in handy for any number of reasons, such as when you want to use multiple devices to work on a post and sync it through pushes to the site's online repository.[^WorkingCopy] Although [Eleventy](https://11ty.dev) doesn't have an "ignore-the-future" capability out of the box, [Saneef H. Ansari](https://saneef.com)'s article, "[Hiding posts with future dates in Eleventy](https://saneef.com/tutorials/hiding-posts-with-future-dates-in-eleventy/)," describes an elegant way to add it. I even used it to "hide" this post until I was ready for you to see it.[^repo] **But**&nbsp;.&nbsp;.&nbsp;. just be sure that, if your site's config file includes the [Eleventy documentation's `html-minifier` example code](https://www.11ty.dev/docs/config/#transforms-example-minify-html-output) (as is the case for this site), you adjust it [as suggested by David Soards](https://github.com/11ty/eleventy/issues/653#issuecomment-716272434) or your builds will break with an error that includes the lyrical phrase, `outputPath.endsWith is not a function (TypeError)`. Fun stuff.
+Some SSGs, such as [Hugo](https://gohugo.io) and [Jekyll](https://jekyllrb.com), allow you to build your site without including posts to which you've assigned future dates. This can come in handy for any number of reasons, such as when you want to use multiple devices to work on a post and sync it through pushes to the site's online repository.[^WorkingCopy] Although [Eleventy](https://11ty.dev) doesn't have an "ignore-the-future" capability out of the box, [Saneef H. Ansari](https://saneef.com)'s article, "[Hiding posts with future dates in Eleventy](https://saneef.com/tutorials/hiding-posts-with-future-dates-in-eleventy/)," describes an elegant way to add it. I even used it to "hide" this post until I was ready for you to see it.[^repo] **But**&nbsp;.&nbsp;.&nbsp;. just be sure that, if your site's config file includes the [Eleventy documentation's `html-minifier` example code](https://www.11ty.dev/docs/config/#transforms-example-minify-html-output) (as is the case for this site), you adjust it [as suggested by David Soards](https://github.com/11ty/eleventy/issues/653#issuecomment-716272434) or your builds will break with an error that includes the lyrical phrase:
+
+```plaintext
+outputPath.endsWith is not a function (TypeError)
+```
+
+Fun stuff.
 
 **Acknowledgement**: Thanks to [Raymond Camden](https://twitter.com/raymondcamden/status/1406277604504748035) for the link to Mr. Ansari's article!
 {.yellowBox}
