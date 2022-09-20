@@ -1,7 +1,7 @@
 ---
 layout: singlepost
 title: "Using Dart Sass with Hugo"
-description: "Until hosts allow Embedded Dart Sass in their build processes, here’s a not-too-hacky workaround for Sass‑on‑Hugo fans."
+description: "Until hosts allow Embedded Dart Sass in their build processes, here’s a not-too-hacky workaround for Sass-on-Hugo fans."
 # description has non-breaking hyphens in `Sass-on-Hugo`
 author: Bryce Wray
 date: 2022-03-08T11:09:00-06:00
@@ -9,7 +9,7 @@ lastmod: 2022-07-22T22:16:00-05:00
 discussionId: "2022-03-using-dart-sass-hugo"
 ---
 
-**Update, 2022‑03‑09**: Things changed dramatically the day after I originally wrote this, so there's a [sequel](/posts/2022/03/using-dart-sass-hugo-sequel/) you'll definitely want to read after this one.
+**Update, 2022-03-09**: Things changed dramatically the day after I originally wrote this, so there's a [sequel](/posts/2022/03/using-dart-sass-hugo-sequel/) you'll definitely want to read after this one.
 {.yellowBox}
 
 {% disclaimer %}

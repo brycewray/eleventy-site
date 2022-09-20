@@ -96,7 +96,7 @@ module.exports = function (eleventyConfig) {
 
 .&nbsp;.&nbsp;. so, **still** above that area, create an `image` shortcode (note the lower-case "i") by adding the code shown below.
 
-**Update, 2021‑04‑28**: Due to a problem reported to me by a user of one of my [starter sets](/posts/2021/03/beginners-luck-update/), I swapped out the code that previously was here with code that is based on *synchronous*, rather than *asynchronous*, usage. To read more about the difference, see [this section](https://www.11ty.dev/docs/plugins/image/#synchronous-usage) of the Eleventy Image documentation. I've also updated those starter sets accordingly.
+**Update, 2021-04-28**: Due to a problem reported to me by a user of one of my [starter sets](/posts/2021/03/beginners-luck-update/), I swapped out the code that previously was here with code that is based on *synchronous*, rather than *asynchronous*, usage. To read more about the difference, see [this section](https://www.11ty.dev/docs/plugins/image/#synchronous-usage) of the Eleventy Image documentation. I've also updated those starter sets accordingly.
 {.yellowBox}
 
 {% raw %}

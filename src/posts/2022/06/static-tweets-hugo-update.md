@@ -8,7 +8,7 @@ lastmod: 2022-08-15T08:09:00-05:00
 #initTextEditor: iA Writer
 ---
 
-**Further info, 2022‑06‑08**: I discovered one additional requirement to make this work, so please see my "**Important**" note at the end.
+**Further info, 2022-06-08**: I discovered one additional requirement to make this work, so please see my "**Important**" note at the end.
 {.yellowBox}
 
 **Update from the future in general (!)**: I continue to improve upon the [Hugo](https://gohugo.io) shortcode described herein. Any displayed tweets in this or other posts obviously will be rendered by the most current code available when the site is on Hugo --- with the only exception being when it serves a purpose to show a less well-rendered tweet, such as for a comparison between Hugo's standard `tweet` shortcode and my own shortcode.\
