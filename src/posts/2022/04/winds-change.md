@@ -1,6 +1,6 @@
 ---
 layout: singlepost
-title: "The winds of change"
+title: "The winds of change"
 description: "Switching to Astro, or tales of a migratory nerd."
 author: Bryce Wray
 date: 2022-04-26T09:35:00-05:00

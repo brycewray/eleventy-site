@@ -1,6 +1,6 @@
 ---
 layout: singlepost
-title: "Scrivener and The Cloud"
+title: "Scrivener and The Cloud"
 description: "When even Ars Technica’s forum users can’t keep this straight, intervention is necessary."
 author: Bryce Wray
 date: 2019-08-18T14:15:00-05:00

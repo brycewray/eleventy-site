@@ -1,6 +1,6 @@
 ---
 layout: singlepost
-title: "Mixed nuts • November, 2019"
+title: "Mixed nuts • November, 2019"
 description: "Observations worth exactly what you’re paying for them."
 author: Bryce Wray
 date: 2019-11-24T10:15:00-06:00
