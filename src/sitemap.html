@@ -8,9 +8,9 @@ eleventyExcludeFromCollections: true
   <url>
     <loc>{{ siteparams.siteURLforOG }}{{ item.url }}</loc>
     {%- if item.data.lastmod -%}
-    <lastmod>{{ item.data.lastmod | dateStringISO }}</lastmod>
+    <lastmod>{{ item.data.lastmod | dateToRfc3339 }}</lastmod>
     {%- else -%}
-    <lastmod>{{ item.date | dateStringISO }}</lastmod>
+    <lastmod>{{ item.date | dateToRfc3339 }}</lastmod>
     {%- endif -%}
   </url>
   {%- endfor -%}
