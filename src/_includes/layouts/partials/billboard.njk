@@ -1,7 +1,8 @@
 		{% set regExpCode = r/<pre class=.*<\/pre>/gm %}
 		{% set regExpImg = r/.imgB.*}/gm %}
 		{% set regExpCSS = r/<style.*<\/style>/gm %}
-		{% set fixedContent = content | replace(regExpCode, "") | replace(regExpCSS, "") | striptags | replace(regExpImg, "") %}
+		{% set regExpDtls = r/<details(.|\n)*?\/details>/gm %}
+		{% set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | striptags | replace(regExpImg, "") %}
 		{% set wordCount = fixedContent | wordcount %}
 		{% set readingRate = 225 %}
 		{% set readingTime = (wordCount/readingRate) | round %}
