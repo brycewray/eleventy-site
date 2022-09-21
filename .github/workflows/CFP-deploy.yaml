@@ -66,7 +66,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CFP_API_TOKEN }}
           accountID: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: 'eleventy-site'
+          projectName: 'static-site'
           directory: '_site'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
   # following, for restarts-on-failures, based on:
