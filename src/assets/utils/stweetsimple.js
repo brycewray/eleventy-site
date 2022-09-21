@@ -18,7 +18,7 @@ module.exports = async (user, id, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production" || prod === "prod") {
+	// if (environment === "production" || prod === "prod") {
 		const urlOembed = `https://twitter.com/${user}/status/${id}`;
 		const query = `url=${urlOembed}&dnt=true&omit_script=true`;
 		const requestUrlO = `https://publish.twitter.com/oembed?` + query;
@@ -40,9 +40,9 @@ module.exports = async (user, id, prod) => {
 
 		stringToRet += JsonOHTML
 
-	} else {
-		stringToRet = `<blockquote data-pagefind-ignore><p class="legal serif">[Embedded <strong>simple</strong> static tweet will appear here in production.]</p></blockquote>`
-	}
+	// } else {
+	// 	stringToRet = `<blockquote data-pagefind-ignore><p class="legal serif">[Embedded <strong>simple</strong> static tweet will appear here in production.]</p></blockquote>`
+	// }
 
 	return stringToRet
 

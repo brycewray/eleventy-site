@@ -17,7 +17,7 @@ module.exports = async (TweetID, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production" || prod === "prod") {
+	// if (environment === "production" || prod === "prod") {
 
 		const jsonURL1 = "https://api.twitter.com/2/tweets?ids="
 		const jsonURL2 = "&expansions=author_id,attachments.media_keys&tweet.fields=created_at,text,attachments,entities,source&user.fields=name,username,profile_image_url&media.fields=preview_image_url,type,url,alt_text"
@@ -128,9 +128,9 @@ module.exports = async (TweetID, prod) => {
 			</div>
 		</blockquote>`
 
-	} else {
-		stringToRet = `<blockquote class="tweet-card"><p class="ctr legal">[Embedded static tweet from V2 will appear here in production.]</p></blockquote>`
-	}
+	// } else {
+	// 	stringToRet = `<blockquote class="tweet-card"><p class="ctr legal">[Embedded static tweet from V2 will appear here in production.]</p></blockquote>`
+	// }
 
 	return stringToRet
 

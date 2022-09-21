@@ -17,7 +17,7 @@ module.exports = async (instance, id, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production" || prod === "prod") {
+	// if (environment === "production" || prod === "prod") {
 		let tootLink, handleInst, mediaMD5, urlToGet, mediaStuff, videoStuff, gifvStuff, pollStuff = ''
 		let imageCount, votesCount = 0
 
@@ -161,9 +161,9 @@ module.exports = async (instance, id, prod) => {
 				</div>
 			</blockquote>`
 		}
-	} else {
-		stringToRet = `<blockquote class="tweet-card" data-pagefind-ignore><p class="ctr legal">[Embedded static toot will appear here in production.]</p></blockquote>`
-	}
+	// } else {
+	// 	stringToRet = `<blockquote class="tweet-card" data-pagefind-ignore><p class="ctr legal">[Embedded static toot will appear here in production.]</p></blockquote>`
+	// }
 
 	return stringToRet
 }

@@ -14,7 +14,7 @@ module.exports = async (user, id, prod) => {
 
 	let stringToRet = ``
 
-	if (environment === "production" || prod === "prod") {
+	// if (environment === "production" || prod === "prod") {
 		// let aspect = '1 / 1'
 		let RT_text = ''
 
@@ -328,9 +328,9 @@ module.exports = async (user, id, prod) => {
 				<a href="https://twitter.com/${Json.user.screen_name}/status/${Json.id_str}" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
 			</div>
 		</blockquote>`
-	} else {
-		stringToRet = `<blockquote class="tweet-card"><p class="ctr legal" data-pagefind-ignore>[Embedded static tweet will appear here in production.]</p></blockquote>`
-	}
+	// } else {
+	// 	stringToRet = `<blockquote class="tweet-card"><p class="ctr legal" data-pagefind-ignore>[Embedded static tweet will appear here in production.]</p></blockquote>`
+	// }
 
 	return stringToRet
 
