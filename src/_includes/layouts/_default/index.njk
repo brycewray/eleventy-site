@@ -15,7 +15,6 @@ layout: base
           {% if loop.index0 < 3 %}
           <div>
             <h2 class="homePost-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
-            <p class="homePost-Subtitle">{{ post.data.subtitle | safe }}</p>
             <p class="homePost-Description">
               {{ post.data.description | safe }}
             </p>
