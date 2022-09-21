@@ -18,7 +18,7 @@ This week, it hit me that I'd erred in trying to move the emails only by using A
 
 Before I could test my theory, I had to figure out where those archives were in the first place; and, true to Apple's way of doing things with its native apps and platforms, the archives weren't easy to find. Specifically, they were in the `Library` in my user directory, nested in folders with long, "hash"-like names; *e.g.*, one path was:
 
-```
+```plaintext
 ~/Library/Mail/V9/96150452-89A7-4317-AB61-99666BAC4F90/
 ```
 

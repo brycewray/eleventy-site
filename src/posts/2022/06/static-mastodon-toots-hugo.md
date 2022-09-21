@@ -63,7 +63,7 @@ As an example, here's a recent toot of mine from within the [mastodon.technology
 
 Now, since the URL for that toot was:
 
-```
+```plaintext
 https://mastodon.technology/@BryceWrayTX/108363758238065126
 ```
 
@@ -328,7 +328,7 @@ Once this is in place in your project's location for shortcodes, invoke it from 
 {% endraw %}
 
 As you can see, the syntax is:\
-{% raw %}`{{</* stoot "$InstanceTLD" "$Id" */>}}`{% endraw%}\
+{% raw %}`{{< stoot "$InstanceTLD" "$Id" />}}`{% endraw%}\
 (And, yes, those quotation marks **are** required.)
 
 ## So what can it do?
