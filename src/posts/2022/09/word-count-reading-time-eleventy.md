@@ -1,6 +1,6 @@
 ---
 layout: singlepost
-title: "Word count and reading time in Eleventy"
+title: "Word count and reading time in Eleventy"
 description: "Want to give your readers an idea of what’s ahead? Here’s some code to make that no biggie."
 author: Bryce Wray
 date: 2022-09-20T14:21:00-05:00
