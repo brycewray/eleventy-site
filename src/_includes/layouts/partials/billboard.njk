@@ -1,6 +1,6 @@
-		{% set regExpCode = r/<pre class=.*<\/pre>/gm %}
-		{% set regExpImg = r/.imgB.*}/gm %}
-		{% set regExpCSS = r/<style.*<\/style>/gm %}
+		{% set regExpCode = r/<pre class=(.|\n)*?<\/pre>/gm %}
+		{% set regExpImg = r/.imgB(.|\n)*?}/gm %}
+		{% set regExpCSS = r/<style(.|\n)*?<\/style>/gm %}
 		{% set regExpDtls = r/<details(.|\n)*?\/details>/gm %}
 		{% set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | striptags | replace(regExpImg, "") %}
 		{% set wordCount = fixedContent | wordcount %}

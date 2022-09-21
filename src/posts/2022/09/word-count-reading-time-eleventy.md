@@ -20,7 +20,7 @@ First, here's a template file derived from[^original] my [`billboard.njk`](https
 
 {% raw %}
 ```twig
-{% set regExpCode = r/<pre class=.*<\/pre>/gm %}
+{% set regExpCode = r/<pre class=(.|\n)*?<\/pre>/gm %}
 {% set fixedContent = content | replace(regExpCode, "") | striptags %}
 {% set wordCount = fixedContent | wordcount %}
 {% set readingRate = 225 %}
