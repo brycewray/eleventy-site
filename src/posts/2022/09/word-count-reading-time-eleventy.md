@@ -56,7 +56,7 @@ The only other thing this requires is the formatting of the `wordCount` so that 
 
 ----
 
-*By the way, this also can be done in the [Hugo](https://gohugo.io) SSG, using various features that come with Hugo out of the box. Here's a similar snippet (by default, Hugo already excludes code blocks from word-counting):*
+*By the way, this also can be done in the [Hugo](https://gohugo.io) SSG, using various features that come with Hugo out of the box:*
 
 {% raw %}
 ```go
