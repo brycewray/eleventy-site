@@ -165,13 +165,14 @@ For each variable font you want from Google Fonts:
 	- Paste the URL into *another* browser window/tab and press **Enter**.
 	- Download the file to *a folder of its own* on your development machine; and I also strongly suggest putting each of the folders in an overarching folder with a name that tells you the date you did this (I'll explain why shortly). For example, here's my `Public_Sans` folder with the files I downloaded to set them up on this site, and note that the inner folder is named `VF-2020-08-09` --- *i.e.*, variable fonts downloaded 2020-08-09 --- and each font type has its own separate subfolder (I *did* get the `latin-extended` versions, just in case):
 
-	{% imgc "Public_Sans_folder_1502x672.png", "Screen capture of OS folder with Public Sans typeface files", 1502, 672 %}
+		{% imgc "Public_Sans_folder_1502x672.png", "Screen capture of OS folder with Public Sans typeface files", 1502, 672 %}</li>
+
 
 7. **Back in the browser window/tab with the CSS you got from the Google Fonts-provided URL, copy the CSS into a text file so you can refer to it later.**
 
 8. Now, close the browser windows/tabs; you're done with them.
 
-9. In each one-font subfolder, **duplicate** its .woff2 file; keep the original just in case something goes wrong with the following step.
+9.  In each one-font subfolder, **duplicate** its .woff2 file; keep the original just in case something goes wrong with the following step.
 
 10. Rename the duplicate .woff2 to something that makes sense to you. My `latin` duplicates have these names (and note that, in each, the name includes the date as an identifier; again, I'll shortly explain why):
 	- public-sans-20200809-vf-italic-latin.woff2
