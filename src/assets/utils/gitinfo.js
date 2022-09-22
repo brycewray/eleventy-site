@@ -14,7 +14,7 @@ module.exports = (pubdate, filename) => {
 
 		let repoLink = `https://github.com/brycewray/eleventy_site/commit/`
 
-		pubdate = DateTime.fromJSDate(pubdate).toFormat("yyyy-MM-dd")
+		pubdate = DateTime.fromJSDate(pubdate, { zone: 'America/Chicago' }).toFormat("yyyy-MM-dd")
 
 		const lastUpdatedFromGit =
 			childProcess

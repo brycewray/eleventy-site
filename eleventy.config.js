@@ -105,7 +105,7 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addFilter("dateStringISO", (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd")
+    return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat("yyyy-MM-dd")
   })
 
   eleventyConfig.addFilter("dateFromTimestamp", (timestamp) => {
