@@ -23,8 +23,16 @@ pre[class*="language-"] {
   color: #fff; // was #a9eafa
   background: none;
   font-family: var.$monospaced;
-  font-size: 1rem; // rem, not em (for indented code blocks)
-  text-align: left;
+	// @media screen and (min-width: var.$bkpt_lg) {
+	// 	font-size: 1rem; // rem, not em (for indented code blocks)
+	// }
+	// @media screen and (min-width: var.$bkpt_xl) {
+	// 	font-size: 1.125rem;
+	// }
+	// @media screen and (min-width: var.$bkpt_2xl) {
+	// 	font-size: 1.25rem;
+	// }
+	text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
