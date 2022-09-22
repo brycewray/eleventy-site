@@ -8,7 +8,7 @@ lastmod: 2022-07-23T20:21:00-05:00
 discussionId: "2021-11-go-big-go-home-sequel"
 ---
 
-The inspiration for this mercifully brief post was a metaphorical, "Why didn't I think of this before?”-kinda forehead-slap. And perhaps it should have been more than metaphorical.
+The inspiration for this mercifully brief post was a metaphorical, "Why didn't I think of this before?"-kinda forehead-slap. And perhaps it should have been more than metaphorical.
 
 Back in February, I wrote [an article](/posts/2021/02/go-big-go-home/) about my conversion of an [Eleventy](https://11ty.dev) [shortcode](https://11ty.dev/docs/shortcodes) to a [Go](https://go.dev)-based shortcode for [Hugo](https://gohugo.io). Each shortcode's purpose generated the necessary HTML for responsive handling of an image from my [Cloudinary](https://cloudinary.com) account. While the spaghetti-ish result for Hugo certainly worked, it was ’way more convoluted and hard to read than it needed to be. This post is an attempt to make up for that.
 
