@@ -36,7 +36,7 @@ hugo new posts/2022/09/hugo-like-archetypes-other-ssgs/index.md
 This works because, in this example, I already have an `archetypes/posts.md` file with the following content:
 
 {% raw %}
-```go
+```md
 ---
 title: "TITLE TO COME"
 description: "DESCRIPTION TO COME."
@@ -85,13 +85,13 @@ Of course, feel free to make the `cp -v` line conform to how your site and SSG a
 
 Finally, give `newfile.sh` the necessary permissions:
 
-```plaintext
+```bash
 chmod 0755 newfile.sh
 ```
 
 Done! Now, when you want to create a new Markdown file, just enter:
 
-```plaintext
+```bash
 ./newfile.sh
 ```
 
