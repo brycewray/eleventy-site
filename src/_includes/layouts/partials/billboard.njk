@@ -20,8 +20,8 @@
 				{% endif %}
 				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="ctr legal" data-pagefind-ignore>
-					{% gitinfo page.date, page.inputPath %}<br />
-					{{ wordCount | numCommas }} words • Reading time: {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %}
+					{% gitinfo page.date, page.inputPath %}{% if (not (title == "Privacy policy")) %}<br />
+					{{ wordCount | numCommas }} words • Reading time: {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %}{% endif %}
 				</p>
 				{% endif %}
       </div>
