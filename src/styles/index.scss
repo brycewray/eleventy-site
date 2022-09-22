@@ -1,7 +1,7 @@
 @charset 'utf-8';
 @use 'reset';
-@use 'fonts_Inter';
-// @use 'fonts_PublicSans';
+// @use 'fonts_Inter';
+@use 'fonts_PublicSans';
 @use 'twitter';
 @use 'prismjs';
 @use 'global';
@@ -16,7 +16,7 @@
 @use 'lazypic';
 @use 'sitemaphtml';
 @use 'search-form';
-@use 'intervf'; // for Inter VF's weird obliquing stuff
+// @use 'intervf'; // for Inter VF's weird obliquing stuff
 @use 'vweights'; // for variable fonts, sys or uploaded (test on Linux VM?)
 // @use 'ffoxobliq'; // if using system font stack
 // @use 'heroimg';
