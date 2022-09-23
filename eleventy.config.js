@@ -264,6 +264,18 @@ module.exports = function(eleventyConfig) {
 		require("./src/assets/utils/gitinfo.js")
 	)
 
+	// h/t https://github.com/11ty/eleventy/issues/613#issuecomment-999637109
+	eleventyConfig.addCollection("everything", (collectionApi) => {
+		const macroImport = `{%- import "macros/index.njk" as macro with context -%}`
+		let collMacros = collectionApi.getFilteredByGlob([
+			'src/**/*.njk',
+			'src/**/*.md'
+		])
+		collMacros.forEach((item) => {
+			item.template.frontMatter.content = `${macroImport}\n${item.template.frontMatter.content}`
+		})
+		return collMacros
+	})
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
