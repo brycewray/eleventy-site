@@ -77,9 +77,7 @@ I've been a 1Password subscriber for a few years but had already decided to let 
 
 Whichever "way" you go, it's a convenience-vs.-security question whether you store in it any [**time-based one-time passwords**](https://en.wikipedia.org/wiki/Time-based_One-Time_Password) (TOTPs) for multi-factor authentication, even though these apps generally are capable of allowing such storage. It's the whole "don't put all your eggs in one basket" thing. Instead, use a **separate** authentication app.[^masterTOTP] For more information on this subject, see the [Techlore](https://techlore.tech) video, "The Ultimate TOTP/2FA Guide for Max Security Online":
 
-{% set videoTitle = "The Ultimate TOTP/2FA Guide for Max Security Online" %}
-{% set videoId = "iXSyxm9jmmo" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("The Ultimate TOTP/2FA Guide for Max Security Online", "iXSyxm9jmmo") }}
 
 [^masterTOTP]: At the very least, keep the TOTP for any "non-KeePass way" provider (*e.g.*, Bitwarden or 1Password) in a separate authenticator app. You **do** have multi-factor authentication set up for that vendor, right?
 

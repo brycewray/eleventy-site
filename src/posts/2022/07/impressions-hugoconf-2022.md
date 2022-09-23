@@ -38,9 +38,7 @@ Speaking of Bookshop: its primary developer, CloudCannon's [Liam Bigelow](https:
 
 [^Pagefind]: Among other things, I'll want to control whether Pagefind includes images in what it grabs. I was able to use styling to *hide* the images, but they --- and some other image files --- still showed up in the download, so I want the option to ignore them altogether.
 
-{% set videoTitle = "Introducing Pagefind: static low-bandwidth search at scale - Liam Bigelow // HugoConf 2022" %}
-{% set videoId = "74lsEXqRQys" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("Introducing Pagefind: static low-bandwidth search at scale - Liam Bigelow // HugoConf 2022", "74lsEXqRQys") }}
 
 One more thing . . .
 

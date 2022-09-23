@@ -14,9 +14,7 @@ In those aforementioned posts, I only briefly touched on the MFA-related subject
 
 I’ll once again acknowledge the excellent [Techlore](https://techlore.tech) video about TOTPs to which I referred you in one of those earlier posts:
 
-{% set videoTitle = "The Ultimate TOTP/2FA Guide for Max Security Online" %}
-{% set videoId = "iXSyxm9jmmo" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("The Ultimate TOTP/2FA Guide for Max Security Online", "iXSyxm9jmmo") }}
 
 If you watch that video from start to finish, you’ll learn *far* more than I’m going to describe here, so you may just want to do that rather than read what follows. However, I’ll still proceed with this post because some folks, like Yours Truly in All His Hoariness, often prefer to learn by reading rather than watching a video.
 

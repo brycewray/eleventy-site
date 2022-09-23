@@ -20,9 +20,7 @@ iA Writer 6 was released June 14 for macOS, iOS, and iPadOS.[^OSIA6] This versio
 
 [^OSIA6]: I assume other supported OSs will get similarly major updates down the line.
 
-{% set videoTitle = "The Biggest Update to iA Writer Yet" %}
-{% set videoId = "LCUAxS7zaVk" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("The Biggest Update to iA Writer Yet", "LCUAxS7zaVk") }}
 
 *(After having spent the last three-and-a-half years using iA Writer, I agree with him about those key shortcuts that moved, but them’s the breaks.)*
 

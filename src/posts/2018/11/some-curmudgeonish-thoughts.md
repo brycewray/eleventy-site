@@ -10,9 +10,7 @@ discussionId: "2018-11-some-curmudgeonish-thoughts"
 
 Here are a few odds and ends --- some a tad acerbic, some not so much. And I swear I'm not trying to sound like the late [Andy Rooney](https://en.wikipedia.org/wiki/Andy_Rooney), or even a parody thereof&nbsp;.&nbsp;.&nbsp;.
 
-{% set videoTitle = "Andy Rooney (Frank Caliendo) On The iPhone" %}
-{% set videoId = "u8pCsfT1gDU" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("Andy Rooney (Frank Caliendo) On The iPhone", "u8pCsfT1gDU") }}
 
 .&nbsp;.&nbsp;.&nbsp;but there may be some hint of that herein, for which I apologize ahead of time.
 

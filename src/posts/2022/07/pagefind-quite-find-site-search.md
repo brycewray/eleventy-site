@@ -11,9 +11,7 @@ lastmod: 2022-08-05T12:10:00-05:00
 
 I noted in my [summary of the recent HugoConf 2022 event](/posts/2022/07/impressions-hugoconf-2022/) that the host, [CloudCannon](https://cloudcannon.com), had used the online gathering to announce [Pagefind](https://github.com/cloudcannon/pagefind). Developed principally by CloudCannon's [Liam Bigelow](https://github.com/bglw), Pagefile is a new free/open-source tool for quickly adding site-wide search to a website which, like this one, originates from a [static site generator](https://jamstack.org/generators) (SSG). Bigelow's video presentation gave HugoConf "attendees" an introduction to, and demo of, Pagefind:
 
-{% set videoTitle = "Introducing Pagefind: static low-bandwidth search at scale - Liam Bigelow // HugoConf 2022" %}
-{% set videoId = "74lsEXqRQys" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("Introducing Pagefind: static low-bandwidth search at scale - Liam Bigelow // HugoConf 2022", "74lsEXqRQys") }}
 
 While I don't know whether the [Algolia](https://algolia.com) folks are exactly shaking in their boots over Pagefind, perhaps they should be. Even though it's been available for only a few weeks, it's already **really** good. After my initial try-out with Pagefind v.0.4.1 during HugoConf, I pronounced it "code-light and staggeringly fast." Then, earlier this week, I was even more pleased to see that, with the release of v.[0.5.0](https://github.com/CloudCannon/pagefind/releases/tag/v0.5.0), Bigelow had added the one change I really wanted to see: the option to keep images out of the search. In 0.4.1, it was easy enough to **hide** them with CSS, but they still got downloaded. I was looking to avoid that for the sake of leaner browser-side performance and, now, in 0.5.0+, a simple setting lets me choose to do exactly that. With this last gotcha gone, I was pleased to put [Pagefind on this site](/search/) earlier today, even adding "Search" to the nav menu.[^styling]
 

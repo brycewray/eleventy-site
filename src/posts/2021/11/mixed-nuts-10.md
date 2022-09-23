@@ -35,6 +35,4 @@ Have recently been beta-testing the [Orion](https://browser.kagi.com/) web brows
 
 *[Flavio Copes](https://flaviocopes.com) switched to [Cloudflare Pages](https://pages.cloudflare.com)?!? "[Whoa, Nellie](https://www.sportingnews.com/us/ncaa-football/news/keith-jackson-college-football-moments-rose-bowl-sugar-bowl-vince-young-bear-bryant-desmond-howard/14uwg0n95xmqn17etxbyem6lai)!”*
 
-{% set videoTitle = "I moved my blog to Cloudflare Pages" %}
-{% set videoId = "ih0zHqU3TBM" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("I moved my blog to Cloudflare Pages", "ih0zHqU3TBM") }}

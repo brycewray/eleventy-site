@@ -13,6 +13,4 @@ If you're at all familiar with [Jeff Delaney](https://twitter.com/JeffDelaney23)
 
 Today, he issued one about the [Hugo](https://gohugo.io) static site generator, so I pass it along for your edification:
 
-{% set videoTitle = "Hugo in 100 Seconds" %}
-{% set videoId = "0RKpf3rK57I" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("Hugo in 100 Seconds", "0RKpf3rK57I") }}

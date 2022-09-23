@@ -78,9 +78,7 @@ So, until reality *ceases* to bite in at least this specific way it's biting rig
 
 Hunker down. Wash your hands every chance you get, with soap and for twenty seconds. By the way, **here's why that matters**, in case you haven't seen this.
 
-{% set videoTitle = "How soap kills the coronavirus" %}
-{% set videoId = "-LKVUarhtvE" %}
-{% include "layouts/partials/lite-youtube.njk" %}
+{{ macro.liteYT("How soap kills the coronavirus", "-LKVUarhtvE") }}
 
 Do this not just for yourself but for everyone with whom you might unavoidably come into contact.
 
