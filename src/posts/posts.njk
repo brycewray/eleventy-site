@@ -69,8 +69,9 @@ permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumb
         {% for post in posts %}
           <div class="posts-ItemDiv">
             <h2 class="posts-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
+						{% set dashDescription = post.data.description | replace(" — ", "—") %}
             <p class="posts-Description">
-              {{ post.data.description | safe }}
+              {{ dashDescription | safe }}
             </p>
             <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
             </p>

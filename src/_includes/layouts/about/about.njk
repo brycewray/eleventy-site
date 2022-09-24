@@ -6,7 +6,8 @@ layout: base
   {% include 'layouts/partials/billboard.njk' %}
   <div class="container-narrower">
     <article>
-      {{ content | safe }}
+			{% set dashContent = content | replace(" — ", "—") %}
+      {{ dashContent | safe }}
     </article>
   </div>
 </main>

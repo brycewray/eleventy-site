@@ -13,7 +13,8 @@
       <div class="billboard-title-block">
         <h1 class="billboard-title-text">{{ title | safe }}</h1>
         {% if description and not (title == siteparams.searchPageTitle) %}
-        <p class="billboard-description-text">{{ description | safe }}</p>
+				{% set dashDescription = description | replace(" — ", "—") %}
+        <p class="billboard-description-text">{{ dashDescription | safe }}</p>
         {% endif %}
 				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="billboard-p-text" data-pagefind-ignore>
