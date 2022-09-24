@@ -29,7 +29,7 @@ That code generally looked something like this[^params] when used with the [Nunj
 But, as I additionally noted at the time, it could be reduced to just one line in the [Hugo](https://gohugo.io) SSG:
 
 {% raw %}
-```go-html-template
+```go
 {{< lite-youtube videoTitle="How to make Eyeballs that Follow You Around" videoId="TGe3pS5LqEw" >}}
 ```
 {% endraw %}
