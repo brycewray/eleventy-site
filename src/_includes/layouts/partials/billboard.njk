@@ -2,7 +2,9 @@
 		{% set regExpImg = r/.imgB(.|\n)*?}/gm %}
 		{% set regExpCSS = r/<style(.|\n)*?<\/style>/gm %}
 		{% set regExpDtls = r/<details(.|\n)*?\/details>/gm %}
-		{% set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | striptags | replace(regExpImg, "") %}
+		{% set regLiteYT = r/<lite-youtube(.|\n)*?\/lite-youtube>/gm %}
+		{% set regFNs = r/<section class="footnotes"(.|\n)*?\/section>/gm %}
+		{% set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | replace(regLiteYT, "") | replace(regFNs, "") | striptags | replace(regExpImg, "") %}
 		{% set wordCount = fixedContent | wordcount %}
 		{% set readingRate = 225 %}
 		{% set readingTime = (wordCount/readingRate) | round %}
