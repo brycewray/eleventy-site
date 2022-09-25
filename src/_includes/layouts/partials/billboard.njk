@@ -1,3 +1,4 @@
+		{% set PublicSans = siteparams.PublicSans %}
 		{% set regExpCode = r/<pre class=(.|\n)*?<\/pre>/gm %}
 		{% set regExpImg = r/.imgB(.|\n)*?}/gm %}
 		{% set regExpCSS = r/<style(.|\n)*?<\/style>/gm %}
@@ -13,8 +14,11 @@
       <div class="billboard-title-block">
         <h1 class="billboard-title-text">{{ title | safe }}</h1>
         {% if description and not (title == siteparams.searchPageTitle) %}
-				{% set dashDescription = description | replace(" — ", "—") %}
-        <p class="billboard-description-text">{{ dashDescription | safe }}</p>
+				{% set Description = description %}
+				{% if PublicSans == true %}
+					{% set Description = description | replace(" — ", "—") %}
+				{% endif %}
+        <p class="billboard-description-text">{{ Description | safe }}</p>
         {% endif %}
 				{% if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="billboard-p-text" data-pagefind-ignore>

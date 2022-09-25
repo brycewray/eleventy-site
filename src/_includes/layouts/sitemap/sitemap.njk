@@ -18,10 +18,14 @@ eleventyExcludeFromCollections: true
 				<h2>Posts</h2>
 				<ul>
 					<li><a href="/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
+					{% set PublicSans = siteparams.PublicSans %}
 					{% for post in collections.post | reverse %}
-						{% set dashDescription = post.data.description | replace(" — ", "—") %}
+						{% set Description = post.data.description %}
+						{% if PublicSans == true %}
+							{% set Description = post.data.description | replace(" — ", "—") %}
+						{% endif %}
 						<li><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>{% if not 'The site this week' in post.data.title %}&nbsp;&nbsp;<strong class="legal">{{ post.date | dateStringISO }}</strong>{% endif %}<br />
-						{{ dashDescription | safe }}
+						{{ Description | safe }}
 						</li>
 					{% endfor %}
 				</ul>
