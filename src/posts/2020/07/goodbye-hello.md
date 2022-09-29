@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Goodbye and hello"
 description: "Moving from Netlify to Vercel: how this site gained a new home."
 author: Bryce Wray

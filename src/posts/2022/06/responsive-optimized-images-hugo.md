@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Responsive and optimized images with Hugo"
 description: "How to take advantage of the amazingly capable image processing built into this SSG."
 author: Bryce Wray

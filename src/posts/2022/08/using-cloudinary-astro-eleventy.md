@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Using Cloudinary with Astro and Eleventy"
 description: "If Cloudinary’s free tier will serve your website’s needs, my code can make it easier to use."
 author: Bryce Wray

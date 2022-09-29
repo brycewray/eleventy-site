@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Speaking up for Sass"
 description: "It may not be This Week’s Kewl Thing, but Sass/SCSS is still an invaluable part of web development."
 author: Bryce Wray

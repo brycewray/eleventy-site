@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough #18"
 description: "Code for copying code, HugoConf, loose ends."
 author: Bryce Wray

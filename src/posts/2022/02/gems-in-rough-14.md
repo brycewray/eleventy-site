@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough #14"
 description: "Full-time Eleventy, variables in Hugo, learning from a nice tweet, using web fonts with internal CSS."
 author: Bryce Wray

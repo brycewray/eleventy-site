@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "It’s about the food, not the decor"
 description: "Thoughts about my recent emphasis on switching between SSGs."
 author: Bryce Wray

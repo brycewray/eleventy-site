@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "GHAs on CFP glitch"
 description: "What I found out about my deploy-to-site GitHub Action and Cloudflare Pages."
 author: Bryce Wray

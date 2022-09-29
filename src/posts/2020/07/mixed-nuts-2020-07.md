@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Mixed nuts • July, 2020"
 description: "Another successful lowering of the bar where observations’ cleverness is concerned."
 author: Bryce Wray

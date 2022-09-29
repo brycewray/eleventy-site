@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Static tweets in Hugo: using resources.​GetRemote"
 # title has a zero-width-space character
 # - h/t https://www.somebits.com/weblog/tech/zero-width-space.html

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Help your website get discovered"
 description: "A few suggestions for getting your website the attention it deserves."
 author: Bryce Wray

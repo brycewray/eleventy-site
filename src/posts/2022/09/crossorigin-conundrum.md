@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The “crossorigin” conundrum"
 description: "After days of getting results that I shouldn’t be getting, I’m sending up an SOS to anyone who can set me straight."
 author: Bryce Wray

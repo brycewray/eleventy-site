@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The version-control follies"
 description: "Why you should go GUI with version control."
 author: Bryce Wray

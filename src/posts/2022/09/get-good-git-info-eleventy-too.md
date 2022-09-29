@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Get good Git info from Eleventy, too"
 description: "While per-page Git data is built into Hugo, a little code can bring it to Eleventy, as well."
 author: Bryce Wray

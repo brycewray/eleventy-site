@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough #11"
 description: "Dueling announcements, CSP-allowed CSS, fun with LQIPs."
 author: Bryce Wray

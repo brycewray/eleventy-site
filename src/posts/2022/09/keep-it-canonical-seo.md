@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Keep it canonical for SEO"
 description: "Use canonical URLs to keep search engines straight on which content they should index."
 author: Bryce Wray

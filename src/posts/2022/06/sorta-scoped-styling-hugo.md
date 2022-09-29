@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Sorta scoped styling in Hugo"
 description: "Interested in more efficient CSS for your site? Hugo doesn’t make it easy, but here’s a suggested way you might get there."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Checking out the IndieWeb again"
 description: "While not entirely sure I’m holding my mouth right, I’m giving webmentions another try."
 author: Bryce Wray

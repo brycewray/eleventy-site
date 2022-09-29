@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Using Dart Sass with Hugo: the GitLab edition"
 description: "For those who prefer GitLab to GitHub where CI/CD is concerned, here’s a GitLab-friendly way to install Hugo and Embedded Dart Sass."
 author: Bryce Wray

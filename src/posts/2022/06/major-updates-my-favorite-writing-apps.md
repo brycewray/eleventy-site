@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Major updates to my favorite writing apps"
 description: "iA Writer 6 and Ulysses 27 arrive, bearing features their adherents had long requested."
 author: Bryce Wray

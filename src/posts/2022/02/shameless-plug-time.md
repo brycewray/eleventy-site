@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Shameless plug time"
 description: "A few words about my new Hugo-related article for the CloudCannon blog."
 author: Bryce Wray

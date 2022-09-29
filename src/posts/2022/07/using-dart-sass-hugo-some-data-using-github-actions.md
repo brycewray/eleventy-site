@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Using Dart Sass with Hugo: some data on using GitHub Actions"
 description: "After encountering some surprising results with my GHA-based method, I decided to do the math."
 author: Bryce Wray

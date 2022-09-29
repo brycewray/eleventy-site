@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Sorta StranGe (SSG) trip"
 description: "Recapping “the dance” and what it taught me."
 author: Bryce Wray

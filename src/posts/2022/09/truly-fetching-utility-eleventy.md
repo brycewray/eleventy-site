@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "A truly fetching utility for Eleventy"
 description: "While trying to make things work equally well in multiple repos, I discover the value of an Eleventy plugin I’d previously ignored."
 author: Bryce Wray

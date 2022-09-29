@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Using iCloud Mail with a custom domain: the return"
 description: "The moral of this story is that one shouldn’t make a decision based on a faulty diagnosis of a problem."
 author: Bryce Wray

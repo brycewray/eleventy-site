@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Good stuff without Google"
 description: "How your website can still have the coolness of variable typefaces, but without Google’s tracking."
 author: Bryce Wray

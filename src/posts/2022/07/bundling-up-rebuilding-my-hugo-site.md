@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Bundling up: rebuilding my Hugo site"
 description: "O ye new users, run as fast as you can — away from the way I was managing my content, and toward using page bundles, as I’m doing now."
 author: Bryce Wray

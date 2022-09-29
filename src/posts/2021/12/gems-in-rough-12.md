@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough #12"
 description: "Speedier CFP builds, HTML sitemaps."
 author: Bryce Wray

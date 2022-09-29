@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Hugo-like archetypes in other SSGs"
 description: "A short shell script extends to the competition an obscure but cool feature in Hugo."
 author: Bryce Wray

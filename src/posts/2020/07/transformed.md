@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Transformed"
 description: "The move to Cloudinary."
 author: Bryce Wray

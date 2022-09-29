@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Back up, Jack"
 description: "Some observations on good backup practices, notably the 4-2-2 approach I’m now using."
 author: Bryce Wray

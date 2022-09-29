@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough #5"
 description: "More notes, notions, and nitpicks about managing one’s personal website."
 author: Bryce Wray

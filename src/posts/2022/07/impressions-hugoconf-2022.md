@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Impressions from HugoConf 2022"
 description: "Takeaways from two great days that focused on the Hugo static site generator."
 author: Bryce Wray

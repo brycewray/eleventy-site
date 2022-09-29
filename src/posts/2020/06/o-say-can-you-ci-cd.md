@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "O say can you CI/CD?"
 description: "A way around the Netlify free-tier build limit."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Goodbye and hello • Part 5"
 description: "Two embarrassments: another site move and the reason behind it."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Webmentions in three SSGs: Part 2"
 description: "Part 2 of a five-part series about incorporating the IndieWeb into three different static site generators (SSGs) — in this case, Eleventy."
 author: Bryce Wray

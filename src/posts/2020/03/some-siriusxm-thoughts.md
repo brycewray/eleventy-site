@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Some Sirius(XM) thoughts"
 description: "Radio, and more, from on high."
 author: Bryce Wray

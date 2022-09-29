@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "iA for IO?"
 description: "A re-consideration of using iA Writer in making Markdown files for this site’s posts."
 author: Bryce Wray

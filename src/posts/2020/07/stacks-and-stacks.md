@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Stacks and stacks"
 description: "Comparing the site’s “tech stacks,” one year apart."
 author: Bryce Wray

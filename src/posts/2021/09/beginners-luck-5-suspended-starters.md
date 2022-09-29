@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Beginner’s luck #5: suspended starters"
 description: "That’s a wrap on further development of my SSG starter sets."
 author: Bryce Wray

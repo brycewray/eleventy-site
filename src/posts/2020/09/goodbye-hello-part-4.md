@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Goodbye and hello • Part 4"
 description: "My curiosity overcomes me and, yet again, I move the site."
 author: Bryce Wray

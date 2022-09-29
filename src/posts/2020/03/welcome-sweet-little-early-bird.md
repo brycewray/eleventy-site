@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Welcome, sweet little early bird"
 description: "The new grandchild arrives, and on her own timeline."
 author: Bryce Wray

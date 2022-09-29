@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Astro and the move to MDX"
 description: "After running into performance problems with basic Markdown, the Astro dev team opts for a more component-oriented flavor — and reaps benefits."
 author: Bryce Wray

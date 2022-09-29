@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Scrivener and The Cloud"
 description: "When even Ars Technica’s forum users can’t keep this straight, intervention is necessary."
 author: Bryce Wray

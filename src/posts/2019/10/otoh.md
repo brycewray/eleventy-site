@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "OTOH"
 description: "One shouldn’t make decisions out of spite. I’m living proof."
 author: Bryce Wray

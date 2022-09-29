@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "What Apple Silicon means for web developers"
 description: "As Apple takes the Mac to the final frontier, here’s what web devs should consider."
 author: Bryce Wray

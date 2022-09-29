@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Is Astro ready for your blog?"
 description: "Some points to consider if you’re thinking about switching your site to the Astro platform."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Retrospective: 2021"
 description: "Reflections on some of the items discussed here in the outgoing year."
 author: Bryce Wray

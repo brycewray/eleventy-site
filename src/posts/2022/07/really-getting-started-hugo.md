@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Really getting started with Hugo"
 description: "Since the officially recommended approach tends to frustrate new users, let’s see whether we can do something about that."
 author: Bryce Wray

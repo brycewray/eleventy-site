@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "A few words about Hugo 0.103.0"
 description: "Here’s some info that’s worth knowing — especially if you use CI/CD to deploy your website."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "IE’s dead, Jim"
 description: "Years after Microsoft told people to stop using Internet Explorer, the hoary browser at last is (mostly) no more."
 author: Bryce Wray

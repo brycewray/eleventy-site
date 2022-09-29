@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "A new way to generate LQIPs in Hugo 0.104.0"
 description: "An interesting addition to this SSG’s image-processing arsenal helps you accommodate users viewing your site under suboptimal conditions."
 author: Bryce Wray

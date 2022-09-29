@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The full .11ty.js monty"
 description: "Going all-JavaScript with my Eleventy site."
 author: Bryce Wray

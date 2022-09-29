@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Bundling JavaScript with Hugo and esbuild"
 description: "An example of how you could use Hugo’s phenomenally fast, built-in bundling capabilities."
 author: Bryce Wray

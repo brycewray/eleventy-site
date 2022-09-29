@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Fireship covers Astro (again)"
 description: "Last week it was Hugo; this week, it’s Astro — as perhaps the “ultimate web framework.”"
 author: Bryce Wray

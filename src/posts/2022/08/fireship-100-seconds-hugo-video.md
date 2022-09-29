@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Fireship’s “100 Seconds” video about Hugo"
 description: "The latest entry in Jeff Delaney’s popular YouTube series spotlights an SSG worthy of the “blazing fast” descriptor he gives it."
 author: Bryce Wray

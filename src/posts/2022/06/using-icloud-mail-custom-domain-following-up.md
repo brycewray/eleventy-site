@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Using iCloud Mail with a custom domain: following up"
 description: "What happened when I moved my main email address to iCloud Mail."
 author: Bryce Wray

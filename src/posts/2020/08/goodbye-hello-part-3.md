@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Goodbye and hello • Part 3"
 description: "Performance is a heckuva drug: earlier considerations aside, I move the site to Vercel for a second time."
 author: Bryce Wray

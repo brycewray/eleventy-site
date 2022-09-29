@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Why I kept Ulysses"
 description: "Renewing the subscription for another year."
 author: Bryce Wray

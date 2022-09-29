@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Go big or Go home?"
 description: "How some image-handling code moved from Eleventy to Hugo."
 author: Bryce Wray

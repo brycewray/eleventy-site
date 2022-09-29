@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Picture perfect?"
 description: "With SSGs and images, it’s “location, location, location.”"
 author: Bryce Wray

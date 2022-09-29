@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The accessibility argument for tabs over spaces"
 description: "I changed my position on a developers’ Holy War — because it was the right thing to do."
 author: Bryce Wray

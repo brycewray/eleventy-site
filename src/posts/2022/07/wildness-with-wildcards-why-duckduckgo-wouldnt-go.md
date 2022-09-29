@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Wildness with wildcards, or why DuckDuckGo wouldn’t go"
 description: "A quick tip about Content Security Policy prissiness where URLs’ wildcards are concerned."
 author: Bryce Wray

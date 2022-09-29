@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Pagefind is quite a find for site search"
 description: "It used to be that having search on a static site was a hassle — and perhaps an expensive one — but Pagefind has changed all that."
 author: Bryce Wray

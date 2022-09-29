@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Cache-busting in Eleventy: a simpler way with Sass"
 description: "Nearly two years after I thrashed around with code to accomplish this, two relatively new plugins make it a breeze — and with automatic Sass compilation, to boot."
 author: Bryce Wray

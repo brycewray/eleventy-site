@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Getting framed"
 description: "Reasons why one might still want to use a CSS framework."
 author: Bryce Wray

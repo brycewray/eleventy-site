@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The winds of change"
 description: "Switching to Astro, or tales of a migratory nerd."
 author: Bryce Wray

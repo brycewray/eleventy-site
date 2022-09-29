@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Static Mastodon toots in Astro"
 description: "Got an Astro site and want to embed completely static versions of posts from the Fediverse? Check out this component."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough"
 description: "I learned these the hard way; perhaps you won’t have to do the same."
 author: Bryce Wray

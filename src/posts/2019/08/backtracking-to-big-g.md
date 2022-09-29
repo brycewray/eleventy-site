@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Backtracking to Big G"
 description: "I admit it: I get too much utility from the myriad of Google services to pass them up, my privacy be damned."
 author: Bryce Wray

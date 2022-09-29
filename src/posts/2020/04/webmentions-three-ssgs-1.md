@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Webmentions in three SSGs: Part 1"
 description: "The intro to a five-part series about incorporating webmentions into three different static site generators (SSGs)."
 author: Bryce Wray

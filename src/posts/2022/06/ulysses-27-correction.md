@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Ulysses 27: a correction"
 description: "Haste makes waste, and it also makes for a bad summary, so here are some corrections to what I wrote yesterday about Ulysses 27."
 author: Bryce Wray

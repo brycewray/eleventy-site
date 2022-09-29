@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "A thousand words, indeed"
 description: "Feelings about look-and-feel: how and why “hero images” have returned to this site."
 author: Bryce Wray

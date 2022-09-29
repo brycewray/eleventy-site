@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Goodbye and hello • Part 2"
 description: "Why I decided to come back to Netlify."
 author: Bryce Wray

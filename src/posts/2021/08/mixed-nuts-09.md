@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Mixed nuts #9"
 description: "Takes that are neither hot nor cool — in multiple ways."
 author: Bryce Wray

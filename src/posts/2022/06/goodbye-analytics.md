@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "A goodbye to analytics"
 description: "As an unintended side effect of CTCAJW Mode, this site bids a fond farewell to The Numbers."
 author: Bryce Wray

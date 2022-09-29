@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The “staying with Hugo” post, three years later"
 description: "Revisiting one of this website’s most frequently accessed posts."
 author: Bryce Wray

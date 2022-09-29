@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Now I’m sixty-four"
 description: "Having reached this milestone-of-sorts, I offer some different wording for a Lennon/McCartney classic that suits me today."
 author: Bryce Wray

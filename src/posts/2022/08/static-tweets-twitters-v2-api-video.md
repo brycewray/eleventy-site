@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Static tweets: Twitter’s v2 API and video"
 description: "Twitter has eliminated one major shortcoming in its preferred API."
 author: Bryce Wray

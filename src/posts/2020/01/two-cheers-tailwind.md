@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Two cheers for Tailwind"
 description: "Trying to decide what I think about utility-first CSS."
 author: Bryce Wray

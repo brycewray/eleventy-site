@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Static embeds in Eleventy"
 description: "In what could and perhaps should be the end of this saga, here’s code to provide static tweets and static Mastodon toots in Eleventy."
 author: Bryce Wray

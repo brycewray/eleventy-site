@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "HugoConf: a reminder"
 description: "The time is nearing for this free event, but you can still get in on the fun."
 author: Bryce Wray

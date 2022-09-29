@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Gems in the rough #13"
 description: "Why I’ve recently backtracked on configurations for CSS and image-handling."
 author: Bryce Wray

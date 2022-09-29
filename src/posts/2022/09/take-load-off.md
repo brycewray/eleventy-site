@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Take a load off"
 description: "Repeated grabs from remote APIs can stress some SSGs (and CPUs), so here’s a simple way to avoid that during development."
 author: Bryce Wray

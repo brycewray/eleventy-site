@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Beginner’s luck"
 description: "Helping more people get going with Eleventy and Hugo."
 author: Bryce Wray

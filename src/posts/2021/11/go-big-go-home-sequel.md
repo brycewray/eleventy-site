@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Go big or Go home? The sequel"
 description: "After a “D’oh!” moment, I refine a bespoke Hugo shortcode."
 author: Bryce Wray

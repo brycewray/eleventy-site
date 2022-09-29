@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Simplifying switcheroos"
 description: "Although I’m unsure of its value beyond my own brain, here’s a tale of how I made it easier to continue as a migratory nerd."
 author: Bryce Wray

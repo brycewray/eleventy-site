@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Hugo hits The Hundy"
 description: "As Hugo reaches version 0.100.x, the venerable SSG improves upon its handling of shortcodes."
 author: Bryce Wray

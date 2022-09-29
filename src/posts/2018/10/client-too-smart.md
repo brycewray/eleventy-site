@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "The client is too smart for you"
 description: "Pretty emails don’t work so well in an Outlook-centric business world."
 author: Bryce Wray

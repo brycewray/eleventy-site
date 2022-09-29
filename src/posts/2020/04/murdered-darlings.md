@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Murdered darlings"
 description: "R.I.P., WIP: a farewell to this site’s original purpose."
 author: Bryce Wray

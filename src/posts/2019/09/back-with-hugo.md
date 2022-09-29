@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Back with Hugo"
 description: "Even for me, this switcheroo was quick, as the prodigal comes crawling back to Hugo."
 author: Bryce Wray

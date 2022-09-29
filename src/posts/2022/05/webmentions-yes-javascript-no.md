@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Webmentions yes, JavaScript no"
 description: "I wondered why a Hugo site needed JavaScript to go IndieWebbin’. I decided it didn’t."
 author: Bryce Wray

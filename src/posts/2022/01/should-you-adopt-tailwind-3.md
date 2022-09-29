@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Should you adopt Tailwind 3?"
 description: "Tailwind is making too much progress to ignore. Is it time to check out the latest version?"
 author: Bryce Wray

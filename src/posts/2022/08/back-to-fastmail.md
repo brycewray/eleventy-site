@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Back to Fastmail"
 description: "For a variety of reasons, I revert to the email provider I’ve trusted for nearly five years — and an email client I’ve loved for over three years."
 author: Bryce Wray

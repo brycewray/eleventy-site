@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Transition"
 description: "Yep, forty-plus years will do."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Really getting started with Hugo: four simple steps"
 description: "Here is just the actual procedure from yesterday’s post about making things easier for new Hugo users."
 author: Bryce Wray

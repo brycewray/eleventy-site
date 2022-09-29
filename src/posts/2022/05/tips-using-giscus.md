@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Tips for using giscus"
 description: "Some advice about a commenting system for static websites."
 author: Bryce Wray

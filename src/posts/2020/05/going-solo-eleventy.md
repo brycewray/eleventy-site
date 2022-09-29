@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Going solo with Eleventy"
 description: "Losing webpack, regaining Tailwind CSS."
 author: Bryce Wray
