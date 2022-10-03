@@ -43,7 +43,7 @@ Then, months later, I created an [Astro](https://astro.build) [component](https:
 
 So, from time to time, I wondered why it couldn't be possible to reduce this to a single-line call in Eleventy, too. But I didn't start looking in earnest until this week, at which time I ran into a subject on which I've spent surprisingly little time during my nerdy obsession with SSGs: **[Nunjucks macros](https://mozilla.github.io/nunjucks/templating.html#macro)**.
 
-After reading some excellent content (see the "[Acknowledgements and related material](#acknowledgements-and-related-material)" at the bottom), I can give you this quickie solution. While it involves some setup that definitely **isn't** a one-liner, it allows subsequent one-line calls of macros just as if they were components in SSGs like Astro or [Next.js](https://nextjs.org). Please note that the main thrust of what follows came from a 2021-12-22 [comment](https://github.com/11ty/eleventy/issues/613#issuecomment-999637109) by [Ted Whitehead](https://github.com/tedw) within an Eleventy issue on GitHub, initially filed in 2019, about using Nunjucks macros within Markdown files.
+After reading some excellent content (see the "[Acknowledgements and related material](#acknowledgements-and-related-material)" at the bottom), I can give you this quickie solution. While it involves some setup that definitely **isn't** a one-liner, it allows subsequent one-line calls of macros just as if they were components in SSGs like Astro or [Next.js](https://nextjs.org). Please note that the main thrust of what follows came from a <span class="nobrk">2021-12-22</span> [comment](https://github.com/11ty/eleventy/issues/613#issuecomment-999637109) by [Ted Whitehead](https://github.com/tedw) within an Eleventy issue on GitHub, initially filed in 2019, about using Nunjucks macros within Markdown files.
 
 One reason why this solution is so helpful is that, one you set it up as explained below, *every* applicable file can have one-line access to *all* your macros. That's because you can put *all* your macros in just one file --- because you define each macro separately within the file --- so, once you enable the Eleventy site to "see" that file, any content file you "bless" in the procedure below will be able to grab any macro therein.
 
@@ -139,13 +139,12 @@ This is because, to quote that [comment from which I borrowed the code](https://
 
 ## Acknowledgements and related material
 
-- Iain Bean, "[Flexible components in Eleventy with Nunjucks macros](https://iainbean.com/posts/2020/flexible-components-in-eleventy-with-nunjucks-macros/)" (2020-12-04).
-- Jérôme Coupé, "[Modular code with Nunjucks and Eleventy](https://www.webstoemp.com/blog/modular-code-nunjucks-eleventy/)" (2021-08-06).
-- Paul Irish, "[Lite YouTube Embed](https://github.com/paulirish/lite-youtube-embed#readme)" documentation (date unknown).
-- Sia Karamalegos, "[Faster YouTube embeds in Eleventy](https://sia.codes/posts/lite-youtube-embed-eleventy/)" (2021-04-07).
-- Trys Mudford, "[Encapsulated Eleventy/Nunjucks components with macros](https://www.trysmudford.com/blog/encapsulated-11ty-components/)" (2021-02-19).
-- Thomas M. Semmler, "[Using parameters in your Eleventy includes with Nunjucks macros](https://helloyes.dev/blog/2021/using-parameters-in-your-eleventy-includes-with-nunjucks-macros/)" (2021-08-10).
-- W. Evan Sheehan, "[Includes and Macros](https://darthmall.net/weblog/2021/includes-and-macros/)" (2021-11-20).
-- "[How to use Nunjucks macro inside Markdown files?](https://github.com/11ty/eleventy/issues/613)" (Eleventy issue #613, initially posted 2019-07-16).
+- Iain Bean, "[Flexible components in Eleventy with Nunjucks macros](https://iainbean.com/posts/2020/flexible-components-in-eleventy-with-nunjucks-macros/)" (<span class="nobrk">2020-12-04</span>).
+- Jérôme Coupé, "[Modular code with Nunjucks and Eleventy](https://www.webstoemp.com/blog/modular-code-nunjucks-eleventy/)" (<span class="nobrk">2021-08-06</span>).
+- Paul Irish, "[Lite YouTube Embed](https://github.com/paulirish/lite-youtube-embed#readme)" documentation (<span class="nobrk">date unknown</span>).
+- Sia Karamalegos, "[Faster YouTube embeds in Eleventy](https://sia.codes/posts/lite-youtube-embed-eleventy/)" (<span class="nobrk">2021-04-07</span>).
+- Trys Mudford, "[Encapsulated Eleventy/Nunjucks components with macros](https://www.trysmudford.com/blog/encapsulated-11ty-components/)" (<span class="nobrk">2021-02-19</span>).
+- Thomas M. Semmler, "[Using parameters in your Eleventy includes with Nunjucks macros](https://helloyes.dev/blog/2021/using-parameters-in-your-eleventy-includes-with-nunjucks-macros/)" (<span class="nobrk">2021-08-10</span>).
+- W. Evan Sheehan, "[Includes and Macros](https://darthmall.net/weblog/2021/includes-and-macros/)" (<span class="nobrk">2021-11-20</span>).
+- "[How to use Nunjucks macro inside Markdown files?](https://github.com/11ty/eleventy/issues/613)" (Eleventy issue #613, initially posted <span class="nobrk">2019-07-16</span>).
 - [Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html).
-
