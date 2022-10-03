@@ -6,7 +6,7 @@
 	"searchPageTitle": "Search the site",
   "siteDescription": "brycewray.com — Observations, opinions, geekery.",
   "siteHost": "CFP",
-	"PublicSans": true,
+	"PublicSans": false,
   "feed": {
     "subtitle": "brycewray.com — Observations, opinions, geekery.",
     "filename": "index.xml",
