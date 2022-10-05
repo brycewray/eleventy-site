@@ -10,12 +10,7 @@ layout: base
         {% if ext_canonical %}
         <p class="blueBox"><strong>Note</strong>: This article originally appeared on <a href="{{ ext_canonical }}">{{ ext_source }}</a> and is &copy;&nbsp;{{ helpers.currentYear() }}&nbsp;<a href="{{ ext_url }}" rel="noopener">{{ ext_copyright }}</a>. The&nbsp;article includes external edits (content-related and stylistic) for that&nbsp;site.</p>
         {% endif %}
-				{% set PublicSans = siteparams.PublicSans %}
-				{% set Content = content %}
-				{% if PublicSans == true %}
-					{% set Content = content | replace(" — ", "—") %}
-				{% endif %}
-				{{ Content | safe }}
+				{{ content | safe }}
         <div class="contactBtn">
 					<a href="mailto:bw@brycewray.com?subject=“{{ title }}”">
 	          <button>

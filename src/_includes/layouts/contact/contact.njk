@@ -6,12 +6,7 @@ layout: base
     {% include 'layouts/partials/billboard.njk' %}
     <div class="container-narrower">
       <article>
-				{% set PublicSans = siteparams.PublicSans %}
-				{% set Content = content %}
-				{% if PublicSans == true %}
-					{% set Content = content | replace(" — ", "—") %}
-				{% endif %}
-				{{ Content | safe }}
+				{{ content | safe }}
       </article>
     </div>
   </main>
