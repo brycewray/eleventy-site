@@ -54,7 +54,6 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 2. Determine which shell your setup is using, `bash` or `zsh`:
 	```bash
 	echo $0
-	{{< /highlight >}}
 	```
 
 3. Use your preferred terminal-level text editor to open the appropriate file --- either `/home/JohnDoe/.bashrc` or `/home/JohnDoe/.zshrc` --- and add the following:
