@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Tying up some recent loose ends"
 description: "Because it’s reasonable to assume you might have missed some or all of these updates, I’ve gathered them into a pile for your inspection."
 author: Bryce Wray

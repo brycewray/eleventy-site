@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Hello again, Fathom Analytics"
 description: "It turns out one set of numbers justifies my getting, once more, to see another set thereof."
 author: Bryce Wray

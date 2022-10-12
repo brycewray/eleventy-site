@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "How I install Hugo"
 description: "Here’s how to bypass package managers and “go direct” when it’s time to install or upgrade Hugo."
 author: Bryce Wray

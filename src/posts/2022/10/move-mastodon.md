@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "A move on Mastodon"
 description: "Until yesterday, my presence in the Fediverse was on mastodon.technology. Here’s why that ceased to be."
 author: Bryce Wray

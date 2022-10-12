@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Adding the Libre Franklin variable web font"
 description: "For once, Google Fonts is the place to get the needed files — if you do it the right way, that is."
 author: Bryce Wray

@@ -1,5 +1,4 @@
 ---
-layout: singlepost
 title: "Accepting reality about Astro"
 description: "It comes down to understanding that not every SSG, no matter how otherwise attractive, is a good fit for this site."
 author: Bryce Wray
