@@ -36,7 +36,7 @@ With that established, let's break this up into three sections that you can togg
 
 ## Linux
 
-<details open><summary>Click/tap here to toggle open/close.</summary>
+<details><summary>Click/tap here to toggle open/close.</summary>
 
 Throughout these instructions, we will pretend that your user name is `JohnDoe`. Thus, your user directory (`{$HOME}`) will be `/home/JohnDoe/`.
 
@@ -118,7 +118,7 @@ And that's it. If you encounter errors in any of the above information, please [
 
 ## macOS
 
-<details open><summary>Click/tap here to toggle open/close.</summary>
+<details><summary>Click/tap here to toggle open/close.</summary>
 
 Throughout these instructions, we will pretend that your user name is `JohnDoe`. Thus, your user directory (`{$HOME}`) will be `/Users/JohnDoe/`.
 
@@ -201,7 +201,7 @@ And that's it. If you encounter errors in any of the above information, please [
 
 ## Windows
 
-<details open><summary>Click/tap here to toggle open/close.</summary>
+<details><summary>Click/tap here to toggle open/close.</summary>
 
 Throughout these instructions, we will pretend that your user name is `JohnDoe`. Thus, your user directory will be `C:\Users\JohnDoe\`.
 
