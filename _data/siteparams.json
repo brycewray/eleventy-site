@@ -6,6 +6,8 @@
 	"searchPageTitle": "Search the site",
   "siteDescription": "brycewray.com — Observations, opinions, geekery.",
   "siteHost": "CFP",
+	"siteHostName": "Cloudflare Pages",
+	"siteHostURL": "https://pages.cloudflare.com",
 	"PublicSans": false,
   "feed": {
     "subtitle": "brycewray.com — Observations, opinions, geekery.",

@@ -1,3 +1,5 @@
+{% set siteHostName = siteparams.siteHostName %}
+{% set siteHostURL = siteparams.siteHostURL %}
     <footer>
       <div class="footerWrapper">
         <div class="icons-box">
@@ -25,6 +27,7 @@
 					&nbsp;<br />
           Site textual content &copy;&nbsp;2018&ndash;{{ helpers.currentYear() }} <a class="h-card" rel="me" href="https://www.brycewray.com/">Bryce Wray</a></span> <span class="text-nowrap">except where otherwise noted</span> <span class="text-nowrap">and/or quoting external sources.</span><br />
 					&nbsp;<br />
+					<span class="text-nowrap">Site powered by <a href="https://11ty.dev" rel="noopener">Eleventy</a></span> and <span class="text-nowrap">hosted by <a href="{{ siteHostURL }}" rel="noopener">{{ siteHostName }}</a></span>.<br />
 					<span class="text-nowrap">Privacy-respecting analytics</span> by <span class="text-nowrap"><a href="https://usefathom.com/ref/ZKHYWX" rel="noopener">Fathom Analytics</a>.*</span> <span class="text-nowrap">Nearly all site images</span> <span class="text-nowrap">hosted and processed</span> by&nbsp;<a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/dqunpyaeqiizezj6lbdu" target="_blank" rel="noopener">Cloudinary</a>.*<br />
 					&nbsp;<br />
 					<em>* Affiliate/invite links.</em>
