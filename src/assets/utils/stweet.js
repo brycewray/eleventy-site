@@ -228,6 +228,9 @@ module.exports = async (user, id, prod) => {
 				`<a href="https://t.co/Ode2sKCtpG">https://t.co/Ode2sKCtpG</a>`,
 				``
 			)
+			.replace (
+				`<a href="https://t.co/3yYtqWFukr">https://t.co/3yYtqWFukr</a>`, ``
+			)
 			// === following `replace` is problematic for (???) reasons, 2022-08-24 ===
 			.replace(
 				`>https://t.co/LOmOSrG28e`,
