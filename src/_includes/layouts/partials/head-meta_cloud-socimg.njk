@@ -29,26 +29,7 @@
 			{% set escapedTitle = escapedTitle | replace(",", "%252C") %}{# comma #}
 			{% set escapedTitle = escapedTitle | replace("/", "%252F") %}{# forward slash #}
 			{# end of double-escaping #}
-			{% set escapedTitle = escapedTitle | replace(" ", "%20") %}{# regular space #}
-			{% set escapedTitle = escapedTitle | replace(":", "%3A") %}{# colon #}
-			{% set escapedTitle = escapedTitle | replace(";", "%3B") %}{# semicolon #}
-			{% set escapedTitle = escapedTitle | replace("!", "%21") %}{# exclamation point #}
-			{% set escapedTitle = escapedTitle | replace("?", "%3F") %}{# question mark #}
-			{% set escapedTitle = escapedTitle | replace("+", "%2B") %}{# plus sign #}
-			{% set escapedTitle = escapedTitle | replace("—", "%E2%80%94") %}{# em dash #}
-			{% set escapedTitle = escapedTitle | replace("–", "%E2%80%93") %}{# en dash #}
-			{% set escapedTitle = escapedTitle | replace(" ", "%C2%A0") %}{# nbsp #}
-			{% set escapedTitle = escapedTitle | replace("•", "%E2%80%A2") %}{# bullet #}
-			{% set escapedTitle = escapedTitle | replace("#", "%23") %}{# number sign or hash #}
-			{% set escapedTitle = escapedTitle | replace("(", "%28") %}{# opening parenthesis #}
-			{% set escapedTitle = escapedTitle | replace(")", "%29") %}{# closing parenthesis #}
-			{% set escapedTitle = escapedTitle | replace('"', "%22") %}{# straight-up quote character --- note the single quotes surrounding it, unlike others here #}
-			{% set escapedTitle = escapedTitle | replace("“", "%E2%80%9C") %}{# opening curly double quote character #}
-			{% set escapedTitle = escapedTitle | replace("”", "%E2%80%9D") %}{# closing curly double quote character #}
-			{% set escapedTitle = escapedTitle | replace("'", "%27") %}{# straight-up apostrophe or single quote character #}
-			{% set escapedTitle = escapedTitle | replace("‘", "%E2%80%98") %}{# opening curly single quote character #}
-			{% set escapedTitle = escapedTitle | replace("’", "%E2%80%99") %}{# curly apostrophe or closing curly single quote character #}
-			{% set escapedTitle = escapedTitle | replace("‑", "%E2%80%91") %}{# non-breaking hyphen #}
+			{% set escapedTitle = escapedTitle | replace(" ", "%20") | replace(":", "%3A") | replace(";", "%3B") | replace("!", "%21") | replace("?", "%3F") | replace("+", "%2B") | replace("—", "%E2%80%94") | replace("–", "%E2%80%93") | replace(" ", "%C2%A0") | replace("•", "%E2%80%A2") | replace("#", "%23") | replace("(", "%28") | replace(")", "%29") | replace('"', "%22") | replace("“", "%E2%80%9C") | replace("”", "%E2%80%9D") | replace("'", "%27") | replace("‘", "%E2%80%98") | replace("’", "%E2%80%99") | replace("‑", "%E2%80%91") %}
 			{% set titleSize = 72 %}
 			{% set fontChoice = "librefranklinsemibold.ttf" %}
 			{# choices are `librefranklinsemibold.ttf` and `librefranklinmedium.ttf` #}
