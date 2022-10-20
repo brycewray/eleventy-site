@@ -1,0 +1,84 @@
+{% set fallbackImg = "https://res.cloudinary.com/brycewray-com/image/upload/c_fill,w_1280,h_669,q_auto,f_auto,x_0,z_1/typewriter-monochrome_2242164_6260x4374.jpg" %}
+{% set eleventyEnv = projEnv.environment %}
+{% set siteHost = siteparams.siteHost %}
+{% set socImg = fallbackImg %}{# for now #}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:type" content="website">
+
+    {% if page.url === "/" %}
+      <link rel="canonical" href="{{ siteparams.siteURLforOG }}/">
+      <title>{{ siteparams.siteTitle }}</title>
+      <meta property="og:title" content="{{ siteparams.siteTitle }}">
+      <meta name="description" content="{{ siteparams.siteDescription }}">
+      <meta property="og:description" content="{{ siteparams.siteDescription }}">
+      <meta property="og:url" content = "{{ siteparams.siteURLforOG }}/">
+    {% else %}
+			{% set escapedTitle = title %}{# for now #}
+			{#
+				Cloudinary requires “double-escaping” (meaning, escaping the `%` within as `%25`) the following characters as follows:
+				- Percent sign %2525 (not just %25)
+				- Comma %252C (not just %2C)
+				- Forward slash %252F (not just %2F)
+				- Emoji character (not worrying about that one!)
+			#}
+			{% set escapedTitle = escapedTitle | replace("%", "%2525") %}{# percent sign #}
+				{# **MUST** put that one at the top to avoid fouling up the rest!! #}
+			{% set escapedTitle = escapedTitle | replace(",", "%252C") %}{# comma #}
+			{% set escapedTitle = escapedTitle | replace("/", "%252F") %}{# forward slash #}
+			{# end of double-escaping #}
+			{% set escapedTitle = escapedTitle | replace(" ", "%20") %}{# regular space #}
+			{% set escapedTitle = escapedTitle | replace(":", "%3A") %}{# colon #}
+			{% set escapedTitle = escapedTitle | replace(";", "%3B") %}{# semicolon #}
+			{% set escapedTitle = escapedTitle | replace("!", "%21") %}{# exclamation point #}
+			{% set escapedTitle = escapedTitle | replace("?", "%3F") %}{# question mark #}
+			{% set escapedTitle = escapedTitle | replace("+", "%2B") %}{# plus sign #}
+			{% set escapedTitle = escapedTitle | replace("—", "%E2%80%94") %}{# em dash #}
+			{% set escapedTitle = escapedTitle | replace("–", "%E2%80%93") %}{# en dash #}
+			{% set escapedTitle = escapedTitle | replace(" ", "%C2%A0") %}{# nbsp #}
+			{% set escapedTitle = escapedTitle | replace("•", "%E2%80%A2") %}{# bullet #}
+			{% set escapedTitle = escapedTitle | replace("#", "%23") %}{# number sign or hash #}
+			{% set escapedTitle = escapedTitle | replace("(", "%28") %}{# opening parenthesis #}
+			{% set escapedTitle = escapedTitle | replace(")", "%29") %}{# closing parenthesis #}
+			{% set escapedTitle = escapedTitle | replace('"', "%22") %}{# straight-up quote character --- note the single quotes surrounding it, unlike others here #}
+			{% set escapedTitle = escapedTitle | replace("“", "%E2%80%9C") %}{# opening curly double quote character #}
+			{% set escapedTitle = escapedTitle | replace("”", "%E2%80%9D") %}{# closing curly double quote character #}
+			{% set escapedTitle = escapedTitle | replace("'", "%27") %}{# straight-up apostrophe or single quote character #}
+			{% set escapedTitle = escapedTitle | replace("‘", "%E2%80%98") %}{# opening curly single quote character #}
+			{% set escapedTitle = escapedTitle | replace("’", "%E2%80%99") %}{# curly apostrophe or closing curly single quote character #}
+			{% set escapedTitle = escapedTitle | replace("‑", "%E2%80%91") %}{# non-breaking hyphen #}
+			{% set titleSize = 72 %}
+			{% set fontChoice = "librefranklinsemibold.ttf" %}
+			{# choices are `librefranklinsemibold.ttf` and `librefranklinmedium.ttf` #}
+			{% set titleWidth = 1036 %}{# 72 each side from 1280 #}
+			{% set socImg = ["https://res.cloudinary.com/brycewray-com/image/upload/w_1280,h_669,c_fill,q_auto,f_auto/w_", titleWidth, ",c_fit,co_rgb:ffffff,g_north,y_72,l_text:", fontChoice, "_", titleSize, "_center:", escapedTitle, "/social-OG-bkgd-w-BW-logo-ctrd-for-1280x669"] | join %}
+			{% if ext_canonical %}
+				<link rel="canonical" href="{{ ext_canonical }}">
+			{% else %}
+	      <link rel="canonical" href="{{ siteparams.siteURLforOG }}{{ page.url }}">
+			{% endif %}
+  	    <title>{{ title }} | {{ siteparams.siteTitle }}</title>
+      <meta property="og:title" content="{{ title }} | {{ siteparams.siteTitle }}">
+      <meta name="description" content="{{ description }}">
+      <meta property="og:description" content="{{ description }}">
+      <meta property="og:url" content="{{ siteparams.siteURLforOG }}{{ page.url }}">
+    {% endif %}
+
+    <meta property="og:image" content="{{ socImg }}">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="669">
+
+    <!-- Twitter meta -->
+    <meta name="twitter:site" content="@BryceWrayTX">
+    <meta name="twitter:creator" content="@BryceWrayTX">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ socImg }}">
+    {% if page.url === "/" %}
+      <meta name="twitter:description" content="{{ siteparams.siteDescription }}">
+      <meta name="twitter:title" content="{{ siteparams.siteTitle }}">
+    {% else %}
+      <meta name="twitter:description" content="{{ description }}">
+      <meta name="twitter:title" content="{{ title }}">
+    {% endif %}
