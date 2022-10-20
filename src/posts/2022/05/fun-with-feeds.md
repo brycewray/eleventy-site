@@ -8,6 +8,13 @@ lastmod: 2022-07-22T22:16:00-05:00
 discussionId: "2022-05-fun-with-feeds"
 ---
 
+**Note, 2022-10-18**: Starting 2022-10-17, this specific page began getting an unusual amount of traffic from Europe via the Google search engine, but I haven't been able to figure out why. If anyone is willing to [let me know](/contact/) what happened to cause this so I could satisfy my curiosity, I'd be very grateful!\
+\
+*(Auf Deutsch)* . . .\
+**Hinweis, 18.10.2022**: Ab dem 17.10.2022 erhielt diese spezielle Seite ungewöhnlich viel Traffic aus Europa über die Google-Suchmaschine, aber ich konnte nicht herausfinden, warum. Wenn jemand bereit ist, [mir mitzuteilen](/contact), was passiert ist, damit ich meine Neugier befriedigen kann, wäre ich sehr dankbar!\
+*(Übersetzung von [Google](https://translate.google.com/). Ich entschuldige mich für etwaige Fehler in der Übersetzung.)*
+{.yellowBox}
+
 If you're not already using a [feed reader app](https://en.wikipedia.org/wiki/RSS), you should start.
 
 Blow off the people telling you it's old technology. So are doorknobs, radios, and commodes. Somehow, I suspect you still use all three, and many other things that are equally Tried And True.
