@@ -57,7 +57,7 @@ jobs:
           node-version: '16'
       - name: Install packages
         run: npm install
-      - name: Build site
+      - name: Build site with Eleventy
         run: npm run build
       - name: Run Pagefind
         run: npm_config_yes=true npx pagefind --source "_site"
