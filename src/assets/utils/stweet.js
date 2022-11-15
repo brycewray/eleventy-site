@@ -240,6 +240,13 @@ module.exports = async (user, id, prod) => {
 				`<a href="https://t.co/KObTA4I8tk">https://t.co/KObTA4I8tk</a>`,
 				`<br /><br /><a href="https://t.co/KObTA4I8tk">astro.build</a>`
 			)
+			.replace(
+				`<a href="http://t.co/YuKy2rcjyU">pic.twitter.com/YuKy2rcjyU</a>`, ``
+			)
+			// prev. `replace` was 2014 Dept. of Interior tweet
+			.replace(
+				`<a href="https://t.co/roq0MwE2Go">https://t.co/roq0MwE2Go</a>`, ``
+			)
 
 		if (Json.card) {
 			if (Json.card.url) {
