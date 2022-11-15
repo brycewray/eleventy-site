@@ -1,3 +1,5 @@
-# Test repository
+# Repo for www.brycewray.com
 
-I use this repository to test the [Eleventy](https://11ty.dev) [static site generator](https://jamstack.org/generators) (SSG).
+This is the repository from which the [Eleventy](https://11ty.dev)-generated version of [www.brycewray.com](https://www.brycewray.com/) is built.[^stickler]
+
+[^stickler]: And, yes, I **am** a stickler for [including `www` in the URL](https://www.yes-www.org/why-use-www/).
