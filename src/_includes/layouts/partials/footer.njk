@@ -17,17 +17,17 @@
 					</a>
         </div>
 				<p>
-					<span class="text-nowrap"><a href="/sitemap/">HTML sitemap</a> &bull; <a href="/sitemap.xml">XML sitemap</a></span><br />
+					<span class="text-nowrap"><a href="/sitemap/">HTML sitemap</a> &bull; <a href="/sitemap.xml">XML sitemap</a></span>
+				</p>
+				<p>
+          Site textual content &copy; 2018&ndash;{{ helpers.currentYear() }} <a class="h-card" rel="me" href="https://www.brycewray.com/">Bryce Wray</a> except&nbsp;where otherwise noted and/or quoting external&nbsp;sources.<br />
+					{% if title != "About me" %}
+					For&nbsp;other site-wide disclaimers/credits, see the footer of the <span class="text-nowrap"><a href="/about/">&ldquo;About me&rdquo; page</a></span>.
+					{% else %}
+					Newer <a href="/posts/2022/06/get-good-git-info-hugo/">Git commits and their applicable dates</a> don&rsquo;t necessarily reflect changes in previously published&nbsp;content. Displayed&nbsp;content statistics (word&nbsp;count and reading&nbsp;time) don&rsquo;t&nbsp;include any code&nbsp;blocks or <code>details</code>&nbsp;elements where&nbsp;applicable. Site&nbsp;powered by <a href="https://gohugo.io" rel="noopener">Hugo</a>, styled&nbsp;by <a href="https://sass-lang.com" rel="noopener">Sass/SCSS</a>, and hosted&nbsp;by <a href="https://pages.cloudflare.com" rel="noopener">Cloudflare&nbsp;Pages</a>. <span class="text-nowrap">Privacy-respecting</span> analytics by <a href="https://usefathom.com/ref/ZKHYWX" rel="noopener">Fathom&nbsp;Analytics</a>.* Nearly&nbsp;all site&nbsp;images hosted&nbsp;and processed by&nbsp;<a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/dqunpyaeqiizezj6lbdu" target="_blank" rel="noopener">Cloudinary</a>.*<br />
 					&nbsp;<br />
-					Newer <a href="/posts/2022/09/get-good-git-info-eleventy-too/">Git commits and their applicable dates</a> don&rsquo;t&nbsp;necessarily reflect changes <span class="text-nowrap">in previously published content.</span><br />
-					Reading time and word count don&rsquo;t include <span class="text-nowrap">any code blocks</span> <span class="text-nowrap">or <code>details</code> elements</span> <span class="text-nowrap">where applicable.</span><br />
-					&nbsp;<br />
-          Site textual content &copy;&nbsp;2018&ndash;{{ helpers.currentYear() }} <a class="h-card" rel="me" href="https://www.brycewray.com/">Bryce Wray</a></span> <span class="text-nowrap">except where otherwise noted</span> <span class="text-nowrap">and/or quoting external sources.</span><br />
-					&nbsp;<br />
-					<span class="text-nowrap">Site powered by <a href="https://11ty.dev" rel="noopener">Eleventy</a></span> and <span class="text-nowrap">hosted by <a href="{{ siteHostURL }}" rel="noopener">{{ siteHostName }}</a></span>.<br />
-					<span class="text-nowrap">Privacy-respecting analytics</span> by <span class="text-nowrap"><a href="https://usefathom.com/ref/ZKHYWX" rel="noopener">Fathom Analytics</a>.*</span> <span class="text-nowrap">Nearly all site images</span> <span class="text-nowrap">hosted and processed</span> by&nbsp;<a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/dqunpyaeqiizezj6lbdu" target="_blank" rel="noopener">Cloudinary</a>.*<br />
-					&nbsp;<br />
-					<em>* Affiliate/invite links.</em>
+					* <em>Affiliate/invite links.</em>
+					{% endif %}
 				</p>
 			</div>
 		</footer>
