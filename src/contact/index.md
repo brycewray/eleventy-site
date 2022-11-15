@@ -1,4 +1,5 @@
 ---
+layout: contact
 title: "Want to reach me?"
 description: "Here are several ways to get in contact."
 author: Bryce Wray
