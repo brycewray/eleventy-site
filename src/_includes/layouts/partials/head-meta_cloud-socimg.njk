@@ -30,7 +30,10 @@
 			{% set escapedTitle = escapedTitle | replace("/", "%252F") %}{# forward slash #}
 			{# end of double-escaping #}
 			{% set escapedTitle = escapedTitle | replace(" ", "%20") | replace(":", "%3A") | replace(";", "%3B") | replace("!", "%21") | replace("?", "%3F") | replace("+", "%2B") | replace("—", "%E2%80%94") | replace("–", "%E2%80%93") | replace(" ", "%C2%A0") | replace("•", "%E2%80%A2") | replace("#", "%23") | replace("(", "%28") | replace(")", "%29") | replace('"', "%22") | replace("“", "%E2%80%9C") | replace("”", "%E2%80%9D") | replace("'", "%27") | replace("‘", "%E2%80%98") | replace("’", "%E2%80%99") | replace("‑", "%E2%80%91") %}
-			{% set titleSize = 72 %}
+			{% set titleSize = 96 %}{# pixels #}
+			{% if (title | length) > 36 %}
+				{% set titleSize = 72 %}
+			{% endif %}
 			{% set fontChoice = "librefranklinsemibold.ttf" %}
 			{# choices are `librefranklinsemibold.ttf` and `librefranklinmedium.ttf` #}
 			{% set titleWidth = 1036 %}{# 72 each side from 1280 #}
@@ -52,8 +55,6 @@
     <meta property="og:image:height" content="669">
 
     <!-- Twitter meta -->
-    <meta name="twitter:site" content="@BryceWrayTX">
-    <meta name="twitter:creator" content="@BryceWrayTX">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="{{ socImg }}">
     {% if page.url === "/" %}
