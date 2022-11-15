@@ -21,7 +21,7 @@ The whole purpose of shortcodes is making it easy to add small, reusable snippet
 Let's say you occasionally want to drop in a standard disclaimer, and so you've made a shortcode for it rather than having to repeat the thing every time (the link is bogus):
 
 **Disclaimer**: This data is provided only for comparison and does **not** necessarily reflect the opinion of [this company](#).
-{.blueBox}
+{.box}
 
 Up to now, that would've had to be an HTML file:
 
@@ -38,11 +38,11 @@ Now, with Markdown as a shortcode format, the typing[^typing] is easier:
 {% raw %}
 ```md
 **Disclaimer**: This data is provided only for comparison and does **not** necessarily reflect the opinion of [this company]({{ .Site.BaseUrl }}about/).
-{.blueBox}
+{.box}
 ```
 {% endraw %}
 
-[^typing]: Note that the link-handling here will be the same as in the HTML version **if** you've used a [`render-link` template](https://gohugo.io/templates/render-hooks/#render-hooks-for-headings-links-and-images) accordingly. As for that `{.blueBox}` item, that's an *attribute*; combined with my site's styling, it accomplishes the same thing as `<div class="blueBox"><p>[content]</p></div>` in the HTML shortcode. This is made possible by the appropriate [goldmark](https://github.com/yuin/goldmark) [setting](https://gohugo.io/getting-started/configuration-markup#goldmark) in your Hugo project's config file, as I explained in last year's "[New in Hugo: easier writing](/posts/2021/02/new-hugo-easier-writing/)."
+[^typing]: Note that the link-handling here will be the same as in the HTML version **if** you've used a [`render-link` template](https://gohugo.io/templates/render-hooks/#render-hooks-for-headings-links-and-images) accordingly. As for that `{.box}` item, that's an *attribute*; combined with my site's styling, it accomplishes the same thing as `<div class="blueBox"><p>[content]</p></div>` in the HTML shortcode. This is made possible by the appropriate [goldmark](https://github.com/yuin/goldmark) [setting](https://gohugo.io/getting-started/configuration-markup#goldmark) in your Hugo project's config file, as I explained in last year's "[New in Hugo: easier writing](/posts/2021/02/new-hugo-easier-writing/)."
 
 ## Respect the indents
 

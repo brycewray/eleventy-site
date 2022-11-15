@@ -8,7 +8,7 @@ discussionId: "2021-09-gems-in-rough-09"
 ---
 
 Each entry in the "Gems in the rough" series is a collection of tips, explanations, and/or idle observations which I hope will be at least somewhat useful to those of you with websites built by [static site generators (SSGs)](https://jamstack.org/generators).
-{.blueBox}
+{.box}
 
 ## Privacy-respecting YouTube embeds
 

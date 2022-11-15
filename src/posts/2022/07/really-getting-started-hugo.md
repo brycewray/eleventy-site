@@ -63,7 +63,7 @@ Imagine someone coming over to Hugo from, say, WordPress. Navigating the chasm b
 So let's move on to what I think would be a much more likely Happy Path where learning Hugo is concerned.
 
 **Note**: The following instructions are for only the two major computer operating systems for consumers, Windows and macOS, because I frankly doubt Linux users *need* help.
-{.blueBox}
+{.box}
 
 ----
 

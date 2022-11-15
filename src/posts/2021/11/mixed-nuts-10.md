@@ -8,7 +8,7 @@ discussionId: "2021-11-mixed-nuts-10"
 ---
 
 Each entry in the "Mixed nuts" series is a collection of random and, occasionally, relevant observations. The series originally was inspired, as noted in the [first "Mixed nuts" post](/posts/2019/11/mixed-nuts-2019-11/), by the famed "Scattershooting" newspaper columns penned by the late Blackie Sherrod.
-{.blueBox}
+{.box}
 
 ---
 

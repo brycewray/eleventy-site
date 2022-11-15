@@ -21,7 +21,7 @@ If you've been interested in trying the [Hugo](https://gohugo.io) [static site g
 Now, the details . . .
 
 **Note**: The following instructions are for only the two major computer operating systems for consumers, Windows and macOS. I doubt Linux users, given their likely inclination toward more geeky pursuits, would *need* this kind of help.
-{.blueBox}
+{.box}
 
 ----
 

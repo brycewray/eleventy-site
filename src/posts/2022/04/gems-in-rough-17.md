@@ -11,7 +11,7 @@ discussionId: "2022-04-gems-in-rough-17"
 {% disclaimer %}
 
 Each entry in the “Gems in the rough” series is a collection of tips, explanations, and/or idle observations which I hope will be at least somewhat useful to those of you with websites built by [static site generators](https://jamstack.org/generators) (SSGs).
-{.blueBox}
+{.box}
 
 ## Getting giscus going again
 
