@@ -1,13 +1,10 @@
 {% set siteHostName = siteparams.siteHostName %}
 {% set siteHostURL = siteparams.siteHostURL %}
-    <footer>
+    <footer data-pagefind-ignore>
       <div class="footerWrapper">
         <div class="icons-box">
           <a href="https://github.com/brycewray" rel="noopener" class="icon" title="GitHub" aria-label="GitHub">
 						{{ '/src/assets/svg/svgGitHubIcon.svg' | svgContents | safe }}
-          </a>
-          <a href="https://twitter.com/BryceWrayTX" rel="noopener" class="icon" title="Twitter" aria-label="Twitter">
-            {{ '/src/assets/svg/svgTwitterIcon.svg' | svgContents | safe }}
           </a>
 					<a href="https://fosstodon.org/@BryceWrayTX" rel="noopener" class="icon" title="Mastodon" aria-label="Mastodon">
 						{{ '/src/assets/svg/svgMastodonIcon.svg' | svgContents | safe }}
