@@ -16,7 +16,7 @@ hr.footnotes-sep {
 }
 
 .footnotes {
-	padding-top: 0.5em;
+	// padding-top: 0.5em; // `box + hr` rule handles in Eleventy
 	// padding-bottom: 1em;
 	ol {
 		padding-inline-start: 1.5rem;
