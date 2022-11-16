@@ -18,7 +18,7 @@ module.exports = async (instance, id, prod) => {
 	let stringToRet = ``
 
 	// if (environment === "production" || prod === "prod") {
-		let tootLink, handleInst, mediaMD5, urlToGet, mediaStuff, videoStuff, gifvStuff, pollStuff = ''
+		let tootLink, handleInst, mediaMD5, urlToGet, mediaStuff, videoStuff, gifvStuff, cardStuff, pollStuff = ''
 		let imageCount, votesCount = 0
 
 		urlToGet = `https://` + instance + `/api/v1/statuses/` + id
@@ -118,6 +118,11 @@ module.exports = async (instance, id, prod) => {
 			*/
 		}
 
+		if(Json.card !== null) {
+			cardStuff = ``;
+			cardStuff = cardStuff + `<a href="${Json.card.url}" rel="noopener"><div class="card"><img src="${Json.card.image}" alt="Card image from ${instance} toot ${id}" loading="lazy" class="tweet-card-img" /><p><span class="card-title">${Json.card.title}</span><br />${Json.card.description}</p></div></a>`;
+		}
+
 		if (Json.poll !== null) {
 			votesCount = Json.poll.votes_count;
 			let pollIterator = 0;
@@ -148,6 +153,9 @@ module.exports = async (instance, id, prod) => {
 				}
 				if (gifvStuff) {
 					stringToRet += `<div>${gifvStuff}</div>`
+				}
+				if (cardStuff) {
+					stringToRet += `<div>${cardStuff}</div>`
 				}
 				if (pollStuff) {
 					stringToRet += `<div>${pollStuff}</div>`
