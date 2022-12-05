@@ -17,7 +17,7 @@ const EleventyFetch = require("@11ty/eleventy-fetch")
 const md5 = require('md5')
 // const axios = require('axios')
 
-const respSizes = [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
+const respSizes = [ 320, 640, 960, 1280, 1600, 1920 ]
 let cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
 let LQIPholder = 'f_jpg,q_1,w_20/' // note ending slash and leading zero in `q`
 let xFmPart1 = 'f_auto,q_auto:eco,w_'
@@ -71,7 +71,7 @@ module.exports = async (url, alt, width, height, phn) => {
     }
 		</style><div class="${divClass} imgB-${imgBmd5}" data-pagefind-ignore>`
 	}
-	stringToRet += `<img class="${imgClass}" src="${cloudiBase + xFmPart1 + "600" + xFmPart2 + url}" srcset="`
+	stringToRet += `<img class="${imgClass}" src="${cloudiBase + xFmPart1 + "640" + xFmPart2 + url}" srcset="`
     respSizes.forEach(size => {
       if (size <= width) {
         arrayFromLoop.push(`${cloudiBase + xFmPart1 + size + xFmPart2 + url} ${size}w`)
