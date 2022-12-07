@@ -20,7 +20,6 @@ const EleventyFetch = require("@11ty/eleventy-fetch")
 
 const respSizes = [ 320, 640, 960, 1280, 1600, 1920 ]
 let cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
-let LQIPholder = 'f_jpg,q_1,w_20/' // note ending slash and leading zero in `q`
 let xFmPart1 = 'f_auto,q_auto:eco,w_'
 let xFmPart2 = ',x_0,z_1/' // note ending slash
 
