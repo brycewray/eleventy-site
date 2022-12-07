@@ -296,19 +296,21 @@ module.exports = function(eleventyConfig) {
 	})
 	// end, RSS/JSON feeds and sitemap.xml collection
 
-  /* === START, prev/next posts stuff === */
-  // https://github.com/11ty/eleventy/issues/529#issuecomment-568257426
+  /* === START, collection for posts === */
   eleventyConfig.addCollection("posts", function (collection) {
     const coll = collection.getFilteredByTag("post")
-    for (let i = 0; i < coll.length; i++) {
-      const prevPost = coll[i - 1]
-      const nextPost = coll[i + 1]
-      coll[i].data["prevPost"] = prevPost
-      coll[i].data["nextPost"] = nextPost
-    }
+		// following has been unnecessary since Eleventy 0.11.0
+		// but is preserved just FYI ...
+	  // h/t https://github.com/11ty/eleventy/issues/529#issuecomment-568257426
+    // for (let i = 0; i < coll.length; i++) {
+    //   const prevPost = coll[i - 1]
+    //   const nextPost = coll[i + 1]
+    //   coll[i].data["prevPost"] = prevPost
+    //   coll[i].data["nextPost"] = nextPost
+    // }
     return coll
   })
-  /* === END, prev/next posts stuff === */
+  /* === END, collection for posts === */
 
 
   /* pathPrefix: "/"; */
