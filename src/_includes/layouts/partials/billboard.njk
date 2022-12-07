@@ -5,7 +5,8 @@
 		{% set regExpDtls = r/<details(.|\n)*?\/details>/gm %}
 		{% set regLiteYT = r/<lite-youtube(.|\n)*?\/lite-youtube>/gm %}
 		{% set regFNs = r/<section class="footnotes"(.|\n)*?\/section>/gm %}
-		{% set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | replace(regLiteYT, "") | replace(regFNs, "") | striptags | replace(regExpImg, "") %}
+		{% set intFNs = r/<sup class="footnote-ref">.*<\/sup>/gm %}
+		{% set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | replace(regLiteYT, "") | replace(regFNs, "") | replace(intFNs, "") | replace(regExpImg, "") | striptags | safe %}
 		{% set wordCount = fixedContent | wordcount %}
 		{% set readingRate = 225 %}
 		{% set readingTime = (wordCount/readingRate) | round %}
