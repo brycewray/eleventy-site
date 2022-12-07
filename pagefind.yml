@@ -1,5 +1,6 @@
 # https://pagefind.app/docs/config-sources/
 
 exclude_selectors:
-  - "[id^='fnref']"
-  - "[class='highlight']"
+  # - "[id^='fnref']" #Hugo
+  - "[sup class='footnote-ref']"
+  # - "[class='highlight']" #Hugo
