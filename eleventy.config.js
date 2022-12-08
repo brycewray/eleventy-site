@@ -55,11 +55,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(svgContents)
-	eleventyConfig.addPlugin(syntaxHighlight, {
-		preAttributes: {
-			"data-pagefind-ignore": ""
-		}
-	})
+	eleventyConfig.addPlugin(syntaxHighlight)
 	eleventyConfig.addPlugin(pluginRev)
 	eleventyConfig.addPlugin(eleventySass, {
 		rev: true,
