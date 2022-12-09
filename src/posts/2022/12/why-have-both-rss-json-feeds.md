@@ -24,12 +24,12 @@ So, in the [Hacker News thread](https://news.ycombinator.com/item?id=31293488) w
 . . . prompting this from me:
 
 > Some prefer it. It offers another two or three fields that RSS doesn't.
-> 
+>
 > In any event, it requires virtually zero extra effort after initial setup, so I see no reason not to offer both. Different strokes...
 
 And now, months later, I have an additional answer to his "What is it good for?" question: *I am using the two-feeds approach to give my feeds-savvy readers a choice*. "Different strokes," indeed.
 
-Some folks want to see articles' entire content in feeds, thus saving them from having to go to the sourced website; but others prefer only a title and short description. (Either method links back to the original, of course.) Until a few days ago, *both* my RSS and JSON feeds went the entire-content route. Indeed, a JSON feed **has** to do so, because that's part of the [JSON feed spec](https://www.jsonfeed.org/version/1.1/):
+Some folks want to see articles' entire content in feeds, thus saving them from having to go to the sourced website; but others prefer only a title and short description. (Either method links back to the original, of course.) Until a few days ago, *both* my RSS and JSON feeds went the entire-content route. Indeed, a JSON feed **has** to do so, because that's part of the [JSON Feed spec](https://www.jsonfeed.org/version/1.1/):
 
 > `content_html` and `content_text` are each optional strings — but one or both must be present. This is the HTML or plain text of the item.
 
