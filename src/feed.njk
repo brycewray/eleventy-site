@@ -23,14 +23,6 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
 	<title>{{ metadata.title }}</title>
 	<subtitle>{{ metadata.subtitle }}</subtitle>
-	<icon>{{ metadata.icon }}</icon>
-	<image>
-		<url>{{ metadata.icon }}</url>
-		<title>{{ metadata.title }}</title>
-		<link href="{{ metadata.url }}" />
-		<width>{{ metadata.width }}</width>
-		<height>{{ metadata.height }}</height>
-	</image>
 	<link href="{{ metadata.feedUrl }}" rel="self"/>
 	<link href="{{ metadata.url }}"/>
 	<updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
