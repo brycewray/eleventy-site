@@ -10,6 +10,8 @@
     "feedUrl": "https://www.brycewray.com/index.xml",
 		"icon": "https://www.brycewray.com/images/icons/favicon-96x96.png",
 		"logo": "https://www.brycewray.com/images/icons/favicon-96x96.png",
+		"width": "96",
+		"height": "96",
     "author": {
       "name": "Bryce Wray",
 			"email": "bw@brycewray.com",
@@ -24,6 +26,13 @@
 	<subtitle>{{ metadata.subtitle }}</subtitle>
 	<icon>{{ metadata.icon }}</icon>
 	<logo>{{ metadata.logo }}</logo>
+	<image>
+		<url>{{ metadata.icon }}</url>
+		<title>{{ metadata.title }}</title>
+		<link href="{{ metadata.url }}" />
+		<width>{{ metadata.width }}</width>
+		<height>{{ metadata.height }}</height>
+	</image>
 	<link href="{{ metadata.feedUrl }}" rel="self"/>
 	<link href="{{ metadata.url }}"/>
 	<updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
