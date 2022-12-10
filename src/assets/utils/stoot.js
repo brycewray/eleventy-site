@@ -17,7 +17,7 @@ module.exports = async (instance, id) => {
 
 	async function GetToot(tootURL) {
 		const response = await EleventyFetch(tootURL, {
-			duration: "1m",
+			duration: "2w",
 			type: "json"
 		});
 		return response
