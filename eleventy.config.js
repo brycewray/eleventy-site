@@ -188,6 +188,12 @@ module.exports = function(eleventyConfig) {
   }
   // END, de-bracketing footnotes
   eleventyConfig.setLibrary("md", markdownEngine)
+
+	// h/t: https://edjohnsonwilliams.co.uk/blog/2019-05-04-replicating-jekylls-markdownify-filter-in-nunjucks-with-eleventy/
+	eleventyConfig.addNunjucksFilter("markdownify", (markdownString) =>
+    markdownEngine.render(markdownString)
+  )
+
   /* --- end, Markdown handling --- */
 
 
@@ -311,6 +317,11 @@ module.exports = function(eleventyConfig) {
     return coll
   })
   /* === END, collection for posts === */
+
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: "<!-- excerpt -->"
+	})
 
 
   /* pathPrefix: "/"; */
