@@ -1,6 +1,6 @@
 ---json
 {
-  "permalink": "/index.json",
+  "permalink": "/index-excerpts.json",
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "BryceWray.com",
@@ -26,17 +26,14 @@
       {%- if loop.index0 < 10  -%}
         {%- set absolutePostUrl -%}{{ post.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
 				{%- set PermaWithJSONutm = [absolutePostUrl, JSONutm] | join -%}
-        {%- set emailReplyHTML -%}<p><a href="mailto:bw@brycewray.com?subject=“{{ post.data.title }}”">Reply via email</a></p>{%- endset -%}
-				{%- set descrForFeed = "[No description]" -%}{# placeholder j/i/c #}
-				{%- if post.data.description -%}{%- set descrForFeed = post.data.description -%}{%- endif -%}
-				{%- set descrWithLine -%}<p>{{ descrForFeed }}</p><hr>{%- endset -%}
-        {%- set finalHTMLContent = [descrWithLine, post.templateContent, emailReplyHTML] | join -%}
+				{%- set getFullFeed -%}<br><hr><p><em>To get posts’ <strong>full</strong> content in your reader, you can subscribe to <a href="https://www.brycewray.com/index.json">this feed</a>.</em></p>{%- endset -%}
+        {%- set finalHTMLContent = [post.data.description, getFullFeed] | join -%}
         {
           "id": "{{ absolutePostUrl }}",
           "title": "{{ post.data.title }}",
           "url": "{{ PermaWithJSONutm }}",
           "date_published": "{{ post.date | dateFromRFC2822 }}",
-          "summary": "{{ descrForFeed }}",
+          "summary": "{% if post.data.subtitle -%}{{ post.data.subtitle }} • {% endif -%}{%- if post.data.description -%}{{ post.data.description }}{%- else -%}No description{%- endif %}",
           "content_html": {{ finalHTMLContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}
         }{%- if not loop.last -%},{%- endif %}
       {%- endif -%}

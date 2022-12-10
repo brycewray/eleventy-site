@@ -1,17 +1,17 @@
 ---json
 {
-  "permalink": "/index.xml",
+  "permalink": "/index-excerpts.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "BryceWray.com",
     "subtitle": "brycewray.com — Observations, opinions, geekery.",
+		"language": "en",
     "description": "brycewray.com — Observations, opinions, geekery.",
     "url": "https://www.brycewray.com/",
     "feedUrl": "https://www.brycewray.com/index.xml",
     "author": {
       "name": "Bryce Wray",
-			"email": "bw@brycewray.com",
-      "url": "https://www.brycewray.com/about/"
+      "email": "bw@brycewray.com"
     }
   }
 }
@@ -33,11 +33,8 @@
 		{%- if loop.index0 < 10 -%}
 			{%- set absolutePostUrl -%}{{ post.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
 			{%- set PermaWithRSSutm = [absolutePostUrl, RSSutm] | join -%}
-      {%- set emailReplyHTML -%}<p><a href="mailto:bw@brycewray.com?subject= “{{ post.data.title }}”">Reply via email</a></p>{%- endset -%}
-			{%- set descrForFeed = "[No description]" -%}{# placeholder j/i/c #}
-			{%- if post.data.description -%}{%- set descrForFeed = post.data.description -%}{%- endif -%}
-			{%- set descrWithLine -%}<p>{{ descrForFeed }}</p><hr>{%- endset -%}
-			{%- set finalHTMLContent = [descrWithLine, post.templateContent, emailReplyHTML] | join -%}
+			{%- set getFullFeed -%}<br><hr><p><em>To get posts’ <strong>full</strong> content in your reader, you can subscribe to <a href="https://www.brycewray.com/index.xml">this feed</a>.</em></p>{%- endset -%}
+			{%- set finalHTMLContent = [post.data.description, getFullFeed] | join -%}
 			<entry>
 				<title>{{ post.data.title }}</title>
 				<link href="{{ PermaWithRSSutm }}"/>
