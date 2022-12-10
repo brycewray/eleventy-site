@@ -36,3 +36,6 @@ Some folks want to see articles' entire content in feeds, thus saving them from 
 . . . but an RSS feed has no such requirement. So, now, I have set my feeds as follows for any post featured therein: each feed includes the article's title and description, but the JSON feed also includes the full content. And, just to cover all bets, the RSS feed notes that those who **still** want the full content can simply subscribe to the JSON feed --- which, yes, is linked from each RSS feed item.
 
 Bottom line: yep, there *are* good reasons to have both RSS and JSON feeds. Perhaps your site, too, can benefit from a similar approach.
+
+**Update, 2022-12-10**: Looks like I zigged when I should've zagged. See the [next post](/posts/2022/12/not-so-fast-there-fella/) for more details.
+{.box}
