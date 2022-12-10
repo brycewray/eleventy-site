@@ -11,6 +11,8 @@ Back in May, [Kevin Cox](https://kevincox.ca) posted an [excellent article](http
 
 Only thing is, I disagree with one point he made early on in the article.
 
+<!-- excerpt -->
+
 You see, this site provides both [RSS](https://www.rssboard.org/rss-specification) and [JSON](https://jsonfeed.org/) feeds (linked from their respective icons at the bottom of each page on the site), and I've [noted](/posts/2021/05/help-your-website-get-discovered/) those are both good choices for others' sites, too. However, Cox's article recommended against the JSON Feed format because it is "less widely supported." (He also said to avoid a few other older or [obscure](https://microformats.org/wiki/h-feed) formats, and I concur with him on those.)
 
 So, in the [Hacker News thread](https://news.ycombinator.com/item?id=31293488) which had tipped me off to Cox's article in the first place, I commented:
