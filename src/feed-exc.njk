@@ -33,14 +33,17 @@
 		{%- if loop.index0 < 10 -%}
 			{%- set absolutePostUrl -%}{{ post.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
 			{%- set PermaWithRSSutm = [absolutePostUrl, RSSutm] | join -%}
-			{%- set getFullFeed -%}<br><hr><p><em>To get posts’ <strong>full</strong> content in your reader, you can subscribe to <a href="https://www.brycewray.com/index.xml">this feed</a>.</em></p>{%- endset -%}
-			{%- set finalHTMLContent = [post.data.description, getFullFeed] | join -%}
+			{%- set getFullFeed -%}<hr><p><em>To get posts’ <strong>full</strong> content in your reader, you can subscribe to <a href="https://www.brycewray.com/index.xml">this feed</a>.</em></p>{%- endset -%}
+			{%- set descrForFeed = "[No description]" -%}
+			{% if post.data.description %}{%- set descrForFeed %}<em>{{ post.data.description }}</em><hr >{%- endset -%}{% endif %}
+			{% if post.data.page.excerpt %}{%- set excerptFromPost = post.data.page.excerpt | string | markdownify -%}{% endif %}
+			{%- set finalHTMLContent = [descrForFeed, excerptFromPost, getFullFeed] | join -%}
 			<entry>
 				<title>{{ post.data.title }}</title>
 				<link href="{{ PermaWithRSSutm }}"/>
 				<updated>{{ post.date | dateToRfc3339 }}</updated>
 				<id>{{ absolutePostUrl }}</id>
-				<summary>{{ descrForFeed }}</summary>
+				<summary>{%- if post.data.description -%}{{ post.data.description }}{%- else -%}[No description]{%- endif %}</summary>
 				<content xml:lang="{{ metadata.language }}" type="html">{{ finalHTMLContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 			</entry>
 		{%- endif -%}
