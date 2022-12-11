@@ -119,7 +119,7 @@ module.exports = async (instance, id) => {
 			pollStuff = pollStuff + `<div class="tweet-poll-count"><strong>${((Json.poll.options[pollIterator].votes_count)/(votesCount)).toLocaleString("en", {style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1})}</strong></div><div class="tweet-poll-meter"><meter id="vote-count" max="${votesCount}" value=${Json.poll.options[pollIterator].votes_count}></meter></div><div class="tweet-poll-title">${Json.poll.options[pollIterator].title}</div>`;
 			pollIterator = ++pollIterator;
 		})
-		pollStuff = pollStuff + `</div><p class="legal tweet-poll-total">${votesCount} votes</p>`;
+		pollStuff = pollStuff + `</div><p class="legal tweet-poll-total">${votesCount} people</p>`;
 	}
 
 	if (Json.content) {
