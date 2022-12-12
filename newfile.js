@@ -20,7 +20,7 @@ desiredTitle = toSentenceCase(desiredTitle)
 
 /*
 	==========================
-	start of time stuff from
+	start of time stuff adapted slightly from
 	https://usefulangle.com/post/30/javascript-get-date-time-with-offset-hours-minutes
 */
 
