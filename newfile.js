@@ -96,6 +96,8 @@ draft: true
 ---
 
 Text begins here.
+
+<!-- excerpt -->
 `
 
 let outputPath = path.join(__dirname, 'src/', desiredPath)
