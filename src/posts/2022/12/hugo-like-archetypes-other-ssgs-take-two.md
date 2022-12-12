@@ -12,6 +12,8 @@ date: 2022-12-12T11:53:00-06:00
 
 While the shell script I described some months ago in "Hugo-like archetypes in other SSGs" will surely do the job to a minimal extent --- that job being automatically generating content files for use in JavaScript-based [static site generators](https://jamstack.org/generators) (SSGs), similar to how [Hugo](https://gohugo.io)'s [archetypes](https://gohugo.io/content-management/archetypes/) work --- I decided I could do better.
 
+<!-- excerpt -->
+
 Now, in a [Node.js](https://nodejs.org)-based SSG, you can do something like this from the command line:
 
 ```bash
@@ -63,13 +65,13 @@ const authorName = "John Doe"
 	invocation of the file
 	(e.g., after `node newfile.js`),
 	we use `process.argv`, which returns
-	an array. The element we need is 
+	an array. The element we need is
 	`process.argv[2]`, i.e., the string
 	we need further down for the file path.
 	- https://nodejs.org/docs/latest/api/process.html#processargv
-	
+
 	We then pull from it the desired title,
-	and --- for use in handling the final path later --- 
+	and --- for use in handling the final path later ---
 	the `yyyy` and `mm` parts of the path.
 	If you **don't** arrange your posts via
 	a `/yyyy/mm/` scheme, you'll want to make
@@ -101,7 +103,7 @@ desiredTitle = toSentenceCase(desiredTitle)
 
 /*
 	==========================
-	Now, we start creating the timestamp 
+	Now, we start creating the timestamp
 	in the format that most SSGs want to see.
 	This was adapted slightly from:
 	https://usefulangle.com/post/30/javascript-get-date-time-with-offset-hours-minutes
@@ -159,7 +161,7 @@ current_secs = current_secs < 10
 	: current_secs
 
 /*
-	Current date/time --- 
+	Current date/time ---
 	a string such as:
 	2022-07-08T09:49:04-05:00
 	(July 8, 2022, at 9:49:04 AM,
@@ -194,7 +196,7 @@ Text begins here.
 
 /*
 	Finally, we create the file.
-	It's necessary to check for the 
+	It's necessary to check for the
 	existence of each folder level
 	(and, if necessary, create that level).
 	h/t: https://www.webmound.com/nodejs-create-directory-recursively/
