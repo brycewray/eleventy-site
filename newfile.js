@@ -1,8 +1,8 @@
 const fs = require("fs")
 const { mkdir } = require("fs/promises")
+const path = require("path")
 
 let
-	path = require("path"),
 	desiredPath = process.argv[2],
 	desiredTitle = desiredPath.slice(14),
 	yearSlice = desiredPath.slice(6, 10),
@@ -12,7 +12,7 @@ desiredTitle = desiredTitle.replaceAll('-', ' ')
 desiredTitle = desiredTitle.replaceAll('.md', '')
 
 function toSentenceCase(str){
-	return str.toLowerCase().charAt(0).toUpperCase() + str.slice(1);;
+	return str.toLowerCase().charAt(0).toUpperCase() + str.slice(1)
 }
 // https://javascriptf1.com/snippet/convert-a-string-to-sentence-case-in-javascript
 
