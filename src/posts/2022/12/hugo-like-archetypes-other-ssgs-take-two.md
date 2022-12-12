@@ -44,7 +44,7 @@ draft: true
 Text begins here.
 ```
 
-This leaves only the immediate task of slightly improving the `title`'s punctuation and capitalization, if necessary (as you see, a simpler title doesn't need any help). You could wait until later to firm up the `description`; and, of course, the `time` doesn't matter until it's actually time to publish to the website. The `draft` item is valid in some JS-based SSGs out of the box, while others require some additional work to make the SSG know how to handle it.
+This leaves only the immediate task of slightly improving the `title`'s punctuation and capitalization, if necessary (as you see, a simpler title doesn't need any help). You could wait until later to firm up the `description`; and, of course, the `date` timestamp doesn't matter until it's actually time to publish to the website. The `draft` item is valid in some JS-based SSGs out of the box, while others require some additional work to make the SSG know how to handle it.
 
 The point, however, is that doing it this way, as opposed to using the simpler shell-script method from my earlier post on this subject, allows for more easily including variables which further automate the job.[^varShells]
 
