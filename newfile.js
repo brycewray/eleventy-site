@@ -125,4 +125,3 @@ let createPath = __dirname + '/src/posts/' + yearSlice + '/' + monthSlice
 
 createFolder(createPath)
 // https://www.webmound.com/nodejs-create-directory-recursively/
-//
