@@ -13,7 +13,7 @@ The increasingly popular [Astro](https://astro.build) [static site generator](ht
 
 Unfortunately, it seems I can no longer do so.
 
-<!-- excerpt -->
+<!--excerpt-->
 
 I thought Astro's [recent emergence from beta testing](https://astro.build/blog/astro-1/) would mean an end to how frequently it would be introducing breaking changes (which, of course, are likely with *any* beta). But, in trying to develop this site in Astro since then, I haven't found that to be the case:
 

@@ -15,7 +15,7 @@ In my years of using various technologies and tools, such as [static site genera
 
 **Don't get freaked out by all the capabilities you *could* be using and, instead, focus for now only on what you *need* to use**. To put it another way: *minimal is okay*.
 
-<!-- excerpt -->
+<!--excerpt-->
 
 What do I mean? Well, let me explain it by the examples from when I initially learned the lesson. Indeed, I learned and re-learned it numerous times.
 

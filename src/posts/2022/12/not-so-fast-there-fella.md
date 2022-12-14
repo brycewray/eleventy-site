@@ -8,7 +8,7 @@ date: 2022-12-10T14:40:00-06:00
 ---
 
 Sometimes a learning experience is also a humbling experience. Such was the case with the aftermath of [my previous post](/posts/2022/12/why-have-both-rss-json-feeds/).
-<!-- excerpt -->
+<!--excerpt-->
 
 In case you didn't read that one, it was my explanation of how I was now using this site's [RSS](https://www.rssboard.org/rss-specification) and [JSON](https://jsonfeed.org/) content feeds: *i.e.*, the former with only the title and description of each post and the latter also with the post's full content. I thought I'd cooked up a best-of-both-worlds approach for my feeds-savvy readers, since they could choose the content feed which best suited their wishes.
 
@@ -21,7 +21,7 @@ Some also told me that, regardless of feed type (a choice of which, a few respon
 {% stoot "fosstodon.org", "109485575488763076" %}
 
 <!--
-https://fosstodon.org/@BryceWrayTX/109485575488763076 
+https://fosstodon.org/@BryceWrayTX/109485575488763076
 Final results:
 - Full article text: 72.0% (screen: 72%)
 - Article excerpt:   20.4% (screen: 20%)

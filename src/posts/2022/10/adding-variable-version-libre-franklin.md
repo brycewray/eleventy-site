@@ -13,7 +13,7 @@ For just about all of this site's four-plus-year history, its typographical pres
 - The [variable](https://web.dev/variable-fonts/) form of the [Inter](https://rsms.me/inter) web font.
 - The variable form of the [Public Sans](https://public-sans.digital.gov) web font.
 
-<!-- excerpt -->
+<!--excerpt-->
 
 I've long admired Public Sans, largely because of its similarity to the historic [Franklin Gothic](https://en.wikipedia.org/wiki/Franklin_Gothic) typeface, of which I've been a fan since at least the 1970s. Also, I like how Public Sans handles italicized/oblique text, which --- given my writing style and tendency toward *emphasizing things willy-nilly* --- makes for easier reading.
 

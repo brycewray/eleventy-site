@@ -320,7 +320,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.setFrontMatterParsingOptions({
 		excerpt: true,
-		excerpt_separator: "<!-- excerpt -->"
+		excerpt_separator: "<!--excerpt-->"
 	})
 
 
