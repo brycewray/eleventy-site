@@ -1,6 +1,6 @@
 // const fs = require("fs")
 const { DateTime } = require("luxon")
-const htmlmin = require("html-minifier")
+// const htmlmin = require("html-minifier")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
 const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
@@ -280,17 +280,17 @@ module.exports = function(eleventyConfig) {
 		return collMacros
 	})
 
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      })
-      return minified
-    }
-    return content
-  })
+  // eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
+  //   if (outputPath && outputPath.endsWith(".html")) {
+  //     let minified = htmlmin.minify(content, {
+  //       useShortDoctype: true,
+  //       removeComments: true,
+  //       collapseWhitespace: true,
+  //     })
+  //     return minified
+  //   }
+  //   return content
+  // })
 
 	// for RSS/JSON feeds and sitemap.xml collection
 	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
