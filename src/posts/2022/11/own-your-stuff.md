@@ -11,7 +11,7 @@ One thing can be said for being really sick for a while, as my wife and I have b
 
 I've already [written](/posts/2022/11/static-tweets-deprecation/) [enough](/posts/2022/11/abandon-sinking-ship/) about the continuing drama at Twitter, so be comforted in knowing this isn't another post about that in particular. Instead, I simply want to reinforce some points I've been making throughout this site's years of existence, because what's been going on in social media **in general** proves those points' salience.
 
-<!--excerpt-->
+<!--more-->
 
 - **If you want to put your content online, don't depend on social media platforms to keep it safe for you**. --- Platforms rise and fall. The only constant is change. A social media platform that lets you post for free and keep your stuff there indefinitely can decide tomorrow that only paid customers get such niceties and, thus, it's purging all the free content it's been holding for years. And don't kid yourself: it doesn't get much better if you **are** paying for the "privilege" of letting a platform host your content.\
 There was a time, back in the early 2010s, when even major corporations told people to visit **not** those corporations' websites but, rather, their **Facebook pages**. (As a small company's webmaster at the time, I was horrified by this trend.) Over time, they realized that wasn't wise. That was true for Facebook then, and it's true today for not only Facebook but also Twitter, Tumblr, Instagram, Medium, Substack, and on down the list.

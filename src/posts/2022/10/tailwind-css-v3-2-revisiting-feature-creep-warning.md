@@ -12,7 +12,7 @@ date: 2022-10-22T08:43:00-05:00
 
 Earlier this week, a [blog post](https://tailwindcss.com/blog/tailwindcss-v3-2) introduced [version 3.2](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.2.0) of the popular [Tailwind CSS](https://tailwindcss.com) styling framework.
 
-<!--excerpt-->
+<!--more-->
 
 The "absolutely *massive* amount of new stuff" the post trumpeted includes:
 

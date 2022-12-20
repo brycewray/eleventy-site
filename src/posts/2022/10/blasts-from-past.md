@@ -11,7 +11,7 @@ As I noted a few days ago in "[Tying up some recent loose ends](/posts/2022/10/t
 
 Thus, if a newer visitor is to know about the older content, and particularly if such a visitor doesn't luck onto the exact combination of magic words that one's chosen search engine wants to see before providing a link to one of my posts, it behooves me to revisit some of the (I hope) helpful nuggets I've put here before.
 
-<!--excerpt-->
+<!--more-->
 
 That's the purpose of this post.
 

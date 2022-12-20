@@ -11,7 +11,7 @@ Of course, you folks don't check my site to see all the little updates I make as
 
 [^sagas]: I'm purposely excluding "sagas" --- *i.e.*, cases in which updates to earlier posts took the form of one or more entirely separate *additional* posts, such as my attempts to make use of custom-domain support in iCloud Mail --- since even my feeds-only readers should be getting those, anyway.
 
-<!--excerpt-->
+<!--more-->
 
 In each part below, the first date shown is the post's *original* date of publication. I reproduced each update mostly as it actually appears in its respective post, the original date of which will determine the order in which it appears below.
 

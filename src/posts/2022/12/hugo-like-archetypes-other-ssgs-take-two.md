@@ -12,7 +12,7 @@ date: 2022-12-12T11:53:00-06:00
 
 While the shell script I described some months ago in "Hugo-like archetypes in other SSGs" will surely do the job to a minimal extent --- that job being automatically generating content files for use in JavaScript-based [static site generators](https://jamstack.org/generators) (SSGs), similar to how [Hugo](https://gohugo.io)'s [archetypes](https://gohugo.io/content-management/archetypes/) work --- I decided I could do better.
 
-<!--excerpt-->
+<!--more-->
 
 Now, in a [Node.js](https://nodejs.org)-based SSG, you can do something like this from the command line:
 
