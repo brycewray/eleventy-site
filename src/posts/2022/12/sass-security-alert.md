@@ -9,7 +9,7 @@ date: 2022-12-16T10:23:00-06:00
 
 On December 10 --- although I personally learned of it only today --- the [blog](https://sass-lang.com/blog) for [Sass](https://sass-lang.com) published an article entitled "[Security Alert: Tar Permissions](https://sass-lang.com/blog/security-alert-tar-permissions)." If your website uses Sass for styling purposes, and particularly if you install it on your dev machine with `.tar.gz` files from [Sass's GitHub repo](https://github.com/sass/) (perhaps using methods such as I've described here in the past), you should read the article and observe its recommended protections against a newly discovered vulnerability.
 
-<!--more-->
+<!--excerpt-->
 
 The article describes who is affected and explains:
 
