@@ -174,7 +174,7 @@ module.exports = function(eleventyConfig) {
     },
     attrs: {
       // target: "_blank",
-      rel: "noreferrer noopener",
+      rel: "noopener",
     },
   })
   // START, de-bracketing footnotes
