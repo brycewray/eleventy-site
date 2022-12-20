@@ -3,7 +3,7 @@ title: "Things worth watching in the Astro and Eleventy pipelines"
 description: "Keep an eye out, as developers for two major JS-based SSGs work actively to resolve shortcomings."
 author: Bryce Wray
 date: 2022-12-20T11:43:00-06:00
-draft: true
+# draft: true
 # initTextEditor: iA Writer # default --- change if needed
 ---
 
