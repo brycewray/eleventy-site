@@ -33,14 +33,14 @@ if (bothModes) {
 	module.exports = {
 		permalink: (data) => {
 			const { permalink, page } = data
-			if (process.env.ELEVENTY_ENV === "production" &&(isPageFromFuture(page) || data.draft)) {
+			if (process.env.ELEVENTY_ENV === "production" && (isPageFromFuture(page) || data.draft)) {
 				return false
 			}
 			return permalink
 		},
 		eleventyExcludeFromCollections: (data) => {
 			const { eleventyExcludeFromCollections, page } = data
-			if (process.env.ELEVENTY_ENV === "production" &&(isPageFromFuture(page) || data.draft)) {
+			if (process.env.ELEVENTY_ENV === "production" && (isPageFromFuture(page) || data.draft)) {
 				return true
 			}
 			return eleventyExcludeFromCollections
