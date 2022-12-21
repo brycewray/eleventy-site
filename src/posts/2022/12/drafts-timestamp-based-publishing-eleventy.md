@@ -9,7 +9,7 @@ date: 2022-12-21T11:44:00-06:00
 
 The [Eleventy](https://11ty.dev) [static site generator](https://jamstack.org) (SSG) has many marvelous powers but, for those capabilities you want that it doesn't (yet) sport, you often have to add them yourself, either through pre-cooked plugins or your own code. This post is about the latter.
 
-In this case, it's code that will give your Eleventy-based site two very nice features that come standard with some other SSGs: **drafts** and **timestamp-based publishing**. There already are quite a few articles out there (as [noted](#references) at the end of this one) about adding one or the other of these two features, but I've yet to find one that mentions both, so this will be an attempt to remedy that.
+In this case, it's code that will give your Eleventy-based site two very nice features that come standard with some other SSGs: **drafts** and **timestamp-based publishing**. There already are quite a few articles out there (as [noted](#references) at the end of this one) about adding one or the other of these two features, but I've yet to find one that mentions both *and* uses currently available Eleventy goodies, so this will be an attempt to remedy that.
 
 <!--more-->
 
