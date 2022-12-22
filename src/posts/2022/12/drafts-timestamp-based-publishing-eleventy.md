@@ -33,6 +33,9 @@ What advantages do you gain from having these features?
 
 ## The code
 
+**Update, 2022-12-22**: If you experience inconsistent behavior with the code provided below, try developing in Eleventy **without** the [`--incremental` switch](https://www.11ty.dev/docs/usage/#incremental-for-partial-incremental-builds), which as of this writing can cause issues in some versions.
+{.box}
+
 Eleventy's [**computed data** feature](https://www.11ty.dev/docs/data-computed/) lets you (quoting the documentation) "inject Data properties into your data object that are based on other data values."
 
 For our purposes here, we'll use `eleventyComputed` to determine each content file's worthiness for publication based on the file's draft status and timestamp. And, because we want Eleventy to make this happen through the project, we'll put the code in the project's *[global data directory](https://www.11ty.dev/docs/data-global/)*, making its results available to all of the project's templates. Typically, that directory is a top-level `_data` folder, so I'll use that placement in the code example below. [In order to work right](https://www.11ty.dev/docs/data-computed/#advanced-details), the file itself must be named `eleventyComputed.js`.[^noteReName]
