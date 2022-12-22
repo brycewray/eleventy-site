@@ -23,7 +23,7 @@
   "description": "{{ metadata.description }}",
   "items": [
 		{%- set JSONutm = "?utm_campaign=JSON&utm_source=JSON&utm_medium=JSON" -%}
-    {%- for post in collections.posts | reverse -%}
+    {%- for post in collections.post | reverse -%}
       {%- if loop.index0 < 10  -%}
         {%- set absolutePostUrl -%}{{ post.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
 				{%- set PermaWithJSONutm = [absolutePostUrl, JSONutm] | join -%}

@@ -5,6 +5,7 @@ description: "brycewray.com: Opinions, observations, nerdiness, miscellany." # 
 author: Bryce Wray
 date: 2018-09-15T21:00:00-05:00
 lastmod: 2021-01-30T13:55:00-05:00
+eleventyImport.collections: ["post"]
 # Nothing else needed because no longer using this text
 ---
 

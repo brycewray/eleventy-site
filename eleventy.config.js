@@ -303,7 +303,7 @@ module.exports = function(eleventyConfig) {
 	// end, RSS/JSON feeds and sitemap.xml collection
 
   /* === START, collection for posts === */
-  eleventyConfig.addCollection("posts", function (collection) {
+  eleventyConfig.addCollection("post", function (collection) {
     const coll = collection.getFilteredByTag("post")
 		// following has been unnecessary since Eleventy 0.11.0
 		// but is preserved just FYI ...

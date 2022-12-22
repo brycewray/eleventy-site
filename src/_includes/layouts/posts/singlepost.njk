@@ -21,8 +21,8 @@ layout: base
       </article>
     </div>
 
-		{%- set prevPost = collections.posts | getPreviousCollectionItem -%}
-		{%- set nextPost = collections.posts | getNextCollectionItem -%}
+		{%- set prevPost = collections.post | getPreviousCollectionItem -%}
+		{%- set nextPost = collections.post | getNextCollectionItem -%}
 		<div class="bg-dark sansSerif" data-pagefind-ignore>
 		{%- if nextPost -%}
 			<p class="ctr prevnextP">

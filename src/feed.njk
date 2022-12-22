@@ -25,14 +25,14 @@
 	<subtitle>{{ metadata.subtitle }}</subtitle>
 	<link href="{{ metadata.feedUrl }}" rel="self"/>
 	<link href="{{ metadata.url }}"/>
-	<updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+	<updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 	<id>{{ metadata.url }}</id>
 	<author>
 		<name>{{ metadata.author.name }}</name>
 		<email>{{ metadata.author.emailReplyHTML }}</email>
 	</author>
 	{%- set RSSutm = "?utm_campaign=RSS&utm_source=RSS&utm_medium=RSS" -%}
-	{%- for post in collections.posts | reverse -%}
+	{%- for post in collections.post | reverse -%}
 		{%- if loop.index0 < 10 -%}
 			{%- set absolutePostUrl -%}{{ post.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
 			{%- set PermaWithRSSutm = [absolutePostUrl, RSSutm] | join -%}
