@@ -77,7 +77,7 @@ const isPageFromFuture = ({ date }) =>
 	of any Eleventy collections
 	(the latter matters for things
 	like automated posts lists).
-	The file must be *neither* 
+	The file must be *neither*
 	a future file *nor* a draft file
 	to be published.
 	We wrap this test within a
