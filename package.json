@@ -5,6 +5,7 @@
   "scripts": {
     "cleanDev": "rimraf '_site/!(images)'",
     "cleanProd": "rimraf _site",
+		"pagefind": "pagefind --source _site",
     "start": "NODE_ENV=development npm-run-all cleanDev dev:eleventy",
     "build": "NODE_ENV=production npm-run-all cleanProd prod:eleventy",
     "testbuild": "NODE_ENV=production npm-run-all cleanDev --parallel testProd:eleventy",

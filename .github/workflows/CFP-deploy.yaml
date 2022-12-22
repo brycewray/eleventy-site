@@ -60,7 +60,8 @@ jobs:
       - name: Build site with Eleventy
         run: npm run build
       - name: Run Pagefind
-        run: npm_config_yes=true npx pagefind --source "_site"
+        # run: npm_config_yes=true npx pagefind --source "_site"
+        run: npm run pagefind
       - name: Publish to CFP
         uses: cloudflare/pages-action@v1
         with:
