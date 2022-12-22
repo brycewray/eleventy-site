@@ -2,24 +2,24 @@
 {%- set siteHost = siteparams.siteHost -%}
 <!DOCTYPE html>
 <html lang="en">
-  {% include 'layouts/partials/head.njk' %}
+  {%- include 'layouts/partials/head.njk' -%}
   <body>
-    {% include 'layouts/partials/header.njk' %}
+    {%- include 'layouts/partials/header.njk' -%}
     {{ content | safe }}
-    {% if title != "Search the site" %}
-			{% include 'layouts/partials/search-pagefind.njk' %}
-		{% endif %}
-		{% include 'layouts/partials/footer.njk' %}
-    {% if eleventyEnv == "production" %}
-      {% if siteHost == "CFP" %}
+    {%- if title != "Search the site" -%}
+			{%- include 'layouts/partials/search-pagefind.njk' -%}
+		{%- endif %}
+		{%- include 'layouts/partials/footer.njk' -%}
+    {%- if eleventyEnv == "production" -%}
+      {%- if siteHost == "CFP" -%}
         <!-- Cloudflare Web Analytics -->
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "36afbbd88c1b4b608a61683f9555fd48"}'>
         </script>
         <!-- End Cloudflare Web Analytics -->
-      {% endif %}
-    {% endif %}
-		{% if '<pre class="language' in content %}
+      {%- endif %}
+    {%- endif -%}
+		{%- if '<pre class="language' in content -%}
 			<script nonce="DhcnhD3khTMePgXw" src="/assets/js/copy-code-button.js" defer></script>
-		{% endif %}
+		{%- endif %}
   </body>
 </html>
