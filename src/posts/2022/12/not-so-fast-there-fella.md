@@ -54,10 +54,10 @@ I think this is about as close as I can come to making everyone happy on this pa
 ## Addendum for Hugo users, 2022-12-14
 
 **Important**: This corrects some erroneous information I'd added to this post earlier today, in which I confused redirects with moves. I apologize for the goof!\
-*Also*, I provided some additional details on 2022-12-19.
+*Also*, I provided some additional details on 2022-12-19, followed by a further update on 2022-12-26.
 {.box}
 
-If you want to have a feeds setup as described above in a Hugo site, you'll have to jump through some hoops. This is because, as nearly as I can tell through researching the subject, Hugo allows only one feed (per format) per *[section](https://gohugo.io/content-management/sections/)*. For example, the home page --- typically the "owner" of a Hugo site's feed(s) --- can have one RSS/Atom feed and one JSON feed, but that's it. To have *multiple* feeds of a given format, set up each additional set of feeds in a separate section.
+If you want to have a feeds setup as described above in a [Hugo](https://gohugo.io) site, you'll have to jump through some hoops. This is because, as nearly as I can tell through researching the subject, Hugo allows only one feed (per format) per *[section](https://gohugo.io/content-management/sections/)*. For example, the home page --- typically the "owner" of a Hugo site's feed(s) --- can have one RSS/Atom feed and one JSON feed, but that's it. To have *multiple* feeds of a given format, set up each additional set of feeds in a separate section.
 
 Let's say you use a `posts` section to "own" your `index-excerpts.xml` and `index-excerpts.json` feed files, by adding appropriate `.json` and `.xml` layouts[^excerptExamples] there, each named according to [Hugo lookup rules](https://gohugo.io/templates/lookup-order/#examples-layout-lookup-for-section-pages):
 
@@ -98,3 +98,6 @@ Finally, **if you build manually** --- *i.e.*, you copy your Hugo-generated `pub
 
 - Move `public/posts/index.xml` to `public/` and rename the file `index-excerpts.xml`, so that it will be `public/index-excerpts.xml`.
 - Move `public/posts/index.json` to `public/` and rename the file `index-excerpts.json`, so that it will be `public/index-excerpts.json`.
+
+**Update, 2022-12-26**: After encountering some minor but apparently intractable issues with the JSON version of the excerpts-only feed (the issues appeared in testing with both [Eleventy](https://11ty.dev) and Hugo, and thus appeared to be SSG-agnostic), I have now killed that feed and no longer link to it from the [contacts page](/contacts). The RSS/Atom excerpts-only feed *does* remain intact --- as do both the full-text RSS/Atom and JSON feeds, of course.
+{.box}
