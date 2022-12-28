@@ -45,6 +45,10 @@
 				<title>{{ post.data.title }}</title>
 				<link href="{{ PermaWithRSSutm }}"/>
 				<updated>{{ post.date | dateToRfc3339 }}</updated>
+				<author>
+					<name>{{ metadata.author.name }}</name>
+					<email>{{ metadata.author.emailReplyHTML }}</email>
+				</author>
 				<id>{{ absolutePostUrl }}</id>
 				<summary>{%- if post.data.description -%}{{ post.data.description }}{%- else -%}[No description]{%- endif %}</summary>
 				<content xml:lang="{{ metadata.language }}" type="html">{{ finalHTMLContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
