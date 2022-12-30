@@ -107,7 +107,7 @@ module.exports = async (instance, id) => {
 
 	if(Json.card !== null) {
 		cardStuff = ``;
-		cardStuff = cardStuff + `<a href="${Json.card.url}" rel="noopener"><div class="card"><img src="${Json.card.image}" alt="Card image from ${instance} toot ${id}" loading="lazy" class="tweet-card-img" /><p><span class="card-title">${Json.card.title}</span><br />${Json.card.description}</p></div></a>`;
+		cardStuff = cardStuff + `<a href="${Json.card.url}" rel="noopener"><div class="toot-card"><div class="toot-card-image"><img src="${Json.card.image}" alt="Card image from ${instance} toot ${id}" loading="lazy" class="toot-card-image-image" /></div><div class="toot-card-content"><p class="card-title">${Json.card.title}</p><p class="card-description">${Json.card.description}</p></div></div></a>`;
 	}
 
 	if (Json.poll !== null) {
@@ -149,7 +149,7 @@ module.exports = async (instance, id) => {
 			}
 
 			let timeToFormat = Json.created_at
-			let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMM d, yyyy")
+			let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMMM d, yyyy")
 
 			stringToRet += `<div class="tweet-footer">
 				<a href="https://${instance}/@${Json.account.acct}/${Json.id}" class="tweet-date twitterExt" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
