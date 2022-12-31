@@ -39,7 +39,7 @@
       {%- set emailReplyHTML -%}<p><a href="mailto:bw@brycewray.com?subject= “{{ post.data.title }}”">Reply via email</a></p>{%- endset -%}
 			{%- set descrForFeed = "[No description]" -%}{# placeholder j/i/c #}
 			{%- if post.data.description -%}{%- set descrForFeed = post.data.description -%}{%- endif -%}
-			{%- set descrWithLine -%}<p>{{ descrForFeed }}</p><hr>{%- endset -%}
+			{%- set descrWithLine -%}<p><em>{{ descrForFeed }}</em></p><hr>{%- endset -%}
 			{%- set finalHTMLContent = [descrWithLine, post.templateContent, emailReplyHTML] | join -%}
 			<entry>
 				<title>{{ post.data.title }}</title>
