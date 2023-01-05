@@ -5,7 +5,7 @@
   "scripts": {
     "cleanDev": "rimraf '_site/!(images)'",
     "cleanProd": "rimraf _site",
-		"pagefind": "pagefind --source _site",
+    "pagefind": "pagefind --source _site",
     "start": "NODE_ENV=development npm-run-all cleanDev dev:eleventy",
     "build": "NODE_ENV=production npm-run-all cleanProd prod:eleventy",
     "testbuild": "NODE_ENV=production npm-run-all cleanDev --parallel testProd:eleventy",
@@ -17,7 +17,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.23",
+    "@11ty/eleventy": "^2.0.0-canary.24",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
@@ -34,7 +34,7 @@
     "fast-glob": "^3.2.12",
     "glob": "^8.0.3",
     "html-minifier": "^4.0.0",
-    "luxon": "^3.2.0",
+    "luxon": "^3.2.1",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.6",
     "markdown-it-attrs": "^4.1.6",
