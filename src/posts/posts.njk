@@ -13,7 +13,8 @@ pagination:
   alias: posts
 permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 # above permalink fixes Eleventy issue #2161 **and** conforms to how Hugo repo paginates
-eleventyImport.collections: ["post"]
+eleventyImport:
+	collections: ["post"]
 ---
 
   <main>
