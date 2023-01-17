@@ -1,21 +1,11 @@
-{%- set eleventyEnv = projEnv.environment -%}
+{% set eleventyEnv = projEnv.environment %}
+
 	<head>
-	<meta name="generator" content="{{ eleventy.generator }}">
-	{%- include 'layouts/partials/head-meta_cloud-socimg.njk' -%}
-	{%- include 'layouts/partials/head-favicons.njk' -%}
-    <!-- https://developer.mozilla.org/en-US/docs/Web/Performance/dns-prefetch#best_practices -->
-    <link rel="dns-prefetch" href="https://res.cloudinary.com">
-    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-		<link rel="dns-prefetch" href="https://giscus.app">
-		<link rel="preconnect" href="https://giscus.app" crossorigin>
-    <!-- discover feeds -->
-		<link rel="alternate" type="application/atom+xml" title="BryceWray.com, full-text - RSS" href="https://www.brycewray.com/index.xml">
-		<link rel="alternate" type="application/feed+json" title="BryceWray.com, full-text - JSON" href="https://www.brycewray.com/index.json">
-		<link rel="alternate" type="application/atom+xml" title="BryceWray.com, excerpt-only - RSS" href="https://www.brycewray.com/index-excerpts.xml">
-	{% include 'layouts/partials/head-css.njk' %}
-		{%- if eleventyEnv == "production" -%}
-		{#- Fathom - beautiful, simple website analytics -#}
-		<script src="https://guitar-thriving.brycewray.com/script.js" data-site="UJDSNFVF" defer></script>
-		{#- / Fathom -#}
-		{%- endif %}
-  </head>
+		<meta name="generator" content="{{ eleventy.generator }}">
+    {% if eleventyEnv == "production" %}
+      <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style" />
+      <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css" />
+    {% else %}
+      <link rel="stylesheet" href="/css/index.css" type="text/css" />
+    {% endif %}
+	</head>
