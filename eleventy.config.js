@@ -324,6 +324,6 @@ module.exports = function(eleventyConfig) {
     ],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true,
+    // passthroughFileCopy: true, // unneeded as of 2.0.0-canary.31
   }
 }
