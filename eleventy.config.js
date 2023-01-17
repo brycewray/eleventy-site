@@ -132,10 +132,10 @@ module.exports = function(eleventyConfig) {
   /* --- end, date-handling */
 
 
-  // // https://www.11ty.dev/docs/layouts/
-  // eleventyConfig.addLayoutAlias("base", "layouts/_default/base.njk")
+  // https://www.11ty.dev/docs/layouts/
+  eleventyConfig.addLayoutAlias("base", "layouts/_default/base.njk")
   // eleventyConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
-  // eleventyConfig.addLayoutAlias("index", "layouts/_default/index.njk")
+  eleventyConfig.addLayoutAlias("index", "layouts/_default/index.njk")
   // eleventyConfig.addLayoutAlias("about", "layouts/about/about.njk")
   // eleventyConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
   // eleventyConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
