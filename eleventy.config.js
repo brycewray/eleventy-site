@@ -1,69 +1,69 @@
 // const fs = require("fs")
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
-const pluginRss = require("@11ty/eleventy-plugin-rss")
-const svgContents = require("eleventy-plugin-svg-contents")
+// const pluginRss = require("@11ty/eleventy-plugin-rss")
+// const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
-const Image = require("@11ty/eleventy-img")
+// const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 // const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
-const pluginRev = require("eleventy-plugin-rev")
-const eleventySass = require("eleventy-sass")
+// const pluginRev = require("eleventy-plugin-rev")
+// const eleventySass = require("eleventy-sass")
 
-async function imageShortcode(src, alt) {
-  let sizes = "(min-width: 1024px) 100vw, 50vw"
-  let srcPrefix = `./src/assets/images/`
-  src = srcPrefix + src
-  console.log(`Generating image(s) from:  ${src}`)
-  if (alt === undefined) {
-    // Throw an error on missing alt (alt="" works okay)
-    throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
-  }
-  let metadataImg = await Image(src, {
-    widths: [600, 900, 1500],
-    formats: ['webp', 'jpeg'],
-    urlPath: "/images/",
-    outputDir: "./_site/images/",
-    filenameFormat: function (id, src, width, format, options) {
-      const extension = path.extname(src)
-      const name = path.basename(src, extension)
-      return `${name}-${width}w.${format}`
-    }
-  })
-  let lowsrc = metadataImg.jpeg[0]
-  let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]
-  return `<picture>
-    ${Object.values(metadataImg).map(imageFormat => {
-      return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
-    }).join("\n")}
-    <img
-      src="${lowsrc.url}"
-      width="${highsrc.width}"
-      height="${highsrc.height}"
-      alt="${alt}"
-      loading="lazy"
-      decoding="async">
-  </picture>`
-}
+// async function imageShortcode(src, alt) {
+//   let sizes = "(min-width: 1024px) 100vw, 50vw"
+//   let srcPrefix = `./src/assets/images/`
+//   src = srcPrefix + src
+//   console.log(`Generating image(s) from:  ${src}`)
+//   if (alt === undefined) {
+//     // Throw an error on missing alt (alt="" works okay)
+//     throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
+//   }
+//   let metadataImg = await Image(src, {
+//     widths: [600, 900, 1500],
+//     formats: ['webp', 'jpeg'],
+//     urlPath: "/images/",
+//     outputDir: "./_site/images/",
+//     filenameFormat: function (id, src, width, format, options) {
+//       const extension = path.extname(src)
+//       const name = path.basename(src, extension)
+//       return `${name}-${width}w.${format}`
+//     }
+//   })
+//   let lowsrc = metadataImg.jpeg[0]
+//   let highsrc = metadataImg.jpeg[metadataImg.jpeg.length - 1]
+//   return `<picture>
+//     ${Object.values(metadataImg).map(imageFormat => {
+//       return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`
+//     }).join("\n")}
+//     <img
+//       src="${lowsrc.url}"
+//       width="${highsrc.width}"
+//       height="${highsrc.height}"
+//       alt="${alt}"
+//       loading="lazy"
+//       decoding="async">
+//   </picture>`
+// }
 
 module.exports = function(eleventyConfig) {
 
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
-  eleventyConfig.addLiquidShortcode("image", imageShortcode)
-  // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
-  eleventyConfig.addJavaScriptFunction("image", imageShortcode)
+  // eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
+  // eleventyConfig.addLiquidShortcode("image", imageShortcode)
+  // // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
+  // eleventyConfig.addJavaScriptFunction("image", imageShortcode)
 
-  eleventyConfig.addPlugin(pluginRss)
-  eleventyConfig.addPlugin(svgContents)
-	eleventyConfig.addPlugin(syntaxHighlight)
-	eleventyConfig.addPlugin(pluginRev)
-	eleventyConfig.addPlugin(eleventySass, {
-		rev: true,
-		sass: {
-			style: "compressed",
-			sourceMap: false
-		}
-	})
+  // eleventyConfig.addPlugin(pluginRss)
+  // eleventyConfig.addPlugin(svgContents)
+	// eleventyConfig.addPlugin(syntaxHighlight)
+	// eleventyConfig.addPlugin(pluginRev)
+	// eleventyConfig.addPlugin(eleventySass, {
+	// 	rev: true,
+	// 	sass: {
+	// 		style: "compressed",
+	// 		sourceMap: false
+	// 	}
+	// })
 
 	// eleventyConfig.addPlugin(pluginEmbedTweet, {
   //   useInlineStyles: false,
@@ -77,14 +77,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("browserconfig.xml")
   eleventyConfig.addPassthroughCopy("favicon.ico")
   eleventyConfig.addPassthroughCopy("robots.txt")
-  eleventyConfig.addPassthroughCopy("./src/assets/fonts")
-  eleventyConfig.addPassthroughCopy("./src/assets/js")
-  eleventyConfig.addPassthroughCopy("./src/assets/svg")
-  eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
+  // eleventyConfig.addPassthroughCopy("./src/assets/fonts")
+  // eleventyConfig.addPassthroughCopy("./src/assets/js")
+  // eleventyConfig.addPassthroughCopy("./src/assets/svg")
+  // eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
-	eleventyConfig.addPassthroughCopy("./src/_pagefind")
+	// eleventyConfig.addPassthroughCopy("./src/_pagefind")
 
-  eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
+  // eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
 
   eleventyConfig.addFilter("numCommas", function(value) {
@@ -132,15 +132,15 @@ module.exports = function(eleventyConfig) {
   /* --- end, date-handling */
 
 
-  // https://www.11ty.dev/docs/layouts/
-  eleventyConfig.addLayoutAlias("base", "layouts/_default/base.njk")
-  eleventyConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
-  eleventyConfig.addLayoutAlias("index", "layouts/_default/index.njk")
-  eleventyConfig.addLayoutAlias("about", "layouts/about/about.njk")
-  eleventyConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
-  eleventyConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
-  eleventyConfig.addLayoutAlias("search", "layouts/search/search.njk")
-  eleventyConfig.addLayoutAlias("sitemap", "layouts/sitemap/sitemap.njk")
+  // // https://www.11ty.dev/docs/layouts/
+  // eleventyConfig.addLayoutAlias("base", "layouts/_default/base.njk")
+  // eleventyConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
+  // eleventyConfig.addLayoutAlias("index", "layouts/_default/index.njk")
+  // eleventyConfig.addLayoutAlias("about", "layouts/about/about.njk")
+  // eleventyConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
+  // eleventyConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
+  // eleventyConfig.addLayoutAlias("search", "layouts/search/search.njk")
+  // eleventyConfig.addLayoutAlias("sitemap", "layouts/sitemap/sitemap.njk")
 
 
   /* --- Markdown handling --- */
@@ -230,55 +230,55 @@ module.exports = function(eleventyConfig) {
     // snippet: false,
   })
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "imgc",
-    require("./src/assets/utils/imgc.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "imgc",
+  //   require("./src/assets/utils/imgc.js")
+  // )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "imgcnobg",
-    require("./src/assets/utils/imgcnobg.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "imgcnobg",
+  //   require("./src/assets/utils/imgcnobg.js")
+  // )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "stweet",
-    require("./src/assets/utils/stweet.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stweet",
+  //   require("./src/assets/utils/stweet.js")
+  // )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "stweetv2",
-    require("./src/assets/utils/stweetv2.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stweetv2",
+  //   require("./src/assets/utils/stweetv2.js")
+  // )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "stweetsimple",
-    require("./src/assets/utils/stweetsimple.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stweetsimple",
+  //   require("./src/assets/utils/stweetsimple.js")
+  // )
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "stoot",
     require("./src/assets/utils/stoot.js")
   )
 
-	eleventyConfig.addShortcode(
-    "disclaimer",
-    require("./src/assets/utils/disclaimer.js")
-  )
+	// eleventyConfig.addShortcode(
+  //   "disclaimer",
+  //   require("./src/assets/utils/disclaimer.js")
+  // )
 
-	eleventyConfig.addNunjucksShortcode(
-		"gitinfo",
-		require("./src/assets/utils/gitinfo.js")
-	)
+	// eleventyConfig.addNunjucksShortcode(
+	// 	"gitinfo",
+	// 	require("./src/assets/utils/gitinfo.js")
+	// )
 
-	// h/t https://github.com/11ty/eleventy/issues/613#issuecomment-999637109
-	eleventyConfig.addCollection("everything", (collectionApi) => {
-		const macroImport = `{%- import "macros/index.njk" as macro with context -%}`
-		let collMacros = collectionApi.getFilteredByGlob('src/**/*.md')
-		collMacros.forEach((item) => {
-			item.template.frontMatter.content = `${macroImport}\n${item.template.frontMatter.content}`
-		})
-		return collMacros
-	})
+	// // h/t https://github.com/11ty/eleventy/issues/613#issuecomment-999637109
+	// eleventyConfig.addCollection("everything", (collectionApi) => {
+	// 	const macroImport = `{%- import "macros/index.njk" as macro with context -%}`
+	// 	let collMacros = collectionApi.getFilteredByGlob('src/**/*.md')
+	// 	collMacros.forEach((item) => {
+	// 		item.template.frontMatter.content = `${macroImport}\n${item.template.frontMatter.content}`
+	// 	})
+	// 	return collMacros
+	// })
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
@@ -292,21 +292,21 @@ module.exports = function(eleventyConfig) {
     return content
   })
 
-	// for RSS/JSON feeds and sitemap.xml collection
-	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
-	eleventyConfig.addCollection("feeds", function (collection) {
-		const feedsColl = collection.getFilteredByGlob([
-			"./src/**/*.md",
-		])
-		return feedsColl
-	})
-	// end, RSS/JSON feeds and sitemap.xml collection
+	// // for RSS/JSON feeds and sitemap.xml collection
+	// // h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
+	// eleventyConfig.addCollection("feeds", function (collection) {
+	// 	const feedsColl = collection.getFilteredByGlob([
+	// 		"./src/**/*.md",
+	// 	])
+	// 	return feedsColl
+	// })
+	// // end, RSS/JSON feeds and sitemap.xml collection
 
 
-	eleventyConfig.setFrontMatterParsingOptions({
-		excerpt: true,
-		excerpt_separator: "<!--more-->"
-	})
+	// eleventyConfig.setFrontMatterParsingOptions({
+	// 	excerpt: true,
+	// 	excerpt_separator: "<!--more-->"
+	// })
 
 
   /* pathPrefix: "/"; */
