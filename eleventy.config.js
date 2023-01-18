@@ -3,12 +3,13 @@ const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 // const pluginRss = require("@11ty/eleventy-plugin-rss")
 // const svgContents = require("eleventy-plugin-svg-contents")
-const path = require('path')
+// const path = require('path')
 // const Image = require("@11ty/eleventy-img")
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+// const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 // const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
 // const pluginRev = require("eleventy-plugin-rev")
 // const eleventySass = require("eleventy-sass")
+// const UpgradeHelper = require ("@11ty/eleventy-upgrade-help")
 
 // async function imageShortcode(src, alt) {
 //   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -53,7 +54,9 @@ module.exports = function(eleventyConfig) {
   // // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
   // eleventyConfig.addJavaScriptFunction("image", imageShortcode)
 
-  // eleventyConfig.addPlugin(pluginRss)
+  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
+  // eleventyConfig.addPlugin(UpgradeHelper)
+	// eleventyConfig.addPlugin(pluginRss)
   // eleventyConfig.addPlugin(svgContents)
 	// eleventyConfig.addPlugin(syntaxHighlight)
 	// eleventyConfig.addPlugin(pluginRev)
@@ -207,27 +210,6 @@ module.exports = function(eleventyConfig) {
     port: 3000, // default is 8080
     showAllHosts: true,
     showVersion: true
-  })
-
-	// BrowserSync stuff
-	// -- "no-op" in Eleventy v.2.0+
-  eleventyConfig.setBrowserSyncConfig({
-    ...eleventyConfig.browserSyncConfig,
-    ghostMode: false, // the default as of 1.0.x
-    port: 3000,
-    // callbacks: {
-    //   ready: function(err, bs) {
-    //     bs.addMiddleware("*", (req, res) => {
-    //       const content_404 = fs.readFileSync('_site/404.njk')
-    //       // Add 404 http status code in request header.
-    //       res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" })
-    //       // Provides the 404 content without redirect.
-    //       res.write(content_404)
-    //       res.end()
-    //     })
-    //   }
-    // },
-    // snippet: false,
   })
 
   // eleventyConfig.addNunjucksAsyncShortcode(
