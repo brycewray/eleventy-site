@@ -1,0 +1,32 @@
+		{%- set PublicSans = siteparams.PublicSans -%}
+		{%- set regExpCode = r/<pre class=(.|\n)*?<\/pre>/gm -%}
+		{%- set regExpImg = r/.imgB(.|\n)*?}/gm -%}
+		{%- set regExpCSS = r/<style(.|\n)*?<\/style>/gm -%}
+		{%- set regExpDtls = r/<details(.|\n)*?\/details>/gm -%}
+		{%- set regLiteYT = r/<lite-youtube(.|\n)*?\/lite-youtube>/gm -%}
+		{%- set regFNs = r/<section class="footnotes"(.|\n)*?\/section>/gm -%}
+		{%- set intFNs = r/<sup class="footnote-ref">.*<\/sup>/gm -%}
+		{%- set fixedContent = content | replace(regExpDtls, "") | replace(regExpCode, "") | replace(regExpCSS, "") | replace(regLiteYT, "") | replace(regFNs, "") | replace(intFNs, "") | replace(regExpImg, "") | striptags | safe -%}
+		{%- set wordCount = fixedContent | wordcount -%}
+		{%- set readingRate = 225 -%}
+		{%- set readingTime = (wordCount/readingRate) | round -%}
+		{%- if readingTime < 1 -%}{%- set readingTime = 1 -%}{%- endif -%}
+		<div class="billboard-div">
+      <div class="billboard-title-block">
+        <h1 class="billboard-title-text">{{ title | safe }}</h1>
+        {%- if description and not (title == siteparams.searchPageTitle) %}
+        <p class="billboard-description-text">{{ description | safe }}</p>
+        {%- endif %}
+				{%- if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
+				<p class="billboard-p-text" data-pagefind-ignore>
+          {%- if (not 'The site this week' in title) -%}<strong>{{ page.date | dateStringISO }}</strong>{%- else -%}&nbsp;{%- endif %}
+        </p>
+				{%- endif %}
+				{%- if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) -%}
+				<p class="ctr legal" data-pagefind-ignore>
+					{% gitinfo page.date, page.inputPath %}{% if (not (title == "Privacy policy")) %}<br />
+					{{ wordCount | numCommas }} words • Reading time: {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %}{% endif %}
+				</p>
+				{%- endif %}
+      </div>
+    </div>

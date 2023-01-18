@@ -1,0 +1,132 @@
+---
+layout: base
+tags:
+  - nav
+navtitle: Posts
+title: Posts
+description: Posts for this website
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.post
+  size: 5
+  reverse: true
+  alias: posts
+permalink: "posts/{% if pagination.pageNumber != 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
+# above permalink fixes Eleventy issue #2161 **and** conforms to how Hugo repo paginates
+eleventyImport:
+	collections: ["post"]
+---
+
+  <main>
+    <div class="posts-Wrapper ctr" data-pagefind-ignore>
+      <h1 class="posts-Head">Posts</h1>
+      <div class="posts-Container">
+        <div class="posts-pagerThing">
+					{# First page. #}
+					<div>
+						{% if pagination.firstPageHref != page.url %}
+							<a class="icon" aria-label="First page" href={{ pagination.firstPageHref}}>
+								{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+					<div class="pagerSpacer"></div>
+					{# Previous page. #}
+					<div>
+						{% if pagination.firstPageHref != page.url %}
+		          <a class="icon" aria-label="Previous page" href={{ pagination.previousPageHref }}>
+								{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+					<div class="pagerSpacer"></div>
+ 					<div class="pagerSpacer"></div>
+					{# Next page. #}
+					<div>
+						{% if pagination.lastPageHref != page.url %}
+							<a class="icon" aria-label="Next page" href={{ pagination.nextPageHref }}>
+								{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+ 					<div class="pagerSpacer"></div>
+					{# Last page. #}
+					<div>
+						{% if pagination.lastPageHref != page.url %}
+							<a class="icon" aria-label="Last page" href={{ pagination.lastPageHref }}>
+								{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+        </div>
+        <hr class="paginatorTop" />
+        {% for post in posts %}
+          <div class="posts-ItemDiv">
+            <h2 class="posts-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
+						{% set dashDescription = post.data.description | replace(" — ", "—") %}
+            <p class="posts-Description">
+              {{ dashDescription | safe }}
+            </p>
+            <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
+            </p>
+						<p class="legal">&nbsp;</p>
+          </div>
+        {% endfor %}
+        <hr class="paginatorBottom" />
+        <div class="posts-pagerThing">
+					{# First page. #}
+					<div>
+						{% if pagination.firstPageHref != page.url %}
+							<a class="icon" aria-label="First page" href={{ pagination.firstPageHref}}>
+								{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+					<div class="pagerSpacer"></div>
+					{# Previous page. #}
+					<div>
+						{% if pagination.firstPageHref != page.url %}
+		          <a class="icon" aria-label="Previous page" href={{ pagination.previousPageHref }}>
+								{{ '/src/assets/svg/svgPrevPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgFirstPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+					<div class="pagerSpacer"></div>
+ 					<div class="pagerSpacer"></div>
+					{# Next page. #}
+					<div>
+						{% if pagination.lastPageHref != page.url %}
+							<a class="icon" aria-label="Next page" href={{ pagination.nextPageHref }}>
+								{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+ 					<div class="pagerSpacer"></div>
+					{# Last page. #}
+					<div>
+						{% if pagination.lastPageHref != page.url %}
+							<a class="icon" aria-label="Last page" href={{ pagination.lastPageHref }}>
+								{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgNextPageIcon.svg' | svgContents | safe }}
+							</a>
+						{% else %}
+							{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}{{ '/src/assets/svg/svgLastPageIcon.svg' | svgContents | safe }}
+						{% endif %}
+					</div>
+        </div>
+      </div>
+    </div>
+  </main>
