@@ -1,9 +1,9 @@
 {%- set eleventyEnv = projEnv.environment -%}
 {%- set siteHost = siteparams.siteHost -%}
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-p-[80px]" lang="en" charset="utf-8">
   {%- include 'layouts/partials/head.njk' -%}
-  <body>
+  <body class="bg-blue-100 dark:bg-black text-black dark:text-gray-100 font-sans font-normal">
     {%- include 'layouts/partials/header.njk' -%}
     {{ content | safe }}
     {%- if title != "Search the site" -%}
