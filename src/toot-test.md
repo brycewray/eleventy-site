@@ -8,7 +8,7 @@ date: 2022-12-09T13:10:00-06:00
 
 This is the toot test post.
 
-{% stoot "sportsfeed.me", "109692990532958188" %}
+{% stoot "mastodon.social", "108335994944738270" %}
 
 https://fosstodon.org/@BryceWrayTX/109484955492093293
 https://mastodon.social/@Gargron/108335994944738270
