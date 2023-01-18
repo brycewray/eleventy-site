@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production npm-run-all cleanProd hasher --parallel prod:*",
     "testbuild": "NODE_ENV=production npm-run-all cleanProd hasher --parallel testProd:*",
     "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --incremental",
     "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash-out) --minify",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
     "testProd:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat csshash-out) --minify",
