@@ -1,3 +1,8 @@
+@import 'prismjs.css';
+@import 'fonts_LibreFranklin.css';
+@import 'tables.css';
+@import 'lite-yt-embed.css';
+@import 'search-form.css';
 @import 'tailwindcss/base';
 @import 'print.css';
 @import 'tailwindcss/components';
