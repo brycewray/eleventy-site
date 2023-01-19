@@ -28,7 +28,7 @@ pre[class*="language-"] {
 	word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
-  tab-size: 4;
+  tab-size: 2;
   hyphens: none;
 }
 
@@ -144,7 +144,7 @@ div.code-toolbar:hover > .toolbar {
 /* Separate line b/c rules are thrown out if selector is invalid.
   IE11 and old Edge versions don't support :focus-within. */
 div.code-toolbar:focus-within > .toolbar {
-  opacity 1;
+  opacity: 1;
 }
 
 div.code-toolbar > .toolbar .toolbar-item {
