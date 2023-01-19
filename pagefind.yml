@@ -3,3 +3,4 @@
 exclude_selectors:
   - "[class='footnote-ref']"
   - "[class^='language']"
+  - "[class='footnote-backref']"
