@@ -1,0 +1,9 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+
+User-agent: *
+{% if siteparams.siteLive %}Allow{% else %}Disallow{% endif %}
+
+Sitemap: https://www.brycewray.com/sitemap.xml
