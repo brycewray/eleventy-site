@@ -11,6 +11,9 @@ discussionId: "2022-06-static-mastodon-toots-hugo"
 **Note**: This is a follow-up to my [three](/posts/2022/02/static-tweets-eleventy-hugo/) [earlier](/posts/2022/02/static-tweets-eleventy-hugo-part-2/) [posts](/posts/2022/04/static-tweets-astro/) about how to perform fully static embeds of tweets in a variety of [static site generators](https://jamstack/org/generators) (SSGs).
 {.box}
 
+**Update from the future**: For a [Tailwind CSS](https://tailwindcss.com)-styled version of the code herein, see [this follow-up post](/posts/2023/01/static-mastodon-toots-hugo-tailwind-css-edition/).
+{.box}
+
 You may have heard, especially recently, about a social media platform called [Mastodon](https://joinmastodon.org).[^Guide] It's very much like [Twitter](https://twitter.com) in how it looks and how one uses it, but very much *unlike* Twitter where **centralization** is concerned. All of Twitter exists under the aegis of one large corporate entity, while Mastodon has [thousands](https://mastodon.help/instances) of separate, community-owned *instances*.
 
 [^Guide]: In addition to the standard [Mastodon site](https://join.mastodon.org)'s [documentation](https://docs.joinmastodon.org/), you may also wish to review [Noëlle Anthony](https://chat.noelle.codes/@noelle)'s "[An Increasingly Less-Brief Guide to Mastodon](https://github.com/joyeusenoelle/GuideToMastodon)."
@@ -187,7 +190,7 @@ I call this Hugo shortcode `stoot.html` because it displays *static toots*, just
 
 You'll quickly see that I took advantage of the visual similarities between tweets and toots by recycling many of the CSS classes I used in styling `stweet.html`; I also created a few more while I was at it.[^styling]
 
-[^styling]: As was the case with `stweet.html`, the best way for you to figure out how the styling works is to use your browser's Inspector tool on the toot example herein as well as the static tweets you'll find scattered throughout the site. (You also can check the [site repo](https://github.com/brycewray/hugo_site), of course.)
+[^styling]: The best way for you to figure out how the styling works is to use your browser's Inspector tool on the toot example herein as well as the static tweets you'll find scattered throughout the site. (You also can check the [site repo](https://github.com/brycewray/hugo_site), of course.) **Update from the future**: For a [Tailwind CSS](https://tailwindcss.com)-styled version of the code herein, see [this follow-up post](/posts/2023/01/static-mastodon-toots-hugo-tailwind-css-edition/).
 
 {% raw %}
 ```go
