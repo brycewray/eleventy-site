@@ -86,6 +86,13 @@ cssfonts_publicsanshash-out
 scssfonts_publicsanshash-out
 cssintervfhash-out
 scssintervfhash-out
+hash-css
+hash-fonts
+hash-liteyt
+hash-print
+hash-prismjs
+hash-searchform
+hash-tables
 
 csp.txt
 cache-and-headers.js

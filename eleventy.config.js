@@ -86,21 +86,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 	eleventyConfig.addPassthroughCopy("./src/_pagefind")
-	eleventyConfig.addPassthroughCopy({
-		"./src/assets/css/fonts_LibreFranklin.css": "css/fonts_LibreFranklin.css"
-	})
-	eleventyConfig.addPassthroughCopy({
-		"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
-	})
-	eleventyConfig.addPassthroughCopy({
-		"./src/assets/css/prismjs.css": "css/prismjs.css"
-	})
-	eleventyConfig.addPassthroughCopy({
-		"./src/assets/css/search-form.css": "css/search-form.css"
-	})
-	eleventyConfig.addPassthroughCopy({
-		"./src/assets/css/tables.css": "css/tables.css"
-	})
+	// eleventyConfig.addPassthroughCopy({
+	// 	"./src/assets/css/fonts_LibreFranklin.css": "css/fonts_LibreFranklin.css"
+	// })
+	// eleventyConfig.addPassthroughCopy({
+	// 	"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
+	// })
+	// eleventyConfig.addPassthroughCopy({
+	// 	"./src/assets/css/prismjs.css": "css/prismjs.css"
+	// })
+	// eleventyConfig.addPassthroughCopy({
+	// 	"./src/assets/css/search-form.css": "css/search-form.css"
+	// })
+	// eleventyConfig.addPassthroughCopy({
+	// 	"./src/assets/css/tables.css": "css/tables.css"
+	// })
 
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
