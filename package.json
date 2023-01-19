@@ -9,11 +9,11 @@
     "pagefind": "pagefind --source _site",
     "start": "TAILWIND_MODE=watch NODE_ENV=development npm-run-all cleanDev --parallel dev:*",
     "build": "NODE_ENV=production npm-run-all cleanProd hasher --parallel prod:*",
-		"dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch",
+    "dev:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/index.css --watch",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --incremental",
     "prod:twcss": "tailwindcss --postcss -i src/assets/css/index.css -o _site/css/$(cat hash-css) --minify",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
-		"testbuild": "npm run build && ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --serve"
+    "testbuild": "npm run build && ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --serve"
   },
   "keywords": [],
   "author": "",
