@@ -8,6 +8,7 @@
   "siteHost": "CFP",
 	"siteHostName": "Cloudflare Pages",
 	"siteHostURL": "https://pages.cloudflare.com",
+	"siteLive": true,
 	"PublicSans": false,
   "feed": {
     "subtitle": "brycewray.com — Observations, opinions, geekery.",
