@@ -2,7 +2,7 @@
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
-const svgContents = require("eleventy-plugin-svg-contents")
+// const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
@@ -57,7 +57,7 @@ module.exports = function(eleventyConfig) {
   // // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
   // eleventyConfig.addPlugin(UpgradeHelper)
 	eleventyConfig.addPlugin(pluginRss)
-  eleventyConfig.addPlugin(svgContents)
+  // eleventyConfig.addPlugin(svgContents)
 	eleventyConfig.addPlugin(syntaxHighlight)
 	// eleventyConfig.addPlugin(pluginRev)
 	// eleventyConfig.addPlugin(eleventySass, {
@@ -86,6 +86,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 	eleventyConfig.addPassthroughCopy("./src/_pagefind")
+	eleventyConfig.addPassthroughCopy({
+		"./src/assets/css/fonts_LibreFranklin.css": "css/fonts_LibreFranklin.css"
+	})
+	eleventyConfig.addPassthroughCopy({
+		"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
+	})
+	eleventyConfig.addPassthroughCopy({
+		"./src/assets/css/prismjs.css": "css/prismjs.css"
+	})
+	eleventyConfig.addPassthroughCopy({
+		"./src/assets/css/search-form.css": "css/search-form.css"
+	})
+	eleventyConfig.addPassthroughCopy({
+		"./src/assets/css/tables.css": "css/tables.css"
+	})
 
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
@@ -222,20 +237,20 @@ module.exports = function(eleventyConfig) {
     require("./src/assets/utils/imgcnobg.js")
   )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "stweet",
-    require("./src/assets/utils/stweet.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stweet",
+  //   require("./src/assets/utils/stweet.js")
+  // )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "stweetv2",
-    require("./src/assets/utils/stweetv2.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stweetv2",
+  //   require("./src/assets/utils/stweetv2.js")
+  // )
 
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "stweetsimple",
-    require("./src/assets/utils/stweetsimple.js")
-  )
+  // eleventyConfig.addNunjucksAsyncShortcode(
+  //   "stweetsimple",
+  //   require("./src/assets/utils/stweetsimple.js")
+  // )
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "stoot",

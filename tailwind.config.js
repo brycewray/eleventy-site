@@ -2,13 +2,12 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: "jit",
   content: [
-    "./src/**/*.js",
-    "./src/**/*.11ty.js",
-		"./src/**/*.njk",
-		"./src/**/*.html"
+    "./src/**/*.{js,11ty.js,njk,html,md}",
   ],
+	safelist: [
+		'header-anchor',
+	],
   darkMode: 'media',
   theme: {
 		fluidTypography: {},
