@@ -30,9 +30,8 @@ eleventyImport:
             <p class="fluid-lg !tracking-tight mt-2 mb-2">
               {{ dashDescription | safe }}
             </p>
-            <p class="fluid-base !tracking-normal mt-0 mb-8">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
+            <p class="fluid-base !tracking-normal mt-0 mb-4">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
             </p>
-						<p class="legal">&nbsp;</p>
           </div>
         {% endfor %}
         <hr class="border-1 border-y-black dark:border-y-white mt-6 mb-2" />
