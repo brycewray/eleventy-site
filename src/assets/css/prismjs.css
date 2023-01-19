@@ -1,0 +1,263 @@
+/* PrismJS 1.17.1
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+markup-templating+git+go+graphql+php+markdown+powershell+jsx+yaml+toml&plugins=toolbar */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code {
+	background-color: hsl(214, 100%, 97%);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	code {
+		background-color: hsl(215, 25%, 27%);
+	}
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: hsl(214, 32%, 91%);
+	background: transparent;
+	font-size: 1rem/* 16px */;
+	line-height: 1.5;
+	white-space: pre;
+	text-align: left;
+	overflow-wrap: normal;
+	word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1rem;
+	margin: 0.5rem 0;
+	overflow: auto;
+  border-radius: 0.75em;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+	background-color: hsl(222, 47%, 11%);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  border-radius: .3em;
+	padding: 0.1em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: hsl(168, 84%, 78%);
+}
+
+.token.punctuation {
+ 	color: hsl(213, 27%, 84%);
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: hsl(0, 94%, 82%);
+}
+
+.token.function-name {
+	color: hsl(198, 93%, 60%);
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: hsl(31, 97%, 72%);
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: hsl(46, 97%, 65%);
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+	color: hsl(201, 94%, 86%);
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: hsl(213, 27%, 84%);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: hsl(43, 96%, 56%);
+}
+
+.token.inserted {
+  color: hsl(142, 69%, 58%);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+div.code-toolbar {
+	position: relative;
+}
+
+div.code-toolbar > .toolbar {
+	position: absolute;
+	opacity: 1;
+  top: .3em;
+  right: .2em;
+}
+
+div.code-toolbar:hover > .toolbar {
+	opacity: 1;
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+  IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
+  opacity 1;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+	display: inline-block;
+}
+
+div.code-toolbar > .toolbar .toolbar-item span {
+	color: white;
+}
+
+div.code-toolbar > .toolbar a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+	background-color: transparent;
+	border-width: 0;
+	overflow: visible;
+	padding: 0;
+	line-height: 1.5;
+  color: inherit;
+  font: inherit;
+  user-select: none; /* for button */
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+	background-color: black;
+	color: white;
+	padding: 0 0.5em;
+  border-radius: .5em;
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+  font-size: .8em;
+}
+
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
+	text-decoration-line: none;
+  color: inherit;
+}
+
+article code {
+  font-size: 0.9em;
+	background-color: #eff6ff;
+}
+
+article blockquote code {
+  color: hsl(206, 5%, 30%);
+}
+
+/* === for copy-code-to-clipboard */
+
+/*
+h/t https://simplernerd.com/hugo-add-copy-to-clipboard-button/
+*/
+
+.clipboard-button {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	padding: 2px 7px 5px 7px;
+	margin: 5px;
+	color: hsl(0, 0%, 46%);
+	border-color: hsl(0, 0%, 46%);
+	background-color: #ededed;
+	border: 1px solid;
+	border-radius: 6px;
+	font-size: 0.8em;
+	z-index: 1;
+	opacity: 0;
+	transition: 0.1s;
+}
+.clipboard-button > svg {
+	fill: hsl(0, 0%, 46%);
+}
+.clipboard-button:hover {
+	cursor: pointer;
+	border-color: hsl(0, 0%, 41%);
+	background-color: #e0e0e0;
+}
+.clipboard-button:hover > svg {
+	fill: hsl(0, 0%, 41%);
+}
+.clipboard-button:focus {
+	outline: 0;
+}
+
+pre[class*="language-"] {
+   position: relative;
+}
+
+pre[class*="language-"]:hover > .clipboard-button {
+	opacity: 1;
+	transition: 0.2s;
+}
+
+article ol li .highlight {
+	line-height: 1.5;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	pre, code {
+		background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+	}
+	article code {
+		background-color: hsl(0, 0%, 27%);
+	}
+	article blockquote code {
+		color: hsl(0, 0%, 87%);
+	}
+}

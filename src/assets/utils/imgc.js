@@ -58,7 +58,7 @@ module.exports = async (url, alt, width, height, phn) => {
   let arrayFromLoop = []
 
 	if (phn === "phn") {
-		imgClass = `img-phn h-auto ctrImg animate-fade`
+		imgClass = `w-[90%] md:w-1/2 h-auto block mx-auto animate-fade`
 		stringToRet += `<div class="${divClass}" data-pagefind-ignore>`
 	} else {
 		imgClass = `w-full h-auto animate-fade`
