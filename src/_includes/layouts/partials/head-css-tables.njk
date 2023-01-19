@@ -1,0 +1,11 @@
+{%- set eleventyEnv = projEnv.environment -%}
+{%- set siteHost = siteparams.siteHost -%}
+
+  {% if '<table' in content %}
+		{% if eleventyEnv == "production" %}
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %}rel="preload" href="/css/tables.css" as="style" crossorigin />
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/tables.css" type="text/css" crossorigin />
+    {% else %}
+      <link rel="stylesheet" href="/css/tables.css" type="text/css" />
+    {% endif %}
+	{% endif %}

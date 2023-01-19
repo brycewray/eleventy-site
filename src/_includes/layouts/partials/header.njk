@@ -6,17 +6,17 @@
 					<svg id="svg-close" class="w-6 fill-white hidden" viewBox="0 0 384 512" width="100" title="times"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" /></svg>
 				</label>
 				<ul class="[font-weight:700] nav-Menu bg-black dark:bg-slate-800 flex flex-col lg:flex-row gap-4 lg:gap-2 text-right my-2 lg:mt-0 lg:mb-0 mr-2 lg:mr-6 ml-0 mbs-0 mbe-0 pis-0">
-					<li class="block pt-2 pb-2 md:pb-1 my-0 mr-auto ml-6 lg:mt-0 lg:mb-1 lg:tracking-normal lg:leading-none"><a href="/" title="Home page" aria-label="Home page" class="no-underline">{{ '/src/assets/svg/svgNavIcon.svg' | svgContents | safe }}</a></li>
-          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/about/" title="About me" aria-label="About me">About</a></li>
+					<li class="block pt-2 pb-2 md:pb-1 my-0 mr-auto ml-6 lg:mt-0 lg:mb-1 lg:tracking-normal lg:leading-none"><a href="/" title="Home page" aria-label="Home page" class="no-underline">{% include "layouts/partials/svgNavIcon.njk" %}</a></li>
+          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/about/" class="no-underline border-0 text-white hover:text-gray-300 focus:text-gray-300 active:text-gray-300" title="About me" aria-label="About me">About</a></li>
           {%- for post in collections.post | reverse -%}
             {%- if loop.index0 < 1 -%}
-              <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="{{ post.url }}" title="Newest post" aria-label="Newest post">Newest post</a></li>
+              <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="{{ post.url }}" class="no-underline border-0 text-white hover:text-gray-300 focus:text-gray-300 active:text-gray-300" title="Newest post" aria-label="Newest post">Newest post</a></li>
             {%- endif -%}
           {%- endfor -%}
-          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/posts/" title="Posts" aria-label="Posts">All posts</a></li>
-					<li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/search/" title="Site search" aria-label="Site search">Search</a></li>
-          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/privacy/" title="Privacy policy" aria-label="Privacy policy">Privacy</a></li>
-          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/contact/" title="Contact me" aria-label="Contact me">Contact</a></li>
+          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/posts/" class="no-underline border-0 text-white hover:text-gray-300 focus:text-gray-300 active:text-gray-300" title="Posts" aria-label="Posts">All posts</a></li>
+					<li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/search/" class="no-underline border-0 text-white hover:text-gray-300 focus:text-gray-300 active:text-gray-300" title="Site search" aria-label="Site search">Search</a></li>
+          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/privacy/" class="no-underline border-0 text-white hover:text-gray-300 focus:text-gray-300 active:text-gray-300" title="Privacy policy" aria-label="Privacy policy">Privacy</a></li>
+          <li class="list-none hidden lg:fluid-sm !tracking-tight lg:block lg:uppercase pr-3 my-0 lg:mt-[0.85rem] lg:mx-0"><a href="/contact/" class="no-underline border-0 text-white hover:text-gray-300 focus:text-gray-300 active:text-gray-300" title="Contact me" aria-label="Contact me">Contact</a></li>
         </ul>
       </nav>
     </header>

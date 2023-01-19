@@ -1,0 +1,11 @@
+{%- set eleventyEnv = projEnv.environment -%}
+{%- set siteHost = siteparams.siteHost -%}
+
+		<link rel="preload" as="font" href="/assets/fonts/LibreFranklin-Roman-VariableFont_subset.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="/assets/fonts/LibreFranklin-Italic-VariableFont_subset.woff2" type="font/woff2" crossorigin>
+    {% if eleventyEnv == "production" %}
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %}rel="preload" href="/css/fonts_LibreFranklin.css" as="style" crossorigin />
+      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/fonts_LibreFranklin.css" type="text/css" crossorigin />
+    {% else %}
+      <link rel="stylesheet" href="/css/fonts_LibreFranklin.css" type="text/css" />
+    {% endif %}

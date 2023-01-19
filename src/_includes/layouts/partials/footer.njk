@@ -4,16 +4,16 @@
       <div class="w-5/6 md:w-3/4 lg:w-2/3 mx-auto">
         <div class="flex flex-row justify-center gap-4">
           <a href="https://github.com/brycewray" rel="noopener" class="border-0" title="GitHub" aria-label="GitHub">
-						{{ '/src/assets/svg/svgGitHubIcon.svg' | svgContents | safe }}
+						{% include "layouts/partials/svgGitHubIcon.njk" %}
           </a>
 					<a href="https://mstdn.social/@BryceWrayTX" rel="noopener" class="border-0" title="Mastodon" aria-label="Mastodon">
-						{{ '/src/assets/svg/svgMastodonIcon.svg' | svgContents | safe }}
+						{% include "layouts/partials/svgMastodonIcon.njk" %}
 					</a>
 					<a class="border-0" href="/index.xml" title="RSS/Atom feed" aria-label="RSS/Atom feed">
-						{{ '/src/assets/svg/svgRSSIcon.svg' | svgContents | safe }}
+						{% include "layouts/partials/svgRSSIcon.njk" %}
 					</a>
 					<a class="border-0" href="/index.json" title="JSON feed" aria-label="JSON feed">
-						{{ '/src/assets/svg/svgJSONfeedIcon.svg' | svgContents | safe }}
+						{% include "layouts/partials/svgJSONFeedIcon.njk" %}
 					</a>
         </div>
 				<p class="mt-4 text-nowrap fluid-xs"><a href="/sitemap/">HTML sitemap</a> &bull; <a href="/sitemap.xml">XML sitemap</a></p>
