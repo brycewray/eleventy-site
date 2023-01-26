@@ -22,5 +22,5 @@
 {%- endset -%}
 
 {%- if cssStyles != "" -%}
-	<style>{{ cssStyles | safe }}</style>
+	<style>{{ cssStyles | cssmin | safe }}</style>
 {%- endif -%}

@@ -6,6 +6,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const CleanCSS = require('clean-css')
 // const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
 // const pluginRev = require("eleventy-plugin-rev")
 // const eleventySass = require("eleventy-sass")
@@ -304,6 +305,11 @@ module.exports = function(eleventyConfig) {
 		require("./src/assets/utils/gitinfo.js")
 	)
 
+  // https://www.11ty.dev/docs/quicktips/inline-css/
+	eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles
+  })
+
 	// h/t https://github.com/11ty/eleventy/issues/613#issuecomment-999637109
 	eleventyConfig.addCollection("everything", (collectionApi) => {
 		const macroImport = `{%- import "macros/index.njk" as macro with context -%}`
@@ -317,7 +323,7 @@ module.exports = function(eleventyConfig) {
   // https://www.11ty.dev/docs/config/#transforms
 	eleventyConfig.addTransform("htmlmin", function(content) {
     // Prior to Eleventy 2.0: use this.outputPath instead
-    if (this.page.outputPath && this.page.outputPath.endsWith(".html") && process.env.PRODUCTION) {
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
