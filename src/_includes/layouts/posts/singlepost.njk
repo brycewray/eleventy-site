@@ -23,15 +23,15 @@ layout: base
 
 		{%- set prevPost = collections.post | getPreviousCollectionItem -%}
 		{%- set nextPost = collections.post | getNextCollectionItem -%}
-		<div class="w-full px-8 py-2 bg-black dark:bg-slate-800 align-middle mt-10 mb-10" data-pagefind-ignore>
+		<div class="w-full px-8 py-2 bg-slate-300 dark:bg-slate-800 align-middle mt-10 mb-10" data-pagefind-ignore>
 		{%- if nextPost -%}
-			<p class="font-sans text-center py-0 my-0 fluid-lg !tracking-normal text-white">
-				<strong>Next</strong>: <a class="no-underline hover:underline text-blue-200 dark:text-blue-300 hover:text-slate-300 hover:border-blue-200" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+			<p class="font-sans text-center py-0 my-0 fluid-lg !tracking-normal text-black dark:text-white">
+				<strong>Next</strong>: <a class="no-underline hover:underline text-blue-700 dark:text-blue-200 hover:text-gray-800 dark:hover:text-slate-300 focus:text-gray-800 dark:focus:text-gray-200 dark:hover:border-blue-200" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
 			</p>
 		{%- endif %}
 		{%- if prevPost -%}
-			<p class="font-sans text-center py-0 my-0 fluid-lg !tracking-normal text-white">
-				<strong>Previous</strong>: <a class="no-underline hover:underline text-blue-200 dark:text-blue-300 hover:text-slate-300 hover:border-blue-200" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+			<p class="font-sans text-center py-0 my-0 fluid-lg !tracking-normal text-black dark:text-white">
+				<strong>Previous</strong>: <a class="no-underline hover:underline text-blue-700 dark:text-blue-200 hover:text-gray-800 focus:text-gray-800 dark:focus:text-gray-200  dark:hover:text-slate-300 dark:hover:border-blue-200" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
 			</p>
 		{%- endif %}
 		</div>
