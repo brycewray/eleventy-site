@@ -11,11 +11,11 @@
 		{%- set readingRate = 225 -%}
 		{%- set readingTime = (wordCount/readingRate) | round -%}
 		{%- if readingTime < 1 -%}{%- set readingTime = 1 -%}{%- endif -%}
-		<div class="font-sans container h-auto w-full min-w-full relative overflow-hidden pt-6 md:pt-12 px-4 md:px-8 2xl:px-20"">
+		<div class="font-sans container h-auto w-full min-w-full relative overflow-hidden pt-6 md:pt-12 xl:pt-16 px-4 md:px-12 xl:px-16 2xl:px-20"">
       <div class="block w-full pt-10 md:pt-4">
         <h1 class="font-[550] text-center fluid-3xl lg:fluid-4xl !tracking-tighter !leading-tight mt-2 mb-4 md:mt-6 md:mb-6 2xl:mt-16">{{ title | safe }}</h1>
         {%- if description and not (title == siteparams.searchPageTitle) %}
-        <p class="text-center md:block fluid-xl !tracking-tight font-[300] mt-2 md:mt-6 mb-0 md:mb-4 2xl:mb-8">{{ description | safe }}</p>
+        <p class="text-center md:block fluid-base md:fluid-lg lg:fluid-xl !tracking-tight font-[300] mt-2 md:mt-6 mb-0 md:mb-4 2xl:mb-8">{{ description | safe }}</p>
         {%- endif %}
 				{%- if (not (title == siteparams.searchPageTitle)) and (not (title == "Want to reach me?")) %}
 				<p class="text-center fluid-lg !tracking-tight px-4 md:px-0 mt-8 mb-0 md:mt-0" data-pagefind-ignore>

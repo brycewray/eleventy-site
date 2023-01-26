@@ -27,10 +27,10 @@ eleventyImport:
           <div>
             <h2 class="fluid-xl !leading-tight !tracking-tight lg:text-[2rem] 2xl:text-4xl mb-2"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
 						{% set dashDescription = post.data.description | replace(" — ", "—") %}
-            <p class="fluid-lg !tracking-tight mt-2 mb-2">
+            <p class="fluid-lg font-light !tracking-tight mt-2 mb-1">
               {{ dashDescription | safe }}
             </p>
-            <p class="fluid-base !tracking-normal mt-0 mb-4">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
+            <p class="fluid-base !tracking-normal mt-0 mb-6">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
             </p>
           </div>
         {% endfor %}
