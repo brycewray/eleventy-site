@@ -12,11 +12,6 @@
 ]
 -%}
 
-{% for condition, fileName in cssTypes %}
-	<link rel="testCond" content="{{ condition }}" />
-	<link rel="testFile" content="{{ fileName }}" />
-{% endfor %}
-
 {%- set cssStyles -%}
 	{%- for condition, fileName in cssTypes -%}
 		{%- if condition == true -%}
@@ -25,8 +20,6 @@
 		{%- endif -%}
 	{%- endfor %}
 {%- endset -%}
-
-{# <link rel="stylesList" content="{{ cssStyles }}" /> #}
 
 {%- if cssStyles != "" -%}
 	<style>{{ cssStyles | safe }}</style>
