@@ -53,10 +53,12 @@ module.exports = function(eleventyConfig) {
 	// https://www.11ty.dev/docs/quicktips/draft-posts/
 
 	// When `permalink` is false, the file is not written to disk
+
 	eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
 		return (data) => {
 			// Always skip during non-watch/serve builds
-			if(data.draft && !process.env.BUILD_DRAFTS) {
+			// if ((data.date > Date.now() || data.draft) && !process.env.BUILD_DRAFTS) {
+			if (data.date > Date.now() || data.draft) {
 				return false
 			}
 
@@ -68,7 +70,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addGlobalData("eleventyComputed.eleventyExcludeFromCollections", function() {
 		return (data) => {
 			// Always exclude from non-watch/serve builds
-			if(data.draft && !process.env.BUILD_DRAFTS) {
+			if (data.date > Date.now() || data.draft) {
 				return true
 			}
 
