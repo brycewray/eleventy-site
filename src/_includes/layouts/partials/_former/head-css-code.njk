@@ -1,7 +1,7 @@
 {%- set eleventyEnv = projEnv.environment -%}
 {%- set siteHost = siteparams.siteHost -%}
 
-	{%- if '<pre class="language' in content -%}
+	{%- if ('<pre class="language' in content) or ('<code>' in content) -%}
     {% if eleventyEnv == "production" %}
       <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %}rel="preload" href="/css/{{ csshash.prismjsCSS }}" as="style" crossorigin />
       <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/{{ csshash.prismjsCSS }}" type="text/css" crossorigin />
