@@ -49,6 +49,42 @@ async function imageShortcode(src, alt) {
 
 module.exports = function(eleventyConfig) {
 
+	// *** BEGINNING, DRAFT POSTS STUFF ***
+	// https://www.11ty.dev/docs/quicktips/draft-posts/
+
+	// When `permalink` is false, the file is not written to disk
+	eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
+		return (data) => {
+			// Always skip during non-watch/serve builds
+			if(data.draft && !process.env.BUILD_DRAFTS) {
+				return false
+			}
+
+			return data.permalink
+		}
+	})
+
+  // When `eleventyExcludeFromCollections` is true, the file is not included in any collections
+	eleventyConfig.addGlobalData("eleventyComputed.eleventyExcludeFromCollections", function() {
+		return (data) => {
+			// Always exclude from non-watch/serve builds
+			if(data.draft && !process.env.BUILD_DRAFTS) {
+				return true
+			}
+
+			return data.eleventyExcludeFromCollections
+		}
+	})
+
+	eleventyConfig.on("eleventy.before", ({runMode}) => {
+		// Set the environment variable
+		if(runMode === "serve" || runMode === "watch") {
+			process.env.BUILD_DRAFTS = true
+		}
+	})
+
+	// *** END, DRAFT POSTS STUFF ***
+
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
   eleventyConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
