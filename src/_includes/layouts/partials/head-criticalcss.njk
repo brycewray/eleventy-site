@@ -5,7 +5,7 @@
 		<link rel="preload" as="font" href="/assets/fonts/LibreFranklin-Italic-VariableFont_subset.woff2" type="font/woff2" crossorigin>
     {% if eleventyEnv == "production" %}
       <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %}rel="preload" href="/css/{{ csshash.criticalCSS }}" as="style" crossorigin />
-      <link{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{% endif %} rel="stylesheet" href="/css/{{ csshash.criticalCSS }}" type="text/css" crossorigin />
+      <link rel="stylesheet" href="/css/{{ csshash.criticalCSS }}" type="text/css" crossorigin />
     {% else %}
       <link rel="stylesheet" href="/css/critical.css" type="text/css" />
     {% endif %}
