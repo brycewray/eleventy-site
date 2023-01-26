@@ -19,11 +19,12 @@ The only thing about doing that, however, is that you first have to select from 
 
 That's why, this past Saturday on Mastodon, I [posted](https://mstdn.social/@BryceWrayTX/109727880716272847) a poll about the subject. Although it got only 139 votes over its twenty-four-hour life, it had roughly these percentages from the beginning:
 
-| Response                | Result |
+| Response                | Result     |
 | ----------------------- | ---------- |
 | Match my chosen mode    | **79.9%**  |
 | Have a dark background  | **20.1%**  |
-| Have a light background | **‌[Zero]**     |
+| Have a light background | **‌[Zero]** |
+
 {.ulysses}
 
 These results made it pretty clear to me what I should do.
