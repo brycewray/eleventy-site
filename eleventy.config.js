@@ -314,17 +314,20 @@ module.exports = function(eleventyConfig) {
 		return collMacros
 	})
 
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html") && process.env.PRODUCTION) {
+  // https://www.11ty.dev/docs/config/#transforms
+	eleventyConfig.addTransform("htmlmin", function(content) {
+    // Prior to Eleventy 2.0: use this.outputPath instead
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html") && process.env.PRODUCTION) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true,
+        collapseWhitespace: true
       })
       return minified
     }
     return content
   })
+
 
 	// for RSS/JSON feeds and sitemap.xml collection
 	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
