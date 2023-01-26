@@ -43,7 +43,7 @@
 		@apply outline-none active:outline-none focus:outline-none hover:outline-none;
 	}
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-		@apply font-semibold;
+		@apply font-medium;
 	}
 	a {
 		@apply underline underline-offset-[0.25em] decoration-[0.05rem] text-blue-700 dark:text-blue-300;
@@ -76,60 +76,11 @@
 	ol {
 		@apply list-decimal;
 	}
-	article {
-		h1, h2, h3, h4 {
-			@apply mt-8 mb-6 !tracking-tight;
-		}
-		p {
-			@apply mt-6 mb-6;
-		}
-		p, li {
-			@apply lg:fluid-lg !leading-normal !tracking-normal;
-		}
-		ul {
-			li li, li li li, li li li li {
-				@apply my-2;
-			}
-		}
-		hr + ul {
-			@apply mt-4;
-		}
-		blockquote {
-			@apply px-6 text-zinc-700 dark:text-zinc-400 border-l-4 border-zinc-400;
-		}
-		hr {
-			@apply border-solid border-zinc-900 dark:border-zinc-100;
-		}
-	}
 	sub, sup {
 		@apply text-fn;
 	}
 	sup {
 		@apply -top-[0.45em] lg:-top-[0.8em];
-	}
-	.footnote-sim {
-		@apply text-blue-700 dark:text-blue-100 text-fn;
-	}
-	.footnotes {
-		/* for specificity */
-		.footnote-ref {
-			@apply font-sans text-fn;
-		}
-		.footnote-ref a {
-			@apply border-transparent;
-		}
-		.footnotes-sep {
-			@apply mb-3;
-		}
-		.footnotes-list {
-			@apply list-decimal pl-6;
-		}
-		.footnote-item, .footnote-item p {
-			@apply !fluid-sm lg:fluid-sm tracking-normal leading-snug my-4;
-		}
-		.footnote-item pre, .footnote-item code {
-			@apply text-xs;
-		}
 	}
 }
 
@@ -141,7 +92,7 @@
 		@apply whitespace-nowrap;
 	}
 	.box {
-		@apply fluid-sm block box-border bg-white dark:bg-gray-800 border border-black dark:border-gray-200 my-auto w-full px-4 py-6 mb-2;
+		@apply fluid-sm block box-border bg-white dark:bg-gray-800 border border-black dark:border-gray-200 my-auto w-full px-4 py-4 mb-2;
 		& p {
 			@apply p-0 m-0;
 		}

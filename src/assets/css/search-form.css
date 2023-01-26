@@ -1,26 +1,5 @@
-.searchDiv, .searchDivPF, .searchBtnDiv {
+.searchDiv, .searchDivPF {
 	margin: 2em auto;
-}
-
-.searchBtnDiv{
-	text-align: center;
-}
-
-.searchBtnDiv button {
-	margin: 0 auto;
-	color: white;
-	width: 15em;
-	padding: 0.5em 0.25em;
-	background-color: hsl(221, 83%, 53%);
-	border: 1px solid hsl(221, 83%, 53%);
-	border-radius: 6px;
-}
-.searchBtnDiv button:hover {
-	cursor: pointer;
-}
-.searchBtnDiv button:focus, .searchBtnDiv button:active, .searchBtnDiv button:hover {
-	border: 1px solid hsl(224, 76%, 48%);
-	background-color: hsl(224, 76%, 48%);
 }
 
 .searchDivPF {
@@ -133,6 +112,10 @@
 	margin-bottom: 0.75em;
 }
 
+.pagefind-ui__result-inner p, .pagefind-ui__result-inner li {
+	letter-spacing: -0.0075em !important;
+}
+
 .pagefind-ui__results-area {
 	position: relative;
 }
@@ -157,15 +140,6 @@
 }
 
 @media screen and (prefers-color-scheme: dark) {
-	.searchBtnDiv button {
-		color: black;
-		border: 1px solid rgb(145, 195, 253);
-		background-color: rgb(145, 195, 253);
-	}
-	.searchBtnDiv button:focus, .searchBtnDiv button:active, .searchBtnDiv button:hover {
-		border: 1px solid hsl(214, 100%, 97%);
-		background-color: hsl(214, 100%, 97%);
-	}
 	.searchBox {
 		background-color: hsl(215, 28%, 17%);
 		border: 1px solid hsl(216, 12%, 84%);
@@ -203,20 +177,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.searchDivPF {
-		width: 70%;
-	}
 	.searchInput {
 		max-width: 300ch;
-	}
-}
-@media screen and (min-width: 1024px) {
-	.searchDivPF {
-		width: 65%;
-	}
-}
-@media screen and (min-width: 1536px) {
-	.searchDivPF {
-		width: 50%;
 	}
 }
