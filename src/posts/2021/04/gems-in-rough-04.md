@@ -40,7 +40,7 @@ Just a quick reminder for you: sometime next month, Google will make a significa
 
 Oh, yes, about Tailwind&nbsp;.&nbsp;.&nbsp;.
 
-In "[Speaking up for Sass](/posts/2021/04/speaking-up-for-sass/)," I (foot)noted that one of the reasons I'd moved this site off Tailwind CSS and back to Sass was because, in that aforementioned Day Job web dev work, I'd picked Sass for the styling and didn't want to be jumping back and forth between one method at work and another at home. The *reason* I'd selected Sass was because I felt that, when my inevitable successor takes over the code base, it would be better for him/her if we hadn't chosen a Styling Flavor of the Month.
+In "[Speaking up for Sass](/posts/2021/04/speaking-up-for-sass/)," I (foot)noted that one of the reasons I'd moved this site off Tailwind CSS and back to Sass was because, in that aforementioned Day Job web dev work, I'd picked Sass for the styling and didn't want to be jumping back and forth between one method at work and another at home. The *reason* I'd selected Sass was because I felt that, when my inevitable successor takes over the code base, it would be better for them if we hadn't chosen a Styling Flavor of the Month.
 
 However, in the days since, I've continued to research the choice. I've found that, increasingly, dev team leads are encouraging adoption of utility-first CSS, exactly for the purpose of making it *easier* for successors to take over existing code. These advocates’ shared point is that, for someone new to a code base, it's easier to figure out how to make changes if one doesn't have to worry about all the existing interrelationships among the base's various web pages and styling cascades.
 

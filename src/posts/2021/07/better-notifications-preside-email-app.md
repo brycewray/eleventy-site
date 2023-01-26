@@ -104,7 +104,7 @@ Ready? Here we go.
 	alertSound="GHSound_ChurchBell.mp3"
 	```
 
-	For a list of the available sounds you can use instead of that default one, see the [URL File Reference](https://github.com/richwaters/PresideNotify#url-reference). (I personally am partial to `GHSound_Piano1.mp3`, but to each his/her own.)
+	For a list of the available sounds you can use instead of that default one, see the [URL File Reference](https://github.com/richwaters/PresideNotify#url-reference). (I personally am partial to `GHSound_Piano1.mp3`, but to each their own.)
 
 13. Go down to line 68, which currently is:
 	```bash

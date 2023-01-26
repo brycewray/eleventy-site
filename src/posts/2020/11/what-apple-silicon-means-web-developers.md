@@ -7,7 +7,7 @@ lastmod: 2022-07-22T21:24:00-05:00
 discussionId: "2020-11-what-apple-silicon-means-web-developers"
 ---
 
-It's common to see web developers using laptops and desktops that run [macOS](https://www.apple.com/macos/). The presence of the Apple logo on a web dev's computer, if not covered by seemingly uncounted numbers of stickers the dev has acquired during his or her travels (hey, remember when people actually *traveled* to developer events?), sometimes seems to be a safe presumption.
+It's common to see web developers using laptops and desktops that run [macOS](https://www.apple.com/macos/). The presence of the Apple logo on a web dev's computer, if not covered by seemingly uncounted numbers of stickers the dev has acquired during their travels (hey, remember when people actually *traveled* to developer events?), sometimes seems to be a safe presumption.
 
 And why not? Since the web runs on [\*nix](https://en.wikipedia.org/wiki/Unix-like), there is a significant incentive to build websites while using an operating system that combines enormous user-friendliness with a \*nix-like foundation. (To be specific, macOS is based on [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution), but that's another story.)
 
