@@ -6,9 +6,9 @@ const CSSFILE = 'hash-css'
 let cssCritical = './src/assets/css/critical.css'
 
 let criticalCSSMd5 = 0
-let indexContent = ''
+let criticalCSSContent = ''
 
-indexContent = fs.readFileSync(cssCritical)
+criticalCSSContent = fs.readFileSync(cssCritical)
 
 criticalCSSMd5 = md5(criticalCSSContent)
 
