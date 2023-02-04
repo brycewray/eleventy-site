@@ -9,7 +9,7 @@
     "start": "NODE_ENV=development npm-run-all cleanDev dev:eleventy",
     "build": "NODE_ENV=production npm-run-all cleanProd prod:eleventy",
     "testbuild": "NODE_ENV=production npm-run-all cleanDev --parallel testProd:eleventy",
-    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --incremental",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site",
     "testProd:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --output=./_site --serve"
   },

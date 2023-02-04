@@ -37,12 +37,12 @@ layout: base
 		<div class="bg-dark sansSerif" data-pagefind-ignore>
 		{%- if nextPost -%}
 			<p class="ctr prevnextP">
-				Next: <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+				<strong>Next</strong>: <a class="next" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
 			</p>
 		{%- endif %}
 		{%- if prevPost -%}
 			<p class="ctr wht prevnextP">
-				Previous: <a class="next" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
+				<strong>Previous</strong>: <a class="next" href="{{ prevPost.url }}">{{ prevPost.data.title }}</a>
 			</p>
 		{%- endif %}
 		</div>

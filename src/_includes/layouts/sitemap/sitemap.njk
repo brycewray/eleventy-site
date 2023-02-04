@@ -18,7 +18,7 @@ eleventyImport.collections: ["post"]
 				</ul>
 				<h2>Posts</h2>
 				<ul>
-					<li><a href="/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
+					<li><a href="/posts/"><strong>Complete list</strong></a> (first page of paginated list; five posts per page)</li>
 					{% for post in collections.post | reverse %}
 						<li><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>{% if not 'The site this week' in post.data.title %}&nbsp;&nbsp;<strong class="legal">{{ post.date | dateStringISO }}</strong>{% endif %}<br />
 						{{ post.data.description | safe }}
