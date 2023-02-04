@@ -21,7 +21,7 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #fff; // was #a9eafa
+  color: var.$black;
   background: none;
   font-family: var.$monospaced;
 	font-size: clamp(0.9rem, 1vw + 0.625em, var.$text-lg);
@@ -33,6 +33,9 @@ pre[class*="language-"] {
   line-height: 1.5;
   tab-size: 2;
   hyphens: none;
+	@media (prefers-color-scheme: dark) {
+		color: var.$white;
+	}
 }
 
 /* Code blocks */
@@ -42,6 +45,7 @@ pre[class*="language-"] {
   margin: .5em 0;
   overflow: auto;
 	border-radius: 16px;
+	border: 1px solid map-get(var.$twcss, gray-400);
 }
 
 pre.indentAfterLI {
@@ -49,7 +53,12 @@ pre.indentAfterLI {
 }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: map-get(var.$twcss, slate-900);
+  background-color: var.$white;
+	color: var.$black;
+	@media (prefers-color-scheme: dark) {
+		background: map-get(var.$twcss, slate-800);
+	}
+	// z-index: -1;
 }
 
 /* Inline code */
@@ -70,7 +79,7 @@ article code, article p code {
 	@media screen and (min-width: var.$bkpt_2xl) {
 		font-size: 0.85em;
 	}
-	background-color: map-get(var.$twcss, sky-200);
+	background-color: map-get(var.$twcss, slate-200);
 	@media (prefers-color-scheme: dark) {
 		background-color: map-get(var.$twcss, slate-900);
 	}
@@ -113,38 +122,59 @@ article blockquote code {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: map-get(var.$twcss, emerald-300);
+  color: map-get(var.$twcss, emerald-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, emerald-300);
+	}
 }
 
 .token.punctuation {
-  color: map-get(var.$twcss, orange-300);
+  color: map-get(var.$twcss, orange-800);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, orange-200);
+	}
 }
 
 .token.tag,
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-  color: map-get(var.$twcss, amber-300);
+  color: map-get(var.$twcss, amber-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, amber-300);
+	}
 }
 
 .token.function-name {
-  color: map-get(var.$twcss, sky-300);
+  color: map-get(var.$twcss, sky-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, sky-300);
+	}
 }
 
 .token.boolean,
 .token.number,
 .token.function {
-  color: map-get(var.$twcss, yellow-200);
+  color: map-get(var.$twcss, yellow-800);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, yellow-200);
+	}
 }
 
 .token.constant {
-  color: map-get(var.$twcss, cyan-700);
+  color: map-get(var.$twcss, cyan-800);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, cyan-200);
+	}
 }
 
 .token.property,
 .token.class-name,
 .token.symbol {
-  color: map-get(var.$twcss, orange-400);
+  color: map-get(var.$twcss, orange-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, orange-300);
+	}
 }
 
 .token.selector,
@@ -153,6 +183,9 @@ article blockquote code {
 .token.keyword,
 .token.builtin {
   color: map-get(var.$twcss, sky-800);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, sky-200);
+	}
 }
 
 .token.string,
@@ -160,13 +193,19 @@ article blockquote code {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: map-get(var.$twcss, amber-300);
+  color: map-get(var.$twcss, amber-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, amber-300);
+	}
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-  color: map-get(var.$twcss, teal-300);
+  color: map-get(var.$twcss, teal-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, teal-300);
+	}
 }
 
 .token.important,
@@ -183,6 +222,9 @@ article blockquote code {
 
 .token.inserted {
   color: map-get(var.$twcss, green-700);
+	@media (prefers-color-scheme: dark) {
+		color: map-get(var.$twcss, green-300);
+	}
 }
 
 div.code-toolbar {
@@ -255,7 +297,8 @@ div.code-toolbar > .toolbar span:focus {
 
 .clipboard-button {
 	position: absolute;
-	right: 0;
+	top: 2px;
+	right: 2px;
 	padding: 2px 7px 5px 7px;
 	margin: 5px;
 	color: map-get(var.$twcss, gray-500);
@@ -275,6 +318,7 @@ div.code-toolbar > .toolbar span:focus {
 	cursor: pointer;
 	border-color: map-get(var.$twcss, green-600);
 	background-color: map-get(var.$twcss, green-100);
+	opacity: 1;
 }
 .clipboard-button:hover > svg {
 	fill: map-get(var.$twcss, green-600);
