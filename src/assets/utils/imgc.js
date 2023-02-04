@@ -62,7 +62,7 @@ module.exports = async (url, alt, width, height, phn) => {
 		stringToRet += `<div class="${divClass}" data-pagefind-ignore>`
 	} else {
 		imgClass = `w-full h-auto animate-fade`
-		stringToRet += `<style nonce="DhcnhD3khTMePgXw">
+		stringToRet += `<style>
     .imgB-${imgBmd5} {
       background: url(data:image/jpeg;base64,${LQIP_b64});
       background-repeat: no-repeat;
