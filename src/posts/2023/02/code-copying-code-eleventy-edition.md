@@ -3,7 +3,7 @@ title: "Code for copying code: the Eleventy edition"
 description: "Here’s a workaround for including “copy” buttons in code blocks built by Prism-based syntax highlighting in Eleventy."
 author: Bryce Wray
 date: 2023-02-04T17:36:00-06:00
-draft: true
+# draft: true
 # initTextEditor: iA Writer # default --- change if needed
 ---
 
@@ -55,6 +55,6 @@ div.highlight {
 
 Finally, make sure the code **for** your chosen "copy-code" button is set to be "triggered" by `<div class="highlight">`, rather than the `<pre><code>` construct; how you do this will vary according to that code, for which --- as I [noted originally](/posts/2022/05/gems-in-rough-18/#code-for-copying-code) --- there are numerous proposed solutions out there.[^repoExample]
 
-[^repoExample]: As of this writing, the Eleventy version of my "copy-code" button code is viewable [here](https://github.com/brycewray/eleventy_site/blob/main/src/assets/js/copy-code-button.js), while its Hugo version is viewable [here](https://github.com/brycewray/hugo_site/blob/main/assets/js/copy-code-button.js). 
+[^repoExample]: As of this writing, the Eleventy version of my "copy-code" button code is viewable [here](https://github.com/brycewray/eleventy_site/blob/main/src/assets/js/copy-code-button.js), while its Hugo version is viewable [here](https://github.com/brycewray/hugo_site/blob/main/assets/js/copy-code-button.js).
 
 This method ensures that, regardless of whether I'm running the site on Eleventy or Hugo, each of the site's code blocks has a "copy-code" button that **won't** scroll horizontally when the code itself does. If you're an Eleventy user who likes to include code blocks in your site content, perhaps this approach can also improve *your* site has consistent "copy-code" functionality.
