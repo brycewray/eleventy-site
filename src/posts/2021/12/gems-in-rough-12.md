@@ -34,7 +34,7 @@ The upshot: to CFP aficionados --- and also any who may be curious about giving 
 
 ## Remember the sitemap
 
-Got this in the [ol’ emailbox](/contact) the other day amid some otherwise very nice comments from this person:
+Got this in the [ol’ emailbox](/contact/) the other day amid some otherwise very nice comments from this person:
 
 > I've been browsing your blog and displaying 5 post/page makes it a pain!
 

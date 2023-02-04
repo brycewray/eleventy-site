@@ -7,7 +7,7 @@ lastmod: 2022-07-22T20:56:00-05:00
 discussionId: "2019-02-ia-for-io"
 ---
 
-My comments at the end of my [previous post](/posts/2019/01/blox-sux) aside, I have to say [iA Writer](https://www.ia.net/writer) can be a halfway decent editor for [Markdown](https://daringfireball.net/projects/markdown/), after all.
+My comments at the end of my [previous post](/posts/2019/01/blox-sux/) aside, I have to say [iA Writer](https://www.ia.net/writer) can be a halfway decent editor for [Markdown](https://daringfireball.net/projects/markdown/), after all.
 
 Once again, I'm **not** considering dropping [Ulysses](https://ulysses.app) from my small collection of much-loved apps that I utterly must have when the muse is with me and I feel like writing. It's just that I grow weary of the export-to-Markdown process inherent in writing something in Ulysses for this site, especially since I like to see my edits on my local version of the site as I save them to the target file.
 

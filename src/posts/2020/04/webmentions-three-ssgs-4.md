@@ -43,7 +43,7 @@ Yeah, right. And you'd think I'd have known better, too.
 
 ## Gatsby: Displaying webmentions
 
-After all: it hadn't been that long since my failed [Gatsby Experiment I](/posts/2019/07/why-staying-with-hugo), my equally failed but at least shorter [Gatsby Experiment II](/posts/2019/09/why-left-hugo-eleventy), or even my successful [Gatsby Experiment III](/posts/2019/10/now-gatsby-geezer); so I should've realized that just because the Gatsby repo could now *"see”* the webmentions in GraphQL didn't mean I could make the repo's *[components](https://www.gatsbyjs.org/docs/building-with-components/)* see them --- or, at least, not without a lot of preliminary grief.
+After all: it hadn't been that long since my failed [Gatsby Experiment I](/posts/2019/07/why-staying-with-hugo/), my equally failed but at least shorter [Gatsby Experiment II](/posts/2019/09/why-left-hugo-eleventy/), or even my successful [Gatsby Experiment III](/posts/2019/10/now-gatsby-geezer/); so I should've realized that just because the Gatsby repo could now *"see”* the webmentions in GraphQL didn't mean I could make the repo's *[components](https://www.gatsbyjs.org/docs/building-with-components/)* see them --- or, at least, not without a lot of preliminary grief.
 
 This is where I ran into the toughest "chase scene"[^Chase] of this entire effort.
 
@@ -51,7 +51,7 @@ This is where I ran into the toughest "chase scene"[^Chase] of this entire effor
 
 For several nights, I pored through successful-webmentions-on-Gatsby articles, forum posts, and repos, trying desperately to duplicate how others had done it. There were a number of false exits along the way. Quite often, I'd achieve display of a *few* webmention elements and think I'd solved the problem, but then quickly discover not only that I couldn't display the *next* few but also that Gatsby didn't even understand what the next few *were*. If I saw one Gatsby error message about trying to display items it considered `Undefined`, I saw a million.
 
-I had hoped to reproduce some of the webmentions-filtering process from the Eleventy repo, so as to avoid the being-eaten-by-ants feel I often got from dealing with GraphQL queries. That hope quickly died. While some things work just fine in the "vanilla" JS that Eleventy uses for this stuff (some of which I'd even been able to use in the [Hugo repo](https://github.com/brycewray/hugo_site_css-grid), as noted in [Part 3](/posts/2020/04/webmentions-three-ssgs-3)), Gatsby "[don't play dat](https://mygeekwisdom.com/2014/02/08/homey-dont-play-that/)."
+I had hoped to reproduce some of the webmentions-filtering process from the Eleventy repo, so as to avoid the being-eaten-by-ants feel I often got from dealing with GraphQL queries. That hope quickly died. While some things work just fine in the "vanilla" JS that Eleventy uses for this stuff (some of which I'd even been able to use in the [Hugo repo](https://github.com/brycewray/hugo_site_css-grid), as noted in [Part 3](/posts/2020/04/webmentions-three-ssgs-3/)), Gatsby "[don't play dat](https://mygeekwisdom.com/2014/02/08/homey-dont-play-that/)."
 
 So what *did* I do, finally?
 

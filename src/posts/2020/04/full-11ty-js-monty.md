@@ -9,7 +9,7 @@ discussionId: "2020-04-full-11ty-js-monty"
 
 {% disclaimer %}
 
-Well, wouldn't you know it? My [recent post](/posts/2020/03/back-nunjucks-eleventy-site) notwithstanding, this [Eleventy](https://11ty.dev)-/[webpack](https://webpack.js.org)-based site is now using nothing but [JavaScript-*only*](https://11ty.dev/docs/languages/javascript) [templating](https://11ty.dev/docs/templates). That means .11ty.js template files rather than [.njk](https://11ty.dev/docs/languages/nunjucks) ([Nunjucks](https://mozilla.github.io/nunjucks/)) files.
+Well, wouldn't you know it? My [recent post](/posts/2020/03/back-nunjucks-eleventy-site/) notwithstanding, this [Eleventy](https://11ty.dev)-/[webpack](https://webpack.js.org)-based site is now using nothing but [JavaScript-*only*](https://11ty.dev/docs/languages/javascript) [templating](https://11ty.dev/docs/templates). That means .11ty.js template files rather than [.njk](https://11ty.dev/docs/languages/nunjucks) ([Nunjucks](https://mozilla.github.io/nunjucks/)) files.
 
 Curious about the code itself? Check out this site's [public repository](https://github.com/brycewray/eleventy_bundler) for the .11ty.js templating. If you want to see the previous Nunjucks stuff, feel free to nose around inside some of the repo's [public branches](https://github.com/brycewray/eleventy_bundler/branches). And, if you're of a mildly sadistic bent, the `nunjucks-to-11ty-js`, `another-to-11ty-js`, and `wm-11ty-js` branches in particular might amuse you as you watch me huff and puff my way through the conversion process.
 
@@ -79,7 +79,7 @@ I must once again extend my highest thanks and commendations to various folks fo
 
 ### Reuben Lillie
 
-I [already noted](/posts/2020/03/back-nunjucks-eleventy-site) Mr. Lillie's great example in steering us Eleventy advocates toward the path of all-.11ty.js with [his own site](https://reubenlillie.com)'s [fantastically well-documented repo](https://gitlab.com/reubenlillie/reubenlillie.com/). Then, in the days after that post, he exceeded even the already optimistic expectations I'd formed after combing that repo for code guidance and exchanging some email and tweets with him.
+I [already noted](/posts/2020/03/back-nunjucks-eleventy-site/) Mr. Lillie's great example in steering us Eleventy advocates toward the path of all-.11ty.js with [his own site](https://reubenlillie.com)'s [fantastically well-documented repo](https://gitlab.com/reubenlillie/reubenlillie.com/). Then, in the days after that post, he exceeded even the already optimistic expectations I'd formed after combing that repo for code guidance and exchanging some email and tweets with him.
 
 Not only has he since put up an *additional* repo, [eleventy-dot-js-blog](https://gitlab.com/reubenlillie/eleventy-dot-js-blog), an all-.11ty.js Eleventy *starter* site ready for your cloning/forking pleasure; but he also gave me far more help than I deserve last weekend --- a holiday weekend --- as I tried to incorporate some of that new repo's code in a branch of this site.
 
