@@ -119,7 +119,7 @@ From here on, we'll refer to your *terminal app*. On macOS, the default is Termi
 	Everything from here on takes place in that `my-site` folder.
 
 **Note**: Windows users, we'll refer to `content/` and `layouts/` --- *i.e.*, using **forward** slashes (the web's norm) rather than **back**slashes.
-{.yellowBox .indentAfterLI}
+{.box .indentAfterLI}
 
 ## Step 3 • Add minimal files to the site
 

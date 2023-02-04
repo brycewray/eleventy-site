@@ -29,14 +29,14 @@ setup: |
 
 I created the `Box` component for, say, an item[^attrs] like this:
 
-**Note**: This colorful box calls your attention to this item.
+**Note**: This box calls your attention to this item.
 {.box}
 
 . . . called as follows:
 
 ```md
-<Box cssClass="yellowBox">
-**Note**: This colorful box calls your attention to this item.
+<Box>
+**Note**: This box calls your attention to this item.
 </Box>
 ```
 
