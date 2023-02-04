@@ -11,7 +11,7 @@ I gave up on my [earlier](/posts/2022/06/sorta-scoped-styling-hugo/), [Rube Gold
 
 <!--more-->
 
-<strong class="red">Important</strong>: If you had read this before 2023-01-23, be sure to check the **Update** at the bottom.
+<strong class="red">Important</strong>: Be sure to check the **Update** at the bottom.
 {.box}
 
 ## Anal-ysis
@@ -93,17 +93,13 @@ Here's a simplified[^CFP] version of one of the Hugo "sub`head`" partials, the `
 
 Unlike the ordeal of months ago, putting all this into practice took literally only a few minutes per each separate type of content (the similarities among the various Hugo partials made it even easier to create new ones), thanks in no small part to the always amazing speed and stability of Hugo.
 
-~~As for whether the results were worth it: use your browser's Inspector tool as you skim through the site; and notice how the CSS files load, and *which* CSS files load, based on what's on each page.~~ While this isn't (yet) a true [critical CSS](https://web.dev/extract-critical-css/) approach, it shows a dependencies-free way to get closer to one.
+As for whether the results were worth it: use your browser's Inspector tool as you skim through the site; and notice how the CSS files load, and *which* CSS files load, based on what's on each page. While this isn't (yet) a true [critical CSS](https://web.dev/extract-critical-css/) approach, it shows a dependencies-free way to get closer to one.
 
 ----
 
-## *Update, 2023-01-23*
+## *Update, 2023-01-29*
 
-Over the ensuing weekend, I did some more thinking about this, and came up with what I think is a even better way (hence the strikethroughs, above).
-
-The main problem with what I'd done above was that it would generate and download more external CSS files, which are always [render-blocking resources](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/). The answer to *that* seemed to be obvious --- namely, the use of *internal* CSS, wherein one puts styling in the `head` section rather than using external files; **but** going whole-hog with that method would impair the site's ability to [cache for the second load](https://web.dev/love-your-cache/).
-
-I ended up with a hybrid solution I'd seen mentioned elsewhere: put only the critical CSS in one external file, while loading all the conditional styling as internal CSS.[^critical] Thus, now, my `head.html` template needs only:
+Over the next couple of weekends, I put in some more thinking and research about this. It turns out the better solution is to put the critical CSS in *internal* CSS (wherein the styling is in a `style` block within the `head` section), while loading all the conditional styling as external CSS files.[^critical] Thus, now, my `head.html` template needs only:
 
 [^critical]: Of course, the key to that is identifying which styling truly is critical for every page on the site. I'll likely refine that over time, but some of the easy choices were the nav bar header, footer, and (as of this writing) web fonts. Beyond that --- which is where the ongoing refinements will come into play --- it got a bit more complicated.
 
@@ -114,7 +110,20 @@ I ended up with a hybrid solution I'd seen mentioned elsewhere: put only the cri
 ```
 {% endraw %}
 
-And, as for `head-css.html`, it puts **all** those conditionals in one file and gradually builds the internal CSS:
+The first of those, `head-criticalcss.html`, looks like this:
+
+{% raw %}
+```go
+{{- $css := "" -}}
+{{- $optionsCSSCritical := (dict "outputStyle" "compressed" "transpiler" "dartsass") -}}
+{{- $css = resources.Get "scss/critical.scss" | resources.ToCSS $optionsCSSCritical -}}
+{{- with $css }}
+	<style>{{ .Content | safeCSS }}</style>
+{{- end }}
+```
+{% endraw %}
+
+And, as for `head-css.html`, it puts **all** those earlier conditionals in one file and gradually builds the external CSS files:
 
 {% raw %}
 ```go
@@ -122,7 +131,6 @@ And, as for `head-css.html`, it puts **all** those conditionals in one file and 
 {{- $cssOptions := dict "outputStyle" "compressed" "transpiler" "dartsass" -}}
 {{- $condition := "" -}}
 {{- $fileName := "" -}}
-{{/* initialize, then populate, booleans for `findRE` actions */}}
 {{- $conditionSocial := false -}}
 {{- $conditionCode := false -}}
 {{- $conditionTables := false -}}
@@ -141,29 +149,33 @@ And, as for `head-css.html`, it puts **all** those conditionals in one file and 
 {{- $cssTypes = append slice (slice $conditionCode "code") $cssTypes -}}
 {{- $cssTypes = append slice (slice $conditionTables "tables") $cssTypes -}}
 {{- $cssTypes = append slice (slice $conditionLiteYT "lite-yt-embed") $cssTypes -}}
-{{- $cssTypes = append slice (slice (or (ne .Title "Home page") (ne .Title "Search the site") (ne .Title "Sitemap") (ne .Title "Posts")) "billboard") $cssTypes -}}
-{{- $cssTypes = append slice (slice (or (and (eq .Section "posts") (ne .Title "Posts")) (eq .Title "About me") (eq .Title "Privacy policy") (eq .Title "Want to reach me?")) "article") $cssTypes -}}
+{{- $cssTypes = append slice (slice (and (ne .Title "Home page") (ne .Title "Sitemap (HTML form)") (ne .Title "Posts")) "billboard") $cssTypes -}}
+{{- $cssTypes = append slice (slice (and (and (ne .Title "Search the site") (ne .Title "Posts")) (or (eq .Section "posts") (eq .Title "About me") (eq .Title "Privacy policy") (eq .Title "Want to reach me?"))) "article") $cssTypes -}}
 {{- $cssTypes = append slice (slice (and (eq .Section "posts") (ne .Title "Posts")) "posts-single") $cssTypes -}}
 {{- $cssTypes = append slice (slice (eq .Title "Posts") "posts-list") $cssTypes -}}
 {{- $cssTypes = append slice (slice $conditionFootnotes "footnotes") $cssTypes -}}
 {{- $cssTypes = append slice (slice (eq .Title "Home page") "home") $cssTypes -}}
 {{- $cssTypes = append slice (slice (eq .Title "Sitemap (HTML form)") "sitemaphtml") $cssTypes -}}
-{{- $cssTypes = append slice (slice (ne .Title .Site.Params.SearchTitle) "search-btn") $cssTypes -}}
-{{- $cssTypes = append slice (slice (eq .Title .Site.Params.SearchTitle) "search-form") $cssTypes -}}
+{{- $cssTypes = append slice (slice (ne .Title site.Params.SearchTitle) "search-btn") $cssTypes -}}
+{{- $cssTypes = append slice (slice (eq .Title site.Params.SearchTitle) "search-form") $cssTypes -}}
 {{- $cssTypes = append slice (slice $conditionDetails "details") $cssTypes -}}
+{{- $cssTypes = append slice (slice (eq .Title "404 Page not found") "fourohfour") $cssTypes -}}
 
 {{- range $cssTypes -}}
 	{{- $condition = index . 0 -}}
 	{{- $fileName = index . 1 -}}
 	{{- if eq $condition true -}}
-		{{- with resources.Get (print "scss/" $fileName ".scss") | resources.ToCSS $cssOptions -}}
-			{{- $css = print $css (.Content | safeCSS) -}}
-		{{- end -}}
+		{{- $cssOptions := merge $cssOptions (dict "targetPath" (print "css/" $fileName ".css" )) -}}
+		{{- $css = resources.Get (print "scss/" $fileName ".scss") | resources.ToCSS $cssOptions -}}
+		{{- if hugo.IsProduction -}}
+			{{- $css = $css | fingerprint "md5" -}}
+		{{- end }}
+		<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+		<link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css">
 	{{ end -}}
 {{- end -}}
-
-{{- if ne $css "" }}
-	<style>{{ $css | safeCSS }}</style>
-{{- end }}
 ```
 {% endraw %}
+
+**Note**: I've updated this post several times in recent days and, rather than leave inaccurate info in it from my previous efforts, I've chosen to keep only the update you see above. Of course, the post's history is [on the site repo](https://github.com/brycewray/hugo_site/commits/main/content/posts/2023/01/sorta-scoped-styling-hugo-take-two.md).
+{.box}
