@@ -10,7 +10,18 @@ layout: base
         {%- if ext_canonical -%}
         <p class="box"><strong>Note</strong>: This article originally appeared on <a href="{{ ext_canonical }}">{{ ext_source }}</a> and is &copy;&nbsp;{{ helpers.currentYear() }}&nbsp;<a href="{{ ext_url }}" rel="noopener">{{ ext_copyright }}</a>. The&nbsp;article includes external edits (content-related and stylistic) for that&nbsp;site.</p>
         {%- endif -%}
-				{{ content | safe }}
+				{# START, divs around Prism `pre``code` stuff #}
+				{% set Content = content %}
+				{% set withoutDivStart = '<pre class="language-' %}
+				{% set withDivStart = '<div class="highlight"><pre class="language-' %}
+				{% set withoutDivEnd = '</code><\/pre>'  %}
+				{% set withDivEnd = '</code></pre></div>' %}
+				{% if withoutDivStart in content %}
+					{% set Content = content | replace (withoutDivStart, withDivStart) %}
+					{% set Content = Content | replace (withoutDivEnd, withDivEnd) %}
+				{% endif %}
+				{#   END, divs around Prism `pre``code` stuff #}
+				{{ Content | safe }}
         <div class="contactBtn">
 					<a href="mailto:bw@brycewray.com?subject=“{{ title }}”">
 	          <button>

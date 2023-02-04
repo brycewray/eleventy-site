@@ -13,7 +13,7 @@ const svgCheck =
 
 const addCopyButtons = (clipboard) => {
 	// 1. Look for pre > code elements in the DOM
-	document.querySelectorAll('pre[class*="language-"]').forEach((codeBlock) => {
+	document.querySelectorAll("pre > code").forEach((codeBlock) => {
 		// 2. Create a button that will trigger a copy operation
 		const button = document.createElement("button");
 		button.className = "clipboard-button";
@@ -29,8 +29,9 @@ const addCopyButtons = (clipboard) => {
 				(error) => (button.innerHTML = "Error")
 			);
 		});
-		// 3. Append the button directly before the code tag (for PrismJS)
-		const pre = codeBlock.firstChild;
+		// 3. Append the button directly before the pre tag
+		//    (with content-searching fix in place for Prism)
+		const pre = codeBlock.parentNode;
 		pre.parentNode.insertBefore(button, pre);
 	});
 };
