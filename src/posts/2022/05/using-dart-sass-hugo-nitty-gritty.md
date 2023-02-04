@@ -66,7 +66,7 @@ Throughout these instructions, we will pretend that your user name is `JohnDoe`.
 	- x64 (`linux-x64`)
 	- IA-32 (`linux-ia32`)
 
-3. To unpack the `.tar.gz` archive file to retrieve its contents, enter `tar -xf ` followed by the name of the `.tar.gz` file. (As an alternative, depending on your particular Linux distribution and windows manager, you **may** also be able to use a GUI to perform this operation.) The resulting contents will depend on which `tar.gz` archive file you chose.
+3. To unpack the `.tar.gz` archive file to retrieve its contents, enter `tar -xf ` followed by the name of the `.tar.gz` file. (As an alternative, depending on your particular Linux distribution and windows manager, you **may** also be able to use a GUI to perform this operation.) This will result in a `sass_embedded` folder, the contents of which will depend on which `tar.gz` archive file you chose.
 
 ### Move the `sass_embedded` folder to `bin`
 
