@@ -309,10 +309,10 @@ module.exports = function(eleventyConfig) {
   //   require("./src/assets/utils/stweetv2.js")
   // )
 
-  // eleventyConfig.addNunjucksAsyncShortcode(
-  //   "stweetsimple",
-  //   require("./src/assets/utils/stweetsimple.js")
-  // )
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "stweetsimple",
+    require("./src/assets/utils/stweetsimple.js")
+  )
 
   eleventyConfig.addNunjucksAsyncShortcode(
     "stoot",
