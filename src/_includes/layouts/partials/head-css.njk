@@ -3,24 +3,31 @@
 {%- set searchPageTitle = siteparams.searchPageTitle -%}
 
 {%- set cssTypes = [
-	[(('<pre class="language' in content) or ('<code>' in content)), 'prismjs'],
+	[('<blockquote class="toot-blockquote' in content), 'social'],
+	[(('<pre class="language' in content) or ('<code>' in content)), 'code'],
 	[('<table' in content), 'tables'],
 	[('<lite-youtube' in content), 'lite-yt-embed'],
-	[(searchPageTitle in title), 'search-form'],
+	[(('Home page' not in title) and ('Sitemap (HTML form)' not in title) and (title != 'Posts')), 'billboard'],
+	[(((title != searchPageTitle) and (title != 'Posts'))	and ((tags == "post") or (title == 'About me') or (title == 'Privacy policy')	or (title == 'Want to reach me?'))), 'article'],
+	[('class="footnote-ref' in content), 'footnotes'],
+	[(title == searchPageTitle), 'search-form'],
 	[('<article' in content), 'article'],
-	[(('<section class="footnotes' in content) or ('class="footnote-sim' in content)), 'footnotes']
+	[((tags == 'post') and (title != 'Posts')), 'posts-single'],
+	[(title == 'Posts'), 'posts-list'],
+	[(('<section class="footnotes' in content) or ('class="footnote-sim' in content)), 'footnotes'],
+	[(title == 'Home page'), 'home'],
+	[(title == 'Sitemap (HTML form)'), 'sitemaphtml'],
+	[(title != 'Search the site'), 'search-btn'],
+	[(title == 'Search the site'), 'search-form'],
+	[('<details>' in content), 'details'],
+	[(title == "404 Page not found"), 'fourohfour']
 ]
 -%}
 
-{%- set cssStyles -%}
-	{%- for condition, fileName in cssTypes -%}
-		{%- if condition == true -%}
-			{%- set tempName = "../../../assets/css/" + fileName + ".css" -%}
-			{% include tempName %}
-		{%- endif -%}
-	{%- endfor %}
-{%- endset -%}
-
-{%- if cssStyles != "" -%}
-	<style>{{ cssStyles | cssmin | safe }}</style>
-{%- endif -%}
+{%- for condition, fileName in cssTypes -%}
+	{%- if condition == true -%}
+		{%- set tempName = fileName + ".css" -%}
+		<link rel="preload" href="{{ collections._styles | assetUrl(tempName) | url }}" as="style">
+		<link rel="stylesheet" href="{{ collections._styles | assetUrl(tempName) | url }}" type="text/css">
+	{%- endif -%}
+{%- endfor %}

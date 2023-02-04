@@ -1,8 +1,8 @@
-				<div class="flex flex-row gap-4 lg:gap-8 justify-center">
+				<div class="posts-pagerThing">
 					{# First page. #}
 					<div>
-						{% if pagination.firstPageHref != page.url %}
-							<a class="border-0 decoration-transparent focus:border-0 focus:decoration-transparent hover:border-0 hover:decoration-transparent active:border-0 active:decoration-transparent" aria-label="First page" href={{ pagination.firstPageHref}}>
+						{% if (pagination.href.first != page.url) and (pagination.href.first != pagination.href.previous) %}
+							<a class="icon" aria-label="First page" href={{ pagination.href.first}}>
 								{% include "layouts/partials/svgPrevPageIcon.njk" %}{% include "layouts/partials/svgPrevPageIcon.njk" %}
 							</a>
 						{% else %}
@@ -12,8 +12,8 @@
 					<div class="pagerSpacer"></div>
 					{# Previous page. #}
 					<div>
-						{% if pagination.firstPageHref != page.url %}
-		          <a class="border-0 decoration-transparent focus:border-0 focus:decoration-transparent hover:border-0 hover:decoration-transparent active:border-0 active:decoration-transparent" aria-label="Previous page" href={{ pagination.previousPageHref }}>
+						{% if pagination.href.first != page.url %}
+		          <a class="icon" aria-label="Previous page" href={{ pagination.href.previous }}>
 								{% include "layouts/partials/svgPrevPageIcon.njk" %}
 							</a>
 						{% else %}
@@ -24,8 +24,8 @@
  					<div class="pagerSpacer"></div>
 					{# Next page. #}
 					<div>
-						{% if pagination.lastPageHref != page.url %}
-							<a class="border-0 decoration-transparent focus:border-0 focus:decoration-transparent hover:border-0 hover:decoration-transparent active:border-0 active:decoration-transparent" aria-label="Next page" href={{ pagination.nextPageHref }}>
+						{% if pagination.href.last != page.url %}
+							<a class="icon" aria-label="Next page" href={{ pagination.href.next }}>
 								{% include "layouts/partials/svgNextPageIcon.njk" %}
 							</a>
 						{% else %}
@@ -35,8 +35,8 @@
  					<div class="pagerSpacer"></div>
 					{# Last page. #}
 					<div>
-						{% if pagination.lastPageHref != page.url %}
-							<a class="border-0 decoration-transparent focus:border-0 focus:decoration-transparent hover:border-0 hover:decoration-transparent active:border-0 active:decoration-transparent" aria-label="Last page" href={{ pagination.lastPageHref }}>
+						{% if (pagination.href.last != page.url) and (pagination.href.last != pagination.href.next ) %}
+							<a class="icon" aria-label="Last page" href={{ pagination.href.last }}>
 								{% include "layouts/partials/svgNextPageIcon.njk" %}{% include "layouts/partials/svgNextPageIcon.njk" %}
 							</a>
 						{% else %}

@@ -12,12 +12,9 @@
 		<link rel="alternate" type="application/atom+xml" title="BryceWray.com, full-text - RSS" href="https://www.brycewray.com/index.xml">
 		<link rel="alternate" type="application/feed+json" title="BryceWray.com, full-text - JSON" href="https://www.brycewray.com/index.json">
 		<link rel="alternate" type="application/atom+xml" title="BryceWray.com, excerpt-only - RSS" href="https://www.brycewray.com/index-excerpts.xml">
-
 		{% include 'layouts/partials/head-criticalcss.njk' %}
 		{% include 'layouts/partials/head-css.njk' %}
-
-		<noscript><style>.nScrHidden {display: none;}</style></noscript>
-
+		<noscript><style type="text/css">.lazy, .nScrHidden {display: none;}</style></noscript>
 		{%- if eleventyEnv == "production" -%}
 		{#- Fathom - beautiful, simple website analytics -#}
 		<script src="https://guitar-thriving.brycewray.com/script.js" data-site="UJDSNFVF" defer></script>

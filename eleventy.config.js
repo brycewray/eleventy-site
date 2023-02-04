@@ -8,7 +8,7 @@ const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const CleanCSS = require('clean-css')
 // const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
-// const pluginRev = require("eleventy-plugin-rev")
+const pluginRev = require("eleventy-plugin-rev")
 // const eleventySass = require("eleventy-sass")
 // const UpgradeHelper = require ("@11ty/eleventy-upgrade-help")
 
@@ -98,13 +98,24 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addPlugin(svgContents)
 	eleventyConfig.addPlugin(syntaxHighlight)
 	// eleventyConfig.addPlugin(pluginRev)
-	// eleventyConfig.addPlugin(eleventySass, {
-	// 	rev: true,
-	// 	sass: {
-	// 		style: "compressed",
-	// 		sourceMap: false
+	// eleventyConfig.addPlugin(eleventySass, [
+	// 	{
+	// 		compileOptions: {
+	// 			permalink: function(contents, inputPath) {
+	// 				return (data) => {
+	// 					return data.page.filePathStem.replace(/^\/assets\/scss\//, "/css/") + ".css"
+	// 				}
+	// 			}
+	// 		}
+	// 	},
+	// 	{
+	// 		rev: true,
+	// 		sass: {
+	// 			style: "compressed",
+	// 			sourceMap: false
+	// 		}
 	// 	}
-	// })
+	// ])
 
 	// eleventyConfig.addPlugin(pluginEmbedTweet, {
   //   useInlineStyles: false,
@@ -143,7 +154,21 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
 
-  eleventyConfig.addFilter("numCommas", function(value) {
+	eleventyConfig.addFilter("assetUrl", function (assetCollection, key) {
+		for (let asset of assetCollection) {
+			if (asset.data.assetKey === key) return asset.url
+		}
+		return ""
+	})
+	eleventyConfig.addFilter("assetContent", function (assetCollection, key) {
+		for (let asset of assetCollection) {
+			if (asset.data.assetKey === key) return asset.content
+		}
+		return ""
+	})
+
+
+	eleventyConfig.addFilter("numCommas", function(value) {
 		return value.toLocaleString()
 	})
 
@@ -251,7 +276,6 @@ module.exports = function(eleventyConfig) {
   )
 
   /* --- end, Markdown handling --- */
-
 
   eleventyConfig.addWatchTarget("./src/**/*.js")
   eleventyConfig.addWatchTarget("./src/**/*.css")

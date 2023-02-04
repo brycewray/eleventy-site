@@ -43,52 +43,52 @@ module.exports = async (instance, id) => {
 		Json.media_attachments.forEach((type, meta) => {
 			if (Json.media_attachments[0].type == "image") {
 				mediaStuff = ``;
-				mediaStuff = mediaStuff + `<div class="mt-2 rounded-xl overflow-hidden grid grid-cols-1 gap-[2px]"><style>.img-${mediaMD5} {aspect-ratio: ${Json.media_attachments[0].meta.original.width} / ${Json.media_attachments[0].meta.original.height}}</style>`;
-				mediaStuff = mediaStuff + `<img src="${Json.media_attachments[0].url}" alt="Image ${Json.media_attachments[0].id} from toot ${id} on ${instance}" class="tweet-media-img img-${mediaMD5}`;
+				mediaStuff = mediaStuff + `<div class="toot-img-grid-${imageCount}"><style>.img-${mediaMD5} {aspect-ratio: ${Json.media_attachments[0].meta.original.width} / ${Json.media_attachments[0].meta.original.height}}</style>`;
+				mediaStuff = mediaStuff + `<img src="${Json.media_attachments[0].url}" alt="Image ${Json.media_attachments[0].id} from toot ${id} on ${instance}" class="toot-media-img img-${mediaMD5}`;
 				if (Json.sensitive) {
-					mediaStuff = mediaStuff + ` blur-2xl relative`;
+					mediaStuff = mediaStuff + ` toot-sens-blur`;
 				}
 				mediaStuff = mediaStuff + `" loading="lazy"`;
 				if (Json.sensitive) {
-					mediaStuff = mediaStuff + ` onclick="this.classList.toggle('!blur-none !z-[9999] relative')"`;
+					mediaStuff = mediaStuff + ` onclick="this.classList.toggle('toot-sens-blur-no')"`;
 				}
 				mediaStuff = mediaStuff + `/>`;
 				if (Json.sensitive) {
-					mediaStuff = mediaStuff + `<div class="absolute font-bold w-full top-[40%] text-white text-center text-2xl leading-tight">Sensitive content<br />(flagged&nbsp;at&nbsp;origin)</div>`;
+					mediaStuff = mediaStuff + `<div class="blur-text">Sensitive content<br />(flagged&nbsp;at&nbsp;origin)</div>`;
 				}
 				mediaStuff = mediaStuff + `</div>`;
 			}
 			if (Json.media_attachments[0].type == "video") {
 				videoStuff = ``;
 				videoStuff = videoStuff + `<style>.img-${mediaMD5} {aspect-ratio: ${Json.media_attachments[0].meta.original.width} / ${Json.media_attachments[0].meta.original.height}}</style>`;
-				videoStuff = videoStuff + `<div class="text-center mt-2 rounded-xl overflow-hidden grid grid-cols-1 gap-[2px]"><video muted playsinline controls class="text-center w-full h-auto aspect-square object-cover img-${mediaMD5}`;
+				videoStuff = videoStuff + `<div class="ctr toot-video-wrapper"><video muted playsinline controls class="ctr toot-media-img img-${mediaMD5}`;
 				if (Json.sensitive) {
-					videoStuff = videoStuff + ` blur-2xl relative`;
+					videoStuff = videoStuff + ` toot-sens-blur`;
 				}
 				videoStuff = videoStuff + `"`;
 				if (Json.sensitive) {
-					videoStuff = videoStuff + ` onclick="this.classList.toggle('!blur-none !z-[9999] relative')"`;
+					videoStuff = videoStuff + ` onclick="this.classList.toggle('toot-sens-blur-no')"`;
 				}
-				videoStuff = videoStuff + `><source src="${Json.media_attachments[0].url}"><p class="fluid-xs text-center">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`;
+				videoStuff = videoStuff + `><source src="${Json.media_attachments[0].url}"><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`;
 				if (Json.sensitive) {
-					videoStuff = videoStuff + `<div class="absolute font-bold w-full top-[40%] text-white text-center text-2xl leading-tight">Sensitive content<br />(flagged&nbsp;at&nbsp;origin)</div>`;
+					videoStuff = videoStuff + `<div class="blur-text">Sensitive content<br />(flagged&nbsp;at&nbsp;origin)</div>`;
 				}
 				videoStuff = videoStuff + `</div>`
 			}
 			if (Json.media_attachments[0].type == "gifv") {
 				gifvStuff = ``;
 				gifvStuff = gifvStuff + `<style>.img-${mediaMD5} {aspect-ratio: ${Json.media_attachments[0].meta.original.width} / ${Json.media_attachments[0].meta.original.height}}</style>`;
-				gifvStuff = gifvStuff + `<div class="text-center mt-2 rounded-xl overflow-hidden grid grid-cols-1 gap-[2px]"><video loop autoplay muted playsinline controls controlslist="nofullscreen" class="text-center w-full h-auto aspect-square object-cover img-${mediaMD5}`;
+				gifvStuff = gifvStuff + `<div class="ctr toot-video-wrapper"><video loop autoplay muted playsinline controls controlslist="nofullscreen" class="ctr toot-media-img img-${mediaMD5}`;
 				if (Json.sensitive) {
-					gifvStuff = gifvStuff + ` blur-2xl relative`;
+					gifvStuff = gifvStuff + `toot-sens-blur`;
 				}
 				gifvStuff = gifvStuff + `"`;
 				if (Json.sensitive) {
-					gifvStuff = gifvStuff + ` onclick="this.classList.toggle('!blur-none !z-[9999] relative')"`;
+					gifvStuff = gifvStuff + ` onclick="this.classList.toggle('toot-sens-blur-no')"`;
 				}
-				gifvStuff = gifvStuff + `><source src="${Json.media_attachments[0].url}"><p class="fluid-xs text-center">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`;
+				gifvStuff = gifvStuff + `><source src="${Json.media_attachments[0].url}"><p class="legal ctr">(Your browser doesn&rsquo;t support the <code>video</code> tag.)</p></video>`;
 				if (Json.sensitive) {
-					gifvStuff = gifvStuff + `<div class=""absolute font-bold w-full top-[40%] text-white text-center text-2xl leading-tight">Sensitive content<br />(flagged&nbsp;at&nbsp;origin)</div>`;
+					gifvStuff = gifvStuff + `<div class="blur-text">Sensitive content<br />(flagged&nbsp;at&nbsp;origin)</div>`;
 				}
 				gifvStuff = gifvStuff + `</div>`
 			}
@@ -107,31 +107,31 @@ module.exports = async (instance, id) => {
 
 	if(Json.card !== null) {
 		cardStuff = ``;
-		cardStuff = cardStuff + `<a href="${Json.card.url}" class="no-underline decoration-transparent text-gray-700 dark:text-gray-300" rel="noopener"><div class="relative md:flex border border-gray-700 dark:border-gray-200 rounded-md mt-4 decoration-transparent overflow-hidden"><div class="flex-100 md:flex-200 relative"><img src="${Json.card.image}" alt="Card image from ${instance} toot ${id}" loading="lazy" class="block m-0 w-full h-full object-cover bg-cover bg-[50%]" /></div><div class="flex-auto overflow-hidden p-3 leading-normal"><p class="font-bold fluid-sm !tracking-normal !leading-normal">${Json.card.title}</p><p class="fluid-xs !leading-normal !tracking-normal">${Json.card.description}</p></div></div></a>`;
+		cardStuff = cardStuff + `<a href="${Json.card.url}" rel="noopener"><div class="toot-card"><div class="toot-card-image"><img src="${Json.card.image}" alt="Card image from ${instance} toot ${id}" loading="lazy" class="toot-card-image-image" /></div><div class="toot-card-content"><p class="card-title">${Json.card.title}</p><p class="card-description">${Json.card.description}</p></div></div></a>`;
 	}
 
 	if (Json.poll !== null) {
 		votesCount = Json.poll.votes_count;
 		let pollIterator = 0;
 		pollStuff = ``;
-		pollStuff = pollStuff + `<div class="grid grid-cols-[3.5em 0.5fr 1fr] gap-[1em]leading-none">`;
+		pollStuff = pollStuff + `<div class="toot-poll-wrapper">`;
 		Json.poll.options.forEach(( options ) => {
-			pollStuff = pollStuff + `<div class="col-start-1 text-right"><strong>${((Json.poll.options[pollIterator].votes_count)/(votesCount)).toLocaleString("en", {style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1})}</strong></div><div class="col-start-2"><meter class="w-full" id="vote-count" max="${votesCount}" value=${Json.poll.options[pollIterator].votes_count}></meter></div><div class="col-start-3">${Json.poll.options[pollIterator].title}</div>`;
+			pollStuff = pollStuff + `<div class="toot-poll-count"><strong>${((Json.poll.options[pollIterator].votes_count)/(votesCount)).toLocaleString("en", {style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1})}</strong></div><div class="toot-poll-meter"><meter id="vote-count" max="${votesCount}" value=${Json.poll.options[pollIterator].votes_count}></meter></div><div class="toot-poll-title">${Json.poll.options[pollIterator].title}</div>`;
 			pollIterator = ++pollIterator;
 		})
-		pollStuff = pollStuff + `</div><p class="fluid-xs pt-4">${votesCount} people</p>`;
+		pollStuff = pollStuff + `</div><p class="legal toot-poll-total">${votesCount} people</p>`;
 	}
 
 	if (Json.content) {
-		stringToRet = `<blockquote class="fluid-base mx-auto my-auto p-4 border-2 border-gray-700 dark:border-gray-200 rounded-xl bg-white dark:bg-gray-900 w-full md:w-[80%]" cite="${tootLink}" data-pagefind-ignore>
-			<div class="flex">
-				<a class="mr-2 flex-shrink-0 no-underline" href="https://${instance}/@${Json.account.acct}" rel="noopener"><img class="w-[48px] h-auto rounded-full" src="${Json.account.avatar}" alt="Mastodon avatar for ${handleInst}" loading="lazy" /></a>
-				<div class="flex flex-col flex-grow">
-					<a class="font-bold text-black dark:text-white fluid-sm lg:fluid-base !tracking-normal no-underline" href="https://${instance}/@${Json.account.acct}" rel="noopener">${Json.account.display_name}</a>
-					<a class="text-gray-700 dark:text-gray-200 fluid-xs lg:fluid-sm !leading-none !tracking-normal no-underline" href="https://${instance}/@${Json.account.acct}" rel="noopener">${handleInst}</a>
+		stringToRet = `<blockquote class="toot-blockquote" cite="${tootLink}" data-pagefind-ignore>
+			<div class="toot-header">
+				<a class="toot-profile" href="https://${instance}/@${Json.account.acct}" rel="noopener"><img src="${Json.account.avatar}" alt="Mastodon avatar for ${handleInst}" loading="lazy" /></a>
+				<div class="toot-author">
+					<a class="toot-author-name" href="https://${instance}/@${Json.account.acct}" rel="noopener">${Json.account.display_name}</a>
+					<a class="toot-author-handle" href="https://${instance}/@${Json.account.acct}" rel="noopener">${handleInst}</a>
 				</div>
 			</div>
-			<div class="toot-content py-4">${Json.content}</div>`
+			<p class="toot-body">${Json.content}</p>`
 			if (mediaStuff) {
 				stringToRet += `<div>${mediaStuff}</div>`
 			}
@@ -151,8 +151,8 @@ module.exports = async (instance, id) => {
 			let timeToFormat = Json.created_at
 			let formattedTime = DateTime.fromISO(timeToFormat, { zone: "utc" }).toFormat("h:mm a • MMMM d, yyyy")
 
-			stringToRet += `<div class="mt-4 flex items-center text-gray-500 dark:text-gray-300 fluid-sm !tracking-normal">
-				<a href="https://${instance}/@${Json.account.acct}/${Json.id}" class="text-gray-600 dark:text-gray-300 no-underline" rel="noopener">${formattedTime}</a>&nbsp;<span class="fluid-xs">(UTC)</span>
+			stringToRet += `<div class="toot-footer">
+				<a href="https://${instance}/@${Json.account.acct}/${Json.id}" class="toot-date" rel="noopener">${formattedTime}</a>&nbsp;<span class="legal">(UTC)</span>
 			</div>
 		</blockquote>`
 	}

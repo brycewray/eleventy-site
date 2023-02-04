@@ -1,11 +1,10 @@
 {%- set eleventyEnv = projEnv.environment -%}
 {%- set siteHost = siteparams.siteHost -%}
 <!DOCTYPE html>
-<html class="scroll-p-[80px]" lang="en" charset="utf-8">
+<html lang="en">
   {%- include 'layouts/partials/head.njk' -%}
-  <body class="bg-slate-100 dark:bg-black text-black dark:text-gray-100 font-sans font-normal">
+  <body>
     {%- include 'layouts/partials/header.njk' -%}
-		<div class="absolute -z-[9999] bg-gradient-to-b from-slate-800 via-slate-300 to-transparent dark:from-slate-500 dark:via-slate-800 w-full h-[12em]"></div>
     {{ content | safe }}
     {%- if title != "Search the site" -%}
 			{%- include 'layouts/partials/search-pagefind.njk' -%}

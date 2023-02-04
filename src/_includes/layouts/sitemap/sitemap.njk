@@ -5,24 +5,26 @@ eleventyExcludeFromCollections: true
 eleventyImport.collections: ["post"]
 ---
   <main>
-    <div class="sm:w-5/6 md:w-4/5 lg:w-7/12 mr-auto ml-auto px-6 lg:px-16" data-pagefind-ignore>
-			<h1 class="font-[600] dark:font-[550] text-center pt-16 lg:pt-24 fluid-3xl !tracking-tight">Sitemap</h1>
-			<h2 class="fluid-xl !tracking-tight my-6">Main pages</h2>
-			<ul>
-				<li class="fluid-sm !tracking-normal my-4"><a href="/">Home page</a></li>
-				<li class="fluid-sm !tracking-normal my-4"><a href="/about/">About me</a></li>
-				<li class="fluid-sm !tracking-normal my-4"><a href="/search/">Search page</a></li>
-				<li class="fluid-sm !tracking-normal my-4"><a href="/privacy/">Privacy policy</a></li>
-				<li class="fluid-sm !tracking-normal my-4"><a href="/contact/">How to contact me</a></li>
-			</ul>
-			<h2 class="fluid-xl !tracking-tight mt-8">Posts</h2>
-			<ul>
-				<li class="fluid-sm !tracking-normal my-4"><a href="/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
-				{% for post in collections.post | reverse %}
-					<li class="fluid-sm !tracking-normal my-4"><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>{% if not 'The site this week' in post.data.title %}&nbsp;&nbsp;<strong class="text-xs whitespace-nowrap">{{ post.date | dateStringISO }}</strong>{% endif %}<br />
-					{{ post.data.description | safe }}
-					</li>
-				{% endfor %}
-			</ul>
+    <div class="sitemap-Container" data-pagefind-ignore>
+			<div class="sitemap-Div">
+				<h1 class="ctr">Sitemap</h1>
+				<h2>Main pages</h2>
+				<ul>
+					<li><a href="/">Home page</a></li>
+					<li><a href="/about/">About me</a></li>
+					<li><a href="/search/">Search page</a></li>
+					<li><a href="/privacy/">Privacy policy</a></li>
+					<li><a href="/contact/">How to contact me</a></li>
+				</ul>
+				<h2>Posts</h2>
+				<ul>
+					<li><a href="/posts/"><strong>Complete list</strong></a> <em>(first page of paginated list; five posts per page)</em></li>
+					{% for post in collections.post | reverse %}
+						<li><a href="{{ post.url }}"><strong>{{ post.data.title | safe }}</strong></a>{% if not 'The site this week' in post.data.title %}&nbsp;&nbsp;<strong class="legal">{{ post.date | dateStringISO }}</strong>{% endif %}<br />
+						{{ post.data.description | safe }}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
   </main>

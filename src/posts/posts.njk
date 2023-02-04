@@ -18,23 +18,23 @@ eleventyImport:
 ---
 
   <main>
-    <div class="text-center px-10 w-full mx-auto" data-pagefind-ignore>
-      <h1 class="pt-16 lg:pt-20 fluid-4xl !tracking-tight">Posts</h1>
-      <div class="my-0 mx-auto w-[85%] lg:w-3/4 2xl:w-[62.5%]">
+    <div class="posts-Wrapper ctr" data-pagefind-ignore>
+      <h1 class="posts-Head">Posts</h1>
+      <div class="posts-Container">
 				{% include "layouts/partials/pagerthing.njk" %}
-				<hr class="border-1 border-y-black dark:border-y-white mt-2 mb-6" />
+				<hr class="paginatorTop" />
         {% for post in posts %}
-          <div>
-            <h2 class="fluid-xl !leading-tight !tracking-tight lg:text-[2rem] 2xl:text-4xl mb-2"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
+          <div class="posts-ItemDiv">
+            <h2 class="posts-Title"><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
 						{% set dashDescription = post.data.description | replace(" — ", "—") %}
-            <p class="fluid-lg font-light !tracking-tight mt-2 mb-1">
+            <p class="posts-Description">
               {{ dashDescription | safe }}
             </p>
-            <p class="fluid-base !tracking-normal mt-0 mb-6">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
+            <p class="posts-Dates">{% if not 'The site this week' in post.data.title %}<strong><time datetime="{{ post.date | dateStringISO }}">{{ post.date | dateStringISO }}</time></strong>{% endif %}
             </p>
           </div>
         {% endfor %}
-        <hr class="border-1 border-y-black dark:border-y-white mt-6 mb-2" />
+        <hr class="paginatorBottom" />
 				{% include "layouts/partials/pagerthing.njk" %}
       </div>
     </div>

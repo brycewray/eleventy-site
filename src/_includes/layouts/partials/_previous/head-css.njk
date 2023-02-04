@@ -1,0 +1,26 @@
+{%- set eleventyEnv = projEnv.environment -%}
+{%- set siteHost = siteparams.siteHost -%}
+{%- set searchPageTitle = siteparams.searchPageTitle -%}
+
+{%- set cssTypes = [
+	[(('<pre class="language' in content) or ('<code>' in content)), 'prismjs'],
+	[('<table' in content), 'tables'],
+	[('<lite-youtube' in content), 'lite-yt-embed'],
+	[(searchPageTitle in title), 'search-form'],
+	[('<article' in content), 'article'],
+	[(('<section class="footnotes' in content) or ('class="footnote-sim' in content)), 'footnotes']
+]
+-%}
+
+{%- set cssStyles -%}
+	{%- for condition, fileName in cssTypes -%}
+		{%- if condition == true -%}
+			{%- set tempName = "../../../assets/css/" + fileName + ".css" -%}
+			{% include tempName %}
+		{%- endif -%}
+	{%- endfor %}
+{%- endset -%}
+
+{%- if cssStyles != "" -%}
+	<style>{{ cssStyles | cssmin | safe }}</style>
+{%- endif -%}
