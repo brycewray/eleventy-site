@@ -167,9 +167,8 @@ module.exports = function(eleventyConfig) {
 		return ""
 	})
 
-
-	eleventyConfig.addFilter("numCommas", function(value) {
-		return value.toLocaleString()
+	eleventyConfig.addFilter("numCommas", function (value) {
+		return new Intl.NumberFormat('en-US').format(value)
 	})
 
 	/* --- date-handling --- */
@@ -324,10 +323,10 @@ module.exports = function(eleventyConfig) {
     require("./src/assets/utils/disclaimer.js")
   )
 
-	eleventyConfig.addNunjucksShortcode(
-		"gitinfo",
-		require("./src/assets/utils/gitinfo.js")
-	)
+	// eleventyConfig.addNunjucksShortcode(
+	// 	"gitinfo",
+	// 	require("./src/assets/utils/gitinfo.js")
+	// )
 
   // https://www.11ty.dev/docs/quicktips/inline-css/
 	eleventyConfig.addFilter("cssmin", function(code) {
