@@ -36,7 +36,6 @@ env:
   TOKEN_SECRET: ${{ secrets.TOKEN_SECRET }}
   CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
   CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
-  # WEBMENTION_IO_TOKEN: ${{ secrets.WEBMENTION_IO_TOKEN }}
 
 jobs:
   deploy:
@@ -60,7 +59,6 @@ jobs:
       - name: Build site with Eleventy
         run: npm run build
       - name: Run Pagefind
-        # run: npm_config_yes=true npx pagefind --source "_site"
         run: npm run pagefind
       - name: Publish to CFP
         uses: cloudflare/pages-action@v1
@@ -70,36 +68,3 @@ jobs:
           projectName: 'static-site'
           directory: '_site'
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-  # following, for restarts-on-failures, based on:
-  # https://www.eliostruyf.com/restart-github-actions-workflow-failed/
-  restart_on_failed_push_build:
-    name: Restart failed push build
-    runs-on: ubuntu-latest
-    # restarts push-based run when it fails
-    if: github.event_name == 'push' && failure()
-    needs: [deploy]
-    steps:
-      - name: Retry the workflow
-        run: |
-          curl -i \
-          -X POST \
-          -H "Accept: application/vnd.github.v3+json" \
-          -H "Authorization: token ${{ secrets.GHA_PAT }}" \
-          https://api.github.com/repos/brycewray/eleventy_site/actions/workflows/34019029/dispatches \
-          -d '{"ref": "${{ github.ref }}" }'
-  # restart_on_failed_cron_job:
-  #   name: Restart failed cron job build
-  #   runs-on: ubuntu-latest
-  #   # restarts scheduled run when it fails
-  #   if: github.event_name == 'schedule' && failure()
-  #   needs: [deploy]
-  #   steps:
-  #     - name: Retry the workflow
-  #       run: |
-  #         curl -i \
-  #         -X POST \
-  #         -H "Accept: application/vnd.github.v3+json" \
-  #         -H "Authorization: token ${{ secrets.GHA_PAT }}" \
-  #         https://api.github.com/repos/brycewray/eleventy_site/actions/workflows/34019029/dispatches \
-  #         -d '{"ref": "${{ github.ref }}" }'
-
