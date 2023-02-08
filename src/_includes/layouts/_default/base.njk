@@ -19,7 +19,11 @@
       {%- endif %}
     {%- endif -%}
 		{%- if '<pre class="language' in content -%}
-			<script nonce="DhcnhD3khTMePgXw" src="/assets/js/copy-code-button.js" defer></script>
+			{%- if siteHost == "CFP" -%}
+				<script nonce="DhcnhD3khTMePgXw" src="/assets/js/copy-code-button.js" defer></script>
+			{%- elseif -%}
+				<script src="/assets/js/copy-code-button.js" defer></script>
+			{%- endif -%}
 		{%- endif %}
   </body>
 </html>
