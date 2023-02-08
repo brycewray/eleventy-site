@@ -31,7 +31,7 @@ These results made it pretty clear to me what I should do.
 
 Thus, the appearance of the site's code blocks, like that of pretty much every other element herein, now matches your chosen display mode. Also: to confirm the results met accessibility guidelines, I used [WebAIM](https://webaim.org/)'s online tools for checking the contrast of both [text](https://webaim.org/resources/contrastchecker/) and [links](https://webaim.org/resources/linkcontrastchecker/).[^links]
 
-[^links]: The links' appearance comes into play with *inline* code (*e.g.*, `a link to the `[`Hugo website`](https://gohugo.io)) rather than code blocks, but --- again --- I was under the hood, anyway, and figured I might as well handle that stuff, too.
+[^links]: The links' appearance comes into play with *inline* code (*e.g.*, `a link to the `[`Hugo website`](https://gohugo.io)) rather than code blocks, but --- again --- I was under the hood, anyway, and figured I might as well handle that stuff, too.
 
 My code always has its flaws but, from here on, perhaps at least it will be pleasant to view.
 
