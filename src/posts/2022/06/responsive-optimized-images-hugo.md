@@ -8,6 +8,8 @@ lastmod: 2022-08-31T08:17:00-05:00
 #initTextEditor: iA Writer
 ---
 
+{% disclaimer %}
+
 If you use any images on your website, you probably know how important it is to make them fully *responsive* and as *optimized* as possible so they provide an optimal user experience, regardless of screen size or connectivity. Fortunately, the [Hugo](https://gohugo.io) [static site generator](https://jamstack.org/generators) (SSG) comes with many impressive [image processing capabilities](https://gohugo.io/content-management/image-processing/) which can help you automate this to an amazing degree. Hugo can resize images of all sizes, convert them to multiple different formats, and perform many more image processing feats --- all much more quickly than can any other SSG.
 
 Years ago, the availability of Hugo image processing was more restrictive concerning the images' location within a Hugo project. Specifically, they had to be [*page resources*](https://gohugo.io/content-management/image-processing/#page-resources), and thus in the same folder as the Markdown content calling them. While that's still perfectly fine, they now also can be [*global resources*](https://gohugo.io/content-management/image-processing/#global-resources), existing in either the project's `assets/` folder or any subfolder thereof.[^versionGlobal] I'm old-school and prefer to keep textual content files separate from image files, so I like this flexibility quite a bit.
@@ -302,3 +304,5 @@ Even if you don't use `imgh` or anything like it, I hope this article has at lea
 - Utkarsh Verma, "[Using responsive images effortlessly with Hugo](https://bitbanged.com/posts/using-responsive-images-effortlessly-with-hugo/)" (<span class="nobrk">2022-03-06</span>).
 - Joost van der Schee, "[Image compression for the lazy](https://hugocodex.org/blog/image-compression-for-the-lazy/)" (<span class="nobrk">2022-06-19</span>).
 
+**Update from the future**: Whether the site's image processing is almost entirely in the hands of Hugo's built-in functionality or Cloudinary depends on whether I'm currently running the site on Hugo or Eleventy. In either case, I use Cloudinary to [auto-generate my site's social media images](/posts/2022/10/automated-social-media-images-cloudinary-hugo/).
+{.box}
