@@ -283,7 +283,7 @@ module.exports = function(eleventyConfig) {
 	// --- REQUIRES Eleventy v.2.0+
 	eleventyConfig.setServerOptions({
 		// enabled: true, // default
-    port: 3000, // default is 8080
+    // port: 3000, // default is 8080
     showAllHosts: true,
     showVersion: true
   })
