@@ -26,8 +26,8 @@
 
 {%- for condition, fileName in cssTypes -%}
 	{%- if condition == true -%}
-		{%- set tempName = fileName + ".css" -%}
-		<link rel="preload" href="{{ collections._styles | assetUrl(tempName) | url }}" as="style">
-		<link rel="stylesheet" href="{{ collections._styles | assetUrl(tempName) | url }}" type="text/css">
+		{%- set finalName = fileName + ".css" -%}
+		<link rel="preload" href="/css/{{ finalName }}" as="style">
+		<link rel="stylesheet" href="/css/{{ finalName }}" type="text/css">
 	{%- endif -%}
 {%- endfor %}

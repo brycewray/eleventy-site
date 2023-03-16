@@ -1,1 +1,10 @@
-<style>{{ (collections._styles | assetContent('critical.css')) | safe }}</style>
+{% set criticalCSS %}
+	{% include 'css/001_reset.css' %}
+	{% include 'css/010_variables.css' %}
+	{% include 'css/020_global.css' %}
+	{% include 'css/050_utility.css' %}
+	{% include 'css/060_nav.css' %}
+	{% include 'css/070_vweights.css' %}
+	{% include 'css/080_ffoxobliq.css' %}
+{% endset %}
+<style>{{ criticalCSS | safe }}</style>

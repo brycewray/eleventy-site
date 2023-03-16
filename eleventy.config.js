@@ -1,4 +1,4 @@
-// const fs = require("fs")
+const fs = require("fs")
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
@@ -43,12 +43,12 @@ async function imageShortcode(src, alt) {
   </picture>`
 }
 
-module.exports = function(eleventyConfig) {
+module.exports = (eConfig) => {
 
 	// *** BEGINNING, DRAFT POSTS STUFF ***
 	// https://www.11ty.dev/docs/quicktips/draft-posts/
 	// When `permalink` is false, the file is not written to disk
-	eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
+	eConfig.addGlobalData("eleventyComputed.permalink", function() {
 		return (data) => {
 			// Always skip during non-watch/serve builds
 			if ((data.date > Date.now() || data.draft) && !process.env.BUILD_DRAFTS) {
@@ -58,7 +58,7 @@ module.exports = function(eleventyConfig) {
 		}
 	})
   // When `eleventyExcludeFromCollections` is true, the file is not included in any collections
-	eleventyConfig.addGlobalData("eleventyComputed.eleventyExcludeFromCollections", function() {
+	eConfig.addGlobalData("eleventyComputed.eleventyExcludeFromCollections", function() {
 		return (data) => {
 			// Always exclude from non-watch/serve builds
 			if ((data.date > Date.now() || data.draft) && !process.env.BUILD_DRAFTS) {
@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
 			return data.eleventyExcludeFromCollections
 		}
 	})
-	eleventyConfig.on("eleventy.before", ({runMode}) => {
+	eConfig.on("eleventy.before", ({runMode}) => {
 		// Set the environment variable
 		if (runMode === "serve" || runMode === "watch") {
 			process.env.BUILD_DRAFTS = true
@@ -76,110 +76,109 @@ module.exports = function(eleventyConfig) {
 	// *** END, DRAFT POSTS STUFF ***
 
   // *** SHORTCODES
-	eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
-  eleventyConfig.addLiquidShortcode("image", imageShortcode)
+	eConfig.addNunjucksAsyncShortcode("image", imageShortcode)
+  eConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
-  eleventyConfig.addJavaScriptFunction("image", imageShortcode)
+  eConfig.addJavaScriptFunction("image", imageShortcode)
 
 	// *** PLUGINS
-	eleventyConfig.addPlugin(pluginRss)
-	eleventyConfig.addPlugin(syntaxHighlight)
+	eConfig.addPlugin(pluginRss)
+	eConfig.addPlugin(syntaxHighlight)
 
-  eleventyConfig.setQuietMode(true)
-
-  // *** PASSTHROUGHS
-	eleventyConfig.addPassthroughCopy("browserconfig.xml")
-  eleventyConfig.addPassthroughCopy("favicon.ico")
-  eleventyConfig.addPassthroughCopy("robots.txt")
-  eleventyConfig.addPassthroughCopy("./src/assets/fonts")
-  eleventyConfig.addPassthroughCopy("./src/assets/js")
-  eleventyConfig.addPassthroughCopy("./src/assets/svg")
-  eleventyConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
-  eleventyConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
-	eleventyConfig.addPassthroughCopy("./src/_pagefind")
-	// eleventyConfig.addPassthroughCopy({
-	// 	"./src/assets/css/fonts_LibreFranklin.css": "css/fonts_LibreFranklin.css"
-	// })
-	// eleventyConfig.addPassthroughCopy({
-	// 	"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
-	// })
-	// eleventyConfig.addPassthroughCopy({
-	// 	"./src/assets/css/prismjs.css": "css/prismjs.css"
-	// })
-	// eleventyConfig.addPassthroughCopy({
-	// 	"./src/assets/css/search-form.css": "css/search-form.css"
-	// })
-	// eleventyConfig.addPassthroughCopy({
-	// 	"./src/assets/css/tables.css": "css/tables.css"
-	// })
-
-  eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
-
+  eConfig.setQuietMode(true)
 
 	// *** FILTERS
-	eleventyConfig.addFilter("assetUrl", function (assetCollection, key) {
+	eConfig.addFilter("assetUrl", function (assetCollection, key) {
 		for (let asset of assetCollection) {
 			if (asset.data.assetKey === key) return asset.url
 		}
 		return ""
 	})
-	eleventyConfig.addFilter("assetContent", function (assetCollection, key) {
+	eConfig.addFilter("assetContent", function (assetCollection, key) {
 		for (let asset of assetCollection) {
 			if (asset.data.assetKey === key) return asset.content
 		}
 		return ""
 	})
-	eleventyConfig.addFilter("numCommas", function (value) {
+	eConfig.addFilter("numCommas", function (value) {
 		return new Intl.NumberFormat('en-US').format(value)
 	})
 	// https://www.11ty.dev/docs/quicktips/inline-css/
-	eleventyConfig.addFilter("cssmin", function(code) {
+	eConfig.addFilter("cssmin", function(code) {
 		return new CleanCSS({}).minify(code).styles
 	})
 
+  // *** PASSTHROUGHS
+	eConfig.addPassthroughCopy("browserconfig.xml")
+  eConfig.addPassthroughCopy("favicon.ico")
+  eConfig.addPassthroughCopy("robots.txt")
+  eConfig.addPassthroughCopy("./src/assets/fonts")
+  eConfig.addPassthroughCopy("./src/assets/js")
+  eConfig.addPassthroughCopy("./src/assets/svg")
+  eConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
+  eConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
+	eConfig.addPassthroughCopy("./src/_pagefind")
+	eConfig.addPassthroughCopy("./src/css")
+	// eConfig.addPassthroughCopy({
+	// 	"./src/assets/css/fonts_LibreFranklin.css": "css/fonts_LibreFranklin.css"
+	// })
+	// eConfig.addPassthroughCopy({
+	// 	"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
+	// })
+	// eConfig.addPassthroughCopy({
+	// 	"./src/assets/css/prismjs.css": "css/prismjs.css"
+	// })
+	// eConfig.addPassthroughCopy({
+	// 	"./src/assets/css/search-form.css": "css/search-form.css"
+	// })
+	// eConfig.addPassthroughCopy({
+	// 	"./src/assets/css/tables.css": "css/tables.css"
+	// })
+
+  eConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
 	/* --- date-handling --- */
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
+  eConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
     )
   })
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+  eConfig.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat("MMMM d, yyyy")
   })
-  eleventyConfig.addFilter("dateStringISO", (dateObj) => {
+  eConfig.addFilter("dateStringISO", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat("yyyy-MM-dd")
   })
-  eleventyConfig.addFilter("dateFromTimestamp", (timestamp) => {
+  eConfig.addFilter("dateFromTimestamp", (timestamp) => {
     return DateTime.fromISO(timestamp, { zone: "utc" }).toJSDate()
   })
-  eleventyConfig.addFilter("dateFromRFC2822", (timestamp) => {
+  eConfig.addFilter("dateFromRFC2822", (timestamp) => {
     return DateTime.fromJSDate(timestamp).toISO()
   })
-  eleventyConfig.addFilter("readableDateFromISO", (dateObj) => {
+  eConfig.addFilter("readableDateFromISO", (dateObj) => {
     return DateTime.fromISO(dateObj).toFormat("LLL d, yyyy h:mm:ss a ZZZZ")
   })
-  eleventyConfig.addFilter("pub_lastmod", (dateObj) => {
+  eConfig.addFilter("pub_lastmod", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "America/Chicago" }).toFormat(
       "MMMM d, yyyy"
     )
   })
-  eleventyConfig.addFilter("socialDate", (dateObj) => {
+  eConfig.addFilter("socialDate", (dateObj) => {
     return DateTime.fromISO(dateObj).toFormat("MM d, yyyy • h:mm a")
   })
   /* --- end, date-handling */
 
 
   // https://www.11ty.dev/docs/layouts/
-  eleventyConfig.addLayoutAlias("base", "layouts/_default/base.njk")
-  eleventyConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
-  eleventyConfig.addLayoutAlias("index", "layouts/_default/index.njk")
-  eleventyConfig.addLayoutAlias("about", "layouts/about/about.njk")
-  eleventyConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
-  eleventyConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
-  eleventyConfig.addLayoutAlias("search", "layouts/search/search.njk")
-  eleventyConfig.addLayoutAlias("sitemap", "layouts/sitemap/sitemap.njk")
+  eConfig.addLayoutAlias("base", "layouts/_default/base.njk")
+  eConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
+  eConfig.addLayoutAlias("index", "layouts/_default/index.njk")
+  eConfig.addLayoutAlias("about", "layouts/about/about.njk")
+  eConfig.addLayoutAlias("contact", "layouts/contact/contact.njk")
+  eConfig.addLayoutAlias("privacy", "layouts/privacy/privacy.njk")
+  eConfig.addLayoutAlias("search", "layouts/search/search.njk")
+  eConfig.addLayoutAlias("sitemap", "layouts/sitemap/sitemap.njk")
 
 
   /* --- Markdown handling --- */
@@ -225,20 +224,20 @@ module.exports = function(eleventyConfig) {
     return n
   }
   // END, de-bracketing footnotes
-  eleventyConfig.setLibrary("md", markdownEngine)
+  eConfig.setLibrary("md", markdownEngine)
 
 	// h/t: https://edjohnsonwilliams.co.uk/blog/2019-05-04-replicating-jekylls-markdownify-filter-in-nunjucks-with-eleventy/
-	eleventyConfig.addNunjucksFilter("markdownify", (markdownString) =>
+	eConfig.addNunjucksFilter("markdownify", (markdownString) =>
     markdownEngine.render(markdownString)
   )
   /* --- end, Markdown handling --- */
 
   // ** WATCH TARGETS
-	eleventyConfig.addWatchTarget("./src/**/*.js")
-  eleventyConfig.addWatchTarget("./src/**/*.css")
-  eleventyConfig.addWatchTarget("./src/**/*.scss")
+	eConfig.addWatchTarget("./src/**/*.js")
+  eConfig.addWatchTarget("./src/**/*.css")
+  eConfig.addWatchTarget("./src/**/*.scss")
 
-	eleventyConfig.setServerOptions({
+	eConfig.setServerOptions({
 		// enabled: true, // default
     // port: 3000, // default is 8080
     showAllHosts: true,
@@ -246,27 +245,27 @@ module.exports = function(eleventyConfig) {
   })
 
 	// *** SHORTCODES
-  eleventyConfig.addNunjucksAsyncShortcode(
+  eConfig.addNunjucksAsyncShortcode(
     "imgc",
     require("./src/assets/utils/imgc.js")
   )
-  eleventyConfig.addNunjucksAsyncShortcode(
+  eConfig.addNunjucksAsyncShortcode(
     "imgcnobg",
     require("./src/assets/utils/imgcnobg.js")
   )
-  eleventyConfig.addNunjucksAsyncShortcode(
+  eConfig.addNunjucksAsyncShortcode(
     "stweetsimple",
     require("./src/assets/utils/stweetsimple.js")
   )
-  eleventyConfig.addNunjucksAsyncShortcode(
+  eConfig.addNunjucksAsyncShortcode(
     "stoot",
     require("./src/assets/utils/stoot.js")
   )
-	eleventyConfig.addShortcode(
+	eConfig.addShortcode(
     "disclaimer",
     require("./src/assets/utils/disclaimer.js")
   )
-	// eleventyConfig.addNunjucksShortcode(
+	// eConfig.addNunjucksShortcode(
 	// 	"gitinfo",
 	// 	require("./src/assets/utils/gitinfo.js")
 	// )
@@ -274,7 +273,7 @@ module.exports = function(eleventyConfig) {
 
 	// *** COLLECTIONS
 	// h/t https://github.com/11ty/eleventy/issues/613#issuecomment-999637109
-	eleventyConfig.addCollection("everything", (collectionApi) => {
+	eConfig.addCollection("everything", (collectionApi) => {
 		const macroImport = `{%- import "macros/index.njk" as macro with context -%}`
 		let collMacros = collectionApi.getFilteredByGlob('src/**/*.md')
 		collMacros.forEach((item) => {
@@ -284,7 +283,7 @@ module.exports = function(eleventyConfig) {
 	})
 	// for RSS/JSON feeds and sitemap.xml collection
 	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
-	eleventyConfig.addCollection("feeds", function (collection) {
+	eConfig.addCollection("feeds", function (collection) {
 		const feedsColl = collection.getFilteredByGlob([
 			"./src/**/*.md",
 		])
@@ -293,7 +292,7 @@ module.exports = function(eleventyConfig) {
 	// end, RSS/JSON feeds and sitemap.xml collection
 
   // https://www.11ty.dev/docs/config/#transforms
-	eleventyConfig.addTransform("htmlmin", function(content) {
+	eConfig.addTransform("htmlmin", function(content) {
     // Prior to Eleventy 2.0: use this.outputPath instead
     if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
@@ -307,11 +306,10 @@ module.exports = function(eleventyConfig) {
   })
 
 
-	eleventyConfig.setFrontMatterParsingOptions({
+	eConfig.setFrontMatterParsingOptions({
 		excerpt: true,
 		excerpt_separator: "<!--more-->"
 	})
-
 
   // *** WRAPUP
 	/* pathPrefix: "/"; */

@@ -76,6 +76,7 @@ gh-pages.pub
 .nova
 
 src/_includes/css/*.*
+src/css/*.*
 
 csshash
 csshash-out
@@ -132,3 +133,4 @@ gha*.json
 static/_pagefind
 # above is Hugo version; Eleventy's probably would be related to passthrough copy
 _pagefind
+
