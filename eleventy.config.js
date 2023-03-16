@@ -2,15 +2,10 @@
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
-// const svgContents = require("eleventy-plugin-svg-contents")
 const path = require('path')
 const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const CleanCSS = require('clean-css')
-// const pluginEmbedTweet = require("eleventy-plugin-embed-tweet")
-const pluginRev = require("eleventy-plugin-rev")
-// const eleventySass = require("eleventy-sass")
-// const UpgradeHelper = require ("@11ty/eleventy-upgrade-help")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -52,20 +47,16 @@ module.exports = function(eleventyConfig) {
 
 	// *** BEGINNING, DRAFT POSTS STUFF ***
 	// https://www.11ty.dev/docs/quicktips/draft-posts/
-
 	// When `permalink` is false, the file is not written to disk
-
 	eleventyConfig.addGlobalData("eleventyComputed.permalink", function() {
 		return (data) => {
 			// Always skip during non-watch/serve builds
 			if ((data.date > Date.now() || data.draft) && !process.env.BUILD_DRAFTS) {
 				return false
 			}
-
 			return data.permalink
 		}
 	})
-
   // When `eleventyExcludeFromCollections` is true, the file is not included in any collections
 	eleventyConfig.addGlobalData("eleventyComputed.eleventyExcludeFromCollections", function() {
 		return (data) => {
@@ -73,60 +64,31 @@ module.exports = function(eleventyConfig) {
 			if ((data.date > Date.now() || data.draft) && !process.env.BUILD_DRAFTS) {
 				return true
 			}
-
 			return data.eleventyExcludeFromCollections
 		}
 	})
-
 	eleventyConfig.on("eleventy.before", ({runMode}) => {
 		// Set the environment variable
-		if(runMode === "serve" || runMode === "watch") {
+		if (runMode === "serve" || runMode === "watch") {
 			process.env.BUILD_DRAFTS = true
 		}
 	})
-
 	// *** END, DRAFT POSTS STUFF ***
 
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
+  // *** SHORTCODES
+	eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode)
   eleventyConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
   eleventyConfig.addJavaScriptFunction("image", imageShortcode)
 
-  // // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
-  // eleventyConfig.addPlugin(UpgradeHelper)
+	// *** PLUGINS
 	eleventyConfig.addPlugin(pluginRss)
-  // eleventyConfig.addPlugin(svgContents)
 	eleventyConfig.addPlugin(syntaxHighlight)
-	// eleventyConfig.addPlugin(pluginRev)
-	// eleventyConfig.addPlugin(eleventySass, [
-	// 	{
-	// 		compileOptions: {
-	// 			permalink: function(contents, inputPath) {
-	// 				return (data) => {
-	// 					return data.page.filePathStem.replace(/^\/assets\/scss\//, "/css/") + ".css"
-	// 				}
-	// 			}
-	// 		}
-	// 	},
-	// 	{
-	// 		rev: true,
-	// 		sass: {
-	// 			style: "compressed",
-	// 			sourceMap: false
-	// 		}
-	// 	}
-	// ])
-
-	// eleventyConfig.addPlugin(pluginEmbedTweet, {
-  //   useInlineStyles: false,
-  // })
 
   eleventyConfig.setQuietMode(true)
 
-	// eleventyConfig.setServerPassthroughCopyBehavior("copy")
-	// fix for issue in 2.0.0-canary.12 and above
-
-  eleventyConfig.addPassthroughCopy("browserconfig.xml")
+  // *** PASSTHROUGHS
+	eleventyConfig.addPassthroughCopy("browserconfig.xml")
   eleventyConfig.addPassthroughCopy("favicon.ico")
   eleventyConfig.addPassthroughCopy("robots.txt")
   eleventyConfig.addPassthroughCopy("./src/assets/fonts")
@@ -154,6 +116,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false) // for the sake of CSS generated just for `head`
 
 
+	// *** FILTERS
 	eleventyConfig.addFilter("assetUrl", function (assetCollection, key) {
 		for (let asset of assetCollection) {
 			if (asset.data.assetKey === key) return asset.url
@@ -166,40 +129,37 @@ module.exports = function(eleventyConfig) {
 		}
 		return ""
 	})
-
 	eleventyConfig.addFilter("numCommas", function (value) {
 		return new Intl.NumberFormat('en-US').format(value)
 	})
+	// https://www.11ty.dev/docs/quicktips/inline-css/
+	eleventyConfig.addFilter("cssmin", function(code) {
+		return new CleanCSS({}).minify(code).styles
+	})
+
 
 	/* --- date-handling --- */
-
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "dd LLL yyyy"
     )
   })
-
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat("MMMM d, yyyy")
   })
-
   eleventyConfig.addFilter("dateStringISO", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'America/Chicago' }).toFormat("yyyy-MM-dd")
   })
-
   eleventyConfig.addFilter("dateFromTimestamp", (timestamp) => {
     return DateTime.fromISO(timestamp, { zone: "utc" }).toJSDate()
   })
-
   eleventyConfig.addFilter("dateFromRFC2822", (timestamp) => {
     return DateTime.fromJSDate(timestamp).toISO()
   })
-
   eleventyConfig.addFilter("readableDateFromISO", (dateObj) => {
     return DateTime.fromISO(dateObj).toFormat("LLL d, yyyy h:mm:ss a ZZZZ")
   })
-
   eleventyConfig.addFilter("pub_lastmod", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "America/Chicago" }).toFormat(
       "MMMM d, yyyy"
@@ -208,7 +168,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("socialDate", (dateObj) => {
     return DateTime.fromISO(dateObj).toFormat("MM d, yyyy • h:mm a")
   })
-
   /* --- end, date-handling */
 
 
@@ -224,7 +183,6 @@ module.exports = function(eleventyConfig) {
 
 
   /* --- Markdown handling --- */
-
   // https://www.11ty.dev/docs/languages/markdown/
   // --and-- https://github.com/11ty/eleventy-base-blog/blob/master/.eleventy.js
   // --and-- https://github.com/planetoftheweb/seven/blob/master/.eleventy.js
@@ -273,14 +231,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addNunjucksFilter("markdownify", (markdownString) =>
     markdownEngine.render(markdownString)
   )
-
   /* --- end, Markdown handling --- */
 
-  eleventyConfig.addWatchTarget("./src/**/*.js")
+  // ** WATCH TARGETS
+	eleventyConfig.addWatchTarget("./src/**/*.js")
   eleventyConfig.addWatchTarget("./src/**/*.css")
   eleventyConfig.addWatchTarget("./src/**/*.scss")
 
-	// --- REQUIRES Eleventy v.2.0+
 	eleventyConfig.setServerOptions({
 		// enabled: true, // default
     // port: 3000, // default is 8080
@@ -288,51 +245,34 @@ module.exports = function(eleventyConfig) {
     showVersion: true
   })
 
+	// *** SHORTCODES
   eleventyConfig.addNunjucksAsyncShortcode(
     "imgc",
     require("./src/assets/utils/imgc.js")
   )
-
   eleventyConfig.addNunjucksAsyncShortcode(
     "imgcnobg",
     require("./src/assets/utils/imgcnobg.js")
   )
-
-  // eleventyConfig.addNunjucksAsyncShortcode(
-  //   "stweet",
-  //   require("./src/assets/utils/stweet.js")
-  // )
-
-  // eleventyConfig.addNunjucksAsyncShortcode(
-  //   "stweetv2",
-  //   require("./src/assets/utils/stweetv2.js")
-  // )
-
   eleventyConfig.addNunjucksAsyncShortcode(
     "stweetsimple",
     require("./src/assets/utils/stweetsimple.js")
   )
-
   eleventyConfig.addNunjucksAsyncShortcode(
     "stoot",
     require("./src/assets/utils/stoot.js")
   )
-
 	eleventyConfig.addShortcode(
     "disclaimer",
     require("./src/assets/utils/disclaimer.js")
   )
-
 	// eleventyConfig.addNunjucksShortcode(
 	// 	"gitinfo",
 	// 	require("./src/assets/utils/gitinfo.js")
 	// )
 
-  // https://www.11ty.dev/docs/quicktips/inline-css/
-	eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles
-  })
 
+	// *** COLLECTIONS
 	// h/t https://github.com/11ty/eleventy/issues/613#issuecomment-999637109
 	eleventyConfig.addCollection("everything", (collectionApi) => {
 		const macroImport = `{%- import "macros/index.njk" as macro with context -%}`
@@ -342,6 +282,15 @@ module.exports = function(eleventyConfig) {
 		})
 		return collMacros
 	})
+	// for RSS/JSON feeds and sitemap.xml collection
+	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
+	eleventyConfig.addCollection("feeds", function (collection) {
+		const feedsColl = collection.getFilteredByGlob([
+			"./src/**/*.md",
+		])
+		return feedsColl
+	})
+	// end, RSS/JSON feeds and sitemap.xml collection
 
   // https://www.11ty.dev/docs/config/#transforms
 	eleventyConfig.addTransform("htmlmin", function(content) {
@@ -358,24 +307,14 @@ module.exports = function(eleventyConfig) {
   })
 
 
-	// for RSS/JSON feeds and sitemap.xml collection
-	// h/t darth_mall (he/him) on the Eleventy Discord, 2022-09-20
-	eleventyConfig.addCollection("feeds", function (collection) {
-		const feedsColl = collection.getFilteredByGlob([
-			"./src/**/*.md",
-		])
-		return feedsColl
-	})
-	// end, RSS/JSON feeds and sitemap.xml collection
-
-
 	eleventyConfig.setFrontMatterParsingOptions({
 		excerpt: true,
 		excerpt_separator: "<!--more-->"
 	})
 
 
-  /* pathPrefix: "/"; */
+  // *** WRAPUP
+	/* pathPrefix: "/"; */
   return {
     dir: {
       input: "src", // <--- everything else in 'dir' is relative to this directory! https://www.11ty.dev/docs/config/#directory-for-includes
@@ -390,6 +329,5 @@ module.exports = function(eleventyConfig) {
     ],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    // passthroughFileCopy: true, // unneeded as of 2.0.0-canary.31
   }
 }
