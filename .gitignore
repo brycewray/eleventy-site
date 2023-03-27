@@ -75,8 +75,8 @@ gh-pages
 gh-pages.pub
 .nova
 
-src/_includes/css/*.*
-src/css/*.*
+# src/_includes/css/*.*
+# src/css/*.*
 
 csshash
 csshash-out
