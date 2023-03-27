@@ -332,7 +332,7 @@ module.exports = (eConfig) => {
 			"liq",
 			"webc"
     ],
-    // htmlTemplateEngine: "njk",
-    // markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
   }
 }
