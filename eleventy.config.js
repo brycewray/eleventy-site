@@ -6,12 +6,13 @@ const path = require('path')
 const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const CleanCSS = require('clean-css')
+const pluginWebc = require("@11ty/eleventy-plugin-webc")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
   let srcPrefix = `./src/assets/images/`
   src = srcPrefix + src
-  console.log(`Generating image(s) from:  ${src}`)
+  console.log(`Generating image(s) from: ${src}`)
   if (alt === undefined) {
     // Throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
@@ -84,6 +85,9 @@ module.exports = (eConfig) => {
 	// *** PLUGINS
 	eConfig.addPlugin(pluginRss)
 	eConfig.addPlugin(syntaxHighlight)
+	eConfig.addPlugin(pluginWebc, {
+		components: './src/_includes/components/*.webc'
+	})
 
   eConfig.setQuietMode(true)
 
@@ -118,10 +122,10 @@ module.exports = (eConfig) => {
   eConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 	eConfig.addPassthroughCopy("./src/_pagefind")
-	eConfig.addPassthroughCopy("./src/css")
-	// eConfig.addPassthroughCopy({
-	// 	"./src/assets/css/fonts_LibreFranklin.css": "css/fonts_LibreFranklin.css"
-	// })
+	// eConfig.addPassthroughCopy("./src/css")
+	eConfig.addPassthroughCopy({
+		"./src/assets/css/": "css/"
+	})
 	// eConfig.addPassthroughCopy({
 	// 	"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
 	// })
@@ -170,7 +174,8 @@ module.exports = (eConfig) => {
   /* --- end, date-handling */
 
 
-  // https://www.11ty.dev/docs/layouts/
+  // *** LAYOUT ALIASES
+	// https://www.11ty.dev/docs/layouts/
   eConfig.addLayoutAlias("base", "layouts/_default/base.njk")
   eConfig.addLayoutAlias("singlepost", "layouts/posts/singlepost.njk")
   eConfig.addLayoutAlias("index", "layouts/_default/index.njk")
@@ -323,9 +328,11 @@ module.exports = (eConfig) => {
       "html",
       "md",
       "njk",
-      "11ty.js"
+      "11ty.js",
+			"liq",
+			"webc"
     ],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
+    // htmlTemplateEngine: "njk",
+    // markdownTemplateEngine: "njk",
   }
 }
