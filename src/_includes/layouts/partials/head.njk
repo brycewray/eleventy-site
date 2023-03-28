@@ -10,7 +10,8 @@
 		<link rel="alternate" type="application/atom+xml" title="BryceWray.com, full-text - RSS" href="https://www.brycewray.com/index.xml">
 		<link rel="alternate" type="application/feed+json" title="BryceWray.com, full-text - JSON" href="https://www.brycewray.com/index.json">
 		<link rel="alternate" type="application/atom+xml" title="BryceWray.com, excerpt-only - RSS" href="https://www.brycewray.com/index-excerpts.xml">
-		{# <link rel="stylesheet" href="/css/index.css" type="text/css"> #}
+		{% criticalCSS %}
+		{%- include 'layouts/partials/head-css.njk' -%}
 		<noscript><style type="text/css">.lazy, .nScrHidden {display: none;}</style></noscript>
 		{%- if eleventyEnv == "production" -%}
 		{#- Fathom - beautiful, simple website analytics -#}

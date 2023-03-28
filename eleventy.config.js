@@ -1,4 +1,6 @@
+let envir = process.env.NODE_ENV
 const fs = require("fs")
+const fg = require('fast-glob')
 const { DateTime } = require("luxon")
 const htmlmin = require("html-minifier")
 const pluginRss = require("@11ty/eleventy-plugin-rss")
@@ -44,6 +46,17 @@ async function imageShortcode(src, alt) {
   </picture>`
 }
 
+critical_CSS_Shortcode = () => {
+	let internalCSSPath = './src/assets/css'
+	let cssTotal = ''
+	fg.sync(`${internalCSSPath}/0*.css`).forEach(function(file) {
+		let output = fs.readFileSync(file)
+		let content = output.toString("utf8")
+		cssTotal += content + `\n`
+	})
+	return `<style type="text/css" media="screen">${cssTotal}</style>`
+}
+
 module.exports = (eConfig) => {
 
 	// *** BEGINNING, DRAFT POSTS STUFF ***
@@ -81,6 +94,9 @@ module.exports = (eConfig) => {
   eConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
   eConfig.addJavaScriptFunction("image", imageShortcode)
+	eConfig.addNunjucksShortcode("criticalCSS", critical_CSS_Shortcode)
+	eConfig.addLiquidShortcode("criticalCSS", critical_CSS_Shortcode)
+	eConfig.addJavaScriptFunction("criticalCSS", critical_CSS_Shortcode)
 
 	// *** PLUGINS
 	eConfig.addPlugin(pluginRss)
@@ -116,17 +132,21 @@ module.exports = (eConfig) => {
 	eConfig.addPassthroughCopy("browserconfig.xml")
   eConfig.addPassthroughCopy("favicon.ico")
   eConfig.addPassthroughCopy("robots.txt")
+	if (envir !== "production") {
+		eConfig.addPassthroughCopy({
+			"./src/assets/css": "css/"
+		})
+	}
   eConfig.addPassthroughCopy("./src/assets/fonts")
   eConfig.addPassthroughCopy("./src/assets/js")
   eConfig.addPassthroughCopy("./src/assets/svg")
   eConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 	eConfig.addPassthroughCopy("./src/_pagefind")
-	// eConfig.addPassthroughCopy("./src/css")
 	eConfig.addPassthroughCopy({
-		"./src/assets/css/": "css/"
+		"./src/_includes/css": "css/"
 	})
-	// eConfig.addPassthroughCopy({
+	// // eConfig.addPassthroughCopy({
 	// 	"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
 	// })
 	// eConfig.addPassthroughCopy({
@@ -299,7 +319,7 @@ module.exports = (eConfig) => {
   // https://www.11ty.dev/docs/config/#transforms
 	eConfig.addTransform("htmlmin", function(content) {
     // Prior to Eleventy 2.0: use this.outputPath instead
-    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html") && (envir === "production")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,

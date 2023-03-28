@@ -1,14 +1,15 @@
 {
   "name": "eleventy_site",
-  "description": "The repository for www.brycewray.com, a website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
+  "description": "A website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
   "private": true,
   "scripts": {
-    "cleanDev": "rimraf '_site/!(images)'",
-    "cleanProd": "rimraf _site",
+    "cleanDev": "rimraf '_site/!(images)' && rimraf 'src/_includes/css' && rimraf '_data/csshash.json'",
+    "cleanProd": "rimraf _site && rimraf 'src/_includes/css' && rimraf '_data/csshash.json'",
+		"hasher": "node csshash.js",
     "search": "pagefind --source _site",
-    "start": "NODE_ENV=development npm-run-all cleanDev dev:eleventy",
-    "build": "NODE_ENV=production npm-run-all cleanProd prod:eleventy search",
-    "testbuild": "NODE_ENV=production npm-run-all cleanDev testProd:eleventy",
+    "start": "NODE_ENV=development npm-run-all cleanDev hasher dev:eleventy",
+    "build": "NODE_ENV=production npm-run-all cleanProd hasher prod:eleventy search",
+    "testbuild": "NODE_ENV=production npm-run-all cleanDev hasher testProd:eleventy",
     "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --incremental",
     "prod:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "testProd:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy --serve"
