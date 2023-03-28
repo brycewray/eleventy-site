@@ -31,7 +31,6 @@
     "dotenv": "^16.0.3",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-rss-helper": "^1.2.1",
-    "fast-glob": "^3.2.12",
     "glob": "^9.3.2",
     "html-minifier": "^4.0.0",
     "luxon": "^3.3.0",
