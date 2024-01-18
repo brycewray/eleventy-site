@@ -10,12 +10,12 @@
 
 .homeOpen {
 	text-align: center;
-}
-.homeOpen h1 {
-	line-height: 1.5em;
-	font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2.25rem);
-	letter-spacing: -0.025em;
-	padding-top: 5vh;
+	h1 {
+		line-height: 1.5em;
+		font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2.25rem);
+		letter-spacing: -0.025em;
+		padding-top: 5vh;
+	}
 }
 
 .homePost-Div {

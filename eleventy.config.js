@@ -9,6 +9,7 @@ const Image = require("@11ty/eleventy-img")
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const CleanCSS = require('clean-css')
 const pluginWebc = require("@11ty/eleventy-plugin-webc")
+const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss")
 
 async function imageShortcode(src, alt) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
@@ -47,16 +48,16 @@ async function imageShortcode(src, alt) {
   </picture>`
 }
 
-critical_CSS_Shortcode = () => {
-	let internalCSSPath = './src/assets/css'
-	let cssTotal = ''
-	fg.sync(`${internalCSSPath}/0*.css`).forEach(function(file) {
-		let output = fs.readFileSync(file)
-		let content = output.toString("utf8")
-		cssTotal += content + `\n`
-	})
-	return `<style type="text/css" media="screen">${cssTotal}</style>`
-}
+// critical_CSS_Shortcode = () => {
+// 	let internalCSSPath = './src/assets/css'
+// 	let cssTotal = ''
+// 	fg.sync(`${internalCSSPath}/0*.css`).forEach(function(file) {
+// 		let output = fs.readFileSync(file)
+// 		let content = output.toString("utf8")
+// 		cssTotal += content + `\n`
+// 	})
+// 	return `<style type="text/css" media="screen">${cssTotal}</style>`
+// }
 
 module.exports = (eConfig) => {
 
@@ -95,9 +96,9 @@ module.exports = (eConfig) => {
   eConfig.addLiquidShortcode("image", imageShortcode)
   // === Liquid needed if `markdownTemplateEngine` **isn't** changed from Eleventy default
   eConfig.addJavaScriptFunction("image", imageShortcode)
-	eConfig.addNunjucksShortcode("criticalCSS", critical_CSS_Shortcode)
-	eConfig.addLiquidShortcode("criticalCSS", critical_CSS_Shortcode)
-	eConfig.addJavaScriptFunction("criticalCSS", critical_CSS_Shortcode)
+	// eConfig.addNunjucksShortcode("criticalCSS", critical_CSS_Shortcode)
+	// eConfig.addLiquidShortcode("criticalCSS", critical_CSS_Shortcode)
+	// eConfig.addJavaScriptFunction("criticalCSS", critical_CSS_Shortcode)
 
 	// *** PLUGINS
 	eConfig.addPlugin(pluginRss)
@@ -105,6 +106,7 @@ module.exports = (eConfig) => {
 	eConfig.addPlugin(pluginWebc, {
 		components: './src/_includes/components/*.webc'
 	})
+	eConfig.addPlugin(lightningCSS)
 
   eConfig.setQuietMode(true)
 
@@ -133,20 +135,20 @@ module.exports = (eConfig) => {
 	eConfig.addPassthroughCopy("browserconfig.xml")
   eConfig.addPassthroughCopy("favicon.ico")
   eConfig.addPassthroughCopy("robots.txt")
-	if (envir !== "production") {
-		eConfig.addPassthroughCopy({
-			"./src/assets/css": "css/"
-		})
-	}
+	// if (envir !== "production") {
+	// 	eConfig.addPassthroughCopy({
+	// 		"./src/assets/css": "css/"
+	// 	})
+	// }
   eConfig.addPassthroughCopy("./src/assets/fonts")
   eConfig.addPassthroughCopy("./src/assets/js")
   eConfig.addPassthroughCopy("./src/assets/svg")
   eConfig.addPassthroughCopy("./src/images") // not just icons due to that one OG image
   eConfig.addPassthroughCopy("_headers") // for CFP as of 2021-10-27
 	eConfig.addPassthroughCopy("./src/_pagefind")
-	eConfig.addPassthroughCopy({
-		"./src/_includes/css": "css/"
-	})
+	// eConfig.addPassthroughCopy({
+	// 	"./src/_includes/css": "css/"
+	// })
 	// // eConfig.addPassthroughCopy({
 	// 	"./src/assets/css/lite-yt-embed.css": "css/lite-yt-embed.css"
 	// })

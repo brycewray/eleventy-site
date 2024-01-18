@@ -7,43 +7,12 @@
 			{% endif %}
 		{%- endfor %} #}
 
-{%- set eleventyEnv = projEnv.environment -%}
-{%- set siteHost = siteparams.siteHost -%}
-{%- set searchPageTitle = siteparams.searchPageTitle -%}
+{# {%- set eleventyEnv = projEnv.environment -%} #}
 
-{%- set cssTypes = [
-	[('<blockquote class="toot-blockquote' in content), 'social'],
-	[(('<pre class="language' in content) or ('<code>' in content)), 'code'],
-	[('<table' in content), 'tables'],
-	[('<lite-youtube' in content), 'lite-yt-embed'],
-	[(('Home page' not in title) and ('Sitemap (HTML form)' not in title) and (title != 'Posts')), 'billboard'],
-	[(((title != searchPageTitle) and (title != 'Posts'))	and ((tags == "post") or (title == 'About me') or (title == 'Privacy policy')	or (title == 'Want to reach me?'))), 'article'],
-	[('class="footnote-ref' in content), 'footnotes'],
-	[(title == searchPageTitle), 'search-form'],
-	[('<article' in content), 'article'],
-	[((tags == 'post') and (title != 'Posts')), 'posts-single'],
-	[(title == 'Posts'), 'posts-list'],
-	[(('<section class="footnotes' in content) or ('class="footnote-sim' in content)), 'footnotes'],
-	[(title == 'Home page'), 'home'],
-	[(title == 'Sitemap (HTML form)'), 'sitemaphtml'],
-	[(title != 'Search the site'), 'search-btn'],
-	[(title == 'Search the site'), 'search-form'],
-	[('<details>' in content), 'details'],
-	[(title == "404 Page not found"), 'fourohfour']
-]
--%}
+{# {% if eleventyEnv == "production" %} #}
+	<link rel="stylesheet" href="/assets/css/index.css" type="text/css" media="screen">
+{# {% else %} #}
+	{# <link rel="stylesheet" href="/css/{{ tempName }}" type="text/css" media="screen"> #}
+{# {% endif %} #}
 
-{%- for condition, fileName in cssTypes -%}
-	{%- if condition == true -%}
-		{%- set tempName = fileName + ".css" -%}
-		{% if eleventyEnv == "production" %}
-			{% for file, hash in csshash %}
-				{% if tempName === file %}
-					<link rel="stylesheet" href="/css/{{ hash }}" type="text/css" media="screen">
-				{% endif %}
-			{% endfor %}
-		{% else %}
-			<link rel="stylesheet" href="/css/{{ tempName }}" type="text/css" media="screen">
-		{% endif %}
-	{%- endif -%}
-{%- endfor %}
+	<link rel="stylesheet" href="/assets/css/print.css" type="text/css" media="print">
