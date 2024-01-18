@@ -22,7 +22,7 @@
           {%- if (not 'The site this week' in title) -%}<strong>{{ page.date | dateStringISO }}</strong>{%- else -%}&nbsp;{%- endif %}
         </p>
 				<p class="ctr legal" data-pagefind-ignore>
-					{{ wordCount | numCommas }} words, {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %} &bull; <a href="https://github.com/brycewray/eleventy_site/commits/main/src{{ page.filePathStem }}.md" title="This page’s commit history">History</a>
+					{{ wordCount | numCommas }} words, {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %} &bull; <a href="https://github.com/brycewray/eleventy-site/commits/main/src{{ page.filePathStem }}.md" title="This page’s commit history">History</a>
 				</p>
 				{%- endif %}
       </div>

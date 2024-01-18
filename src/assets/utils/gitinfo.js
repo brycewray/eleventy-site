@@ -12,7 +12,7 @@ module.exports = (pubdate, filename) => {
 
 	if (environment === "production") {
 
-		let repoLink = `https://github.com/brycewray/eleventy_site/commit/`
+		let repoLink = `https://github.com/brycewray/eleventy-site/commit/`
 
 		pubdate = DateTime.fromJSDate(pubdate, { zone: 'America/Chicago' }).toFormat("yyyy-MM-dd")
 
