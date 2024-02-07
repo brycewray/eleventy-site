@@ -1,3 +1,5 @@
+@charset 'utf-8';
+
 /* based on https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/ */
 
 @media print {
@@ -35,19 +37,19 @@
 		overflow-x: auto !important;
 	}
 	code[class*="language-"], pre[class*="language-"] {
-		color: white;
+		color: var(--white);
 	}
 	:not(pre) > code[class*="language-"], pre[class*="language-"] {
 		background: #000;
 	}
 	.chroma * {
-		color: white !important;
+		color: var(--white) !important;
 	}
 	article code {
 		background-color: #ddd;
 	}
 	h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
-		break-after: avoid-page;
+		break-after: avoid;
 		break-inside: avoid-page;
 	}
 	.box {
