@@ -2,6 +2,9 @@
   "name": "eleventy-site",
   "description": "A website built on the Eleventy (https://11ty.dev) static site generator. Built off the Git history of the earlier `eleventy_solo` repo.",
   "private": true,
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "cleanDev": "rimraf '_site'",
     "cleanProd": "rimraf '_site'",
@@ -25,6 +28,7 @@
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.3.0",
     "axios": "^1.6.5",
+    "browserslist": "^4.22.3",
     "clean-css": "^5.3.3",
     "cross-env": "^7.0.3",
     "cross-spawn": "^7.0.3",
