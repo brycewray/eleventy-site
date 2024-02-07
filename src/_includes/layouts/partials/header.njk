@@ -18,5 +18,30 @@
           <li><a href="/privacy/" title="Privacy policy" aria-label="Privacy policy">Privacy</a></li>
           <li><a href="/contact/" title="Contact me" aria-label="Contact me">Contact</a></li>
         </ul>
+			<div class="nScrHidden switchTheme">
+				<label for="lightMode" class="lightLabel" aria-label="Select light mode" title="Light mode">
+					<input type="radio" name="switchTheme" id="lightMode">
+					<span>
+						&#128526;
+					</span>
+				</label>
+				<label for="autoMode" class="autoLabel" aria-label="Select auto mode for OS theme choice" title="Auto mode">
+					<input type="radio" name="switchTheme" id="autoMode">
+					<span>
+						&#127763;
+					</span>
+				</label>
+				<label for="darkMode" class="darkLabel" aria-label="Select dark mode" title="Dark mode">
+					<input type="radio" name="switchTheme" id="darkMode">
+					<span>
+						&#127769;
+					</span>
+				</label>
+			</div>
       </nav>
     </header>
+		{%- if siteHost == "CFP" -%}
+			<script nonce="DhcnhD3khTMePgXw" src="/assets/js/mode-switch-auto.js" defer></script>
+		{%- else -%}
+			<script src="/assets/js/mode-switch-auto.js" defer></script>
+		{%- endif %}
