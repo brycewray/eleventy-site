@@ -23,7 +23,9 @@ let xFmPart2 = ',x_0,z_1/' // note ending slash
 
 export default async (url, alt, width, height, phn) => {
 
-	dataSzes = `(min-width: 1024px) 100vw, 50vw`
+	let dataSzes = `(min-width: 1024px) 100vw, 50vw`
+
+	let imgClass
 
   let stringToRet = ``
   let arrayFromLoop = []
