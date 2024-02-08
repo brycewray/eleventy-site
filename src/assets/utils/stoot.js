@@ -3,11 +3,11 @@
 // both Hugo and Astro for static content
 // from Mastodon
 
-const EleventyFetch = require("@11ty/eleventy-fetch")
-const md5 = require('md5')
-const { DateTime } = require("luxon")
+import EleventyFetch from "@11ty/eleventy-fetch"
+import md5 from 'md5'
+import { DateTime } from "luxon"
 
-module.exports = async (instance, id) => {
+export default async (instance, id) => {
 
 	let stringToRet = ``
 	let tootLink, handleInst, mediaMD5, urlToGet, mediaStuff, videoStuff, gifvStuff, cardStuff, pollStuff = ''

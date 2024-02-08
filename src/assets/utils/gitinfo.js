@@ -1,12 +1,12 @@
 // https://www.aleksandrhovhannisyan.com/blog/eleventy-build-info/
 // https://stackoverflow.com/questions/8611486/how-to-get-the-last-commit-date-for-a-bunch-of-files-in-git
 
-// const spawn = require('cross-spawn')
-const { DateTime } = require("luxon")
-const childProcess = require('child_process');
+// import spawn from 'cross-spawn'
+import { DateTime } from "luxon"
+import childProcess from 'child_process';
 const environment = process.env.NODE_ENV
 
-module.exports = (pubdate, filename) => {
+export default (pubdate, filename) => {
 
 	let stringToRet = ``
 

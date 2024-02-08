@@ -8,13 +8,13 @@
 
 	If "prod" is "prod", show the tweet as if in production mode.
 */
-const EleventyFetch = require("@11ty/eleventy-fetch")
+import EleventyFetch from "@11ty/eleventy-fetch"
 const environment = process.env.NODE_ENV
 
 // const fetch = (...args) =>
 // 	import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
-module.exports = async (user, id, prod) => {
+export default async (user, id, prod) => {
 
 	let stringToRet = ``
 

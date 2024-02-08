@@ -12,10 +12,10 @@ If 'phn' is unspecified, default image styling occurs.
 The `animate-fade` CSS class is from the Tailwind CSS config file.
 */
 
-const EleventyFetch = require("@11ty/eleventy-fetch")
+import EleventyFetch from "@11ty/eleventy-fetch"
 
-const md5 = require('md5')
-// const axios = require('axios')
+import md5 from 'md5'
+// import axios from 'axios'
 
 const respSizes = [ 320, 640, 960, 1280, 1600, 1920 ]
 let cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
@@ -23,11 +23,13 @@ let LQIPholder = 'f_jpg,q_01,w_20/' // note ending slash and leading zero in `q`
 let xFmPart1 = 'f_auto,q_auto:eco,w_'
 let xFmPart2 = ',x_0,z_1/' // note ending slash
 
-module.exports = async (url, alt, width, height, phn) => {
+export default async (url, alt, width, height, phn) => {
   let imgBmd5 = md5(url)
 
-	divClass = `relative`
-	dataSzes = `(min-width: 1024px) 100vw, 50vw`
+	let imgClass
+
+	let divClass = `relative`
+	let dataSzes = `(min-width: 1024px) 100vw, 50vw`
 
   /*
   ================================================================

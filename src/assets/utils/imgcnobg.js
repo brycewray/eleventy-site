@@ -16,14 +16,12 @@
 	example image in the post about the Eleventy Image plugin.
 */
 
-const EleventyFetch = require("@11ty/eleventy-fetch")
-
 const respSizes = [ 320, 640, 960, 1280, 1600, 1920 ]
 let cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
 let xFmPart1 = 'f_auto,q_auto:eco,w_'
 let xFmPart2 = ',x_0,z_1/' // note ending slash
 
-module.exports = async (url, alt, width, height, phn) => {
+export default async (url, alt, width, height, phn) => {
 
 	dataSzes = `(min-width: 1024px) 100vw, 50vw`
 
