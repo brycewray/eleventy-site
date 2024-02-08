@@ -1,6 +1,6 @@
-const fs = require("fs")
-const { mkdir } = require("fs/promises")
-const path = require("path")
+import fs from "fs"
+import { mkdir } from "fs/promises"
+import path from "path"
 
 let
 	desiredPath = process.argv[2],
