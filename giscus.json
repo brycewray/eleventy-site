@@ -1,0 +1,14 @@
+{
+  "origins": [
+    "https://www.brycewray.com",
+    "https://brycewray.com",
+		"https://static-site-dupe.pages.dev",
+		"https://static-site-wdu.pages.dev",
+    "https://static-site-omega.vercel.app"
+  ],
+  "originsRegex": [
+    "http://localhost:[0-9]+",
+    "http://192.168.0.70:[0-9]+"
+  ],
+  "defaultCommentOrder": "oldest"
+}
