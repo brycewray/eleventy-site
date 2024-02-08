@@ -333,7 +333,7 @@ export default (eConfig) => {
       "md",
       "njk",
       "11ty.js",
-			"liq",
+			"liquid",
 			"webc"
     ],
     htmlTemplateEngine: "njk",
