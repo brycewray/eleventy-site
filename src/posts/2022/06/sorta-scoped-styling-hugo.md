@@ -25,7 +25,9 @@ Still, the use of scoped styling in other projects makes people ask about it whe
 
 This resonated with me because of how I already organized my site's SCSS partials --- which I'd been doing even before seeing a video from [Kevin Powell](https://www.kevinpowell.co/) about how to set up one's styling files (although I found additional inspiration in what he described):
 
-{{ macro.liteYT("Get your stylesheets more organized with Sass partials", "9Ld-aOKsEDk") }}
+{% set videoTitle = "Get your stylesheets more organized with Sass partials" %}
+{% set videoId = "9Ld-aOKsEDk" %}
+{% include "layouts/partials/lite-youtube.njk" %}
 
 I already had SCSS partials that were pretty specific to certain content types, but up to then I'd been channeling all of them into one big `index` CSS file for use by every page on the site. Of course, it's a colossal understatement to call this "suboptimal."
 

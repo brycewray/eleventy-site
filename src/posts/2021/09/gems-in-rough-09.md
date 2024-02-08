@@ -36,7 +36,9 @@ For example, adding the following to the [Markdown](https://daringfireball.net/p
 
 .&nbsp;.&nbsp;.&nbsp;produces this embed of a short video which just happens to be one of my favorites because its sarcastic point is **so** spot-on:
 
-{{ macro.liteYT("Every programming tutorial", "MAlSjtxy5ak") }}
+{% set videoTitle = "Every programming tutorial" %}
+{% set videoId = "MAlSjtxy5ak" %}
+{% include "layouts/partials/lite-youtube.njk" %}
 
 I altered the code a little bit to add the disclaimer after each video, which I believe keeps this site in good shape where the [GDPR](https://gdpr-info.eu/) and other related privacy measures are concerned. I made this additional change after noting the concerns expressed in "[Embed YouTube videos without cookies](https://axbom.com/embed-youtube-videos-without-cookies/)" by [Per Axbom](https://twitter.com/axbom). In short: just using the (sorta-)no-cookies YouTube domain isn't enough; it's also necessary to advise your visitors that actually **playing** an embed from that domain, the domain name notwithstanding, **still** loads cookies.
 

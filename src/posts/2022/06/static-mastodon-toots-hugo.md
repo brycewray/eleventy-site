@@ -20,7 +20,9 @@ You may have heard, especially recently, about a social media platform called [M
 
 Yet, these instances are *federated* so as to allow a surprising degree of interconnectivity among them. An often-used analogy is that of email. You and I may well have two totally different email providers, but we can email each other because both our providers adhere to the necessary standards. Similarly, an account on one Mastodon instance (usually) can follow and interact with an account on a different instance. The following video from 2018 explains it well:
 
-{{ macro.liteYT("What is Mastodon?", "IPSbNdBmWKE") }}
+{% set videoTitle = "What is Mastodon?" %}
+{% set videoId = "IPSbNdBmWKE" %}
+{% include "layouts/partials/lite-youtube.njk" %}
 
 As the video also notes, some instances' owners purposely limit the instances' full interconnectivity with other instances. Mastodon adherents consider this to be a feature, not a bug. Our discussion today is pretty much about those instances which **do** allow full interactivity with other compatible instances.
 

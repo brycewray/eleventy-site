@@ -13,10 +13,14 @@ In this latest video, Delaney posited Astro as having the potential to be the "u
 
 [^away]: I'd have published this post yesterday, but in the last few days I've been preoccupied with other stuff, coding-related and otherwise, so today was my first opportunity to come up for air (if only briefly).
 
-{{ macro.liteYT("Astro just Launched.... Could it be the ultimate web framework?", "gxBkghlglTg") }}
+{% set videoTitle = "Astro just Launched.... Could it be the ultimate web framework?" %}
+{% set videoId = "gxBkghlglTg" %}
+{% include "layouts/partials/lite-youtube.njk" %}
 
 . . . and, now, take a trip back in time to Fireship's "[x] in 100 Seconds" video about Astro, then in v.0.18.x or so[^early]:
 
 [^early]: It's hard to tell, because Astro's [releases on GitHub](https://github.com/withastro/astro/releases) go back no further than [v.0.18.9 on August 5, 2021](https://github.com/withastro/astro/releases/tag/astro%400.18.9), three weeks *after* this video appeared.
 
-{{ macro.liteYT("Astro in 100 Seconds", "dsTXcSeAZq8") }}
+{% set videoTitle = "Astro in 100 Seconds" %}
+{% set videoId = "dsTXcSeAZq8" %}
+{% include "layouts/partials/lite-youtube.njk" %}

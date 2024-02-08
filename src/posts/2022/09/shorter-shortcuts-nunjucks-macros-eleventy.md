@@ -9,7 +9,9 @@ initTextEditor: iA Writer
 
 A year ago this month, I [wrote](https://www.brycewray.com/posts/2021/09/gems-in-rough-09/) here about my appreciation for [some code by Sia Karamalegos](https://sia.codes/posts/lite-youtube-embed-eleventy/) that made it possible, even easy, to embed YouTube videos like so, and without all the usual nasty tracking:
 
-{{ macro.liteYT("How to make Eyeballs that Follow You Around", "TGe3pS5LqEw") }}
+{% set videoTitle = "How to make Eyeballs that Follow You Around" %}
+{% set videoId = "TGe3pS5LqEw" %}
+{% include "layouts/partials/lite-youtube.njk" %}
 
 That code generally looked something like this[^params] when used with the [Nunjucks](https://mozilla.github.io/nunjucks) templating language in the [Eleventy](https://11ty.dev) static site generator (SSG):
 
