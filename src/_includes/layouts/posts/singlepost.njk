@@ -22,6 +22,9 @@ layout: base
 				{% endif %}
 				{#   END, divs around Prism `pre``code` stuff #}
 				{{ Content | safe }}
+				<p class="ctr legal" data-pagefind-ignore>
+					{% gitinfo page.date, page.inputPath %}
+				</p>
         <contact-button data-pagefind-ignore aria-label="Link for generating email to reply to this website post" class="nScrHidden">
 					<a href="mailto:bw@brycewray.com?subject=“{{ title }}”">
 	          <button>
