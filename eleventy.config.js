@@ -1,26 +1,44 @@
 let envir = process.env.NODE_ENV
-const fs = require("fs")
-const fg = require('fast-glob')
-const { DateTime } = require("luxon")
-const htmlmin = require("html-minifier")
-const pluginRss = require("@11ty/eleventy-plugin-rss")
-const path = require('path')
-const Image = require("@11ty/eleventy-img")
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const CleanCSS = require('clean-css')
-const pluginWebc = require("@11ty/eleventy-plugin-webc")
-const lightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss")
+// import fs from "fs"
+// import fg from "fast-glob"
+import { DateTime } from "luxon"
+import htmlmin from "html-minifier"
+import pluginRss from "@11ty/eleventy-plugin-rss"
+import path from "path"
+import eleventyImage, { eleventyImagePlugin } from "@11ty/eleventy-img"
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight"
+import CleanCSS from "clean-css"
+import pluginWebc from "@11ty/eleventy-plugin-webc"
+import lightningCSS from "@11tyrocks/eleventy-plugin-lightningcss"
+import markdownIt from "markdown-it"
+import markdownItFootnote from "markdown-it-footnote"
+import markdownItAnchor from "markdown-it-anchor"
+import markdownItAttrs from "markdown-it-attrs"
+import markdownItBrakSpans from "markdown-it-bracketed-spans"
+import markdownItPrism from "markdown-it-prism"
+import markdownItLinkAttrs from "markdown-it-link-attributes"
+import disclaimer from "./src/assets/utils/disclaimer.js"
+import imgc from "./src/assets/utils/imgc.js"
+import imgcnobg from "./src/assets/utils/imgcnobg.js"
+import stweetsimple from "./src/assets/utils/stweetsimple.js"
+import stoot from "./src/assets/utils/stoot.js"
+import gitinfo from "./src/assets/utils/gitinfo.js"
 
-async function imageShortcode(src, alt) {
+
+async function imageShortcode(src, alt, proc, width, height, phn) {
   let sizes = "(min-width: 1024px) 100vw, 50vw"
-  let srcPrefix = `./src/assets/images/`
-  src = srcPrefix + src
-  console.log(`Generating image(s) from: ${src}`)
+	let cloudiBase = 'https://res.cloudinary.com/brycewray-com/image/upload/'
+	let xFmPart1 = 'f_auto,q_auto:eco'
+	let xFmPart2 = ',x_0,z_1/' // note ending slash
+  // let srcPrefix = `./src/assets/images/`
+  // src = srcPrefix + src
+  src = cloudiBase + xFmPart1 + xFmPart2 + src
+  // console.log(`Generating image(s) from: ${src}`)
   if (alt === undefined) {
     // Throw an error on missing alt (alt="" works okay)
     throw new Error(`Missing \`alt\` on responsive image from: ${src}`)
   }
-  let metadataImg = await Image(src, {
+  let metadataImg = await eleventyImage(src, {
     // widths: [600, 900, 1500],
 		widths: [320, 640, 960, 1280, 1600, 1920],
     formats: ['webp', 'jpeg'],
@@ -48,18 +66,7 @@ async function imageShortcode(src, alt) {
   </picture>`
 }
 
-// critical_CSS_Shortcode = () => {
-// 	let internalCSSPath = './src/assets/css'
-// 	let cssTotal = ''
-// 	fg.sync(`${internalCSSPath}/0*.css`).forEach(function(file) {
-// 		let output = fs.readFileSync(file)
-// 		let content = output.toString("utf8")
-// 		cssTotal += content + `\n`
-// 	})
-// 	return `<style type="text/css" media="screen">${cssTotal}</style>`
-// }
-
-module.exports = (eConfig) => {
+export default (eConfig) => {
 
 	// *** BEGINNING, DRAFT POSTS STUFF ***
 	// https://www.11ty.dev/docs/quicktips/draft-posts/
@@ -99,6 +106,13 @@ module.exports = (eConfig) => {
 	// eConfig.addNunjucksShortcode("criticalCSS", critical_CSS_Shortcode)
 	// eConfig.addLiquidShortcode("criticalCSS", critical_CSS_Shortcode)
 	// eConfig.addJavaScriptFunction("criticalCSS", critical_CSS_Shortcode)
+  eConfig.addNunjucksAsyncShortcode("imgc", imgc)
+  eConfig.addNunjucksAsyncShortcode("imgcnobg", imgcnobg)
+  eConfig.addNunjucksAsyncShortcode("stweetsimple", stweetsimple)
+  eConfig.addNunjucksAsyncShortcode("stoot", stoot)
+	eConfig.addShortcode("disclaimer", disclaimer)
+	// ==================
+	eConfig.addNunjucksShortcode("gitinfo", gitinfo)
 
 	// *** PLUGINS
 	eConfig.addPlugin(pluginRss)
@@ -213,13 +227,6 @@ module.exports = (eConfig) => {
   // https://www.11ty.dev/docs/languages/markdown/
   // --and-- https://github.com/11ty/eleventy-base-blog/blob/master/.eleventy.js
   // --and-- https://github.com/planetoftheweb/seven/blob/master/.eleventy.js
-  let markdownIt = require("markdown-it")
-  let markdownItFootnote = require("markdown-it-footnote")
-  let markdownItAnchor = require("markdown-it-anchor")
-  let markdownItAttrs = require("markdown-it-attrs")
-  let markdownItBrakSpans = require("markdown-it-bracketed-spans")
-  let markdownItPrism = require("markdown-it-prism")
-  let markdownItLinkAttrs = require("markdown-it-link-attributes")
   let markdownItOpts = {
     html: true,
     linkify: false,
@@ -271,32 +278,6 @@ module.exports = (eConfig) => {
     showAllHosts: true,
     showVersion: true
   })
-
-	// *** SHORTCODES
-  eConfig.addNunjucksAsyncShortcode(
-    "imgc",
-    require("./src/assets/utils/imgc.js")
-  )
-  eConfig.addNunjucksAsyncShortcode(
-    "imgcnobg",
-    require("./src/assets/utils/imgcnobg.js")
-  )
-  eConfig.addNunjucksAsyncShortcode(
-    "stweetsimple",
-    require("./src/assets/utils/stweetsimple.js")
-  )
-  eConfig.addNunjucksAsyncShortcode(
-    "stoot",
-    require("./src/assets/utils/stoot.js")
-  )
-	eConfig.addShortcode(
-    "disclaimer",
-    require("./src/assets/utils/disclaimer.js")
-  )
-	// eConfig.addNunjucksShortcode(
-	// 	"gitinfo",
-	// 	require("./src/assets/utils/gitinfo.js")
-	// )
 
 
 	// *** COLLECTIONS
