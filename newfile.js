@@ -1,6 +1,12 @@
 import fs from "fs"
 import { mkdir } from "fs/promises"
-import path from "path"
+
+// Eleventy 3.0 fix
+// from https://www.youtube.com/watch?v=LsN6TBx9Hxo
+import {fileURLToPath} from "node:url"
+import path from "node:path"
+let __filename = fileURLToPath(import.meta.url)
+let __dirname = path.dirname(__filename)
 
 let
 	desiredPath = process.argv[2],
