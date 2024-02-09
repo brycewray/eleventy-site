@@ -1,0 +1,19 @@
+{# {%- set imgs = {{ imgs }} -%} #}
+{%- set siteHost = siteparams.siteHost -%}
+<script{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{%- endif %}>
+	const theHead = document.querySelector("head")
+	const imgsCSS = document.createElement("style")
+	imgsCSS.type = "text/css"
+	if (siteHost == "CFP") {
+		imgsCSS.nonce = "DhcnhD3khTMePgXw"
+	}
+	imgsCSS.textContent = `
+	p.tester {
+		color: red;
+	}
+	`
+	// code to follow
+
+	theHead.append(imgsCSS)
+
+</script>

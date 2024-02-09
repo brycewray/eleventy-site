@@ -1,5 +1,6 @@
         {%- set obfuscation = siteparams.EmailObfuscation -%}
 				{%- set email = metadata.author.email -%}
+				{%- set siteHost = siteparams.siteHost -%}
 				<contact-button data-pagefind-ignore aria-label="Link for generating email to reply to this website post" class="nScrHidden">
 				{%- if obfuscation == "local" -%}
 					<script{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{%- endif %}>
