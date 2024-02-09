@@ -1,7 +1,13 @@
         {%- set obfuscation = siteparams.EmailObfuscation -%}
+				{%- set email = metadata.author.email -%}
 				<contact-button data-pagefind-ignore aria-label="Link for generating email to reply to this website post" class="nScrHidden">
 				{%- if obfuscation == "local" -%}
-					<a href="/" class="contactButton">
+					<script{% if siteHost == "CFP" %} nonce="DhcnhD3khTMePgXw"{%- endif %}>
+						let email = "{{ email }}"
+						let title = "{{ title }}"
+						let email64Link = btoa(`href="mailto:` + email);
+						document.write('<a ' + atob(email64Link) + '?subject=“{{ title }}”" class="contactButton">');
+					</script>
 				{%- else -%}
 					<a href="mailto:bw@brycewray.com?subject=“{{ title }}”" class="contactButton">
 				{%- endif -%}
