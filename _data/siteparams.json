@@ -17,5 +17,6 @@
     "url": "https://www.brycewray.com/index.xml",
     "id": "https://www.brycewray.com"
   },
-  "respSizes": [ 320, 640, 960, 1280, 1600, 1920 ]
+  "respSizes": [ 320, 640, 960, 1280, 1600, 1920 ],
+	"EmailObfuscation": "local"
 }
