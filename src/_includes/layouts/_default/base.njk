@@ -7,7 +7,7 @@
     {%- include 'layouts/partials/header.njk' -%}
     {{ content | safe }}
     {%- if title != "Search the site" -%}
-			{%- include 'layouts/partials/search-pagefind.njk' -%}
+			{%- include 'layouts/partials/search-btn-pagefind.njk' -%}
 		{%- endif %}
 		{%- include 'layouts/partials/footer.njk' -%}
     {%- if eleventyEnv == "production" -%}
